@@ -546,7 +546,7 @@ article blockquote {
 article .article-title {
   position: relative;
   color: #212121;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.2;
   text-align: center;
   margin: 0;
@@ -743,7 +743,7 @@ article.archive {
   margin: 2em auto;
 }
 .archive-post .archive-title {
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1;
   position: relative;
   color: #212121;
