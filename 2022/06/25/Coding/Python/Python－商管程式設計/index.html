@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[Python] 商管程式設計 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="本文為臺大孔令傑教授與盧信銘教授的「用 Python 做商管程式設計」學習筆記
+課程網址：https://www.coursera.org/learn/pbc1、https://www.coursera.org/learn/pbc2
+
+Information Technology（IT）IT-ass">
+  
+
+  
+  
+  <meta name="keywords" content="Python">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[Python] 商管程式設計"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[Python] 商管程式設計</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/Python/Python－商管程式設計/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.610Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>本文為臺大孔令傑教授與盧信銘教授的「用 Python 做商管程式設計」學習筆記</p>
+<p>課程網址：<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/pbc1%E3%80%81https://www.coursera.org/learn/pbc2">https://www.coursera.org/learn/pbc1、https://www.coursera.org/learn/pbc2</a></p>
+</blockquote>
+<h2 id="Information-Technology（IT）"><a href="#Information-Technology（IT）" class="headerlink" title="Information Technology（IT）"></a>Information Technology（IT）</h2><h3 id="IT-assisted-management"><a href="#IT-assisted-management" class="headerlink" title="IT-assisted management"></a>IT-assisted management</h3><ul>
+<li>管理資訊系統 MIS<ul>
+<li>商用 IS</li>
+<li>利用 IS 輔助企業經營</li>
+</ul>
+</li>
+<li>辦公室自動化 OAS</li>
+<li>交易處理 TPS</li>
+</ul>
+<h3 id="IT-supported-management"><a href="#IT-supported-management" class="headerlink" title="IT-supported management"></a>IT-supported management</h3><ul>
+<li>電腦不只可以做得快，還能做得更好。</li>
+<li>決策支援 DSS<ul>
+<li>最佳化作業流程</li>
+<li>輔助企業決策</li>
+</ul>
+</li>
+</ul>
+<h3 id="IT-enabled-management"><a href="#IT-enabled-management" class="headerlink" title="IT-enabled management"></a>IT-enabled management</h3><ul>
+<li>高頻交易：從人們無法利用、極為短暫的市場變化中尋求獲利的自動化程序交易。</li>
+<li>新聞交易：分析線上資訊來源，以求在人類交易員之前做出行動。</li>
+<li>推薦系統（精準行銷）：收集行為資料以分析</li>
+</ul>
+<h2 id="Operations-Management（OM）"><a href="#Operations-Management（OM）" class="headerlink" title="Operations Management（OM）"></a>Operations Management（OM）</h2><h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><ul>
+<li>Operations are activities.</li>
+<li>源於 Production Management</li>
+</ul>
+<h3 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h3><ul>
+<li>Facility location</li>
+<li>Production planning and scheduling</li>
+<li>Inventory control</li>
+<li>Logistics and transportation</li>
+</ul>
+<h2 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h2><h3 id="Makespan-minimization-最小化排程"><a href="#Makespan-minimization-最小化排程" class="headerlink" title="Makespan minimization 最小化排程"></a>Makespan minimization 最小化排程</h3><ul>
+<li>Load balancing 負載平衡</li>
+<li>Heuristic algo. 啟發性演算法、經驗法則：利用經驗來搜尋近似最佳解</li>
+</ul>
+<h3 id="Longest-processing-time-first（LPT）"><a href="#Longest-processing-time-first（LPT）" class="headerlink" title="Longest processing time first（LPT）"></a>Longest processing time first（LPT）</h3><ul>
+<li>For makespan minimization<ol>
+<li>降冪排序 jobs 的 processing time</li>
+<li>分配 job 給目前能最早完成時間的機器</li>
+</ol>
+</li>
+<li>也稱作<ul>
+<li>Iterative algo.</li>
+<li>Greedy algo.：採取當前最好、最佳選</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Number of jobs: &quot;</span>))</span><br><span class="line">m = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Number of machines: &quot;</span>))</span><br><span class="line">p = <span class="built_in">input</span>(<span class="string">&quot;Processing times: &quot;</span>).split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    p[i] = <span class="built_in">int</span>(p[i])</span><br><span class="line"></span><br><span class="line">assignment = [<span class="number">0</span>] * n    <span class="comment"># assignment 陣列內有 n 個 0</span></span><br><span class="line">loads = [<span class="number">0</span>] * m    <span class="comment"># loads 陣列內有 m 個 0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    leastLoadedMachine = <span class="number">0</span></span><br><span class="line">    leastLoad = loads[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">        <span class="keyword">if</span> loads[i] &lt; leastLoad:</span><br><span class="line">            leastLoadedMachine = i</span><br><span class="line">            leastLoad = loads[i]</span><br><span class="line">    loads[leastLoadedMachine] += p[j]</span><br><span class="line">    assignment[j] = leastLoadedMachine + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(p[j]) + <span class="string">&quot;: &quot;</span> + <span class="built_in">str</span>(loads))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Job assignment: &quot;</span> + <span class="built_in">str</span>(assignment))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Machine loads: &quot;</span> + <span class="built_in">str</span>(loads))</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Invetory-Control"><a href="#Invetory-Control" class="headerlink" title="Invetory Control"></a>Invetory Control</h2><h3 id="Common-inventory-policies"><a href="#Common-inventory-policies" class="headerlink" title="Common inventory policies"></a>Common inventory policies</h3><ul>
+<li><p>the（Q, R）policy：I &lt; R（&#x3D; reorder point）則訂 Q 個貨 ➪ 最小化存貨</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Q = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Order quantity: &quot;</span>))</span><br><span class="line">R = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Reorder point: &quot;</span>))</span><br><span class="line">I = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Initial inventory: &quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Inventory: &quot;</span> + <span class="built_in">str</span>(I))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:     <span class="comment"># 每天檢查</span></span><br><span class="line">    sales = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Sales in a day: &quot;</span>))</span><br><span class="line">    I = (I - sales) <span class="keyword">if</span> (I - sales &gt;= <span class="number">0</span>) <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> I &lt; R:</span><br><span class="line">        I += Q</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Inventory: &quot;</span> + <span class="built_in">str</span>(I))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>optimizing the（Q, R）policy</p>
+<ul>
+<li>Minimize the sum of inventory, ordering, and shortage cost.</li>
+</ul>
+</li>
+<li><p>optimal R</p>
+<ul>
+<li>the <strong>expected total cost</strong> for the future, need to estimate &#x2F; forecast &#x2F; predict future demands.</li>
+<li>無未來預測 ➪ for the past ? days</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">sales_str = <span class="string">&quot;14,23,26,17,17,12,24,19,10,18,22,31,19,16,22,28,20,27,20,32&quot;</span></span><br><span class="line">sales = sales_str.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(sales)):</span><br><span class="line">    sales[i] = <span class="built_in">int</span>(sales[i])</span><br><span class="line">stg_cost = <span class="number">2</span></span><br><span class="line">inv_cost = <span class="number">1000</span> * <span class="number">0.073</span> / <span class="number">365</span></span><br><span class="line">Q, I = <span class="number">30</span>, <span class="number">20</span></span><br><span class="line"></span><br><span class="line">best_r, cost_of_best_r = <span class="number">0</span>, <span class="number">100000000</span></span><br><span class="line"><span class="keyword">for</span> R <span class="keyword">in</span> <span class="built_in">range</span>(Q):</span><br><span class="line">    total_cost = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> sales:</span><br><span class="line">    I -= s</span><br><span class="line">    <span class="keyword">if</span> I &lt; <span class="number">0</span>:</span><br><span class="line">        total_cost += -I * stg_cost</span><br><span class="line">        I += Q</span><br><span class="line">    <span class="keyword">elif</span> I &lt; R:</span><br><span class="line">        I += Q</span><br><span class="line">    total_cost += I * inv_cost</span><br><span class="line">    <span class="keyword">if</span> total_cost &lt; cost_of_best_r:</span><br><span class="line">        best_r = R</span><br><span class="line">        cost_of_best_r = total_cost</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(best_r)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>the（s, S）policy：當你的存貨 I &lt; s 則訂 S</p>
+</li>
+</ul>
+<h3 id="Automatic-ordering"><a href="#Automatic-ordering" class="headerlink" title="Automatic ordering"></a>Automatic ordering</h3><ul>
+<li>continuous review system<ul>
+<li>每經過 POS 售出，請檢查存貨。</li>
+<li>達到 reorder point 則訂貨</li>
+</ul>
+</li>
+<li>periodic review system<ul>
+<li><strong>定期</strong>檢查存貨</li>
+<li>達到 reorder point 則訂貨</li>
+</ul>
+</li>
+</ul>
+<h2 id="Logistics-and-transportation"><a href="#Logistics-and-transportation" class="headerlink" title="Logistics and transportation"></a>Logistics and transportation</h2><h3 id="Travsupllyelling-salesperson-problem（TSP）旅行推銷員問題"><a href="#Travsupllyelling-salesperson-problem（TSP）旅行推銷員問題" class="headerlink" title="Travsupllyelling salesperson problem（TSP）旅行推銷員問題"></a>Travsupllyelling salesperson problem（TSP）旅行推銷員問題</h3><ul>
+<li><p>vehicle routing problem 特例</p>
+</li>
+<li><p>greedy algo.</p>
+<blockquote>
+<p>從某點出發，經過每個點恰好一次，且回到原點，找最短距離。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">numLoc = <span class="built_in">int</span>(<span class="built_in">input</span>())	<span class="comment"># 幾個地點</span></span><br><span class="line">dst = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numLoc):</span><br><span class="line">	dst.append(<span class="built_in">input</span>().split())</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(numLoc):</span><br><span class="line">		dst[i][j] = <span class="built_in">int</span>(dst[i][j])</span><br><span class="line"></span><br><span class="line">origin = <span class="number">0</span>		<span class="comment"># 原點</span></span><br><span class="line"></span><br><span class="line">tour = [origin]</span><br><span class="line">tourLen = <span class="number">0</span>		<span class="comment"># 花費距離</span></span><br><span class="line">unvisited = []		<span class="comment"># 目前沒去過的點</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numLoc):</span><br><span class="line">    unvisited.append(i)</span><br><span class="line"></span><br><span class="line">unvisited.remove(origin)	<span class="comment"># 原點到過</span></span><br><span class="line"></span><br><span class="line">cur = origin	<span class="comment"># 目前在哪</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numLoc - <span class="number">1</span>):</span><br><span class="line">    <span class="built_in">next</span> = -<span class="number">1</span>	<span class="comment"># 下個要去的點</span></span><br><span class="line">    minDst = <span class="number">999</span>	<span class="comment"># 假設很大的數</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> unvisited:</span><br><span class="line">        <span class="keyword">if</span> dst[cur][j] &lt; minDst:</span><br><span class="line">            <span class="built_in">next</span> = j</span><br><span class="line">            minDst = dst[cur][j]</span><br><span class="line"></span><br><span class="line">    tour.append(<span class="built_in">next</span>)</span><br><span class="line">    cur = <span class="built_in">next</span></span><br><span class="line">    unvisited.remove(<span class="built_in">next</span>)</span><br><span class="line">    tourLen += minDst</span><br><span class="line">    <span class="built_in">print</span>(tour, tourLen)</span><br><span class="line"></span><br><span class="line">tour.append(origin)</span><br><span class="line">tourLen += dst[cur][origin]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tour, tourLen)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="練習題"><a href="#練習題" class="headerlink" title="練習題"></a>練習題</h2><h3 id="報童問題"><a href="#報童問題" class="headerlink" title="報童問題"></a>報童問題</h3><blockquote>
+<p>每份報紙的進貨價格是 c 元，賣給客人的零售價是 r 元，而單日需求量 D 為隨機，估計 D 會落在 0 ～ N，且符合如下的機率分佈：$Pr(D&#x3D;i) &#x3D; p_i，i &#x3D; 0, 1,……, N$</p>
+<p>並算出最佳訂貨量 q、期望利潤 $\pi(q) &#x3D; rE[\ min${ q, D }$\ ] − cq$</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="built_in">int</span>(<span class="built_in">input</span>())  <span class="comment"># 單價成本</span></span><br><span class="line">r = <span class="built_in">int</span>(<span class="built_in">input</span>())  <span class="comment"># 單位售價</span></span><br><span class="line">N = <span class="built_in">int</span>(<span class="built_in">input</span>())  <span class="comment"># 購買量</span></span><br><span class="line"></span><br><span class="line">pr = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N + <span class="number">1</span>):</span><br><span class="line">    pr.append(<span class="built_in">float</span>(<span class="built_in">input</span>()))</span><br><span class="line"></span><br><span class="line">lst = []</span><br><span class="line">pMax = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, N + <span class="number">1</span>):</span><br><span class="line">  exp = d = p = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> j != i:</span><br><span class="line">        p = (r * j - c * i) * pr[j]</span><br><span class="line">        d += pr[j]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      p = (r * i - c * i) * (<span class="number">1</span> - d)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> exp &gt; pMax:</span><br><span class="line">      pMax = exp</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(pMax))</span><br></pre></td></tr></table></figure>
+<p>訂貨量 q 為負數不算，上面的沒篩。</p>
+<h3 id="報童問題（進階版）"><a href="#報童問題（進階版）" class="headerlink" title="報童問題（進階版）"></a>報童問題（進階版）</h3><blockquote>
+<p>多了 s 單位殘值</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">r = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">N = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">s = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">pr = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N + <span class="number">1</span>):</span><br><span class="line">    pr.append(<span class="built_in">float</span>(<span class="built_in">input</span>()))</span><br><span class="line"></span><br><span class="line">lst = []</span><br><span class="line">pMax = qBest = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, N + <span class="number">1</span>):</span><br><span class="line">  exp = d = p = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> j != i:</span><br><span class="line">      p = (r * j - c * i + s * (i - j)) * pr[j]</span><br><span class="line">      d += pr[j]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      p = (r * j - c * i + s * (i - j)) * (<span class="number">1</span> - d)</span><br><span class="line"></span><br><span class="line">    exp += p</span><br><span class="line">    <span class="keyword">if</span> exp &gt; pMax:</span><br><span class="line">      pMax = exp</span><br><span class="line">      qBest = i</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(qBest, <span class="built_in">int</span>(pMax))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="基地臺位址選擇"><a href="#基地臺位址選擇" class="headerlink" title="基地臺位址選擇"></a>基地臺位址選擇</h3><blockquote>
+<p>城鎮數 n、基地數 p、半徑 d</p>
+<p>$d &#x3D; \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$。</p>
+<ol>
+<li><p>蓋在這裡可以覆蓋<strong>最多</strong>還沒被覆蓋的人</p>
+</li>
+<li><p>蓋在這裡可以覆蓋多少還沒被覆蓋的人</p>
+</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">data = <span class="built_in">input</span>().split()</span><br><span class="line">n = <span class="built_in">int</span>(data[<span class="number">0</span>])    <span class="comment"># 幾個城鎮</span></span><br><span class="line">p = <span class="built_in">int</span>(data[<span class="number">1</span>])    <span class="comment"># 幾個基地台</span></span><br><span class="line">d = <span class="built_in">int</span>(data[<span class="number">2</span>])    <span class="comment"># 覆蓋半徑</span></span><br><span class="line"></span><br><span class="line">town = []</span><br><span class="line">townlst = []    <span class="comment"># 尚未建造</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    town.append(<span class="built_in">input</span>().split())</span><br><span class="line">    townlst.append(i)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):  <span class="comment"># x、y、人口</span></span><br><span class="line">        town[i][j] = <span class="built_in">int</span>(town[i][j])</span><br><span class="line"></span><br><span class="line">build = []    <span class="comment"># 已建造</span></span><br><span class="line">cover = []    <span class="comment"># 涵蓋城鎮</span></span><br><span class="line">maxPop = -<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    pop = town[i][<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> i != j:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[i][<span class="number">0</span>] - town[j][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[i][<span class="number">1</span>] - town[j][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">                pop += town[j][<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">if</span> pop &gt; maxPop:</span><br><span class="line">        maxPop = pop</span><br><span class="line">        firstBuild = i</span><br><span class="line"></span><br><span class="line">coverPop = maxPop    <span class="comment"># 第一個城鎮涵蓋的人口</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coverPop)</span><br><span class="line"></span><br><span class="line">build.append(firstBuild)</span><br><span class="line">cover.append(firstBuild)</span><br><span class="line">townlst.remove(firstBuild)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一次蓋完後涵蓋的城鎮</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> townlst:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[firstBuild][<span class="number">0</span>] - town[i][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[firstBuild][<span class="number">1</span>] - town[i][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">        cover.append(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接著蓋</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(p - <span class="number">1</span>):</span><br><span class="line">    pop = <span class="number">0</span></span><br><span class="line">    maxPop = -<span class="number">1</span></span><br><span class="line">    nextBuild = -<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> townlst:    <span class="comment"># 在尚未蓋的城鎮中</span></span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> cover:    <span class="comment"># 不在目前涵蓋城鎮內</span></span><br><span class="line">            pop = town[i][<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pop = <span class="number">0</span>    <span class="comment"># 涵蓋過的不算，人口算0。</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> i != j:</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[i][<span class="number">0</span>] - town[j][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[i][<span class="number">1</span>] - town[j][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">                    <span class="keyword">if</span> j <span class="keyword">not</span> <span class="keyword">in</span> cover:</span><br><span class="line">                        pop += town[j][<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">if</span> pop &gt; maxPop:</span><br><span class="line">            maxPop = pop</span><br><span class="line">            nextBuild = i  <span class="comment"># 目前人口最多的城鎮</span></span><br><span class="line"></span><br><span class="line">    build.append(nextBuild)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 蓋完後涵蓋的城鎮、人口</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> townlst:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[i][<span class="number">0</span>] - town[nextBuild][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[i][<span class="number">1</span>] - town[nextBuild][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">            coverPop += town[i][<span class="number">2</span>]</span><br><span class="line">            cover.append(i)</span><br><span class="line"></span><br><span class="line">    townlst.remove(nextBuild)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(p):</span><br><span class="line">    <span class="built_in">print</span>(build[i] + <span class="number">1</span>, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(coverPop)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Python/">Python</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Python/">Python</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page 3 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS30/JS30－Day02 CSS＋JS Clock/"><span>[JS30] Day02 CSS＋JS Clock</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS30/JS30－Day02 CSS＋JS Clock/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.558Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="https://i.imgur.com/KyBsWFG.jpg" style="zoom:50%;" />
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>用 JS、CSS 製作一個實時的時鐘</p>
+<h2 id="控制時間"><a href="#控制時間" class="headerlink" title="控制時間"></a>控制時間</h2><ul>
+<li>不斷於間隔固定的時間重複執行 <code>setInterval()</code></li>
+<li>執行一次就結束 <code>setTimeout ()</code></li>
+</ul>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><ul>
+<li>年（yyyy）<code>getFullYear()</code></li>
+<li>月（0-11）<code>getMonth()</code></li>
+<li>日（1-31）<code>getDate()</code></li>
+<li>星期幾（0-6）<code>getDay()</code></li>
+</ul>
+<h3 id="時間"><a href="#時間" class="headerlink" title="時間"></a>時間</h3><ul>
+<li><p>時（0-23）<code>getHours()</code></p>
+</li>
+<li><p>分（0-59）<code>getMinutes()</code></p>
+</li>
+<li><p>秒（0-59）<code>getSeconds()</code></p>
+</li>
+</ul>
+<h2 id="時鐘角度"><a href="#時鐘角度" class="headerlink" title="時鐘角度"></a>時鐘角度</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hourDeg = (hour/<span class="number">12</span>)*<span class="number">360</span> + (min/<span class="number">60</span>)*<span class="number">30</span> + <span class="number">90</span>;</span><br><span class="line"><span class="keyword">var</span> minDeg = (min/<span class="number">60</span>)*<span class="number">360</span> + (sec/<span class="number">60</span>)*<span class="number">6</span> + <span class="number">90</span>;</span><br><span class="line"><span class="keyword">var</span> secDeg = (sec/<span class="number">60</span>)*<span class="number">360</span> + <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setClock</span>(<span class="params"></span>) &#123;</span><br><span class="line">    hourDeg += (<span class="number">360</span>/<span class="number">12</span>)/<span class="number">60</span>/<span class="number">60</span>;</span><br><span class="line">    minDeg += (<span class="number">360</span>/<span class="number">60</span>)/<span class="number">60</span>;</span><br><span class="line">    secDeg += <span class="number">360</span>/<span class="number">60</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>算出比例再＊360°</p>
+</li>
+<li><p>時針、分針再加上其分、秒</p>
+</li>
+<li><p>每秒改變的角度再 +90°</p>
+</li>
+<li><p>時針、分針、秒針隨秒逐漸增加</p>
+<ul>
+<li>秒針 360／60＝6°&#x2F;秒</li>
+<li>分針 360／60＝6°&#x2F;分</li>
+<li>時針 360／12＝30°&#x2F;時</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS30/JS30－Day01 JS Drum Kit/"><span>[JS30] Day01 JS Drum Kit</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS30/JS30－Day01 JS Drum Kit/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.552Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="https://i.imgur.com/qdMubSb.jpg" style="zoom:50%;" />
+
+
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>以 JS 使鍵盤按下後播放出對應按鍵的音效 </p>
+<h2 id="事件監聽"><a href="#事件監聽" class="headerlink" title="事件監聽"></a>事件監聽</h2><p><code>element.addEventListener(event, func, useCapture)</code></p>
+<h3 id="按下按鍵後播放聲音"><a href="#按下按鍵後播放聲音" class="headerlink" title="按下按鍵後播放聲音"></a>按下按鍵後播放聲音</h3><ul>
+<li><h4 id="偵測按下鍵盤事件"><a href="#偵測按下鍵盤事件" class="headerlink" title="偵測按下鍵盤事件"></a>偵測按下鍵盤事件</h4><ul>
+<li>偵測 <code>window.addEventListener(&quot;keydown&quot;, (e) =&gt; &#123;...&#125;);</code></li>
+<li>按下哪一鍵－取得 keyCode<ul>
+<li>keyCode 查詢：<a target="_blank" rel="noopener" href="https://keycode.info/">https://keycode.info/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="播放聲音"><a href="#播放聲音" class="headerlink" title="播放聲音"></a>播放聲音</h4><ul>
+<li>回到音訊開頭 <code>audio.currentTime = 0;</code></li>
+<li>播放 <code>audio.play();</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="data"><a href="#data" class="headerlink" title="data-*"></a>data-*</h2><p>自訂屬性便於 JS 取得，為全域屬性。</p>
+<h3 id="存取"><a href="#存取" class="headerlink" title="存取"></a>存取</h3><ul>
+<li><code>element.dataset.keyname</code></li>
+<li><code>element.dataset[keyname]</code></li>
+</ul>
+<h2 id="transitionend"><a href="#transitionend" class="headerlink" title="transitionend"></a>transitionend</h2><p>發生於 CSS transition 完成後</p>
+<h3 id="transition-轉場"><a href="#transition-轉場" class="headerlink" title="transition 轉場"></a>transition 轉場</h3><p><code>transition: prop duratioin timing-func delay;</code></p>
+<h3 id="transitionEvent（唯讀）"><a href="#transitionEvent（唯讀）" class="headerlink" title="transitionEvent（唯讀）"></a>transitionEvent（唯讀）</h3><p><code>event.propertyName</code></p>
+<p>取得與 transition 有關的屬性名稱</p>
+<h2 id="類別屬性"><a href="#類別屬性" class="headerlink" title="類別屬性"></a>類別屬性</h2><p><code>element.classList</code></p>
+<ul>
+<li>新增 <code>add()</code></li>
+<li>移除 <code>remove()</code></li>
+<li>切換 <code>toggle()</code></li>
+</ul>
+<h2 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h2><ul>
+<li><p>當前事件對象 <code>event.currentTarget</code></p>
+</li>
+<li><p>觸發事件的元素 <code>event.target</code></p>
+</li>
+</ul>
+<h2 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h2><ul>
+<li>位移 <code>translate(x,y)</code></li>
+<li>縮放 <code>scale(x,y)</code></li>
+<li>傾斜 <code>skew(deg,deg)</code></li>
+<li>轉軸 <code>rotate(deg)</code></li>
+<li>變形矩陣 <code>matrix(a,b,c,d,e,f)</code></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS－變數宣告/"><span>[JS] 變數宣告</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS－變數宣告/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.541Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Scope-作用域"><a href="#Scope-作用域" class="headerlink" title="Scope 作用域"></a>Scope 作用域</h2><h3 id="Global-Scope"><a href="#Global-Scope" class="headerlink" title="Global Scope"></a>Global Scope</h3><p><strong>函式外</strong>宣告</p>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ul>
+<li>允許重複宣告</li>
+<li>不支援 Block Scope</li>
+<li>不支援常數</li>
+</ul>
+<h4 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h4><ul>
+<li>命名空間汙染、混亂</li>
+<li>易被存取，可能被修改而導致臭蟲。</li>
+<li>性能差，須一直追蹤。</li>
+</ul>
+<h3 id="Function-Scope"><a href="#Function-Scope" class="headerlink" title="Function Scope"></a>Function Scope</h3><p>函式 {} 內宣告</p>
+<h3 id="Block-Scope"><a href="#Block-Scope" class="headerlink" title="Block Scope"></a>Block Scope</h3><p>於函式中的 { } 內宣告 ➪ 防止不當存取</p>
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><p>in 函式作用域</p>
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>in 區塊作用域</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>宣告時必須賦值 in 區塊作用域</p>
+<p><strong>💡let、const 同區塊內禁止重複命名、不會洩漏到全域</strong></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS－原型繼承/"><span>[JS] 原型繼承</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS－原型繼承/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.536Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="原型-Prototypes"><a href="#原型-Prototypes" class="headerlink" title="原型 Prototypes"></a>原型 Prototypes</h2>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS－jQuery/"><span>[JS] jQuery 筆記</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS－jQuery/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.531Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="jQuery-庫"><a href="#jQuery-庫" class="headerlink" title="jQuery 庫"></a>jQuery 庫</h2><p>JavaScript 函數庫，為事件處理特別設計的。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>HTML 元素選取、操作</li>
+<li>CSS 操作</li>
+<li>HTML 事件函數</li>
+<li>JS 特效、動畫</li>
+<li>HTML DOM 遍歷、修改</li>
+<li>AJAX</li>
+<li>Utilities</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li>下載 <a target="_blank" rel="noopener" href="https://jquery.com/download/#Download_jQuery">jQuery</a></li>
+<li><code>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p><code>$(選擇器).行為()</code></p>
+<p><strong>💡若同時用 jQuery 及其他框架，而都以 $ 作為簡寫怎麼辦？ <code>noConflict()</code></strong></p>
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><p>協助快速控制 CSS</p>
+<ul>
+<li>show() 顯示 ↔ hide()</li>
+<li>toggle() 切換隱藏／顯示</li>
+<li>淡入／出<ul>
+<li>fadeIn(speed)</li>
+<li>fadeOut(speed)</li>
+<li>fadeToggle(speed)</li>
+<li>fadeTo(speed, opacity)</li>
+</ul>
+</li>
+<li>滑入／出<ul>
+<li>slideDown(speed, callback)</li>
+<li>slideUp(speed, callback)</li>
+<li>slideToggle(speed, callback)</li>
+</ul>
+</li>
+<li>delay(speed) 延遲時間</li>
+<li>stop() 停止正在發生的特效</li>
+<li>animate(css, speed) 應用自定義動畫</li>
+</ul>
+<blockquote>
+<p><strong>Callback</strong>：於當前動畫完成後調用</p>
+<p><strong>Chaining</strong>：把多個動作／方法連接起来</p>
+</blockquote>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="内容＆屬性"><a href="#内容＆屬性" class="headerlink" title="内容＆屬性"></a>内容＆屬性</h3><ul>
+<li>text() 設置／回傳内容</li>
+<li>html() 同上（包括 HTML 標記）</li>
+<li>val() 設置／回傳表單值</li>
+<li>attr() 設置／改變屬性值</li>
+</ul>
+<h3 id="新增内容"><a href="#新增内容" class="headerlink" title="新增内容"></a>新增内容</h3><ul>
+<li>append() 結尾</li>
+<li>prepend() 開頭</li>
+<li>after() 元素後</li>
+<li>before() 元素前</li>
+</ul>
+<h3 id="刪除内容"><a href="#刪除内容" class="headerlink" title="刪除内容"></a>刪除内容</h3><ul>
+<li>remove() 刪除包括其子元素</li>
+<li>empty() 只刪除子元素</li>
+</ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><ul>
+<li><p>addClass() 新增一或多個類</p>
+</li>
+<li><p>removeClass() 刪除一或多個類</p>
+</li>
+<li><p>toggleClass() 切換新增／刪除</p>
+</li>
+<li><p>css() 設置／回傳元素之屬性</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>attr() 與 css() 之差別</strong></p>
+<ul>
+<li>attr() → HTML</li>
+<li>css() → style</li>
+</ul>
+</blockquote>
+<h2 id="遍歷"><a href="#遍歷" class="headerlink" title="遍歷"></a>遍歷</h2><h3 id="祖先"><a href="#祖先" class="headerlink" title="祖先"></a>祖先</h3><p>向上遍歷 DOM 樹</p>
+<ul>
+<li>parent() 回傳父元素</li>
+<li>parents() 回傳所有祖先元素</li>
+<li>parentsUntil() 回傳兩元素之間的所有祖先元素</li>
+</ul>
+<h3 id="後代"><a href="#後代" class="headerlink" title="後代"></a>後代</h3><p>向下遍歷 DOM 樹</p>
+<ul>
+<li>children() 回傳子元素</li>
+<li>find() 回傳所有後代元素</li>
+</ul>
+<h3 id="同胞"><a href="#同胞" class="headerlink" title="同胞"></a>同胞</h3><p>擁有相同的父元素，水平遍歷 DOM 樹。</p>
+<ul>
+<li><p>siblings() 回傳所有同胞元素</p>
+</li>
+<li><h4 id="向前"><a href="#向前" class="headerlink" title="向前"></a>向前</h4><ul>
+<li>next() 回傳下一同胞元素</li>
+<li>nextAll() 回傳所有跟隨的同胞元素</li>
+<li>nextUntil() 回傳兩參數之間所有跟隨的同胞元素</li>
+</ul>
+</li>
+<li><h4 id="向後"><a href="#向後" class="headerlink" title="向後"></a>向後</h4><ul>
+<li>prev()</li>
+<li>prevAll()</li>
+<li>prevUntil()</li>
+</ul>
+</li>
+</ul>
+<h3 id="過濾"><a href="#過濾" class="headerlink" title="過濾"></a>過濾</h3><ul>
+<li>first() 回傳首個元素 ↔ last()</li>
+<li>eq() 回傳帶有指定索引的元素</li>
+<li>filter() 回傳匹配標準的元素，否則刪除 ↔ not()</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/jQuery/">jQuery</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS－Function/"><span>[JS] Function</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS－Function/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.524Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h2><h3 id="函式宣告"><a href="#函式宣告" class="headerlink" title="函式宣告"></a>函式宣告</h3><p><code>function Name([param]) &#123; ... &#125;</code></p>
+<h3 id="運算式"><a href="#運算式" class="headerlink" title="運算式"></a>運算式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> plus = <span class="keyword">function</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="箭頭（ES6）"><a href="#箭頭（ES6）" class="headerlink" title="箭頭（ES6）"></a>箭頭（ES6）</h3><p>不會綁定 this，不適合定義物件方法，也沒被提升，須在使用前定義。</p>
+<ul>
+<li>自動綁定（bind）this 到函式定義時的環境</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">plus</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="參數預設值（ES6）"><a href="#參數預設值（ES6）" class="headerlink" title="參數預設值（ES6）"></a>參數預設值（ES6）</h2><p><code>function Name([param[=defaultValue]]) &#123; ... &#125;</code></p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>指向當前物件</p>
+<ul>
+<li>永遠指向一個物件</li>
+<li>指向取決於函式調用的位置</li>
+</ul>
+<h3 id="指向"><a href="#指向" class="headerlink" title="指向"></a>指向</h3><ul>
+<li><p>全域 ➪ window</p>
+</li>
+<li><p>沒有明確呼叫者 ➪ window</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">func</span>() <span class="comment">// window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">func</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = obj.<span class="property">func</span></span><br><span class="line"><span class="title function_">result</span>()  <span class="comment">// window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">func2</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> func2 </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">func</span>() <span class="comment">// window</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有明確呼叫者 ➪ 呼叫者</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">func</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">func</span>()  <span class="comment">// obj</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="綁定"><a href="#綁定" class="headerlink" title="綁定"></a>綁定</h3><ul>
+<li><h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>回傳綁定 this 後的<strong>原函式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;Molly&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">logName</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sayHi = &#123;</span><br><span class="line">  <span class="attr">say</span>: <span class="string">&#x27;Hi&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newFunc = logName.<span class="title function_">bind</span>(sayHi)</span><br><span class="line"><span class="title function_">logName</span>() <span class="comment">// Molly</span></span><br><span class="line"><span class="title function_">newFunc</span>() <span class="comment">// Hi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="call＆apply"><a href="#call＆apply" class="headerlink" title="call＆apply"></a>call＆apply</h4><p>回傳函式執行結果</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;12345&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">map</span>.<span class="title function_">apply</span>(str, [<span class="function"><span class="params">c</span> =&gt;</span> c ** <span class="number">2</span>])</span><br><span class="line"><span class="comment">// [1, 4, 9, 16, 25 ]</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">map</span>.<span class="title function_">call</span>(str, <span class="function"><span class="params">c</span> =&gt;</span> c ** <span class="number">3</span>)</span><br><span class="line"><span class="comment">// [1, 8, 27, 64, 125 ]</span></span><br><span class="line"></span><br><span class="line">str.<span class="title function_">map</span>(<span class="function"><span class="params">c</span> =&gt;</span> c ** <span class="number">2</span>)</span><br><span class="line"><span class="comment">// TypeError: str.map is not a function</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="閉包-Closures"><a href="#閉包-Closures" class="headerlink" title="閉包 Closures"></a>閉包 Closures</h2><p>用於表示<strong>匿名函式</strong>的 class ➪ 減少命名空間之混亂、物件的相依性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(x++)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="原型-Prototype-ES6"><a href="#原型-Prototype-ES6" class="headerlink" title="原型 Prototype (ES6)"></a>原型 Prototype (ES6)</h2><p>　Def. 每一物件都會從原型中「繼承」屬性<br>　– 原型鏈 Prototype Chain：將原型的實例賦值給另一物件，物件再賦值給其他物件。<br>　　▴Object.create()：將建構函式插在原型鏈中間，製造繼承效果，達成多層原型鏈。<br>　– 取得　Object.getPrototypeOf(obj)<br>　– prototype：物件、構造函數指向原型的屬性<br>　– __proto__：實例指向原型的屬性<br>　– constructor：指向該關聯的構造函數，每個原型都有。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS－BOM＆DOM/"><span>[JS] BOM＆DOM</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS－BOM＆DOM/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.517Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Browser-Object-Model（BOM）"><a href="#Browser-Object-Model（BOM）" class="headerlink" title="Browser Object Model（BOM）"></a>Browser Object Model（BOM）</h2><p>瀏覽器本身（<strong>window 物件</strong>）所有功能的核心，作為 JS 與瀏覽器的溝通窗口，無關網頁內容。</p>
+<h3 id="結構"><a href="#結構" class="headerlink" title="結構"></a>結構</h3><ul>
+<li>screen：使用者的螢幕畫面資訊</li>
+<li>location：頁面網址 (URL)</li>
+<li>history：瀏覽器的上下頁</li>
+<li>navigator：瀏覽器資訊</li>
+<li>frames：瀏覽器框架</li>
+</ul>
+<h3 id="常見操作"><a href="#常見操作" class="headerlink" title="常見操作"></a>常見操作</h3><h4 id="window"><a href="#window" class="headerlink" title="window"></a>window</h4><ul>
+<li><code>window.open()</code> 開啟新視窗 ↔ <code>window.close()</code></li>
+</ul>
+<h4 id="對話視窗"><a href="#對話視窗" class="headerlink" title="對話視窗"></a>對話視窗</h4><ul>
+<li><p><code>alert()</code> 警告</p>
+</li>
+<li><p><code>confirm()</code> 確認</p>
+</li>
+<li><p><code>prompt()</code> 文字輸入</p>
+</li>
+</ul>
+<h4 id="計時器"><a href="#計時器" class="headerlink" title="計時器"></a>計時器</h4><p>一段時間過後，自動執行某個函式 (callback)。</p>
+<ul>
+<li><p><code>setTimeout()</code> 執行一次就停止 ↔ <code>clearTimeout()</code></p>
+</li>
+<li><p>&#96;&#96;setInterval()<code>一直執行下去 ↔</code>clearInterval()&#96;</p>
+</li>
+</ul>
+<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><ul>
+<li><code>history.back()</code> 回到上一頁 ↔ <code>history.forward()</code></li>
+<li><code>history.go()</code> 跳至第幾頁</li>
+</ul>
+<h2 id="Document-Object-Model（DOM）"><a href="#Document-Object-Model（DOM）" class="headerlink" title="Document Object Model（DOM）"></a>Document Object Model（DOM）</h2><p>提供了一個文件（樹）的結構化表示法，定義程式可存取並改變架構、風格和內容的方法。</p>
+<blockquote>
+<p>document 是 DOM tree 的根節點，表示整份 HTML 文件。</p>
+</blockquote>
+<h3 id="取得-DOM-元素"><a href="#取得-DOM-元素" class="headerlink" title="取得 DOM 元素"></a>取得 DOM 元素</h3><h4 id="ID"><a href="#ID" class="headerlink" title="ID"></a>ID</h4><ul>
+<li><code>document.getElementById()</code></li>
+</ul>
+<h4 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h4><ul>
+<li><code>document.getElementsByTagName()</code></li>
+</ul>
+<h4 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h4><ul>
+<li><code>document.getElementsByClassName()</code></li>
+</ul>
+<h4 id="CSS-選擇器"><a href="#CSS-選擇器" class="headerlink" title="CSS 選擇器"></a>CSS 選擇器</h4><ul>
+<li><code>document.querySelector()</code></li>
+<li><code>document.querySelectorAll()</code></li>
+</ul>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><ul>
+<li><code>node.childNodes()</code> 元素的所有子節點</li>
+<li><code>node.children()</code> 元素的所有 Element 節點</li>
+<li><code>node.firstChild()</code> 第一個節點 ↔ <code>lastChild()</code></li>
+<li><code>node.previousSibling()</code> 元素的前一個節點 ↔ <code>nextSibling()</code></li>
+</ul>
+<h3 id="節點物件的屬性"><a href="#節點物件的屬性" class="headerlink" title="節點物件的屬性"></a>節點物件的屬性</h3><ul>
+<li><code>node.nodeType()</code> 取得該節點類型</li>
+<li><code>element.innerHTML／Text()</code> 取得 DOM 元素節點中的內容、改變元素的內容</li>
+<li><code>element.outerHTML()</code> 同上但會返回節點本身的內容</li>
+<li><code>node.textContent()</code> 第一個節點 ↔ <code>lastChild()</code><ul>
+<li>textContent 返回 <code>&lt;script&gt;</code>、<code>&lt;style&gt;</code> 的所有內容，但 innerText 不會。</li>
+<li>innerText 不會返回看不見的元素，但 textContent 會。</li>
+</ul>
+</li>
+</ul>
+<h3 id="節點操作"><a href="#節點操作" class="headerlink" title="節點操作"></a>節點操作</h3><ul>
+<li><code>document.createElement()</code> 建立一新元素</li>
+<li><code>document.createTextNode()</code> 建立一新文字節點</li>
+<li><code>parentNode.appendChild()</code> 新增一新子元素到現有的最後面 ↔ <code>removeChild()</code></li>
+<li><code>parentNode.insertBefore()</code> 新增一新子元素到現有的前面</li>
+</ul>
+<h3 id="HTML-attr"><a href="#HTML-attr" class="headerlink" title="HTML attr"></a>HTML attr</h3><p><code>element.hasAttribute()</code> 檢查元素是否有某個屬性</p>
+<p><code>element.getAttribute()</code> 取得元素的屬性值</p>
+<p><code>element.setAttribute()</code> 新增元素的屬性 ↔ <code>removeAttribute()</code></p>
+<p><code>element.attributes</code> 取得元素所有的屬性</p>
+<h3 id="CSS-style"><a href="#CSS-style" class="headerlink" title="CSS style"></a>CSS style</h3><p><code>element.style.cssProperty = newStyle</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// []</span></span><br><span class="line">btn.<span class="property">style</span>[<span class="string">&#x27;background-color&#x27;</span>] = <span class="string">&#x27;#f00&#x27;</span>;</span><br><span class="line"><span class="comment">// 駝峰式寫法</span></span><br><span class="line">btn.<span class="property">style</span>.<span class="property">marginTop</span> = <span class="string">&#x27;100px&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>element.style.cssText = newCSS</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.<span class="property">style</span>.<span class="property">cssText</span> = <span class="string">&#x27;font-size: 20px; color: purple;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件處理"><a href="#事件處理" class="headerlink" title="事件處理"></a>事件處理</h3><table>
+<thead>
+<tr>
+<th>事件名稱</th>
+<th>觸發條件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>blur</td>
+<td>物件失去焦點時</td>
+</tr>
+<tr>
+<td>change</td>
+<td>物件內容改變時</td>
+</tr>
+<tr>
+<td>click</td>
+<td>滑鼠點擊物件時</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>滑鼠連點二下物件時</td>
+</tr>
+<tr>
+<td>error</td>
+<td>當圖片或文件下載產生錯誤時</td>
+</tr>
+<tr>
+<td>focus</td>
+<td>當物件被點擊或取得焦點時</td>
+</tr>
+<tr>
+<td>keydown</td>
+<td>按下鍵盤按鍵時</td>
+</tr>
+<tr>
+<td>keypress</td>
+<td>按下並放開鍵盤按鍵後</td>
+</tr>
+<tr>
+<td>keyup</td>
+<td>按下並放開鍵盤按鍵時</td>
+</tr>
+<tr>
+<td>load</td>
+<td>網頁或圖片完成下載時</td>
+</tr>
+<tr>
+<td>mousedown</td>
+<td>按下滑鼠按鍵時</td>
+</tr>
+<tr>
+<td>mousemove</td>
+<td>介於over跟out間的滑鼠移動行為</td>
+</tr>
+<tr>
+<td>mouseout</td>
+<td>滑鼠離開某物件四周時</td>
+</tr>
+<tr>
+<td>mouseover</td>
+<td>滑鼠進入一個元素 (包含進入該元素中的子元素) 四周時</td>
+</tr>
+<tr>
+<td>mouseup</td>
+<td>放開滑鼠按鍵時</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>當視窗或框架大小被改變時</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>當捲軸被拉動時</td>
+</tr>
+<tr>
+<td>select</td>
+<td>當文字被選取時</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>當按下送出按紐時</td>
+</tr>
+<tr>
+<td>beforeunload</td>
+<td>當使用者關閉 (或離開) 網頁之前</td>
+</tr>
+<tr>
+<td>unload</td>
+<td>當使用者關閉 (或離開) 網頁之後</td>
+</tr>
+</tbody></table>
+<h4 id="HTML-Inline-Attribute"><a href="#HTML-Inline-Attribute" class="headerlink" title="HTML Inline Attribute"></a>HTML Inline Attribute</h4><p>tag 中寫上 <code>on + 事件名稱</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;test()&quot;</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="DOM-Object-Property"><a href="#DOM-Object-Property" class="headerlink" title="DOM Object Property"></a>DOM Object Property</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn;&quot;</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="title function_">test</span>()</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 取消綁定</span></span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="element-addEventListener"><a href="#element-addEventListener" class="headerlink" title="element.addEventListener()"></a><code>element.addEventListener()</code></h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn;&quot;</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 新增 click 事件處理函式</span></span></span><br><span class="line"><span class="language-javascript">    btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, test)</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 移除</span></span></span><br><span class="line"><span class="language-javascript">    btn.<span class="title function_">removeventListener</span>(<span class="string">&#x27;click&#x27;</span>, test)</span></span><br><span class="line"><span class="language-javascript"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS－AJAX/"><span>[JS] AJAX 筆記</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS－AJAX/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.510Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="AJAX-非同步的-JS-與-XML-技術"><a href="#AJAX-非同步的-JS-與-XML-技術" class="headerlink" title="AJAX 非同步的 JS 與 XML 技術"></a>AJAX 非同步的 JS 與 XML 技術</h2><p>不必重整即可更新網頁</p>
+<ol>
+<li>建立 XMLHttpRequest</li>
+<li>傳送到伺服器要資料（常為 HTML、XML、JSON）</li>
+<li>回傳到自己的瀏覽器</li>
+<li>拿到後增加 onload 事件</li>
+</ol>
+<h2 id="XMLHttpRequest-跨瀏覽器撈資料"><a href="#XMLHttpRequest-跨瀏覽器撈資料" class="headerlink" title="XMLHttpRequest 跨瀏覽器撈資料"></a>XMLHttpRequest 跨瀏覽器撈資料</h2><p>Ajax 核心，用於向伺服器<strong>交換資料</strong>。</p>
+<p><code>var xhr = new XMLHttpRequest()</code></p>
+<h3 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a>readyState</h3><p>判斷目前讀取資料的狀態</p>
+<ul>
+<li><p>0 已產生 XMLHttpRequest，請求未初始化。</p>
+</li>
+<li><p>1 設定連線方法，未傳送資料。</p>
+<p><code>xhr.open(method, url, async)</code></p>
+<ul>
+<li>method<ul>
+<li>get 讀取：比 post 更簡單更快</li>
+<li>post 傳送資料到伺服器：無大小限制、更安全</li>
+</ul>
+</li>
+<li>url</li>
+<li>異步 async<ul>
+<li>true 非同步：可同時進行多任務</li>
+<li>false 同步：須等到請求完成才會繼續往下執行，常用於快速測試。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2 偵測到正在使用 send</p>
+<p><code>xhr.send()</code></p>
+<p><strong>💡若只要讀取資料則 () 內打 null</strong></p>
+</li>
+<li><p>3 資料處理中</p>
+</li>
+<li><p>4 完成</p>
+</li>
+</ul>
+<h3 id="onreadystatechange"><a href="#onreadystatechange" class="headerlink" title="onreadystatechange"></a>onreadystatechange</h3><p>調用於 readyState 發生變化時</p>
+<h3 id="onload"><a href="#onload" class="headerlink" title="onload"></a>onload</h3><p>當資料全部跑完，才會觸發此事件</p>
+<h2 id="HTTP-Status-狀態碼"><a href="#HTTP-Status-狀態碼" class="headerlink" title="HTTP Status 狀態碼"></a>HTTP Status 狀態碼</h2><p>判斷連線狀態</p>
+<ul>
+<li>1XX 參考資訊</li>
+<li>2XX 成功回應<ul>
+<li>200 正確回傳</li>
+<li>201 資源已創建</li>
+</ul>
+</li>
+<li>3XX 重新導向</li>
+<li>4XX 用戶端錯誤<ul>
+<li>401、403 錯誤要求</li>
+<li>404 找不到</li>
+<li>429 請求次數過多</li>
+</ul>
+</li>
+<li>5XX 後端錯誤<ul>
+<li>500 不可預期之錯誤</li>
+<li>503 無法正確處理該請求</li>
+</ul>
+</li>
+</ul>
+<h2 id="Cross-Origin-Resource-Sharing（CORS）跨來源資源共享"><a href="#Cross-Origin-Resource-Sharing（CORS）跨來源資源共享" class="headerlink" title="Cross-Origin Resource Sharing（CORS）跨來源資源共享"></a>Cross-Origin Resource Sharing（CORS）跨來源資源共享</h2><p>開啟資料<strong>權限</strong>才能讓其他開發者<strong>跨網域</strong>撈資料</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AJAX/">AJAX</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/Java/Java－Swing 視窗設計/"><span>[Java] Swing 視窗設計</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/Java/Java－Swing 視窗設計/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.493Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Swing"><a href="#Swing" class="headerlink" title="Swing"></a>Swing</h2><p>採用 Model-View-Controller 設計，提供各種 GUI 元件。</p>
+<h2 id="建立視窗"><a href="#建立視窗" class="headerlink" title="建立視窗"></a>建立視窗</h2><ol>
+<li><p>視窗初始化 <code>Jframe()</code></p>
+</li>
+<li><p>內容面板</p>
+<ul>
+<li><p>JPanel</p>
+<ol>
+<li>元件之容器 <code>JPanel()</code>：集中元件</li>
+<li>視窗設定內容面板 <code>frame.setContentPane(contentPane)</code></li>
+<li>添加元件 <code>panel.add(component)</code></li>
+</ol>
+</li>
+<li><p>設定佈局 <code>frame.setLayout(LayotManager mgr)</code></p>
+<p>類型</p>
+<ul>
+<li>FlowLayout：一行行排</li>
+<li>BorderLayout：分為東西南北中</li>
+<li>CardLayout：每個元件都是卡片</li>
+<li>GridLayout：平均劃分為表格</li>
+<li>GridBagLayout：加上合併儲存格的 GridLayout</li>
+<li>GroupLayout：分層分組元件</li>
+<li>null 不佈局：自己設座標</li>
+</ul>
+<p><strong>💡可不寫 <code>JPanel</code>，會直接調用至 <code>ContentPane</code>，若有寫則改為 <code>panel.setLayout(LayotManager mgr)</code>。</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Java/">Java</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Java/">Java</a><a href="/tags/Swing/">Swing</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/HTML／CSS/CSS－CSS 選擇器/"><span>[CSS] CSS 選擇器</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/HTML／CSS/CSS－CSS 選擇器/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.480Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="選擇器"><a href="#選擇器" class="headerlink" title="選擇器"></a>選擇器</h2><h3 id="基本選擇器"><a href="#基本選擇器" class="headerlink" title="基本選擇器"></a>基本選擇器</h3><ul>
+<li>通用 <code>*</code></li>
+<li>元素 <code>elm</code></li>
+<li>class <code>.class</code></li>
+<li>id <code>#id</code>：具唯一性，常搭配 JS。</li>
+<li>屬性<code>[attr]</code></li>
+</ul>
+<h3 id="組合選擇器"><a href="#組合選擇器" class="headerlink" title="組合選擇器"></a>組合選擇器</h3><ul>
+<li>後代 <code>.elm1 elm2</code></li>
+<li>子代 <code>.elm1＞elm2</code></li>
+<li>相鄰兄弟 <code>.elm1＋elm2</code>：elm1 後的第一個 elm2</li>
+<li>一般兄弟 <code>.elm1～elm2</code>：elm1 後的所有 elm2</li>
+</ul>
+<h3 id="偽類選擇器"><a href="#偽類選擇器" class="headerlink" title="偽類選擇器"></a>偽類選擇器</h3><ul>
+<li>未訪問過的元素 <code>:link</code> ↔ <code>:visited</code></li>
+<li>滑鼠放在元素上之狀態 <code>:hover</code></li>
+<li>獲得焦點的元素 <code>:focus </code></li>
+<li>點擊元素時 <code>:active</code></li>
+<li>於元素之前插入內容 <code>:before</code> ↔ <code>:after</code></li>
+</ul>
+<p>…</p>
+<h2 id="權重"><a href="#權重" class="headerlink" title="權重"></a>權重</h2><ol>
+<li><code>!important</code></li>
+<li>inline style</li>
+<li>id 選擇器</li>
+<li>class 選擇器</li>
+<li>屬性選擇器</li>
+<li>偽類選擇器</li>
+<li>元素選擇器</li>
+<li>通用選擇器</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/HTML-CSS/">HTML/CSS</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/CSS/">CSS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/page/2/" class="pagination-prev">Prev</a>
+  
+  
+  <a href="/page/4/" class="pagination-next">Next</a>
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

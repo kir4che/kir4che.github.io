@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] AJAX 筆記 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="AJAX 非同步的 JS 與 XML 技術不必重整即可更新網頁
+
+建立 XMLHttpRequest
+傳送到伺服器要資料（常為 HTML、XML、JSON）
+回傳到自己的瀏覽器
+拿到後增加 onload 事件
+
+XMLHttpRequest 跨瀏覽器撈資料Ajax 核心，用於向伺服器交換資料。
+va">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript,AJAX">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] AJAX 筆記"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] AJAX 筆記</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/JavaScript/JS－AJAX/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.510Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="AJAX-非同步的-JS-與-XML-技術"><a href="#AJAX-非同步的-JS-與-XML-技術" class="headerlink" title="AJAX 非同步的 JS 與 XML 技術"></a>AJAX 非同步的 JS 與 XML 技術</h2><p>不必重整即可更新網頁</p>
+<ol>
+<li>建立 XMLHttpRequest</li>
+<li>傳送到伺服器要資料（常為 HTML、XML、JSON）</li>
+<li>回傳到自己的瀏覽器</li>
+<li>拿到後增加 onload 事件</li>
+</ol>
+<h2 id="XMLHttpRequest-跨瀏覽器撈資料"><a href="#XMLHttpRequest-跨瀏覽器撈資料" class="headerlink" title="XMLHttpRequest 跨瀏覽器撈資料"></a>XMLHttpRequest 跨瀏覽器撈資料</h2><p>Ajax 核心，用於向伺服器<strong>交換資料</strong>。</p>
+<p><code>var xhr = new XMLHttpRequest()</code></p>
+<h3 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a>readyState</h3><p>判斷目前讀取資料的狀態</p>
+<ul>
+<li><p>0 已產生 XMLHttpRequest，請求未初始化。</p>
+</li>
+<li><p>1 設定連線方法，未傳送資料。</p>
+<p><code>xhr.open(method, url, async)</code></p>
+<ul>
+<li>method<ul>
+<li>get 讀取：比 post 更簡單更快</li>
+<li>post 傳送資料到伺服器：無大小限制、更安全</li>
+</ul>
+</li>
+<li>url</li>
+<li>異步 async<ul>
+<li>true 非同步：可同時進行多任務</li>
+<li>false 同步：須等到請求完成才會繼續往下執行，常用於快速測試。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2 偵測到正在使用 send</p>
+<p><code>xhr.send()</code></p>
+<p><strong>💡若只要讀取資料則 () 內打 null</strong></p>
+</li>
+<li><p>3 資料處理中</p>
+</li>
+<li><p>4 完成</p>
+</li>
+</ul>
+<h3 id="onreadystatechange"><a href="#onreadystatechange" class="headerlink" title="onreadystatechange"></a>onreadystatechange</h3><p>調用於 readyState 發生變化時</p>
+<h3 id="onload"><a href="#onload" class="headerlink" title="onload"></a>onload</h3><p>當資料全部跑完，才會觸發此事件</p>
+<h2 id="HTTP-Status-狀態碼"><a href="#HTTP-Status-狀態碼" class="headerlink" title="HTTP Status 狀態碼"></a>HTTP Status 狀態碼</h2><p>判斷連線狀態</p>
+<ul>
+<li>1XX 參考資訊</li>
+<li>2XX 成功回應<ul>
+<li>200 正確回傳</li>
+<li>201 資源已創建</li>
+</ul>
+</li>
+<li>3XX 重新導向</li>
+<li>4XX 用戶端錯誤<ul>
+<li>401、403 錯誤要求</li>
+<li>404 找不到</li>
+<li>429 請求次數過多</li>
+</ul>
+</li>
+<li>5XX 後端錯誤<ul>
+<li>500 不可預期之錯誤</li>
+<li>503 無法正確處理該請求</li>
+</ul>
+</li>
+</ul>
+<h2 id="Cross-Origin-Resource-Sharing（CORS）跨來源資源共享"><a href="#Cross-Origin-Resource-Sharing（CORS）跨來源資源共享" class="headerlink" title="Cross-Origin Resource Sharing（CORS）跨來源資源共享"></a>Cross-Origin Resource Sharing（CORS）跨來源資源共享</h2><p>開啟資料<strong>權限</strong>才能讓其他開發者<strong>跨網域</strong>撈資料</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AJAX/">AJAX</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

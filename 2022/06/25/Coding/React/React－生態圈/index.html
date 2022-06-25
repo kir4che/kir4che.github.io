@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[React] 生態圈 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="ReactJavaScript UI 庫
+優點
+宣告式 Declarative：以 Virtual DOM 概念進行綁定、渲染
+高效率重用[組件](React－組件 Component.md)
+與 Backend for Frontend 相性良好
+可開發原生 APP ➪ React Native
+">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,React">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[React] 生態圈"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[React] 生態圈</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/React/React－生態圈/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.650Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>JavaScript UI 庫</p>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>宣告式 Declarative：以 Virtual DOM 概念進行綁定、渲染</li>
+<li>高效率重用[組件](React－組件 Component.md)</li>
+<li>與 Backend for Frontend 相性良好</li>
+<li>可開發原生 APP ➪ React Native</li>
+<li>強大的社群生態系</li>
+</ul>
+<blockquote>
+<p>Virtual DOM：以 JS 物件模擬 DOM 結構而產生的樹狀結構，不直接操作 DOM，而是暫存再更新 ➪ <strong>提升效能</strong></p>
+<p>ReactDOM：把 Virtual DOM 渲染至文檔中變成實際瀏覽器的 DOM（&#x3D; React.js App 進入點）</p>
+</blockquote>
+<h3 id="渲染機制"><a href="#渲染機制" class="headerlink" title="渲染機制"></a>渲染機制</h3><img src="https://i.imgur.com/XiKMcSM.jpg" alt="React 渲染機制（來自布魯斯前端的課程教學圖片）" style="zoom: 45%;" />
+
+<h2 id="JSX（選用）"><a href="#JSX（選用）" class="headerlink" title="JSX（選用）"></a>JSX（選用）</h2><p>JS 語法擴展，也是一種語法糖 Syntatic Sugar。</p>
+<blockquote>
+<p>語法糖：此語法對語言的功能無影響，但便於程式設計師使用。</p>
+</blockquote>
+<h3 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h3><ul>
+<li>只能有一個根元素 root</li>
+<li>駝峰式命名</li>
+<li>所有元素都須閉合</li>
+<li>保留字<ul>
+<li>class → className</li>
+<li>for → htmlFor</li>
+</ul>
+</li>
+<li>以 { } 篩寫 JS 程式碼<ul>
+<li>行內樣式</li>
+<li>表達式</li>
+<li>屬性 attr</li>
+<li>綁定事件</li>
+<li>疊代元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="優點-1"><a href="#優點-1" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>更加語意化且易懂的標籤</li>
+<li>實現宣告式 Declarative（注重 what to），而非命令式 Imperative（注重 how to）之寫法 ➪ 關注點分離</li>
+<li>結合原生 JS 語法</li>
+</ul>
+<h2 id="Node-Package-Manager（NPM）"><a href="#Node-Package-Manager（NPM）" class="headerlink" title="Node Package Manager（NPM）"></a>Node Package Manager（NPM）</h2><p>Node.js 下的主流套件管理工具</p>
+<h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><p>將 ES6+ 、JSX 等程式碼轉換成不支援的瀏覽器能看懂的語法</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/React/">React</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/React/">React</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

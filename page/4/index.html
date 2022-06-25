@@ -1,0 +1,1361 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page 4 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/Git/以 Hexo、Github Page 展示前端作品/"><span>以 Hexo、Github Page 展示前端作品</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/Git/以 Hexo、Github Page 展示前端作品/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.465Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="專案上傳"><a href="#專案上傳" class="headerlink" title="專案上傳"></a>專案上傳</h2><ol>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit -m “first commit”</li>
+<li>git branch -M main</li>
+<li>git remote add origin <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>:kir4che&#x2F;項目名稱.git</li>
+<li>git push -u origin main</li>
+</ol>
+<h2 id="Github-Page"><a href="#Github-Page" class="headerlink" title="Github Page"></a>Github Page</h2><ol>
+<li><p>yarn add –dev gh-pages</p>
+</li>
+<li><p>新增 gh-pages 分支</p>
+</li>
+<li><p>package.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;homepage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://kir4che.github.io/項目名稱&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;predeploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;yarn run build&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;deploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gh-pages -d build&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>yarn run deploy</p>
+</li>
+</ol>
+<h2 id="新增、修改檔案"><a href="#新增、修改檔案" class="headerlink" title="新增、修改檔案"></a>新增、修改檔案</h2><ol>
+<li>git add .</li>
+<li>git commit -m “版本信息”</li>
+<li>git push -u origin main</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Git/">Git</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Git/">Git</a><a href="/tags/Hexo/">Hexo</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/Git/Git－操作指南/"><span>[Git] 操作指南</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/Git/Git－操作指南/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.459Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>分散式<strong>版本控制</strong>工具，運作不需伺服器端軟體</p>
+<h3 id="用處"><a href="#用處" class="headerlink" title="用處"></a>用處</h3><ul>
+<li>版本備份</li>
+<li>切換版本</li>
+<li>協同開發</li>
+</ul>
+<h3 id="分區"><a href="#分區" class="headerlink" title="分區"></a>分區</h3><ul>
+<li>工作區 working directory：實際操作的資料夾（檔案）</li>
+<li>暫存區 stage snapshot（&#x3D; .git）：放置工作區未提交之檔案</li>
+<li>git 目錄 .git directory：歷史紀錄</li>
+</ul>
+<h2 id="終端機指令"><a href="#終端機指令" class="headerlink" title="終端機指令"></a>終端機指令</h2><table>
+<thead>
+<tr>
+<th align="left">cmd</th>
+<th align="left">wins</th>
+<th align="left">mac</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">切換目錄</td>
+<td align="left">cd</td>
+<td align="left">cd</td>
+</tr>
+<tr>
+<td align="left">取得目前位置</td>
+<td align="left">cd</td>
+<td align="left">pwd</td>
+</tr>
+<tr>
+<td align="left">列出目前的檔案列表</td>
+<td align="left">dir</td>
+<td align="left">ls</td>
+</tr>
+<tr>
+<td align="left">建立新目錄</td>
+<td align="left">mkdir</td>
+<td align="left">mkdir</td>
+</tr>
+<tr>
+<td align="left">建立檔案</td>
+<td align="left">X</td>
+<td align="left">touch</td>
+</tr>
+<tr>
+<td align="left">複製檔案</td>
+<td align="left">copy</td>
+<td align="left">cp</td>
+</tr>
+<tr>
+<td align="left">移動檔案</td>
+<td align="left">move</td>
+<td align="left">mv</td>
+</tr>
+<tr>
+<td align="left">刪除檔案</td>
+<td align="left">del</td>
+<td align="left">rm</td>
+</tr>
+<tr>
+<td align="left">清除畫面上的內容</td>
+<td align="left">cls</td>
+<td align="left">clear</td>
+</tr>
+</tbody></table>
+<h2 id="建立專案"><a href="#建立專案" class="headerlink" title="建立專案"></a>建立專案</h2><h3 id="本地數據庫-Local-Repository"><a href="#本地數據庫-Local-Repository" class="headerlink" title="本地數據庫 Local Repository"></a>本地數據庫 Local Repository</h3><ul>
+<li><p>初始化 <code>git init</code></p>
+</li>
+<li><p>當前狀態 <code>git status</code>：哪些項目被修改過</p>
+</li>
+<li><p>修改内容 <code>git diff</code></p>
+</li>
+</ul>
+<h3 id="提交檔案"><a href="#提交檔案" class="headerlink" title="提交檔案"></a>提交檔案</h3><ol>
+<li><p>加入索引（追蹤）</p>
+<ul>
+<li><p>全部 <code>git add .</code></p>
+</li>
+<li><p>指定 <code>git add 檔名</code></p>
+</li>
+</ul>
+</li>
+<li><p>提交 <code>git commit -m 訊息(自行撰寫)</code></p>
+<ul>
+<li>改寫 <code>git commit --amend</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h2><h3 id="歷史資訊"><a href="#歷史資訊" class="headerlink" title="歷史資訊"></a>歷史資訊</h3><ul>
+<li>過去 <code>git log</code></li>
+<li>未來 <code>git reflog</code></li>
+</ul>
+<h3 id="切換"><a href="#切換" class="headerlink" title="切換"></a>切換</h3><ul>
+<li>指定版本 <code>git checkout 識別碼（前4碼）</code></li>
+<li>切回最新版本 <code>git checkout master</code></li>
+</ul>
+<blockquote>
+<p>HEAD （&#x3D; HEAD～0＝＠）當前版本：會隨著 master 推進</p>
+<ul>
+<li><code>HEAD^＝HEAD~1</code> 上一版本</li>
+<li><code>HEAD^^＝HEAD^2</code> 上上一版本</li>
+<li><code>HEAD^^^＝HEAD^3</code> 上上上一版本</li>
+</ul>
+</blockquote>
+<h3 id="還原"><a href="#還原" class="headerlink" title="還原"></a>還原</h3><p>清除過去紀錄</p>
+<ul>
+<li>還原就對了（預設 –mixed） <code>git reset 分支名</code></li>
+<li>保留工作區、暫存區的檔案 <code>git reset --soft 分支名</code></li>
+<li>放棄工作區、暫存區的檔案 <code>git reset --hard 分支名</code></li>
+</ul>
+<h2 id="檔案管理"><a href="#檔案管理" class="headerlink" title="檔案管理"></a>檔案管理</h2><h3 id="取消索引"><a href="#取消索引" class="headerlink" title="取消索引"></a>取消索引</h3><ul>
+<li>放進<code>.gitignore</code></li>
+<li>刪除檔案 <code>git rm</code>＝<code>git add -u</code>＝<code>git add --update</code></li>
+</ul>
+<h3 id="搬移"><a href="#搬移" class="headerlink" title="搬移"></a>搬移</h3><p><code>git mv 檔名 資料夾</code></p>
+<h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><p><code>git mv 舊檔名 新檔名</code></p>
+<h3 id="還原-1"><a href="#還原-1" class="headerlink" title="還原"></a>還原</h3><ul>
+<li><p>清空工作區（未加入索引）</p>
+<ul>
+<li>顯示要被清除之檔案 <code>git clean -n</code></li>
+<li>強制清除 <code>git clean -f</code></li>
+</ul>
+</li>
+<li><p>還原工作區（已加入索引）</p>
+<ul>
+<li>全部 <code>git checkout -- 檔名</code></li>
+<li>單一 <code>git checkout .</code></li>
+</ul>
+</li>
+<li><p>退到工作區（已加入索引） <code>git reset HEAD</code></p>
+</li>
+</ul>
+<h3 id="暫存"><a href="#暫存" class="headerlink" title="暫存"></a>暫存</h3><ul>
+<li><p>至當前目錄<code>git stash</code></p>
+</li>
+<li><p>瀏覽 stash 列表 <code>git stash list</code></p>
+</li>
+<li><p>還原最新暫存 <code>git stash pop</code></p>
+</li>
+<li><p>清除</p>
+<ul>
+<li><p>最新 <code>git stash drop</code></p>
+</li>
+<li><p>全部 <code>git stash clear</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="上傳至-Github（遠端數據庫）"><a href="#上傳至-Github（遠端數據庫）" class="headerlink" title="上傳至 Github（遠端數據庫）"></a>上傳至 Github（遠端數據庫）</h2><h3 id="加入遠端庫"><a href="#加入遠端庫" class="headerlink" title="加入遠端庫"></a>加入遠端庫</h3><ul>
+<li><p>連接 <code>git remote add 遠端庫（預設 origin） 專案網址</code></p>
+<ul>
+<li>重命名 <code>git remote rename 原遠端庫名 新遠端庫名</code></li>
+</ul>
+</li>
+<li><p>推送 <code>git push 遠端庫 分支</code></p>
+<ul>
+<li>強制 <code>git push -f</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h3><p><code>git clone 遠端庫網址</code></p>
+<h4 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h4><ul>
+<li>本地數據庫資料不見，從遠端庫拉一份新資料。</li>
+<li>推送至 GitHub，其他開發者想拉下來開發時。</li>
+</ul>
+<h3 id="下載"><a href="#下載" class="headerlink" title="下載"></a>下載</h3><p><code>git pull 遠端庫</code>＝<code>git fetch</code>＋<code>git merge</code></p>
+<h2 id="分支-branch"><a href="#分支-branch" class="headerlink" title="分支 branch"></a>分支 branch</h2><p>分開儲存各個修改記錄，互相不受其他分支的影響，最初提交的預設為 Master。</p>
+<h3 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h3><ul>
+<li>Integration ➪ 隨時建立發布版本</li>
+<li>Topic ➪ 開發功能或修復錯誤…</li>
+</ul>
+<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p><code>git branch 分支名</code></p>
+<ul>
+<li>刪除  <code>git branch -D 分支名</code></li>
+<li>重命名 <code>git branch -m 舊分支名 新分支名</code></li>
+</ul>
+<h3 id="合併"><a href="#合併" class="headerlink" title="合併"></a>合併</h3><p>完成任務的 topic（歷史紀錄），最終都會併到 integration。</p>
+<ul>
+<li><p>類型</p>
+<ul>
+<li><p>Merge</p>
+<p><code>git merge 分支名</code></p>
+<p>修改內容的記錄維持原狀，但合併後會變更複雜。</p>
+</li>
+<li><p>Rebase</p>
+<p><code>git rebase 分支名</code></p>
+<p>修改內容的記錄接在要合併的分支後，合併後會較清楚，易發生衝突。</p>
+</li>
+</ul>
+</li>
+<li><p>取消合併</p>
+</li>
+<li><p>解決衝突</p>
+</li>
+</ul>
+<h2 id="標籤"><a href="#標籤" class="headerlink" title="標籤"></a>標籤</h2><p>紀錄訊息</p>
+<h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><ul>
+<li>輕量標籤 <code>git tag 標籤名</code></li>
+<li>標示標籤 <code>git tag -am &quot;備註&quot; 標籤名</code></li>
+<li>於特定 commit <code>git tag 標籤名 識別碼</code></li>
+</ul>
+<h3 id="刪除"><a href="#刪除" class="headerlink" title="刪除"></a>刪除</h3><p><code>git tag -d 標籤名</code></p>
+<h3 id="列出現有標籤"><a href="#列出現有標籤" class="headerlink" title="列出現有標籤"></a>列出現有標籤</h3><p><code>git tag</code></p>
+<h3 id="切換至標籤的-commit"><a href="#切換至標籤的-commit" class="headerlink" title="切換至標籤的 commit"></a>切換至標籤的 commit</h3><p><code>git checkout 標籤名</code></p>
+<h3 id="查詢詳細內容"><a href="#查詢詳細內容" class="headerlink" title="查詢詳細內容"></a>查詢詳細內容</h3><p><code>git tag -n</code></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Git/">Git</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Git/">Git</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/DSA/DSA－資料結構介紹/"><span>[DSA] 資料結構介紹</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/DSA/DSA－資料結構介紹/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.432Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="陣列-Array"><a href="#陣列-Array" class="headerlink" title="陣列 Array"></a>陣列 Array</h2><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>儲存<strong>有序</strong>串列之<strong>相同型態</strong>的資料於連續記憶空間 ➪ 新增、刪除慢</li>
+<li>須事先<strong>宣告固定的記憶體空間</strong> ➪ 存取快 O(1)</li>
+</ul>
+<h2 id="串列-List"><a href="#串列-List" class="headerlink" title="串列 List"></a>串列 List</h2><p>元素以線性方式（有序）儲存，且可重復。</p>
+<h3 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h3><ul>
+<li>[**Linked list**](##鏈結串列 Linked list)（<font color=dodgerblue>無序</font>）</li>
+<li><strong>ArrayList</strong>：<font color=dodgerblue>自動擴張容量</font></li>
+</ul>
+<h2 id="鏈結串列-Linked-list"><a href="#鏈結串列-Linked-list" class="headerlink" title="鏈結串列 Linked list"></a>鏈結串列 Linked list</h2><h3 id="特性-1"><a href="#特性-1" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>不用事先宣告連續的記憶體空間，資料數量為動態 ➪ 新增、刪除快</li>
+<li>存取 O(n) 節點 node 須<strong>從頭</strong>開始找 ➪ 存取慢</li>
+</ul>
+<h3 id="類型-1"><a href="#類型-1" class="headerlink" title="類型"></a>類型</h3><ul>
+<li><h4 id="單向鏈結串列-Singly-Linked-List"><a href="#單向鏈結串列-Singly-Linked-List" class="headerlink" title="單向鏈結串列 Singly Linked List"></a>單向鏈結串列 Singly Linked List</h4><p>追加資料只須更動指標的指向</p>
+<img src="https://teachics.org/wp-content/uploads/2021/08/linked-list-data-structure-2.png" alt="linked list example in C" style="zoom:80%;" />
+</li>
+<li><h4 id="雙向鏈結串列-Doubly-Linked-List"><a href="#雙向鏈結串列-Doubly-Linked-List" class="headerlink" title="雙向鏈結串列 Doubly Linked List"></a>雙向鏈結串列 Doubly Linked List</h4><p>追加或刪除資料時，須更動比單向鏈結串列更多的指標次數。</p>
+<img src="https://teachics.org/wp-content/uploads/2021/09/doubly-linked-list-data-structure-representation.png" alt="doubly linked list data structure representation" style="zoom:80%;" />
+</li>
+<li><h4 id="環狀鏈結串列-Circular-Linked-List"><a href="#環狀鏈結串列-Circular-Linked-List" class="headerlink" title="環狀鏈結串列 Circular Linked List"></a>環狀鏈結串列 Circular Linked List</h4><p>每個節點都可以是串列頭</p>
+<img src="https://teachics.org/wp-content/uploads/2021/09/circular-linked-list-data-structure.png" alt="Circular Linked List Operations - Data Structures Using C - Teachics" style="zoom:80%;" /></li>
+</ul>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>無法預知、需頻繁變動資料的數量</li>
+<li>大量新增、刪除資料</li>
+</ul>
+<h2 id="集合-Set"><a href="#集合-Set" class="headerlink" title="集合 Set"></a>集合 Set</h2><h3 id="特性-2"><a href="#特性-2" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><font color=dodgerblue>無序、元素不重複</font></li>
+</ul>
+<h3 id="類型-2"><a href="#類型-2" class="headerlink" title="類型"></a>類型</h3><ul>
+<li><strong>HashSet</strong>（<font color=red>高效</font>） ➪ 快速查找</li>
+<li><strong>LinkedHashSet</strong>（<font color=dodgerblue>有序</font>）➪ 快速查找</li>
+<li><strong>TreeSet</strong>（<font color=dodgerblue>有序</font>）➪ 確保元素處於有序</li>
+</ul>
+<h3 id="用途-1"><a href="#用途-1" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>一堆可能重複的資料</li>
+<li>找出共通之元件</li>
+</ul>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>鍵映射至值的集合</p>
+<h3 id="特性-3"><a href="#特性-3" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>每一映射的<strong>鍵不重複</strong></li>
+<li>每一鍵最多只能映射一值</li>
+</ul>
+<h3 id="類型-3"><a href="#類型-3" class="headerlink" title="類型"></a>類型</h3><ul>
+<li><p>[**HashTable**](##雜湊表 Hash Table)：以雜湊函式 Hash Function 算出鍵值並放入對應的陣列索引，且不允許鍵值為 null。</p>
+</li>
+<li><p><strong>HashMap</strong>（<font color=red>高效</font>）：允許鍵值為 null</p>
+<ul>
+<li>新增 <code>put</code></li>
+<li>刪除 <code>remove()</code></li>
+<li>取得 <code>get()</code></li>
+<li>查找指定鍵值 <code>containsKey()、containsValue()</code></li>
+</ul>
+</li>
+<li><p><strong>LinkedHashMap</strong>（<font color=dodgerblue>有序</font>）</p>
+</li>
+<li><p><strong>TreeMap</strong>（<font color=dodgerblue>有序</font>）</p>
+</li>
+</ul>
+<h2 id="堆疊-Stack"><a href="#堆疊-Stack" class="headerlink" title="堆疊 Stack"></a>堆疊 Stack</h2><h3 id="特性-4"><a href="#特性-4" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>先進後出 FILO、後進先出 LIFO</li>
+<li>只能從頂端存取資料</li>
+<li>只需一個指標：top</li>
+</ul>
+<h3 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h3><ul>
+<li><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><img src="https://github.com/alrightchiu/SecondRound/blob/master/content/Algorithms and Data Structures/BasicDataStructures/Stack/implement/f2.png?raw=true" alt="cc" style="zoom:80%;" />
+</li>
+<li><h4 id="Linked-list"><a href="#Linked-list" class="headerlink" title="Linked list"></a>Linked list</h4><img src="https://github.com/alrightchiu/SecondRound/blob/master/content/Algorithms and Data Structures/BasicDataStructures/Stack/implement/f6.png?raw=true" alt="cc" style="zoom:80%;" /></li>
+</ul>
+<h3 id="常見操作"><a href="#常見操作" class="headerlink" title="常見操作"></a>常見操作</h3><ul>
+<li>push() 新增元素 O(1)</li>
+<li>pop() 刪除頂端元素 O(1)</li>
+<li>peek() 查看頂端元素</li>
+</ul>
+<h3 id="用途-2"><a href="#用途-2" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>上一頁</li>
+<li>還原</li>
+</ul>
+<h2 id="佇列-Queue"><a href="#佇列-Queue" class="headerlink" title="佇列 Queue"></a>佇列 Queue</h2><img src="https://geekystack.com/wp-content/uploads/2021/07/JavaScript-Queue.png" alt="JavaScript Data Structures – Queue - GeekyStack" style="zoom:80%;" />
+
+<h3 id="特性-5"><a href="#特性-5" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><p>先進先出 FIFO的有序表</p>
+</li>
+<li><p>不易於插入或刪除某指定資料</p>
+</li>
+<li><p>若要取出最新資料，需先移除前面所有資料。</p>
+</li>
+<li><p>前端 front、尾端 rear（back）</p>
+</li>
+</ul>
+<h3 id="特殊類型"><a href="#特殊類型" class="headerlink" title="特殊類型"></a>特殊類型</h3><ul>
+<li><p>Circular Queue：開頭結尾接起來 ➪ 解決 front 前面有未使用空間</p>
+<p>當 rear 到達 MAXSIZE 時，將其設為 0。</p>
+</li>
+<li><p>Deque（Double-ended queue、Head-tail linked list）：兩端都可放資料、拿資料</p>
+<ul>
+<li>Input restricted deque：只有一邊可放入 ↔ Output restricted deque</li>
+</ul>
+</li>
+<li><p>Priority Queue：看誰有<strong>優先權</strong> ➪ 不符合 FIFO　ex. 工作排程</p>
+</li>
+<li><p>Multiple Queue：兩個 queue 共用一 array</p>
+</li>
+</ul>
+<h2 id="樹-Tree"><a href="#樹-Tree" class="headerlink" title="樹 Tree"></a>樹 Tree</h2><img src="https://miro.medium.com/max/975/1*PWJiwTxRdQy8A_Y0hAv5Eg.png" alt="8 Useful Tree Data Structures Worth Knowing | by Vijini Mallawaarachchi |  Towards Data Science" style="zoom: 50%;" />
+
+<blockquote>
+<p><strong>名詞介紹</strong></p>
+<ul>
+<li>節點 Node：每一資料元素</li>
+<li>枝 Branch：節點向下延伸擴展的枝</li>
+<li>根節點 Root：樹狀結構的最上層，具有唯一性。</li>
+<li>葉節點 Leaf：沒有子節點的節點 ↔ 非終端點 Non-terminal Nodes</li>
+<li>祖先節點 Ancenstors：某節點以上的節點 ↔ 子孫節點 Descendant</li>
+<li>父節點 Parent、子節點 Child：父節點向下分支出子節點</li>
+<li>兄弟節點 Siblings：同一父節點的其他節點</li>
+<li>分支度 Dregree：每一節點的節點數量，且每條分支可看作 Linked list。</li>
+<li>階層 Level：節點的層級數量（根的階層＝ 1）</li>
+<li>高度Height：某節點下最長邊之距離</li>
+<li>深度 Depth：根節點至某節點之距離（根的深度＝ 0）</li>
+</ul>
+</blockquote>
+<h3 id="特性-6"><a href="#特性-6" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>非線性結構</li>
+<li>不能形成環路 ➪ 爸爸只有一位</li>
+</ul>
+<h2 id="二元樹-Binary-tree"><a href="#二元樹-Binary-tree" class="headerlink" title="二元樹 Binary tree"></a>二元樹 Binary tree</h2><p>每一節點的子節點 ≤ 2，且分為左右子樹。</p>
+<h3 id="類型-4"><a href="#類型-4" class="headerlink" title="類型"></a>類型</h3><ul>
+<li><p><strong>歪斜樹 Skewed binary tree</strong>：分支只有左或只有右</p>
+</li>
+<li><p><strong>嚴格二元樹 Strictly binary tree</strong>：每一節點的子節點只能為 0 或 2</p>
+</li>
+<li><p><strong>滿二元樹 Full binary tree（&#x3D; Perfect binary tree）</strong></p>
+<p>若階層為 k，節點數為 $2^k-1$。</p>
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/h/h0rnet/20170330/20170330191416.png" alt="CFR 792 D. Paths in a Complete Binary Tree ( Ad hoc, Binary Search ) - 0w1" style="zoom:50%;" />
+</li>
+<li><p><strong>完全二元樹 Complete binary tree</strong>：最後一層以外皆全滿</p>
+<p>若階層為 k，$2^{(k-1)} \leq$ 節點數 $\leq 2^k-1$</p>
+<img src="http://web.cecs.pdx.edu/~sheard/course/Cs163/Graphics/CompleteBinary.jpg" alt="Count Complete Tree Nodes - Hygeia - 博客园" style="zoom:67%;" />
+</li>
+<li><p><strong>二元搜尋樹 Binary Search tree（&#x3D; 有序二元樹）</strong></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/1200px-Binary_search_tree.svg.png" alt="二元搜尋樹- 維基百科，自由的百科全書" style="zoom: 20%;" />
+
+<ul>
+<li><p>左子樹鍵值 &lt; 樹根鍵值 &lt; 右子樹鍵值</p>
+</li>
+<li><p>左右子樹亦是二元搜尋樹</p>
+</li>
+<li><p>每一鍵值皆不相同</p>
+</li>
+<li><h4 id="AVL（Adelson-Velsky-and-Landis）樹"><a href="#AVL（Adelson-Velsky-and-Landis）樹" class="headerlink" title="AVL（Adelson-Velsky and Landis）樹"></a>AVL（Adelson-Velsky and Landis）樹</h4><p>每一節點的左右邊子節點高度差＝ -1～1 ➪ 搜尋更快</p>
+</li>
+<li><h4 id="紅黑樹-Red–Black-tree-➪-保持樹狀結構的平衡"><a href="#紅黑樹-Red–Black-tree-➪-保持樹狀結構的平衡" class="headerlink" title="紅黑樹 Red–Black tree ➪ 保持樹狀結構的平衡"></a>紅黑樹 Red–Black tree ➪ 保持樹狀結構的平衡</h4><ul>
+<li>每一節點是🔴或⚫，且根為⚫。</li>
+<li>葉節點一定是⚫的 NULL</li>
+<li>🔴的子節點必為⚫ ➪ 不能🔴—🔴，但⚫的子節點無限制。</li>
+<li>從任何節點出發，其下至葉節點所有路徑的⚫數目要相同。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="遍歷-Traversal"><a href="#遍歷-Traversal" class="headerlink" title="遍歷 Traversal"></a>遍歷 Traversal</h3><ul>
+<li>Pre-order 前序：根 → 左 → 右 ➪ 深度優先搜尋 Depth-First Search（DFS）</li>
+<li>In-order 中序：左 → 根 → 右</li>
+<li>Post-order 後序：左 → 右→ 根</li>
+<li>Level-order 層序：一層層從左至右 ➪ 廣度優先搜尋 Breadth-First Search（BFS）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="type">int</span> key;</span><br><span class="line">    Node left, right;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Node</span><span class="params">(<span class="type">int</span> item)</span> &#123;</span><br><span class="line">        key = item;</span><br><span class="line">        left = right = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BinaryTree</span> &#123;</span><br><span class="line">    Node root;</span><br><span class="line"></span><br><span class="line">    BinaryTree() &#123; root = <span class="literal">null</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Post_order</span><span class="params">(Node node)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        Post_order(node.left);</span><br><span class="line">        Post_order(node.right);</span><br><span class="line">        System.out.print(node.key + <span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">In_order</span><span class="params">(Node node)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        In_order(node.left);</span><br><span class="line">        System.out.print(node.key + <span class="string">&quot; &quot;</span>);</span><br><span class="line">        In_order(node.right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Pre_order</span><span class="params">(Node node)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        System.out.print(node.key + <span class="string">&quot; &quot;</span>);</span><br><span class="line">        Pre_order(node.left);</span><br><span class="line">        Pre_order(node.right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Level_order</span><span class="params">(Node node)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> height(root), i;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= h; i++)</span><br><span class="line">            CurrentLevel(root, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="title function_">height</span><span class="params">(Node root)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">lheight</span> <span class="operator">=</span> height(root.left);</span><br><span class="line">            <span class="type">int</span> <span class="variable">rheight</span> <span class="operator">=</span> height(root.right);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (lheight &gt; rheight) <span class="keyword">return</span> (lheight + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> (rheight + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">CurrentLevel</span><span class="params">(Node root, <span class="type">int</span> level)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (level == <span class="number">1</span>) System.out.print(root.key + <span class="string">&quot; &quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (level &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            CurrentLevel(root.left, level - <span class="number">1</span>);</span><br><span class="line">            CurrentLevel(root.right, level - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Post_order</span><span class="params">()</span> &#123; Post_order(root); &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">In_order</span><span class="params">()</span> &#123; In_order(root); &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Pre_order</span><span class="params">()</span> &#123; Pre_order(root); &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Level_order</span><span class="params">()</span> &#123; Level_order(root); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">BinaryTree</span> <span class="variable">tree</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BinaryTree</span>();</span><br><span class="line"></span><br><span class="line">        tree.root = <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">1</span>);</span><br><span class="line">        tree.root.left = <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">2</span>);</span><br><span class="line">        tree.root.right = <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">3</span>);</span><br><span class="line">        tree.root.left.left = <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">4</span>);</span><br><span class="line">        tree.root.left.right = <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;Pre-order traversal of binary tree is &quot;</span>);</span><br><span class="line">        tree.Pre_order();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\nIn-order traversal of binary tree is &quot;</span>);</span><br><span class="line">        tree.In_order();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\nPost-order traversal of binary tree is &quot;</span>);</span><br><span class="line">        tree.Post_order();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\nLevel-order traversal of binary tree is &quot;</span>);</span><br><span class="line">        tree.Level_order();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="堆積-Heap"><a href="#堆積-Heap" class="headerlink" title="堆積 Heap"></a>堆積 Heap</h2><p>一種完全二元樹</p>
+<h3 id="類型-5"><a href="#類型-5" class="headerlink" title="類型"></a>類型</h3><ul>
+<li>最小堆積 min-Heap<ul>
+<li>所有父節點的值 &lt; 子節點</li>
+<li>根＝min</li>
+</ul>
+</li>
+<li>最大堆積 Max-Heap<ul>
+<li>所有父節點的值 &gt; 子節點</li>
+<li>根＝MAX</li>
+</ul>
+</li>
+</ul>
+<h2 id="雜湊表-Hash-Table"><a href="#雜湊表-Hash-Table" class="headerlink" title="雜湊表 Hash Table"></a>雜湊表 Hash Table</h2><blockquote>
+<p><strong>名詞介紹</strong></p>
+<ul>
+<li>雜湊函式 Hash Function：將資料打亂並混合，建立出該資料對應的雜湊值。</li>
+<li>桶 bucket：儲存資料的位置，每一位置對應唯一位址 bucket address。</li>
+<li>槽 slot：每一桶中的資料欄位</li>
+<li>碰撞 collision：對應到相同位址 ➪ 以連結串列的方式儲存</li>
+<li>溢位 overflow：資料經過雜湊函數運算後，雜湊值所指向的桶位址已滿，無法再儲存。</li>
+</ul>
+</blockquote>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20190922/20120698rOIRCbvowz.png" alt="https://ithelp.ithome.com.tw/upload/images/20190922/20120698rOIRCbvowz.png"></p>
+<h3 id="原則"><a href="#原則" class="headerlink" title="原則"></a>原則</h3><ul>
+<li>降低碰撞與溢位的產生</li>
+<li>不宜過於複雜，越容易計算越佳</li>
+<li>文字 → 數字的鍵值</li>
+<li>雜湊值均勻分布在每一桶 ➪ 均衡性</li>
+</ul>
+<h3 id="雜湊函數"><a href="#雜湊函數" class="headerlink" title="雜湊函數"></a>雜湊函數</h3><ul>
+<li><h4 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h4><p>以鍵值 k 或 k＋常數 c 作為雜湊值</p>
+</li>
+<li><h4 id="數字分析法"><a href="#數字分析法" class="headerlink" title="數字分析法"></a>數字分析法</h4><p>提取鍵值中取值比較均勻的數字作為雜湊值</p>
+</li>
+<li><h4 id="除留餘數法"><a href="#除留餘數法" class="headerlink" title="除留餘數法"></a>除留餘數法</h4><p>將鍵字 ÷ 某個＜哈希表長度 m，所得餘數為雜湊值。</p>
+</li>
+<li><h4 id="分段疊加法"><a href="#分段疊加法" class="headerlink" title="分段疊加法"></a>分段疊加法</h4><p>依雜湊表地址位數，將關鍵字分成位數相等的幾部分並相加，雜湊值為捨棄最高位後的總和。</p>
+</li>
+<li><h4 id="平分取中法"><a href="#平分取中法" class="headerlink" title="平分取中法"></a>平分取中法</h4><p>當鍵值部分分佈不均勻時，可求出其平方值，然後依需求取中間幾位作為雜湊值。</p>
+</li>
+<li><h4 id="偽隨機數法"><a href="#偽隨機數法" class="headerlink" title="偽隨機數法"></a>偽隨機數法</h4><p>採用一偽隨機數當作雜湊函數</p>
+</li>
+</ul>
+<h3 id="處理碰撞、溢位"><a href="#處理碰撞、溢位" class="headerlink" title="處理碰撞、溢位"></a>處理碰撞、溢位</h3><ul>
+<li><h4 id="線性探測法-Linear-Probing"><a href="#線性探測法-Linear-Probing" class="headerlink" title="線性探測法 Linear Probing"></a>線性探測法 Linear Probing</h4><p>以線性方式往後找到空 bucket 為止，若後面 bucket 滿了，可循環到前面找。</p>
+</li>
+<li><h4 id="平方探測法-Quadratic-Probing"><a href="#平方探測法-Quadratic-Probing" class="headerlink" title="平方探測法 Quadratic Probing"></a>平方探測法 Quadratic Probing</h4><p> $(H(x)±i^2)\ mod \ b\ \ _{1 ≤ i ≤ \frac{(b-1)}{2}}$ ➪ 尋找其他空 bucket</p>
+</li>
+<li><h4 id="鏈結法-Chaining"><a href="#鏈結法-Chaining" class="headerlink" title="鏈結法 Chaining"></a>鏈結法 Chaining</h4><p>於每一 Bucket 中用 Linked List</p>
+</li>
+<li><h4 id="再雜湊法-Rehashing"><a href="#再雜湊法-Rehashing" class="headerlink" title="再雜湊法 Rehashing"></a>再雜湊法 Rehashing</h4><p>用其他雜湊函式計算另一雜湊函數地址，重覆計算到不再衝突。</p>
+</li>
+</ul>
+<h3 id="用途-3"><a href="#用途-3" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>關鍵字搜尋</li>
+<li>加／解密</li>
+</ul>
+<h2 id="圖-Graph"><a href="#圖-Graph" class="headerlink" title="圖 Graph"></a>圖 Graph</h2><p>由數個頂點 vertex（節點 node）、邊 edge 所構成，且之間互相連結或關聯 ➪ $G&#x3D;(V,E)$</p>
+<h3 id="名詞"><a href="#名詞" class="headerlink" title="名詞"></a>名詞</h3><ul>
+<li><p>路徑 path：兩頂點經過的邊</p>
+</li>
+<li><p>路徑長度 path length：該路徑上所有邊的數量</p>
+</li>
+<li><p>簡單路徑 simple path：起點～終點的頂點不可重複（起點可＝終點）</p>
+</li>
+<li><p>相鄰 adjacent : 兩頂點有一條邊相連</p>
+</li>
+<li><p>分支度 degree</p>
+<ul>
+<li>有向圖中：入分支度 In-Degree ↔ 出分支度 Out-Degree</li>
+<li>無向圖中：一個頂點含有幾條邊</li>
+</ul>
+</li>
+<li><p>完整圖 complete graph</p>
+<ul>
+<li>有向圖中：n 個頂點，會有 $n(n-1)$ 條邊</li>
+<li>無向圖中：n 個頂點，會有 $\frac{n(n-1)}{2}$ 條邊</li>
+</ul>
+</li>
+<li><p>子圖 subgraph</p>
+<img src="https://www.researchgate.net/profile/Valerio-De-Biagi/publication/275027315/figure/fig3/AS:670005221916678@1536753101566/A-graph-G-with-subgraphs-G-and-G-G-is-an-induces-subgraph-of-G-but-G-is-not-On-the.ppm" alt="3: A graph G with subgraphs G and G : G is an induces subgraph of G,... |  Download Scientific Diagram" style="zoom: 40%;" /></li>
+</ul>
+<h3 id="類型-6"><a href="#類型-6" class="headerlink" title="類型"></a>類型</h3><ul>
+<li><p>有向圖 Directed graph：邊具有方向性 ➪ 單向</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Directed_graph.svg/1280px-Directed_graph.svg.png" alt="File:Directed graph.svg - Wikimedia Commons" style="zoom: 15%;" />
+</li>
+<li><p>無向圖 Undirected graph ➪ 雙向</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Undirected_graph.svg/1280px-Undirected_graph.svg.png" alt="File:Undirected graph.svg - Wikimedia Commons" style="zoom:15%;" />
+</li>
+<li><p>權重圖 Weighted graph：數值說明連接程度</p>
+<img src="https://i.stack.imgur.com/Mu6VZ.png" alt="How to make a weighted graph in Cytoscape.js? - Stack Overflow" style="zoom: 28%;" /></li>
+</ul>
+<h3 id="表示法"><a href="#表示法" class="headerlink" title="表示法"></a>表示法</h3><ul>
+<li><p>相鄰矩陣 Adjacency Matrix：兩頂點間有邊值為 1，無為 0。</p>
+<img src="https://ycpcs.github.io/cs360-spring2019/lectures/images/lecture15/adjmatexample.png" alt="CS 360: Lecture 15: Graph Theory" style="zoom:80%;" />
+</li>
+<li><p>相鄰串列 Adjacency List：每一頂點以 Singly Linked List 串接相鄰頂點，無邊不處理。</p>
+<img src="https://i.stack.imgur.com/8PQ2E.png" alt="Adjacency Lists and average time complexity for binary search (2 separate  questions) - Stack Overflow" style="zoom: 80%;" /></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/DSA/">DSA</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/DSA/">DSA</a><a href="/tags/Java/">Java</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/DSA/DSA－時間、空間複雜度/"><span>[DSA] 時間、空間複雜度</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/DSA/DSA－時間、空間複雜度/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.425Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="演算法-Algorithm"><a href="#演算法-Algorithm" class="headerlink" title="演算法 Algorithm"></a>演算法 Algorithm</h2><p>解決特定問題或提供某功用之有限指令／敘述之集合</p>
+<ol>
+<li><p>Input：≥ 0 個 input data</p>
+</li>
+<li><p>Output：至少 1 個 output 結果</p>
+</li>
+<li><p>Definiteness：每個指令 &#x2F; 敘述皆 clear, unambiguous</p>
+</li>
+<li><p>Finitense：結束於有限個步驟</p>
+<p>▴Program 不一定有限</p>
+</li>
+<li><p>Effectiveness：步驟合理、可執行</p>
+</li>
+</ol>
+<h2 id="時間複雜度-Time-Complexity"><a href="#時間複雜度-Time-Complexity" class="headerlink" title="時間複雜度 Time Complexity"></a>時間複雜度 Time Complexity</h2><p>執行演算法所需時間，以 Big-O 呈現。</p>
+<h3 id="漸進符號-Asymptotic-Notation"><a href="#漸進符號-Asymptotic-Notation" class="headerlink" title="漸進符號 Asymptotic Notation"></a>漸進符號 Asymptotic Notation</h3><ul>
+<li><h4 id="Big-O（Ο）"><a href="#Big-O（Ο）" class="headerlink" title="Big-O（Ο）"></a>Big-O（Ο）</h4><p>演算法時間函式的上限 Upper bound ➪ 最壞狀況</p>
+</li>
+<li><h4 id="Big-Omega（Ω）"><a href="#Big-Omega（Ω）" class="headerlink" title="Big-Omega（Ω）"></a>Big-Omega（Ω）</h4><p>演算法時間函式的下限 Upper bound ➪ 最好狀況</p>
+</li>
+<li><h4 id="Big-Theta（Θ）"><a href="#Big-Theta（Θ）" class="headerlink" title="Big-Theta（Θ）"></a>Big-Theta（Θ）</h4><p>演算法時間函式的上限、下限</p>
+</li>
+</ul>
+<h3 id="成長速率等級"><a href="#成長速率等級" class="headerlink" title="成長速率等級"></a>成長速率等級</h3><p>$O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n^2) &lt; … &lt; O(n^k) &lt; O(2^n) &lt; … &lt; O(k^n) &lt; O(n!)$</p>
+<img src="https://miro.medium.com/max/1838/1*MWqGpQboF-3f3QKCpcvr_A.png" alt="The Simplicity of Time Complexity! | by Sydney Casey | Medium" style="zoom: 33%;" />
+
+
+
+<h2 id="空間複雜度-Space-Complexity"><a href="#空間複雜度-Space-Complexity" class="headerlink" title="空間複雜度 Space Complexity"></a>空間複雜度 Space Complexity</h2><p>執行演算法所消耗的記憶體，以 Big-O 呈現。</p>
+<h2 id="最佳解"><a href="#最佳解" class="headerlink" title="最佳解"></a>最佳解</h2><p>滿足時間複雜度指標 → 降低空間複雜度</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Example</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; x; i++) cnt++;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(sum(<span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>迴圈需要執行 n 次 ➪ 時間複雜度＝O(n)</p>
+<p>變數的數量為固定常數，共有 3 個（ x、cnt、i）➪ 空間複雜度＝O(1)</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/DSA/">DSA</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/DSA/">DSA</a><a href="/tags/Java/">Java</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/DSA/DSA－搜尋 Search/"><span>[DSA] 搜尋 Search</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/DSA/DSA－搜尋 Search/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.418Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h2><ul>
+<li><h4 id="內部搜尋"><a href="#內部搜尋" class="headerlink" title="內部搜尋"></a>內部搜尋</h4><p>資料量小，可從 RAM 資料檔中尋找資料。</p>
+</li>
+<li><h4 id="外部搜尋"><a href="#外部搜尋" class="headerlink" title="外部搜尋"></a>外部搜尋</h4><p>資料量較大，通常先分次載入部份資料，再用內部排序後回存或合併結果。</p>
+</li>
+</ul>
+<h2 id="線性搜尋-Linear-Search（-x3D-循序搜尋-Sequential-Search）"><a href="#線性搜尋-Linear-Search（-x3D-循序搜尋-Sequential-Search）" class="headerlink" title="線性搜尋 Linear Search（&#x3D; 循序搜尋 Sequential Search）"></a>線性搜尋 Linear Search（&#x3D; 循序搜尋 Sequential Search）</h2><p>從頭逐一比對各筆資料值與目標，直到找到或搜完為止。</p>
+<h3 id="複雜度"><a href="#複雜度" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(n) → O(n)</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] data = &#123;<span class="number">75</span>,<span class="number">50</span>,<span class="number">60</span>,<span class="number">20</span>,<span class="number">90</span>,<span class="number">40</span>,<span class="number">55</span>,<span class="number">80</span>&#125;;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> <span class="number">55</span>;<span class="keyword">static</span> String <span class="title function_">linearSearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (arr[i] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 &quot;</span> + (i+<span class="number">1</span>) + <span class="string">&quot; 項&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;找不到&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(linearSearch(data, target));  <span class="comment">// 找到了！在第 7 項</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二分搜尋-Binary-Search"><a href="#二分搜尋-Binary-Search" class="headerlink" title="二分搜尋 Binary Search"></a>二分搜尋 Binary Search</h2><p>在<strong>已排序</strong>陣列 中搜尋某一元素</p>
+<h4 id="過程"><a href="#過程" class="headerlink" title="過程"></a>過程</h4><ol>
+<li>排序</li>
+<li>找出中間值</li>
+<li>比對目標與中間值（若大於目標往左找）</li>
+<li>重複 3. 縮小範圍至找到或找完</li>
+</ol>
+<h3 id="複雜度-1"><a href="#複雜度-1" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(logn) → O(logn)</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼-1"><a href="#程式碼-1" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] data = &#123;<span class="number">10</span>,<span class="number">15</span>,<span class="number">25</span>,<span class="number">40</span>,<span class="number">45</span>,<span class="number">55</span>,<span class="number">60</span>,<span class="number">80</span>,<span class="number">90</span>&#125;;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> <span class="number">55</span>;</span><br><span class="line"><span class="keyword">static</span> String <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> start, <span class="type">int</span> end, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (start &lt;= end) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> start + (end - start) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 &quot;</span> + (mid+<span class="number">1</span>) + <span class="string">&quot; 項&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &gt; target) <span class="keyword">return</span> binarySearch(arr, start, mid-<span class="number">1</span>, target);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> binarySearch(arr, mid+<span class="number">1</span>, end, target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;找不到&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(binarySearch(data, <span class="number">0</span>, data.length-<span class="number">1</span>, target));  <span class="comment">// 找到了！在第 6 項</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="內插搜尋-Interpolation-Search"><a href="#內插搜尋-Interpolation-Search" class="headerlink" title="內插搜尋 Interpolation Search"></a>內插搜尋 Interpolation Search</h2><p>從<strong>已排序</strong>資料中以斜率預測目標所在位置</p>
+<h3 id="複雜度-2"><a href="#複雜度-2" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(n) → O(log(logn))</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼-2"><a href="#程式碼-2" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> String <span class="title function_">interSearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> start, <span class="type">int</span> end, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (start &lt;= end) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> start + (target - arr[start]) * (end - start) / (arr[end] - arr [start]);</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 &quot;</span> + (mid+<span class="number">1</span>) + <span class="string">&quot; 項&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &lt; target) <span class="keyword">return</span> binarySearch(arr, mid+<span class="number">1</span>, end, target);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> binarySearch(arr, start, mid-<span class="number">1</span>, target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;找不到&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(interSearch(data2, <span class="number">0</span>, data2.length-<span class="number">1</span>, target));  <span class="comment">// 找到了！在第 6 項</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="指數搜尋-Exponential-Search"><a href="#指數搜尋-Exponential-Search" class="headerlink" title="指數搜尋 Exponential Search"></a>指數搜尋 Exponential Search</h2><p>搜尋無限、無邊界的<strong>已排序</strong>陣列</p>
+<h3 id="過程-1"><a href="#過程-1" class="headerlink" title="過程"></a>過程</h3><ol>
+<li><p>從索引位置 $2^0$ 開始，不斷遞增 $2^1、2^2$ 直到 $2^i$。</p>
+</li>
+<li><p>若比目標大，會停止指數增長，改用<strong>二分搜尋</strong>來尋找。</p>
+</li>
+</ol>
+<h3 id="複雜度-3"><a href="#複雜度-3" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(logn) → O(logn)</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼-3"><a href="#程式碼-3" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> String <span class="title function_">expSearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 1 項&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; arr.length &amp;&amp; arr[i] &lt;= target) i *= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> binarySearch(arr, (i / <span class="number">2</span>), Math.min(i, arr.length), target);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="深度優先搜尋-Depth-first-Search（DFS）"><a href="#深度優先搜尋-Depth-first-Search（DFS）" class="headerlink" title="深度優先搜尋 Depth-first Search（DFS）"></a>深度優先搜尋 Depth-first Search（DFS）</h2><h3 id="過程-2"><a href="#過程-2" class="headerlink" title="過程"></a>過程</h3><ol>
+<li>選定一起始點走訪</li>
+<li>選與其相鄰且未走過的點，再以此為起始點。</li>
+<li>重複 1～2.，直到走完所有頂點。</li>
+</ol>
+<h3 id="圖解"><a href="#圖解" class="headerlink" title="圖解"></a>圖解</h3><img src="https://i.imgur.com/s5eUbrk.png" style="zoom: 60%;" />
+
+
+
+
+
+<h2 id="廣度優先搜尋-Breadth-first-Search（BFS）"><a href="#廣度優先搜尋-Breadth-first-Search（BFS）" class="headerlink" title="廣度優先搜尋 Breadth-first Search（BFS）"></a>廣度優先搜尋 Breadth-first Search（BFS）</h2><p>找出兩物之間的最短距離</p>
+<h3 id="過程-3"><a href="#過程-3" class="headerlink" title="過程"></a>過程</h3><ol>
+<li>選定一起始點走訪</li>
+<li>選與其相鄰且未走過的點</li>
+<li>重複 1～2.</li>
+<li>走完所有與其相鄰的點後，尋找下一層頂點。</li>
+</ol>
+<h3 id="圖解-1"><a href="#圖解-1" class="headerlink" title="圖解"></a>圖解</h3><img src="https://yuihuang.com/wp-content/uploads/2020/01/zj_d453_3.png" alt="img" style="zoom:50%;" />
+
+
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/DSA/">DSA</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/DSA/">DSA</a><a href="/tags/Java/">Java</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/DSA/DSA－排序 Sorting/"><span>[DSA] 排序 Sorting</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/DSA/DSA－排序 Sorting/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.412Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h2><ul>
+<li><h4 id="內部排序-Internal-sort（-x3D-陣列排序）"><a href="#內部排序-Internal-sort（-x3D-陣列排序）" class="headerlink" title="內部排序 Internal sort（&#x3D; 陣列排序）"></a>內部排序 Internal sort（&#x3D; 陣列排序）</h4><p>資料量少，於 RAM 就能完成，一般演算法皆為內部排序。</p>
+</li>
+<li><h4 id="外部排序-External-sort（-x3D-檔案排序）"><a href="#外部排序-External-sort（-x3D-檔案排序）" class="headerlink" title="外部排序 External sort（&#x3D; 檔案排序）"></a>外部排序 External sort（&#x3D; 檔案排序）</h4><p>資料量較大，通常先分次載入部份資料至記憶體，再用內部排序後回存或合併結果。</p>
+</li>
+</ul>
+<h3 id="相同值排序前後之順序"><a href="#相同值排序前後之順序" class="headerlink" title="相同值排序前後之順序"></a>相同值排序前後之順序</h3><ul>
+<li>穩定排序法 Stable sorting ➪ 相同</li>
+</ul>
+<h3 id="排序效率"><a href="#排序效率" class="headerlink" title="排序效率"></a>排序效率</h3><ul>
+<li>簡單（初等）排序：排序演算法簡單，但執行時間較長 $O(n^2)$ ↔ 高等排序 $O(nlog^2n)$</li>
+</ul>
+<h2 id="常見排序"><a href="#常見排序" class="headerlink" title="常見排序"></a>常見排序</h2><img src="https://i.imgur.com/QLCTrW9.png" style="zoom: 75%;" />
+
+<h3 id="選擇排序-Selection-sort"><a href="#選擇排序-Selection-sort" class="headerlink" title="選擇排序 Selection sort"></a>選擇排序 Selection sort</h3><p>每次把沒排過中的 min 丟到前面</p>
+<h4 id="動畫"><a href="#動畫" class="headerlink" title="動畫"></a>動畫</h4><img src="https://i.imgur.com/lyNx1N3.gif" alt="img" style="zoom: 75%;" />
+
+<h4 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[])</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">min_idx</span> <span class="operator">=</span> i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i+<span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &lt; arr[min_idx]) min_idx = j;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[min_idx];</span><br><span class="line">            arr[min_idx] = arr[i];</span><br><span class="line">            arr[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="插入排序-Insertion-sort"><a href="#插入排序-Insertion-sort" class="headerlink" title="插入排序 Insertion sort"></a>插入排序 Insertion sort</h3><p>每一未排序資料由右而左來找位置插入</p>
+<h4 id="動畫-1"><a href="#動畫-1" class="headerlink" title="動畫"></a>動畫</h4><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif" alt="File:Insertion-sort-example.gif" style="zoom:60%;" />
+
+<h4 id="程式碼-1"><a href="#程式碼-1" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[])</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">key</span> <span class="operator">=</span> arr[i];</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i - <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; key)</span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j--];</span><br><span class="line">            </span><br><span class="line">            arr[j+<span class="number">1</span>] = key;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="氣泡排序-Bubble-sort（-x3D-交換排序）"><a href="#氣泡排序-Bubble-sort（-x3D-交換排序）" class="headerlink" title="氣泡排序 Bubble sort（&#x3D; 交換排序）"></a>氣泡排序 Bubble sort（&#x3D; 交換排序）</h3><p>依序比較相鄰兩個元素，右 &gt; 左則交換。</p>
+<h4 id="動畫-2"><a href="#動畫-2" class="headerlink" title="動畫"></a>動畫</h4><p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif" alt="File:Bubble-sort-example-300px.gif"></p>
+<h4 id="程式碼-2"><a href="#程式碼-2" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[])</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n-<span class="number">1</span>; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n-i-<span class="number">1</span>; j++)</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="堆積排序-Heap-sort"><a href="#堆積排序-Heap-sort" class="headerlink" title="堆積排序 Heap sort"></a>堆積排序 Heap sort</h3><h4 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h4><ol>
+<li>陣列 → 最大堆積 Max Heap（遞增）或最小堆積 Min Heap（遞減）</li>
+<li>再以<strong>完全二元樹</strong>來排序</li>
+</ol>
+<h4 id="動畫-3"><a href="#動畫-3" class="headerlink" title="動畫"></a>動畫</h4><img src="https://i.imgur.com/fi2uJ94.gif" alt="img" style="zoom: 90%;" />
+
+<h4 id="程式碼-3"><a href="#程式碼-3" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[])</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">            heapify(arr, n, i);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[<span class="number">0</span>];</span><br><span class="line">            arr[<span class="number">0</span>] = arr[i];</span><br><span class="line">            arr[i] = temp;</span><br><span class="line"></span><br><span class="line">            heapify(arr, i, <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="合併排序-Merge-sort"><a href="#合併排序-Merge-sort" class="headerlink" title="合併排序 Merge sort"></a>合併排序 Merge sort</h3><p>採用分治法 Divide-and-Conquer，陣列拆分後再排序合併。</p>
+<h4 id="動畫-4"><a href="#動畫-4" class="headerlink" title="動畫"></a>動畫</h4><p><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif" alt="File:Merge-sort-example-300px.gif"></p>
+<h4 id="程式碼-4"><a href="#程式碼-4" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> l, <span class="type">int</span> m, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n1</span> <span class="operator">=</span> m - l + <span class="number">1</span>, n2 = r - m;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> L[] = <span class="keyword">new</span> <span class="title class_">int</span>[n1], R[] = <span class="keyword">new</span> <span class="title class_">int</span>[n2];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n1; ++i) L[i] = arr[l + i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n2; ++j) R[j] = arr[m + <span class="number">1</span> + j];</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = <span class="number">0</span>, k = l;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) &#123;</span><br><span class="line">        <span class="keyword">if</span> (L[i] &lt;= R[j]) arr[k++] = L[i++];</span><br><span class="line">        <span class="keyword">else</span> arr[k++] = R[j++];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (i &lt; n1) arr[k++] = L[i++];</span><br><span class="line">    <span class="keyword">while</span> (j &lt; n2) arr[k++] = R[j++];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> l, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span>l+ (r-l)/<span class="number">2</span>;</span><br><span class="line">        sort(arr, l, m);</span><br><span class="line">        sort(arr, m + <span class="number">1</span>, r);</span><br><span class="line">        merge(arr, l, m, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="快速排序-Quick-sort"><a href="#快速排序-Quick-sort" class="headerlink" title="快速排序 Quick sort"></a>快速排序 Quick sort</h3><p>採用分治法 Divide-and-Conquer</p>
+<h4 id="步驟-1"><a href="#步驟-1" class="headerlink" title="步驟"></a>步驟</h4><ol>
+<li><p>選出一元素當基準 pivot</p>
+<p>左邊的元素都＜pivot、右邊的元素都 $\ge$ pivot（不用排序）</p>
+</li>
+<li><p>對左右邊的 array 重複 1.</p>
+</li>
+</ol>
+<h4 id="動畫-5"><a href="#動畫-5" class="headerlink" title="動畫"></a>動畫</h4><p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif" alt="File:Quicksort-example.gif"></p>
+<h4 id="程式碼-5"><a href="#程式碼-5" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> begin, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">pivot</span> <span class="operator">=</span> arr[end], i = (begin-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> begin; j &lt; end; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[j] &lt;= pivot) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">swapTemp</span> <span class="operator">=</span> arr[++i];</span><br><span class="line">            arr[i] = arr[j];</span><br><span class="line">            arr[j] = swapTemp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">swapTemp</span> <span class="operator">=</span> arr[i+<span class="number">1</span>];</span><br><span class="line">    arr[i+<span class="number">1</span>] = arr[end];</span><br><span class="line">    arr[end] = swapTemp;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="希爾排序-Shell-sort（-x3D-增量遞減排序-Diminishing-Increment-sort）"><a href="#希爾排序-Shell-sort（-x3D-增量遞減排序-Diminishing-Increment-sort）" class="headerlink" title="希爾排序 Shell sort（&#x3D; 增量遞減排序 Diminishing Increment sort）"></a>希爾排序 Shell sort（&#x3D; 增量遞減排序 Diminishing Increment sort）</h3><h4 id="改良於插入排序"><a href="#改良於插入排序" class="headerlink" title="改良於插入排序"></a>改良於插入排序</h4><ul>
+<li>將資料透過不同的<strong>間距 gap</strong> 拆分</li>
+<li>每段資料各自做插入排序</li>
+<li>利用每次排序出來的結果來加速下一次排序</li>
+</ul>
+<h4 id="動畫-6"><a href="#動畫-6" class="headerlink" title="動畫"></a>動畫</h4><img src="https://morosedog.gitlab.io/images/algorithm/sort/chapter4/03.gif" alt="Shell sort - Wikiwand" style="zoom:100%;" />
+
+<h4 id="程式碼-6"><a href="#程式碼-6" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[])</span> &#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">gap</span> <span class="operator">=</span> n / <span class="number">2</span>; gap &gt; <span class="number">0</span>; gap /= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> gap; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[i];</span><br><span class="line">            <span class="type">int</span> j;</span><br><span class="line">			<span class="keyword">for</span> (j = i; j &gt;= gap &amp;&amp; arr[j - gap] &gt; temp; j -= gap)</span><br><span class="line">            	arr[j] = arr[j - gap];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="計數排序-Counting-sort"><a href="#計數排序-Counting-sort" class="headerlink" title="計數排序 Counting sort"></a>計數排序 Counting sort</h3><p>先計算每個元素出現於序列中的次數，再用其進行排序。</p>
+<h4 id="動畫-7"><a href="#動畫-7" class="headerlink" title="動畫"></a>動畫</h4><img src="https://img.imyangyong.com/blog/2020-07-12%2018-17-21.gif" alt="Counting sort - Wikiwand" style="zoom:80%;" />
+
+<h4 id="程式碼-7"><a href="#程式碼-7" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> size)</span> &#123;</span><br><span class="line">	<span class="type">int</span>[] output = <span class="keyword">new</span> <span class="title class_">int</span>[size + <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; size; i++)</span><br><span class="line">      <span class="keyword">if</span> (array[i] &gt; max) max = array[i];</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span>[] count = <span class="keyword">new</span> <span class="title class_">int</span>[max + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; max; ++i) count[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; i++) count[array[i]]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= max; i++) count[i] += count[i - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> size - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">      output[count[array[i]] - <span class="number">1</span>] = array[i];</span><br><span class="line">      count[array[i]]--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; i++) array[i] = output[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="桶排序-Bucket-sort"><a href="#桶排序-Bucket-sort" class="headerlink" title="桶排序 Bucket sort"></a>桶排序 Bucket sort</h3><p>每一桶子對應資料區間，先將資料分配到不同桶，內部再各自排序。</p>
+<h4 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h4><ul>
+<li>當資料均勻分配每一桶時最快</li>
+<li>都分配同一桶中最慢</li>
+</ul>
+<h4 id="動畫-8"><a href="#動畫-8" class="headerlink" title="動畫"></a>動畫</h4><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Buffer_extraction_for_block_sort.gif/440px-Buffer_extraction_for_block_sort.gif" alt="Block sort - Wikiwand"></p>
+<h4 id="程式碼-8"><a href="#程式碼-8" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">float</span>[] arr, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    ArrayList&lt;Float&gt;[] bucket = <span class="keyword">new</span> <span class="title class_">ArrayList</span>[n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">      bucket[i] = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Float&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">      <span class="type">int</span> <span class="variable">bucketIndex</span> <span class="operator">=</span> (<span class="type">int</span>) arr[i] * n;</span><br><span class="line">      bucket[bucketIndex].add(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) Collections.sort((bucket[i]));</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>, size = bucket[i].size(); j &lt; size; j++)</span><br><span class="line">      	arr[index++] = bucket[i].get(j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="基數排序-Radix-sort"><a href="#基數排序-Radix-sort" class="headerlink" title="基數排序 Radix sort"></a>基數排序 Radix sort</h3><p>根據某個基數對元素進行分配排序</p>
+<h4 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h4><ul>
+<li>Least Significant Digital（LSD）：由右到左<ol>
+<li>LSD of each key：取得每一資料鍵值的最小位數（LSD）</li>
+<li>Sorting subroutine：依該位數大小排序</li>
+<li>Repeating：取得下一有效位數，並重複 2. 至最大位數（MSD）為止</li>
+</ol>
+</li>
+<li>Most Significant Digital（MSD）：由左到右</li>
+</ul>
+<h4 id="動畫-9"><a href="#動畫-9" class="headerlink" title="動畫"></a>動畫</h4><p><img src="https://img.magiclen.org/albums/radix-sort/animation-lsd-601x106.gif" alt="基數排序(Radix Sort)演算法，可以依據多個鍵值來排序的演算法| MagicLen"></p>
+<h4 id="程式碼-9"><a href="#程式碼-9" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span>[] number, <span class="type">int</span> d)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>, n = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span>[][] temp = <span class="keyword">new</span> <span class="title class_">int</span>[number.length][number.length];</span><br><span class="line">        <span class="type">int</span>[] order = <span class="keyword">new</span> <span class="title class_">int</span>[number.length];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(n &lt;= d) &#123; </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> num : number) &#123; </span><br><span class="line">                <span class="type">int</span> <span class="variable">lsd</span> <span class="operator">=</span> (num / n) % <span class="number">10</span>; </span><br><span class="line">                temp[lsd][order[lsd]++] = num; </span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; number.length; i++) &#123; </span><br><span class="line">                <span class="keyword">if</span>(order[i] != <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; order[i]; j++) </span><br><span class="line">                        number[k++] = temp[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">                order[i] = <span class="number">0</span>; </span><br><span class="line">            &#125; </span><br><span class="line">            n *= <span class="number">10</span>; </span><br><span class="line">            k = <span class="number">0</span>; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/DSA/">DSA</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/DSA/">DSA</a><a href="/tags/Java/">Java</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/術語紀錄/"><span>術語紀錄</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/術語紀錄/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.401Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        Here's something encrypted, password is required to continue reading.
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Coding/">Coding</a><a href="/tags/Term/">Term</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/學習地圖/"><span>學習地圖</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/學習地圖/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.396Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        Here's something encrypted, password is required to continue reading.
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Coding/">Coding</a><a href="/tags/Roadmap/">Roadmap</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/25/Coding/CS、BS 架構/"><span>CS、BS 架構</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/CS、BS 架構/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.390Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Client／Server-主從式架構"><a href="#Client／Server-主從式架構" class="headerlink" title="Client／Server 主從式架構"></a>Client／Server 主從式架構</h2><p>透過 HTTP 協定送出請求 request 給 server 提取 get，當 server 接收到回應 response 後開始處理，並回傳一個回應 response 給 client。</p>
+<p>➪ client、server 之間透過 HTTP 協定進行溝通</p>
+<img src="https://darvishdarab.github.io/cs421_f20/assets/images/client-server-1-d85a93ea16590c10bed340dd78294d0d.png" alt="Client-Server Architecture | EN.601.421: Object-Oriented Software  Engineering (OOSE)" style="zoom: 18%;" />
+
+<ul>
+<li>交互性強</li>
+<li>具有安全的存取模式</li>
+<li>響應速度快</li>
+<li>適於處理大量數據</li>
+<li>較難以維護、管理（成本高）</li>
+</ul>
+<h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><p>提供 web 服務相關的伺服器</p>
+<h3 id="Client（主動）"><a href="#Client（主動）" class="headerlink" title="Client（主動）"></a>Client（主動）</h3><p>任何可以呈現 server 端所傳來的資訊，並提供使用者本地服務的程式。</p>
+<h2 id="Browser／Server-瀏覽器-伺服器"><a href="#Browser／Server-瀏覽器-伺服器" class="headerlink" title="Browser／Server 瀏覽器-伺服器"></a>Browser／Server 瀏覽器-伺服器</h2><p>只需要瀏覽器即可與 web 伺服器互動</p>
+<img src="http://ithelp.ithome.com.tw/upload/images/20141005/2014100500235854301f1ee42b2_resize_600.png" alt="iT 邦幫忙::一起幫忙解決難題，拯救IT 人的一天" style="zoom: 90%;" />
+
+<ul>
+<li>分布性強</li>
+<li>易於維護（成本低）</li>
+<li>開發簡單</li>
+<li>共享性強</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Web/">Web</a><a href="/tags/Client／Server/">Client／Server</a><a href="/tags/Browser／Server/">Browser／Server</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/page/3/" class="pagination-prev">Prev</a>
+  
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

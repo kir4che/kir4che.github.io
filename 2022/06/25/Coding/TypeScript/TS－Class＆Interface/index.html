@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[TS] Class＆Interface | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="Class 類別1234567891011class Animal &amp;#123;    constructor(name) &amp;#123;        this.name = name;    &amp;#125;    sayHi() &amp;#123;        return `My name is $&amp;">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,TypeScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[TS] Class＆Interface"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[TS] Class＆Interface</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/25/Coding/TypeScript/TS－Class＆Interface/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-25T03:46:07.685Z">
+          2022-06-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Class-類別"><a href="#Class-類別" class="headerlink" title="Class 類別"></a>Class 類別</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`My name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(<span class="string">&#x27;Jack&#x27;</span>);  <span class="comment">// 物件實例化</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">sayHi</span>());</span><br></pre></td></tr></table></figure>
+
+<h3 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h3><ul>
+<li><p>封裝 <code>public、private、protected</code></p>
+</li>
+<li><p>繼承 <code>extend</code></p>
+<p><strong>💡不可多重繼承，但可透過 Mixins 或 Implements</strong></p>
+</li>
+<li><p>多型：繼承後產生不同的類別，對同一方法</p>
+</li>
+</ul>
+<h3 id="靜態方法"><a href="#靜態方法" class="headerlink" title="靜態方法"></a>靜態方法</h3><p>不可被實例繼承，僅存在類別。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Something</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> instances = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">foo</span>(): <span class="built_in">number</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">42</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 實例化物件</span></span><br><span class="line"><span class="keyword">const</span> s1 = <span class="keyword">new</span> <span class="title class_">Something</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s1.<span class="property">instances</span>) <span class="comment">// Error: Property &#x27;instances&#x27; is a static member of type &#x27;Something&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="accessors-存取器"><a href="#accessors-存取器" class="headerlink" title="accessors 存取器"></a>accessors 存取器</h3><p>有效間接操作類別中的屬性 ➪ 提高屬性安全性</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">get</span> <span class="title function_">name</span>() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;Jack&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> <span class="title function_">name</span>(<span class="params">value</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;setter: &#x27;</span> + value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(<span class="string">&#x27;Kitty&#x27;</span>); <span class="comment">// setter: Kitty</span></span><br><span class="line">a.<span class="property">name</span> = <span class="string">&#x27;Tom&#x27;</span>; <span class="comment">// setter: Tom</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="property">name</span>); <span class="comment">// Jack</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h4><p>存取子<strong>讀取</strong>屬性值，不能有參數，且一定要有回傳值</p>
+</li>
+<li><h4 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h4><p>存取子<strong>修改</strong>屬性值，只能有一參數。</p>
+</li>
+</ul>
+<h3 id="abstract-抽象"><a href="#abstract-抽象" class="headerlink" title="abstract 抽象"></a>abstract 抽象</h3><p>使類別<font color=dodgerblue>不可實例化（new）</font>，但其方法必須被子類別實現。</p>
+<h3 id="implements-實現"><a href="#implements-實現" class="headerlink" title="implements 實現"></a>implements 實現</h3><p>指定要實作之介面，使其行為具體化。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span>,</span><br><span class="line">    <span class="attr">toString</span>: <span class="function">() =&gt;</span> <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">implements</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">    <span class="attr">toString</span>: <span class="function">() =&gt;</span> <span class="built_in">string</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">toString</span> = <span class="function">() =&gt;</span> <span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.age&#125;</span>: <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="類別型別"><a href="#類別型別" class="headerlink" title="類別型別"></a>類別型別</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">sayHi</span>(): <span class="built_in">string</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`My name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">a</span>: <span class="title class_">Animal</span> = <span class="keyword">new</span> <span class="title class_">Animal</span>(<span class="string">&#x27;Jack&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">sayHi</span>());</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Interface-介面"><a href="#Interface-介面" class="headerlink" title="Interface 介面"></a>Interface 介面</h2><p>約束類別的行為，只描述屬性、方法。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">    <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">    <span class="attr">birthday</span>: <span class="title class_">Date</span></span><br><span class="line">    <span class="attr">habits</span>: <span class="built_in">string</span>[]</span><br><span class="line">    <span class="title function_">run</span>(<span class="attr">meter</span>: <span class="built_in">number</span>): <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 單一函式可寫成如下</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Run</span>&#123;</span><br><span class="line">    (<span class="attr">meter</span>: <span class="built_in">number</span>):<span class="built_in">void</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="屬性"><a href="#屬性" class="headerlink" title="屬性"></a>屬性</h3><ul>
+<li><p>可選屬性 <code>name?: string</code></p>
+</li>
+<li><p>唯獨屬性  <code>readonly name?: string</code>：賦值後即不可變，類似於 const。</p>
+</li>
+<li><p>任意屬性 <code>[name: string: any]</code></p>
+<p><strong>💡一旦定義任意屬性，其他所有屬性都必須為其子屬性。</strong></p>
+</li>
+</ul>
+<h3 id="介面-v-s-型別別名"><a href="#介面-v-s-型別別名" class="headerlink" title="介面 v.s. 型別別名"></a>介面 v.s. 型別別名</h3><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">介面</th>
+<th align="center">型別別名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">創建新名稱</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td align="center">代表型別</td>
+<td align="center">object</td>
+<td align="center">任何</td>
+</tr>
+<tr>
+<td align="center">同名多次定義</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td align="center">擴展</td>
+<td align="center">extends、union、intersection</td>
+<td align="center">union、intersection</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/TypeScript/">TypeScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/TypeScript/">TypeScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
