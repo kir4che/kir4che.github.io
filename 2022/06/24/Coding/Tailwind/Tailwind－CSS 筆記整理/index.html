@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[Tailwind] CSS 筆記整理 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="安裝＆設定yarn add postcss-cli autoprefixer -D
+產生配置檔yarn tailwindcss init -p
+tailwind.css
+123@tailwind base;@tailwind components;@tailwind utilities;">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,Tailwind">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[Tailwind] CSS 筆記整理"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[Tailwind] CSS 筆記整理</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/24/Coding/Tailwind/Tailwind－CSS 筆記整理/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.258Z">
+          2022-06-24
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="安裝＆設定"><a href="#安裝＆設定" class="headerlink" title="安裝＆設定"></a>安裝＆設定</h2><p><code>yarn add postcss-cli autoprefixer -D</code></p>
+<h3 id="產生配置檔"><a href="#產生配置檔" class="headerlink" title="產生配置檔"></a>產生配置檔</h3><p><code>yarn tailwindcss init -p</code></p>
+<p><code>tailwind.css</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h3 id="編譯"><a href="#編譯" class="headerlink" title="編譯"></a>編譯</h3><ul>
+<li><code>npx tailwindcss -i tailwind.css -o style.css</code></li>
+<li><code>module.exports = &#123;  purge: [    &quot;./*.&#123;html,js&#125;&quot;,    &quot;./**/*.&#123;html,js&#125;&quot;,  ],  ... &#125;npm run build</code></li>
+</ul>
+<h3 id="Purge-設定"><a href="#Purge-設定" class="headerlink" title="Purge 設定"></a>Purge 設定</h3><p>於 <code>tailwind.config.js</code> 更改 ➪ 環境優化</p>
+<ul>
+<li><h4 id="檢查檔案"><a href="#檢查檔案" class="headerlink" title="檢查檔案"></a>檢查檔案</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 單一頁面 */</span></span><br><span class="line">module<span class="selector-class">.exports</span> = &#123;</span><br><span class="line">  purge: [<span class="string">&quot;./index.html&quot;</span>],</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 多頁面 */</span></span><br><span class="line">module<span class="selector-class">.exports</span> = &#123;</span><br><span class="line">  purge: [</span><br><span class="line">    <span class="string">&quot;./*.html&quot;</span>,</span><br><span class="line">    <span class="string">&quot;./**/*.html&quot;</span>,</span><br><span class="line">  ],</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 還有 JS */</span></span><br><span class="line">module<span class="selector-class">.exports</span> = &#123;</span><br><span class="line">  purge: &#123;</span><br><span class="line">    enabled: true,  <span class="comment">/* 手動開啟 Tree-Shake */</span></span><br><span class="line">    content: [</span><br><span class="line">      <span class="string">&quot;./*.&#123;html,js&#125;&quot;</span>,</span><br><span class="line">      <span class="string">&quot;./**/*.&#123;html,js&#125;&quot;</span>,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="安全名單-Safe-List"><a href="#安全名單-Safe-List" class="headerlink" title="安全名單 Safe List"></a>安全名單 Safe List</h4><p>讓 Tailwind 移除樣式時略過他們</p>
+<p><strong>💡若把 safelist 寫在 purge，則只接受字串格式，不接受正規表示式 regex。</strong> </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">module<span class="selector-class">.exports</span> = &#123;</span><br><span class="line">  purge: &#123;</span><br><span class="line">    enabled: true, // true: 開啟 / false: 關閉</span><br><span class="line">    content: [</span><br><span class="line">      <span class="string">&quot;./*.&#123;html,js&#125;&quot;</span>,</span><br><span class="line">      <span class="string">&quot;./**/*.&#123;html,js&#125;&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    safelist: [</span><br><span class="line">      <span class="string">&#x27;bg-blue-500&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;text-center&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;hover:opacity-100&#x27;</span>,</span><br><span class="line">      // ...</span><br><span class="line">      <span class="string">&#x27;lg:text-right&#x27;</span>,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 以 options 使用 Regex */</span></span><br><span class="line">module<span class="selector-class">.exports</span> = &#123;</span><br><span class="line">  purge: &#123;</span><br><span class="line">    enabled: true, // true: 開啟 / false: 關閉</span><br><span class="line">    content: [</span><br><span class="line">      <span class="string">&quot;./*.&#123;html,js&#125;&quot;</span>,</span><br><span class="line">      <span class="string">&quot;./**/*.&#123;html,js&#125;&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    options: &#123;</span><br><span class="line">      safelist: [/(bg|ring)<span class="built_in">-</span>(.*)<span class="built_in">-</span>(\d&#123;<span class="number">1</span>&#125;<span class="number">0</span>&#123;<span class="number">1</span>,<span class="number">2</span>&#125;)/]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="Just-In-Time（JIT）"><a href="#Just-In-Time（JIT）" class="headerlink" title="Just In Time（JIT）"></a>Just In Time（JIT）</h4><p>隨時監控 purge 設定的監聽範圍中的文件</p>
+<p><strong>💡即時編譯 Just-In-Time Compilation：不斷實時分析正在執行的程式碼，並認定程式中的某些內容，更新時就只需要部份編譯。</strong></p>
+<ul>
+<li><h5 id="啟用"><a href="#啟用" class="headerlink" title="啟用"></a>啟用</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module<span class="selector-class">.exports</span> = &#123;</span><br><span class="line">  mode: <span class="string">&quot;jit&quot;</span>,</span><br><span class="line">  purge: [</span><br><span class="line">  	...</span><br><span class="line">  ],</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h5><ul>
+<li><p>任意使用 Variants</p>
+<p><code>&lt;input class=&quot;active:bg-indigo-200&quot;&gt;</code></p>
+</li>
+<li><p>任意值 class</p>
+<p><code>&lt;button class=&quot;bg-[#00b900] w-[40px] h-[20px]&quot;&gt;加入&lt;/button&gt;</code></p>
+</li>
+<li><p>!important</p>
+<p><code>&lt;div class=&quot;sm:hover:!font-bold&quot;&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="監控伺服器-Watch-Server"><a href="#監控伺服器-Watch-Server" class="headerlink" title="監控伺服器 Watch Server"></a>監控伺服器 Watch Server</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;watch&quot;</span>: <span class="string">&quot;tailwindcss -i tailwind.css -o style.css -w&quot;</span></span><br><span class="line">    <span class="comment">/* 這行最後面加上 -w */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li>將樣式插入至 CSS <code>@tailwind</code></li>
+<li>宣告層級 <code>@layer</code></li>
+<li>引用 <code>@apply</code></li>
+</ul>
+<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>部分引用主題 &#96;theme()&#96;&#96;</li>
+<li>創建按名稱引用斷點的 media <code>screen()</code></li>
+</ul>
+<h2 id="CSS樣式"><a href="#CSS樣式" class="headerlink" title="CSS樣式"></a>CSS樣式</h2><h3 id="Preflight清除樣式"><a href="#Preflight清除樣式" class="headerlink" title="Preflight清除樣式"></a><a target="_blank" rel="noopener" href="https://tailwindcss.tw/docs/preflight">Preflight</a>清除樣式</h3><ul>
+<li>去除樣式：&lt;h1&gt;～&lt;h6&gt;、&lt;ol&gt;、&lt;ul&gt;、&lt;li&gt;</li>
+<li>去除外距：&lt;h1&gt;～&lt;h6&gt;、&lt;hr&gt;、&lt;p&gt;、&lt;pre&gt;</li>
+<li>行內 → 區塊顯示：&lt;img&gt;、&lt;svg&gt;、&lt;video&gt;、&lt;canvas&gt;、&lt;audio&gt;、&lt;iframe&gt;</li>
+</ul>
+<h3 id="佈局"><a href="#佈局" class="headerlink" title="佈局"></a>佈局</h3><ul>
+<li>box<ul>
+<li>decoration break 跨行列／頁呈現 <code>box-decoration-clone/slice</code></li>
+<li>size 指定寬高 <code>box-border/content</code></li>
+</ul>
+</li>
+<li>display <code>block</code>、<code>inline</code>、<code>flex</code>、<code>table</code>、<code>grid</code>、<code>hidden</code>…</li>
+<li>floats <code>float-位置</code></li>
+<li>overflow <code>overflow-軸向-溢出方式</code></li>
+<li>overscroll <code>overscroll-軸向-滾動方式</code></li>
+<li>position <code>static</code>、<code>fixed</code>、<code>absolute</code>、<code>relative</code>、<code>sticky</code></li>
+<li>定位 <code>inset-軸向-位置</code>、<code>top/right/bottom/left-位置</code></li>
+<li>visibility <code>visible</code>、<code>invisible</code></li>
+<li>z-Index <code>z-順序</code></li>
+</ul>
+<h3 id="Flexbox-amp-Grid"><a href="#Flexbox-amp-Grid" class="headerlink" title="Flexbox &amp; Grid"></a>Flexbox &amp; Grid</h3><ul>
+<li><h4 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h4><ul>
+<li><p>direction <code>flex-方向</code></p>
+</li>
+<li><p>wrap <code>flex-換行方式</code></p>
+</li>
+<li><p>grow 是否伸展 <code>grow</code>、<code>grow-0</code></p>
+</li>
+<li><p>shrink 是否收縮 <code>shrink</code>、<code>shrink-0</code></p>
+</li>
+</ul>
+</li>
+<li><h4 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h4><ul>
+<li><p>columns／rows <code>grid-cols/rows-欄/列數</code></p>
+</li>
+<li><p>column／rows start／end <code>col/rows-模式-欄/列數</code></p>
+</li>
+<li><p>auto flow <code>grid-flow-欄/列</code></p>
+</li>
+<li><p>auto columns／rows <code>auto-cols/rows-大小</code></p>
+</li>
+</ul>
+</li>
+<li><h4 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h4><ul>
+<li><p>order 順序 <code>order-</code></p>
+</li>
+<li><p>gap <code>gap-軸向-間隙</code></p>
+</li>
+<li><p>justify</p>
+<ul>
+<li>content <code>justify-準軸點</code></li>
+<li>items 項目對齊 <code>justify-items-準軸點</code></li>
+<li>self <code>justify-self-準軸點</code></li>
+</ul>
+</li>
+<li><p>align</p>
+<ul>
+<li>content <code>content-準軸點</code></li>
+<li>items 項目對齊 <code>items-準軸點</code></li>
+<li>self <code>self-準軸點</code></li>
+</ul>
+</li>
+<li><p>place（&#x3D; justify＋align）</p>
+<ul>
+<li>content 容器對齊 <code>place-content-準軸點</code></li>
+<li>self 項目的絕對位置 <code>place-self-準軸點</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3><ul>
+<li>width <code>w-寬度</code></li>
+<li>min／max-width <code>min/max-w-寬度</code></li>
+<li>height <code>h-高度</code></li>
+<li>min／max-height <code>min/max-h-高度</code></li>
+</ul>
+<h3 id="間距"><a href="#間距" class="headerlink" title="間距"></a>間距</h3><ul>
+<li><p>Padding <code>[正/負]p[軸向]-距離</code></p>
+</li>
+<li><p>Margin <code>[正/負]m[軸向]-距離</code></p>
+</li>
+<li><p>Space Between <code>space-軸向-距離</code></p>
+</li>
+</ul>
+<h3 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h3><ul>
+<li><h4 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h4><ul>
+<li><p>family <code>font-字型</code></p>
+</li>
+<li><p>size <code>text-尺寸</code></p>
+</li>
+<li><p>style <code>italic</code>、<code>not-italic</code></p>
+</li>
+<li><p>weight <code>font-粗細</code></p>
+</li>
+</ul>
+</li>
+<li><h4 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h4><ul>
+<li><p>alignment <code>text-方向</code></p>
+</li>
+<li><p>color <code>text-顏色-深淺度</code></p>
+<ul>
+<li>decoration <code>underline</code>、<code>overline</code>、<code>line-through</code>、<code>no-underline</code></li>
+<li>color <code>decoration-顏色-深淺度</code></li>
+<li>style <code>decoration-樣式</code></li>
+<li>thickness <code>decoration-粗細</code></li>
+<li>offset <code>underline-間距</code></li>
+</ul>
+</li>
+<li><p>transform <code>uppercase</code>、<code>lowercase</code>、<code>capitalize</code>、<code>normal-case</code></p>
+</li>
+<li><p>overflow <code>truncate</code>、<code>text-ellipsis</code>、<code>text-clip</code></p>
+</li>
+<li><p>indent <code>indent-縮排</code></p>
+</li>
+<li><p>vertical Alignment <code>align-方向</code></p>
+</li>
+</ul>
+</li>
+<li><h4 id="Spacing"><a href="#Spacing" class="headerlink" title="Spacing"></a>Spacing</h4><ul>
+<li><p>letter Spacing <code>tracking-字距</code></p>
+</li>
+<li><p>line Height <code>tracking-行距</code></p>
+</li>
+</ul>
+</li>
+<li><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><ul>
+<li><p>style type <code>list-樣式</code></p>
+</li>
+<li><p>style position <code>list-位置</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
+<li>attachment 固定 <code>bg-模式</code></li>
+<li>position <code>bg-位置</code></li>
+<li>repeat <code>bg-軸向</code></li>
+<li>size <code>bg-縮放方式</code></li>
+<li>image <code>bg-gradient-漸層方向</code></li>
+<li>gradient color <code>from/via/to-顏色-深淺度</code></li>
+</ul>
+<h3 id="邊框"><a href="#邊框" class="headerlink" title="邊框"></a>邊框</h3><ul>
+<li>radius <code>rounded-方向-圓角程度</code></li>
+<li>width <code>border-方向-寬度</code></li>
+<li>style <code>border-樣式</code></li>
+</ul>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><ul>
+<li>box shadow <code>shadow-陰影量</code></li>
+<li>opacity <code>opacity-不透明度</code></li>
+</ul>
+<h3 id="轉場＆動畫"><a href="#轉場＆動畫" class="headerlink" title="轉場＆動畫"></a>轉場＆動畫</h3><ul>
+<li>transition property <code>transition-樣式</code></li>
+<li>transition duration <code>duration-持續時間</code></li>
+<li>transition delay <code>delay-延遲時間</code></li>
+<li>animation <code>animate-樣式</code></li>
+</ul>
+<h3 id="變形"><a href="#變形" class="headerlink" title="變形"></a>變形</h3><ul>
+<li>scale 縮放 <code>scale-軸向-程度</code></li>
+<li>rotate 旋轉 <code>rotate-角度</code></li>
+<li>translate 平移 <code>translate-軸向-程度</code></li>
+<li>skew 扭曲 <code>skew-軸向-程度</code></li>
+<li>transform Origin 旋轉原點 <code>origin-方向</code></li>
+</ul>
+<h2 id="自定義"><a href="#自定義" class="headerlink" title="自定義"></a>自定義</h2><h3 id="螢幕斷點"><a href="#螢幕斷點" class="headerlink" title="螢幕斷點"></a>螢幕斷點</h3><ul>
+<li>640px <code>sm:</code></li>
+<li>768px <code>md:</code></li>
+<li>1024px <code>lg:</code></li>
+<li>1280px <code>xl:</code></li>
+<li>1536px <code>2xl:</code></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Tailwind/">Tailwind</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/Tailwind/">Tailwind</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

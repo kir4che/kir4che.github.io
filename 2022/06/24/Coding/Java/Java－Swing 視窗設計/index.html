@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[Java] Swing 視窗設計 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="Swing採用 Model-View-Controller 設計，提供各種 GUI 元件。">
+  
+
+  
+  
+  <meta name="keywords" content="Java,Swing">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[Java] Swing 視窗設計"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[Java] Swing 視窗設計</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/24/Coding/Java/Java－Swing 視窗設計/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.025Z">
+          2022-06-24
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Swing"><a href="#Swing" class="headerlink" title="Swing"></a>Swing</h2><p>採用 Model-View-Controller 設計，提供各種 GUI 元件。</p>
+<span id="more"></span>
+
+<h2 id="建立視窗"><a href="#建立視窗" class="headerlink" title="建立視窗"></a>建立視窗</h2><ol>
+<li><p>視窗初始化 <code>Jframe()</code></p>
+</li>
+<li><p>內容面板</p>
+<ul>
+<li><p>JPanel</p>
+<ol>
+<li>元件之容器 <code>JPanel()</code>：集中元件</li>
+<li>視窗設定內容面板 <code>frame.setContentPane(contentPane)</code></li>
+<li>添加元件 <code>panel.add(component)</code></li>
+</ol>
+</li>
+<li><p>設定佈局 <code>frame.setLayout(LayotManager mgr)</code></p>
+<p>類型</p>
+<ul>
+<li>FlowLayout：一行行排</li>
+<li>BorderLayout：分為東西南北中</li>
+<li>CardLayout：每個元件都是卡片</li>
+<li>GridLayout：平均劃分為表格</li>
+<li>GridBagLayout：加上合併儲存格的 GridLayout</li>
+<li>GroupLayout：分層分組元件</li>
+<li>null 不佈局：自己設座標</li>
+</ul>
+<p><strong>💡可不寫 <code>JPanel</code>，會直接調用至 <code>ContentPane</code>，若有寫則改為 <code>panel.setLayout(LayotManager mgr)</code>。</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Java/">Java</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Java/">Java</a><a href="/tags/Swing/">Swing</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

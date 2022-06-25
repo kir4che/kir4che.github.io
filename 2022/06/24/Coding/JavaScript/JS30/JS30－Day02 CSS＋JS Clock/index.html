@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS30] Day02 CSS＋JS Clock | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="功能用 JS、CSS 製作一個實時的時鐘">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript,Challenge">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS30] Day02 CSS＋JS Clock"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS30] Day02 CSS＋JS Clock</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day02 CSS＋JS Clock/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.118Z">
+          2022-06-24
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="https://i.imgur.com/KyBsWFG.jpg" style="zoom:50%;" />
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>用 JS、CSS 製作一個實時的時鐘</p>
+<span id="more"></span>
+
+<h2 id="控制時間"><a href="#控制時間" class="headerlink" title="控制時間"></a>控制時間</h2><ul>
+<li>不斷於間隔固定的時間重複執行 <code>setInterval()</code></li>
+<li>執行一次就結束 <code>setTimeout ()</code></li>
+</ul>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><ul>
+<li>年（yyyy）<code>getFullYear()</code></li>
+<li>月（0-11）<code>getMonth()</code></li>
+<li>日（1-31）<code>getDate()</code></li>
+<li>星期幾（0-6）<code>getDay()</code></li>
+</ul>
+<h3 id="時間"><a href="#時間" class="headerlink" title="時間"></a>時間</h3><ul>
+<li><p>時（0-23）<code>getHours()</code></p>
+</li>
+<li><p>分（0-59）<code>getMinutes()</code></p>
+</li>
+<li><p>秒（0-59）<code>getSeconds()</code></p>
+</li>
+</ul>
+<h2 id="時鐘角度"><a href="#時鐘角度" class="headerlink" title="時鐘角度"></a>時鐘角度</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hourDeg = (hour/<span class="number">12</span>)*<span class="number">360</span> + (min/<span class="number">60</span>)*<span class="number">30</span> + <span class="number">90</span>;</span><br><span class="line"><span class="keyword">var</span> minDeg = (min/<span class="number">60</span>)*<span class="number">360</span> + (sec/<span class="number">60</span>)*<span class="number">6</span> + <span class="number">90</span>;</span><br><span class="line"><span class="keyword">var</span> secDeg = (sec/<span class="number">60</span>)*<span class="number">360</span> + <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setClock</span>(<span class="params"></span>) &#123;</span><br><span class="line">    hourDeg += (<span class="number">360</span>/<span class="number">12</span>)/<span class="number">60</span>/<span class="number">60</span>;</span><br><span class="line">    minDeg += (<span class="number">360</span>/<span class="number">60</span>)/<span class="number">60</span>;</span><br><span class="line">    secDeg += <span class="number">360</span>/<span class="number">60</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>算出比例再＊360°</p>
+</li>
+<li><p>時針、分針再加上其分、秒</p>
+</li>
+<li><p>每秒改變的角度再 +90°</p>
+</li>
+<li><p>時針、分針、秒針隨秒逐漸增加</p>
+<ul>
+<li>秒針 360／60＝6°&#x2F;秒</li>
+<li>分針 360／60＝6°&#x2F;分</li>
+<li>時針 360／12＝30°&#x2F;時</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2022 Molly Su
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

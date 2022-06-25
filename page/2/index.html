@@ -61,248 +61,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/React/React－Props＆State/"><span>[React] Props＆State</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/React/React－CSS in JS/"><span>[React] CSS in JS</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/React/React－Props＆State/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.639Z">
-          2022-06-25
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="屬性-Props"><a href="#屬性-Props" class="headerlink" title="屬性 Props"></a>屬性 Props</h2><p>父組件 → 子組件傳遞之屬性，用來設定組件初始化的相關資料，可讀不可寫。</p>
-<h3 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h3><p>為組件參數作類型限制</p>
-<h3 id="children"><a href="#children" class="headerlink" title="children"></a>children</h3><p>JSX element 的子 element，調用包在標籤中的內容。</p>
-<ul>
-<li><h4 id="React-FC"><a href="#React-FC" class="headerlink" title="React.FC"></a>React.FC</h4><p>已在 FC 定義好 children 型別、函式回傳值</p>
-<p><strong>💡不可使用 <code>setState()</code>，須改用 <code>useState()</code>、<code>useEffect()</code> 等。</strong></p>
-</li>
-<li><h4 id="直接定義"><a href="#直接定義" class="headerlink" title="直接定義"></a>直接定義</h4><ul>
-<li>JSX.Element（不支持 string）</li>
-<li>ReactChild</li>
-<li>ReactNode</li>
-</ul>
-</li>
-</ul>
-<h2 id="狀態-State"><a href="#狀態-State" class="headerlink" title="狀態 State"></a>狀態 State</h2><p>維護組件內的資料，用於會隨時間而變動之事件，為私有屬性。</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>於 constructor 定義初始 state</p>
-<p><strong>💡JS this 取決於當下誰執行 function</strong></p>
-<h3 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h3><p><code>setState(updater, [callback])</code></p>
-<p>改變組件 state，並重新調用 render 以渲染。</p>
-<ul>
-<li>接受 object、function 作為參數</li>
-<li>不會馬上更新，須利用利用上一次結果 ➪ <code>prevState</code></li>
-</ul>
-<p><strong>💡不要寫在 <code>render()</code> ➪ 死迴圈</strong></p>
-<h2 id="生命週期"><a href="#生命週期" class="headerlink" title="生命週期"></a>生命週期</h2><img src="https://i.imgur.com/oJ2lwSa.png" alt="img" style="zoom: 45%;" />
-
-<h3 id="Mounting"><a href="#Mounting" class="headerlink" title="Mounting"></a>Mounting</h3><p>建立組件時被執行</p>
-<p><code>componentDidMount()</code> 於組件被 mounted <strong>後</strong>執行 ➪ 啟動</p>
-<h3 id="Updating"><a href="#Updating" class="headerlink" title="Updating"></a>Updating</h3><p>更新組件時執行</p>
-<p><code>componentDidUpdate()</code> 於 re-rending 更新組件後執行</p>
-<h3 id="Unmounting"><a href="#Unmounting" class="headerlink" title="Unmounting"></a>Unmounting</h3><p>當組件將要從 DOM 刪除時觸發</p>
-<p><code>componentWillUnmount()</code> 於組件被刪除<strong>前</strong>執行 ➪ 清除</p>
-<h2 id="Function-Steps"><a href="#Function-Steps" class="headerlink" title="Function Steps"></a>Function Steps</h2><ol>
-<li><p>定義子組件之 Props type</p>
-</li>
-<li><p>調用 <code>useState</code></p>
-</li>
-<li><p>設定 <strong>setState</strong></p>
-</li>
-<li><p>子組件功能偵測父組件中的 function</p>
-</li>
-<li><p>調用 function 執行 setState 來更新 state</p>
-</li>
-<li><p>觸發渲染機制</p>
-</li>
-<li><p>重新渲染 App 所有組件</p>
-</li>
-</ol>
-<h2 id="Class-Steps"><a href="#Class-Steps" class="headerlink" title="Class Steps"></a>Class Steps</h2><ol>
-<li><p>定義父、子組件之 Props、State type</p>
-</li>
-<li><p>父、子組件 constructor 初始化</p>
-</li>
-<li><p><code>super(props)</code></p>
-</li>
-<li><p><code>this.state</code></p>
-</li>
-<li><p>調用 <code>setState</code></p>
-</li>
-<li><p>記得保證 this 永遠指向 APP，不管是誰執行它。</p>
-<p><code>this.function = this.function.bind(this)</code></p>
-</li>
-</ol>
-<h2 id="Ex-計數器"><a href="#Ex-計數器" class="headerlink" title="Ex.計數器"></a>Ex.計數器</h2><h3 id="Function-Component"><a href="#Function-Component" class="headerlink" title="Function Component"></a>Function Component</h3><ul>
-<li><h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123;useState&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義 props</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">BtnProps</span> = &#123;</span><br><span class="line">  <span class="attr">currentNum</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="attr">addCounter</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子組件</span></span><br><span class="line"><span class="comment">// 改變變數 → 觸發渲染</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Btn</span>: <span class="title class_">React</span>.<span class="property">FC</span>&lt;<span class="title class_">BtnProps</span>&gt; = <span class="function">(<span class="params">&#123;currentNum, addCounter&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// onclick 偵測父組件中的 function</span></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;addCounter&#125;</span>&gt;</span>加 1 <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>目前的總數：&#123;currentNum&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 父組件</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">App</span>: <span class="title class_">React</span>.<span class="property">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 設定 state 以重新渲染（連帶影響子組件）</span></span><br><span class="line">  <span class="keyword">const</span> [num, setNum] = <span class="title function_">useState</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">//加 1</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">setNum</span>(num + <span class="number">1</span>)  <span class="comment">// 更新 state（num）</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(num)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>計數器：&#123;num&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Btn</span> <span class="attr">currentNum</span>=<span class="string">&#123;num&#125;</span> <span class="attr">addCounter</span>=<span class="string">&#123;add&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="流程圖"><a href="#流程圖" class="headerlink" title="流程圖"></a>流程圖</h4><p><img src="https://i.imgur.com/ED5s7qu.jpg" style="zoom: 35%;" />&#96;</p>
-</li>
-</ul>
-<h3 id="Class-Component"><a href="#Class-Component" class="headerlink" title="Class Component"></a>Class Component</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">BtnProps</span> = &#123;</span><br><span class="line">    <span class="attr">addCounter</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">BtnState</span> = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子類別</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Btn</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&lt;<span class="title class_">BtnProps</span>, <span class="title class_">BtnState</span>&gt; &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">props: BtnProps</span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>(props)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">render</span>(): <span class="title class_">React</span>.<span class="property">ReactNode</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.props.addCounter&#125;</span>&gt;</span>加 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AppProps</span> = &#123;&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AppState</span> = &#123;</span><br><span class="line">    <span class="attr">count</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 類別</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&lt;<span class="title class_">AppProps</span>, <span class="title class_">AppState</span>&gt; &#123;</span><br><span class="line">    <span class="comment">// 建構子：對類別做物件參數初始化</span></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">props: AppProps</span>) &#123;</span><br><span class="line">        <span class="comment">// 參照父類別的建構子，也才能使用 this。</span></span><br><span class="line">        <span class="variable language_">super</span>(props)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">            <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 保證 this 永遠指向 APP，不管是誰執行它。</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">add</span> = <span class="variable language_">this</span>.<span class="property">add</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 加 1</span></span><br><span class="line">    <span class="title function_">add</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// this → window（它沒有 setState function）</span></span><br><span class="line">        <span class="comment">// prevState 代表前一個狀態</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setState</span>(<span class="function">(<span class="params">prevState</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// callback function 以 return 更新 state</span></span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">count</span>: prevState.<span class="property">count</span> + <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">render</span>(): <span class="title class_">React</span>.<span class="property">ReactNode</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h1</span>&gt;</span>計數器：&#123;this.state.count&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Btn</span> <span class="attr">addCounter</span>=<span class="string">&#123;this.add&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/React/">React</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/React/">React</a><a href="/tags/Props/">Props</a><a href="/tags/State/">State</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/25/Coding/React/React－Hooks vs Render Props vs HOC/"><span>[React] Hooks vs Render Props vs HOC</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/25/Coding/React/React－Hooks vs Render Props vs HOC/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.633Z">
-          2022-06-25
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <blockquote>
-<p><strong>組件封裝</strong> ➪ 重複使用程式碼</p>
-</blockquote>
-<h2 id="Higher-Order-Component（HOC）高階組件"><a href="#Higher-Order-Component（HOC）高階組件" class="headerlink" title="Higher Order Component（HOC）高階組件"></a>Higher Order Component（HOC）高階組件</h2><p>抽離程式碼間的共用邏輯，把 component 作為參數傳入以重複使用之<strong>函式</strong>。</p>
-<img src="https://i.imgur.com/z9SqgBs.jpg" style="zoom: 32%;" />
-
-<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li>寫法簡潔</li>
-</ul>
-<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li>看不到接收、回傳之結構 ➪ 可讀性差</li>
-<li>不能確定多個 HOC 之順序，且不知 props 從何而來。</li>
-<li>同名 props ➪ 命名衝突（不會發出警告）</li>
-<li>靜態組合 ➪ 不能用於 render、lifeCycle</li>
-</ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AProps</span> = &#123;</span><br><span class="line">  <span class="attr">totalScore</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">BProps</span> = &#123;</span><br><span class="line">  <span class="attr">totalScore</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getCurrentScore</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getScoreByBoardName</span>(<span class="params">boardName:<span class="built_in">String</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (boardName === <span class="string">&#x27;boardA&#x27;</span>) <span class="keyword">return</span> <span class="number">200</span></span><br><span class="line">  <span class="keyword">if</span> (boardName === <span class="string">&#x27;boardB&#x27;</span>) <span class="keyword">return</span> <span class="number">1000</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ScoreBoardA</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&lt;<span class="title class_">AProps</span>&gt; &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>A Total Score: this.props.totalScore&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ScoreBoardB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&lt;<span class="title class_">BProps</span>&gt; &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>B Total Score: &#123;this.props.totalScore&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// HOC</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">withTotalScore</span>(<span class="params">WrappedComponent: React.ComponentType&lt;<span class="built_in">any</span>&gt;, boardName: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">React</span>.<span class="property">Component</span>&lt;&#123;&#125;, &#123; <span class="attr">totalScore</span>: <span class="built_in">number</span> &#125;&gt; &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">props: &#123;&#125;</span>) &#123;</span><br><span class="line">      <span class="variable language_">super</span>(props);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">        <span class="attr">totalScore</span>: <span class="number">0</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">        <span class="attr">totalScore</span>: <span class="title function_">getCurrentScore</span>() + <span class="title function_">getScoreByBoardName</span>(boardName)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">render</span>(): <span class="title class_">React</span>.<span class="property">ReactNode</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> <span class="attr">totalScore</span>=<span class="string">&#123;this.state.totalScore&#125;</span> /&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Main</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title class_">WrappedComponentA</span> = <span class="title function_">withTotalScore</span>(<span class="title class_">ScoreBoardA</span>, <span class="string">&#x27;boardA&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> <span class="title class_">WrappedComponentB</span> = <span class="title function_">withTotalScore</span>(<span class="title class_">ScoreBoardB</span>, <span class="string">&#x27;boardB&#x27;</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">WrappedComponentA</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">WrappedComponentB</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Main</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>可在不用 class 情況下，藉助 Hooks 在純函數位件中使用狀態和其他 React 功能。</p>
-<p><strong>💡不能於條件式、迴圈及一般的 JS 函式中呼叫 Hooks</strong></p>
-<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li>可對 props 重命名</li>
-<li>無限制資料獲取及使用範圍</li>
-<li>在 class 不能用</li>
-</ul>
-<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li>無法實現 Component 之間共享程式碼</li>
-</ul>
-<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getCurrentScore</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getScoreByBoardName</span>(<span class="params">boardName:<span class="built_in">String</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (boardName === <span class="string">&#x27;boardA&#x27;</span>) <span class="keyword">return</span> <span class="number">200</span></span><br><span class="line">  <span class="keyword">if</span> (boardName === <span class="string">&#x27;boardB&#x27;</span>) <span class="keyword">return</span> <span class="number">1000</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ScoreBoardA</span>: <span class="title class_">React</span>.<span class="property">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> score = <span class="title function_">useGetTotalScore</span>(<span class="string">&#x27;boardA&#x27;</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>A Total Score: &#123;score&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ScoreBoardB</span>: <span class="title class_">React</span>.<span class="property">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> score = <span class="title function_">useGetTotalScore</span>(<span class="string">&#x27;boardB&#x27;</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>B Total Score: &#123;score&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自定義 Hook (class HOC)</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">useGetTotalScore</span>(<span class="params">boardName: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [score, setScore] = <span class="title function_">useState</span>(<span class="number">0</span>)</span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> currentScore = <span class="title function_">getCurrentScore</span>() + <span class="title function_">getScoreByBoardName</span>(boardName)</span><br><span class="line">    <span class="title function_">setScore</span>(currentScore)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> score</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Main</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ScoreBoardA</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ScoreBoardB</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Main</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Render-Props"><a href="#Render-Props" class="headerlink" title="Render Props"></a>Render Props</h2><p>用一值為函式的 prop 來在 React Component 之間共享程式碼</p>
-<h3 id="Pros-2"><a href="#Pros-2" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li>可對 props 重命名</li>
-<li>能夠動態決定 render 什麼</li>
-<li>不會產生沒用的空組件 ↔ HOC</li>
-</ul>
-<h3 id="Cons-2"><a href="#Cons-2" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li>程式碼冗長</li>
-<li>難以使用 render 以外之資料 ➪ 巢狀地獄</li>
-</ul>
-<h2 id="原版程式碼"><a href="#原版程式碼" class="headerlink" title="原版程式碼"></a>原版程式碼</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AProps</span> = &#123;</span><br><span class="line">  <span class="attr">totalScore</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AState</span> = &#123;</span><br><span class="line">  <span class="attr">totalScore</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">BProps</span> = &#123;</span><br><span class="line">  <span class="attr">totalScore</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">BState</span> = &#123;</span><br><span class="line">  <span class="attr">totalScore</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getCurrentScore</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getScoreByBoardName</span>(<span class="params">boardName:<span class="built_in">String</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (boardName === <span class="string">&#x27;boardA&#x27;</span>) <span class="keyword">return</span> <span class="number">200</span></span><br><span class="line">  <span class="keyword">if</span> (boardName === <span class="string">&#x27;boardB&#x27;</span>) <span class="keyword">return</span> <span class="number">1000</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ScoreBoardA</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&lt;<span class="title class_">AProps</span>, <span class="title class_">AState</span>&gt; &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props: AProps</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">totalScore</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">totalScore</span>: <span class="title function_">getCurrentScore</span>() + <span class="title function_">getScoreByBoardName</span>(<span class="string">&#x27;boardA&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>A Total Score: &#123;this.state.totalScore&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ScoreBoardB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&lt;<span class="title class_">BProps</span>, <span class="title class_">BState</span>&gt; &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props: BProps</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">totalScore</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">totalScore</span>: <span class="title function_">getCurrentScore</span>() + <span class="title function_">getScoreByBoardName</span>(<span class="string">&#x27;boardB&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>B Total Score: &#123;this.state.totalScore&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Main</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ScoreBoardA</span> <span class="attr">totalScore</span>=<span class="string">&#123;0&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ScoreBoardB</span> <span class="attr">totalScore</span>=<span class="string">&#123;0&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Main</span>;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/React/">React</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/React/">React</a><a href="/tags/Hooks/">Hooks</a><a href="/tags/Render-Props/">Render Props</a><a href="/tags/HOC/">HOC</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/25/Coding/React/React－CSS in JS/"><span>[React] CSS in JS</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/25/Coding/React/React－CSS in JS/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.628Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/React/React－CSS in JS/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.195Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -320,23 +87,9 @@
 <li>支持組件間繼承 ➪ 可維護性 ↗</li>
 <li>能以 Props 控制 CSS</li>
 </ul>
-<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
-<li>提取可重複使用的樣式進行管理</li>
-<li>不用想 className</li>
-<li>避免沒用的 CSS 樣式堆積</li>
-<li>比較好找對應元件</li>
-</ul>
-<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
-<li>生成的 className 是隨機字串 ➪ 除錯不易</li>
-<li>預設無 CSS 語法高亮、提示</li>
-</ul>
-<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><ul>
-<li><code>npm install --save styled-components</code></li>
-<li><code>yarn add styled-components</code></li>
-</ul>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;styled-components&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">BtnType</span> = &#123;</span><br><span class="line">  <span class="attr">colorStatus</span>: <span class="built_in">boolean</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 參數傳遞</span></span><br><span class="line"><span class="comment">// colorStatus = false 則紅色，反之粉色。</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span>&lt;<span class="title class_">BtnType</span>&gt;<span class="string">`</span></span><br><span class="line"><span class="string">  background: transparent;</span></span><br><span class="line"><span class="string">  border-radius: 3px;</span></span><br><span class="line"><span class="string">  border: 2px solid palevioletred;</span></span><br><span class="line"><span class="string">  color: <span class="subst">$&#123;props =&gt; props.colorStatus === <span class="literal">false</span> ? <span class="string">&#x27;red&#x27;</span> : <span class="string">&#x27;palevioletred&#x27;</span>&#125;</span>;</span></span><br><span class="line"><span class="string">  margin: 0 1em;</span></span><br><span class="line"><span class="string">  padding: 0.25em 1em;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">H1</span> = styled.<span class="property">h1</span><span class="string">`</span></span><br><span class="line"><span class="string">  color: blue;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">App</span>: <span class="title class_">React</span>.<span class="property">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 直接透過 JS 進行樣式切換 </span></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">H1</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">H1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Button</span> <span class="attr">colorStatus</span>=<span class="string">&#123;false&#125;</span>&gt;</span>BTN<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
-
-
+        
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/React/React－CSS in JS/"><span>...More</span></a></p>
+        
       
     </div>
 
@@ -375,15 +128,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/Python/Python－爬蟲實戰（Dcard看版）/"><span>[Python] 爬蟲實戰（Dcard看版）</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/Python/Python－爬蟲實戰（Dcard看版）/"><span>[Python] 爬蟲實戰（Dcard看版）</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/Python/Python－爬蟲實戰（Dcard看版）/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.615Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/Python/Python－爬蟲實戰（Dcard看版）/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.183Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -406,10 +159,9 @@
 </ul>
 <p>皆回傳 JSON 格式資料！</p>
 <p>（來源：<a target="_blank" rel="noopener" href="https://blog.jiatool.com/posts/dcard_api_v2/">爬蟲 Dcard API 2.0 版本？！ – IT 空間</a>）</p>
-<h2 id="最新-30-篇文章及其留言"><a href="#最新-30-篇文章及其留言" class="headerlink" title="最新 30 篇文章及其留言"></a>最新 30 篇文章及其留言</h2><p>尚有問題待解決</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 連上網站</span></span><br><span class="line">forums = <span class="string">&quot;sex&quot;</span></span><br><span class="line">url = <span class="string">&quot;https://www.dcard.tw/service/api/v2/forums/&quot;</span> + forums + <span class="string">&quot;/posts&quot;</span></span><br><span class="line">req = requests.get(url, headers= &#123;</span><br><span class="line"><span class="string">&quot;User-Agent&quot;</span>:<span class="string">&quot;X&quot;</span></span><br><span class="line">&#125;)</span><br><span class="line">data = req.json()</span><br></pre></td></tr></table></figure>
-
-
+        
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Python/Python－爬蟲實戰（Dcard看版）/"><span>...More</span></a></p>
+        
       
     </div>
 
@@ -448,15 +200,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/Python/Python－商管程式設計/"><span>[Python] 商管程式設計</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/Python/Python－商管程式設計/"><span>[Python] 商管程式設計</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/Python/Python－商管程式設計/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.610Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/Python/Python－商管程式設計/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.176Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -472,125 +224,9 @@
 <p>本文為臺大孔令傑教授與盧信銘教授的「用 Python 做商管程式設計」學習筆記</p>
 <p>課程網址：<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/pbc1%E3%80%81https://www.coursera.org/learn/pbc2">https://www.coursera.org/learn/pbc1、https://www.coursera.org/learn/pbc2</a></p>
 </blockquote>
-<h2 id="Information-Technology（IT）"><a href="#Information-Technology（IT）" class="headerlink" title="Information Technology（IT）"></a>Information Technology（IT）</h2><h3 id="IT-assisted-management"><a href="#IT-assisted-management" class="headerlink" title="IT-assisted management"></a>IT-assisted management</h3><ul>
-<li>管理資訊系統 MIS<ul>
-<li>商用 IS</li>
-<li>利用 IS 輔助企業經營</li>
-</ul>
-</li>
-<li>辦公室自動化 OAS</li>
-<li>交易處理 TPS</li>
-</ul>
-<h3 id="IT-supported-management"><a href="#IT-supported-management" class="headerlink" title="IT-supported management"></a>IT-supported management</h3><ul>
-<li>電腦不只可以做得快，還能做得更好。</li>
-<li>決策支援 DSS<ul>
-<li>最佳化作業流程</li>
-<li>輔助企業決策</li>
-</ul>
-</li>
-</ul>
-<h3 id="IT-enabled-management"><a href="#IT-enabled-management" class="headerlink" title="IT-enabled management"></a>IT-enabled management</h3><ul>
-<li>高頻交易：從人們無法利用、極為短暫的市場變化中尋求獲利的自動化程序交易。</li>
-<li>新聞交易：分析線上資訊來源，以求在人類交易員之前做出行動。</li>
-<li>推薦系統（精準行銷）：收集行為資料以分析</li>
-</ul>
-<h2 id="Operations-Management（OM）"><a href="#Operations-Management（OM）" class="headerlink" title="Operations Management（OM）"></a>Operations Management（OM）</h2><h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><ul>
-<li>Operations are activities.</li>
-<li>源於 Production Management</li>
-</ul>
-<h3 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h3><ul>
-<li>Facility location</li>
-<li>Production planning and scheduling</li>
-<li>Inventory control</li>
-<li>Logistics and transportation</li>
-</ul>
-<h2 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h2><h3 id="Makespan-minimization-最小化排程"><a href="#Makespan-minimization-最小化排程" class="headerlink" title="Makespan minimization 最小化排程"></a>Makespan minimization 最小化排程</h3><ul>
-<li>Load balancing 負載平衡</li>
-<li>Heuristic algo. 啟發性演算法、經驗法則：利用經驗來搜尋近似最佳解</li>
-</ul>
-<h3 id="Longest-processing-time-first（LPT）"><a href="#Longest-processing-time-first（LPT）" class="headerlink" title="Longest processing time first（LPT）"></a>Longest processing time first（LPT）</h3><ul>
-<li>For makespan minimization<ol>
-<li>降冪排序 jobs 的 processing time</li>
-<li>分配 job 給目前能最早完成時間的機器</li>
-</ol>
-</li>
-<li>也稱作<ul>
-<li>Iterative algo.</li>
-<li>Greedy algo.：採取當前最好、最佳選</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Number of jobs: &quot;</span>))</span><br><span class="line">m = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Number of machines: &quot;</span>))</span><br><span class="line">p = <span class="built_in">input</span>(<span class="string">&quot;Processing times: &quot;</span>).split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    p[i] = <span class="built_in">int</span>(p[i])</span><br><span class="line"></span><br><span class="line">assignment = [<span class="number">0</span>] * n    <span class="comment"># assignment 陣列內有 n 個 0</span></span><br><span class="line">loads = [<span class="number">0</span>] * m    <span class="comment"># loads 陣列內有 m 個 0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    leastLoadedMachine = <span class="number">0</span></span><br><span class="line">    leastLoad = loads[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">        <span class="keyword">if</span> loads[i] &lt; leastLoad:</span><br><span class="line">            leastLoadedMachine = i</span><br><span class="line">            leastLoad = loads[i]</span><br><span class="line">    loads[leastLoadedMachine] += p[j]</span><br><span class="line">    assignment[j] = leastLoadedMachine + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(p[j]) + <span class="string">&quot;: &quot;</span> + <span class="built_in">str</span>(loads))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Job assignment: &quot;</span> + <span class="built_in">str</span>(assignment))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Machine loads: &quot;</span> + <span class="built_in">str</span>(loads))</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Invetory-Control"><a href="#Invetory-Control" class="headerlink" title="Invetory Control"></a>Invetory Control</h2><h3 id="Common-inventory-policies"><a href="#Common-inventory-policies" class="headerlink" title="Common inventory policies"></a>Common inventory policies</h3><ul>
-<li><p>the（Q, R）policy：I &lt; R（&#x3D; reorder point）則訂 Q 個貨 ➪ 最小化存貨</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Q = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Order quantity: &quot;</span>))</span><br><span class="line">R = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Reorder point: &quot;</span>))</span><br><span class="line">I = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Initial inventory: &quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Inventory: &quot;</span> + <span class="built_in">str</span>(I))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:     <span class="comment"># 每天檢查</span></span><br><span class="line">    sales = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Sales in a day: &quot;</span>))</span><br><span class="line">    I = (I - sales) <span class="keyword">if</span> (I - sales &gt;= <span class="number">0</span>) <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> I &lt; R:</span><br><span class="line">        I += Q</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Inventory: &quot;</span> + <span class="built_in">str</span>(I))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>optimizing the（Q, R）policy</p>
-<ul>
-<li>Minimize the sum of inventory, ordering, and shortage cost.</li>
-</ul>
-</li>
-<li><p>optimal R</p>
-<ul>
-<li>the <strong>expected total cost</strong> for the future, need to estimate &#x2F; forecast &#x2F; predict future demands.</li>
-<li>無未來預測 ➪ for the past ? days</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">sales_str = <span class="string">&quot;14,23,26,17,17,12,24,19,10,18,22,31,19,16,22,28,20,27,20,32&quot;</span></span><br><span class="line">sales = sales_str.split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(sales)):</span><br><span class="line">    sales[i] = <span class="built_in">int</span>(sales[i])</span><br><span class="line">stg_cost = <span class="number">2</span></span><br><span class="line">inv_cost = <span class="number">1000</span> * <span class="number">0.073</span> / <span class="number">365</span></span><br><span class="line">Q, I = <span class="number">30</span>, <span class="number">20</span></span><br><span class="line"></span><br><span class="line">best_r, cost_of_best_r = <span class="number">0</span>, <span class="number">100000000</span></span><br><span class="line"><span class="keyword">for</span> R <span class="keyword">in</span> <span class="built_in">range</span>(Q):</span><br><span class="line">    total_cost = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> sales:</span><br><span class="line">    I -= s</span><br><span class="line">    <span class="keyword">if</span> I &lt; <span class="number">0</span>:</span><br><span class="line">        total_cost += -I * stg_cost</span><br><span class="line">        I += Q</span><br><span class="line">    <span class="keyword">elif</span> I &lt; R:</span><br><span class="line">        I += Q</span><br><span class="line">    total_cost += I * inv_cost</span><br><span class="line">    <span class="keyword">if</span> total_cost &lt; cost_of_best_r:</span><br><span class="line">        best_r = R</span><br><span class="line">        cost_of_best_r = total_cost</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(best_r)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>the（s, S）policy：當你的存貨 I &lt; s 則訂 S</p>
-</li>
-</ul>
-<h3 id="Automatic-ordering"><a href="#Automatic-ordering" class="headerlink" title="Automatic ordering"></a>Automatic ordering</h3><ul>
-<li>continuous review system<ul>
-<li>每經過 POS 售出，請檢查存貨。</li>
-<li>達到 reorder point 則訂貨</li>
-</ul>
-</li>
-<li>periodic review system<ul>
-<li><strong>定期</strong>檢查存貨</li>
-<li>達到 reorder point 則訂貨</li>
-</ul>
-</li>
-</ul>
-<h2 id="Logistics-and-transportation"><a href="#Logistics-and-transportation" class="headerlink" title="Logistics and transportation"></a>Logistics and transportation</h2><h3 id="Travsupllyelling-salesperson-problem（TSP）旅行推銷員問題"><a href="#Travsupllyelling-salesperson-problem（TSP）旅行推銷員問題" class="headerlink" title="Travsupllyelling salesperson problem（TSP）旅行推銷員問題"></a>Travsupllyelling salesperson problem（TSP）旅行推銷員問題</h3><ul>
-<li><p>vehicle routing problem 特例</p>
-</li>
-<li><p>greedy algo.</p>
-<blockquote>
-<p>從某點出發，經過每個點恰好一次，且回到原點，找最短距離。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">numLoc = <span class="built_in">int</span>(<span class="built_in">input</span>())	<span class="comment"># 幾個地點</span></span><br><span class="line">dst = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numLoc):</span><br><span class="line">	dst.append(<span class="built_in">input</span>().split())</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(numLoc):</span><br><span class="line">		dst[i][j] = <span class="built_in">int</span>(dst[i][j])</span><br><span class="line"></span><br><span class="line">origin = <span class="number">0</span>		<span class="comment"># 原點</span></span><br><span class="line"></span><br><span class="line">tour = [origin]</span><br><span class="line">tourLen = <span class="number">0</span>		<span class="comment"># 花費距離</span></span><br><span class="line">unvisited = []		<span class="comment"># 目前沒去過的點</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numLoc):</span><br><span class="line">    unvisited.append(i)</span><br><span class="line"></span><br><span class="line">unvisited.remove(origin)	<span class="comment"># 原點到過</span></span><br><span class="line"></span><br><span class="line">cur = origin	<span class="comment"># 目前在哪</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numLoc - <span class="number">1</span>):</span><br><span class="line">    <span class="built_in">next</span> = -<span class="number">1</span>	<span class="comment"># 下個要去的點</span></span><br><span class="line">    minDst = <span class="number">999</span>	<span class="comment"># 假設很大的數</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> unvisited:</span><br><span class="line">        <span class="keyword">if</span> dst[cur][j] &lt; minDst:</span><br><span class="line">            <span class="built_in">next</span> = j</span><br><span class="line">            minDst = dst[cur][j]</span><br><span class="line"></span><br><span class="line">    tour.append(<span class="built_in">next</span>)</span><br><span class="line">    cur = <span class="built_in">next</span></span><br><span class="line">    unvisited.remove(<span class="built_in">next</span>)</span><br><span class="line">    tourLen += minDst</span><br><span class="line">    <span class="built_in">print</span>(tour, tourLen)</span><br><span class="line"></span><br><span class="line">tour.append(origin)</span><br><span class="line">tourLen += dst[cur][origin]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tour, tourLen)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="練習題"><a href="#練習題" class="headerlink" title="練習題"></a>練習題</h2><h3 id="報童問題"><a href="#報童問題" class="headerlink" title="報童問題"></a>報童問題</h3><blockquote>
-<p>每份報紙的進貨價格是 c 元，賣給客人的零售價是 r 元，而單日需求量 D 為隨機，估計 D 會落在 0 ～ N，且符合如下的機率分佈：$Pr(D&#x3D;i) &#x3D; p_i，i &#x3D; 0, 1,……, N$</p>
-<p>並算出最佳訂貨量 q、期望利潤 $\pi(q) &#x3D; rE[\ min${ q, D }$\ ] − cq$</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="built_in">int</span>(<span class="built_in">input</span>())  <span class="comment"># 單價成本</span></span><br><span class="line">r = <span class="built_in">int</span>(<span class="built_in">input</span>())  <span class="comment"># 單位售價</span></span><br><span class="line">N = <span class="built_in">int</span>(<span class="built_in">input</span>())  <span class="comment"># 購買量</span></span><br><span class="line"></span><br><span class="line">pr = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N + <span class="number">1</span>):</span><br><span class="line">    pr.append(<span class="built_in">float</span>(<span class="built_in">input</span>()))</span><br><span class="line"></span><br><span class="line">lst = []</span><br><span class="line">pMax = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, N + <span class="number">1</span>):</span><br><span class="line">  exp = d = p = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> j != i:</span><br><span class="line">        p = (r * j - c * i) * pr[j]</span><br><span class="line">        d += pr[j]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      p = (r * i - c * i) * (<span class="number">1</span> - d)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> exp &gt; pMax:</span><br><span class="line">      pMax = exp</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(pMax))</span><br></pre></td></tr></table></figure>
-<p>訂貨量 q 為負數不算，上面的沒篩。</p>
-<h3 id="報童問題（進階版）"><a href="#報童問題（進階版）" class="headerlink" title="報童問題（進階版）"></a>報童問題（進階版）</h3><blockquote>
-<p>多了 s 單位殘值</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">r = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">N = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">s = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">pr = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N + <span class="number">1</span>):</span><br><span class="line">    pr.append(<span class="built_in">float</span>(<span class="built_in">input</span>()))</span><br><span class="line"></span><br><span class="line">lst = []</span><br><span class="line">pMax = qBest = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, N + <span class="number">1</span>):</span><br><span class="line">  exp = d = p = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> j != i:</span><br><span class="line">      p = (r * j - c * i + s * (i - j)) * pr[j]</span><br><span class="line">      d += pr[j]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      p = (r * j - c * i + s * (i - j)) * (<span class="number">1</span> - d)</span><br><span class="line"></span><br><span class="line">    exp += p</span><br><span class="line">    <span class="keyword">if</span> exp &gt; pMax:</span><br><span class="line">      pMax = exp</span><br><span class="line">      qBest = i</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(qBest, <span class="built_in">int</span>(pMax))</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="基地臺位址選擇"><a href="#基地臺位址選擇" class="headerlink" title="基地臺位址選擇"></a>基地臺位址選擇</h3><blockquote>
-<p>城鎮數 n、基地數 p、半徑 d</p>
-<p>$d &#x3D; \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$。</p>
-<ol>
-<li><p>蓋在這裡可以覆蓋<strong>最多</strong>還沒被覆蓋的人</p>
-</li>
-<li><p>蓋在這裡可以覆蓋多少還沒被覆蓋的人</p>
-</li>
-</ol>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">data = <span class="built_in">input</span>().split()</span><br><span class="line">n = <span class="built_in">int</span>(data[<span class="number">0</span>])    <span class="comment"># 幾個城鎮</span></span><br><span class="line">p = <span class="built_in">int</span>(data[<span class="number">1</span>])    <span class="comment"># 幾個基地台</span></span><br><span class="line">d = <span class="built_in">int</span>(data[<span class="number">2</span>])    <span class="comment"># 覆蓋半徑</span></span><br><span class="line"></span><br><span class="line">town = []</span><br><span class="line">townlst = []    <span class="comment"># 尚未建造</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    town.append(<span class="built_in">input</span>().split())</span><br><span class="line">    townlst.append(i)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):  <span class="comment"># x、y、人口</span></span><br><span class="line">        town[i][j] = <span class="built_in">int</span>(town[i][j])</span><br><span class="line"></span><br><span class="line">build = []    <span class="comment"># 已建造</span></span><br><span class="line">cover = []    <span class="comment"># 涵蓋城鎮</span></span><br><span class="line">maxPop = -<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    pop = town[i][<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> i != j:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[i][<span class="number">0</span>] - town[j][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[i][<span class="number">1</span>] - town[j][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">                pop += town[j][<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">if</span> pop &gt; maxPop:</span><br><span class="line">        maxPop = pop</span><br><span class="line">        firstBuild = i</span><br><span class="line"></span><br><span class="line">coverPop = maxPop    <span class="comment"># 第一個城鎮涵蓋的人口</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coverPop)</span><br><span class="line"></span><br><span class="line">build.append(firstBuild)</span><br><span class="line">cover.append(firstBuild)</span><br><span class="line">townlst.remove(firstBuild)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一次蓋完後涵蓋的城鎮</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> townlst:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[firstBuild][<span class="number">0</span>] - town[i][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[firstBuild][<span class="number">1</span>] - town[i][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">        cover.append(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接著蓋</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(p - <span class="number">1</span>):</span><br><span class="line">    pop = <span class="number">0</span></span><br><span class="line">    maxPop = -<span class="number">1</span></span><br><span class="line">    nextBuild = -<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> townlst:    <span class="comment"># 在尚未蓋的城鎮中</span></span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> cover:    <span class="comment"># 不在目前涵蓋城鎮內</span></span><br><span class="line">            pop = town[i][<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pop = <span class="number">0</span>    <span class="comment"># 涵蓋過的不算，人口算0。</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> i != j:</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[i][<span class="number">0</span>] - town[j][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[i][<span class="number">1</span>] - town[j][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">                    <span class="keyword">if</span> j <span class="keyword">not</span> <span class="keyword">in</span> cover:</span><br><span class="line">                        pop += town[j][<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">if</span> pop &gt; maxPop:</span><br><span class="line">            maxPop = pop</span><br><span class="line">            nextBuild = i  <span class="comment"># 目前人口最多的城鎮</span></span><br><span class="line"></span><br><span class="line">    build.append(nextBuild)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 蓋完後涵蓋的城鎮、人口</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> townlst:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">pow</span>(<span class="built_in">pow</span>((town[i][<span class="number">0</span>] - town[nextBuild][<span class="number">0</span>]), <span class="number">2</span>) + <span class="built_in">pow</span>((town[i][<span class="number">1</span>] - town[nextBuild][<span class="number">1</span>]), <span class="number">2</span>), <span class="number">0.5</span>) &lt;= d:</span><br><span class="line">            coverPop += town[i][<span class="number">2</span>]</span><br><span class="line">            cover.append(i)</span><br><span class="line"></span><br><span class="line">    townlst.remove(nextBuild)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(p):</span><br><span class="line">    <span class="built_in">print</span>(build[i] + <span class="number">1</span>, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(coverPop)</span><br></pre></td></tr></table></figure>
-
+        
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Python/Python－商管程式設計/"><span>...More</span></a></p>
+        
       
     </div>
 
@@ -629,15 +265,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/MySQL/MySQL－練習題/"><span>[MySQL] 練習題</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/MySQL/MySQL－練習題/"><span>[MySQL] 練習題</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/MySQL/MySQL－練習題/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.598Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/MySQL/MySQL－練習題/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.164Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -652,84 +288,9 @@
         <h3 id="01-課程成績＞02-課程成績的學生"><a href="#01-課程成績＞02-課程成績的學生" class="headerlink" title="01 課程成績＞02 課程成績的學生"></a>01 課程成績＞02 課程成績的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, s1.score AS 國文, s2.score AS 數學 FROM student</span><br><span class="line">JOIN sc s1 ON student.Sid = s1.Sid AND s1.Cid = &#x27;01&#x27;</span><br><span class="line">JOIN sc s2 ON student.Sid = s2.Sid AND s2.cid = &#x27;02&#x27;</span><br><span class="line">WHERE s1.score &gt; s2.score</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.imgur.com/2qTPahq.png"></p>
-<h3 id="存在-01-課程成績但可能缺少-02-課程成績的學號"><a href="#存在-01-課程成績但可能缺少-02-課程成績的學號" class="headerlink" title="存在 01 課程成績但可能缺少 02 課程成績的學號"></a>存在 01 課程成績但可能缺少 02 課程成績的學號</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT s1.SId AS 學號, s1.score AS 國文, s2.score AS 數學 FROM (SELECT * FROM sc WHERE sc.CId = &#x27;01&#x27;) AS s1</span><br><span class="line">LEFT JOIN (SELECT * FROM sc WHERE sc.CId = &#x27;02&#x27;) AS s2 ON s1.SId = s2.SId</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/eMWcP4w.png"></p>
-<h3 id="存在-01-課程成績但缺少-02-課程成績的學號"><a href="#存在-01-課程成績但缺少-02-課程成績的學號" class="headerlink" title="存在 01 課程成績但缺少 02 課程成績的學號"></a>存在 01 課程成績但缺少 02 課程成績的學號</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.SId AS 學號, sc.score AS 國文 FROM sc</span><br><span class="line">WHERE sc.SId NOT IN (</span><br><span class="line">    SELECT SId FROM sc </span><br><span class="line">    WHERE sc.CId = &#x27;02&#x27;</span><br><span class="line">) AND sc.CId= &#x27;01&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>也可以在上一題後方加 <code>WHERE s2.score IS NULL</code></p>
-<p><img src="https://i.imgur.com/FKcYsUv.png"></p>
-<h3 id="平均成績-≥-60-的學生資料"><a href="#平均成績-≥-60-的學生資料" class="headerlink" title="平均成績 ≥ 60 的學生資料"></a>平均成績 ≥ 60 的學生資料</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, r.avgsc AS 平時成績 FROM Student</span><br><span class="line">RIGHT JOIN(</span><br><span class="line">  SELECT SId, ROUND(AVG(score), 1) AS avgsc FROM sc</span><br><span class="line">  GROUP BY SId</span><br><span class="line">  HAVING AVG(score) &gt;= 60</span><br><span class="line">) r ON student.SId = r.SId;</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\k5528\AppData\Roaming\Typora\typora-user-images\image-20220519131835778.png" alt="image-20220519131835778"></p>
-<h3 id="所有學生的選課數、課程之總成績"><a href="#所有學生的選課數、課程之總成績" class="headerlink" title="所有學生的選課數、課程之總成績"></a>所有學生的選課數、課程之總成績</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.Sid AS 學號, student.Sname AS 姓名, r.課數, r.總成績</span><br><span class="line">FROM student, (SELECT sc.SId, COUNT(sc.CId) AS 課數, SUM(sc.score) AS 總成績 FROM sc GROUP BY sc.SId) r</span><br><span class="line">WHERE student.SId = r.SId;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/K5toVJ0.png"></p>
-<h3 id="姓黃的學生"><a href="#姓黃的學生" class="headerlink" title="姓黃的學生"></a>姓黃的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE Sname LIKE &#x27;黃%&#x27;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/6OKWDpX.png"></p>
-<h3 id="選修「周欣潔」老師課程的學生"><a href="#選修「周欣潔」老師課程的學生" class="headerlink" title="選修「周欣潔」老師課程的學生"></a>選修「周欣潔」老師課程的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select student.* FROM student, teacher, course,sc</span><br><span class="line">WHERE student.SId = sc.SId AND course.CId = sc.CId AND course.TId = teacher.TId AND Tname = &#x27;周欣潔&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/GXOR3S6.png"></p>
-<h3 id="沒有選修「簡佳蓉」老師課程的學生"><a href="#沒有選修「簡佳蓉」老師課程的學生" class="headerlink" title="沒有選修「簡佳蓉」老師課程的學生"></a>沒有選修「簡佳蓉」老師課程的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student</span><br><span class="line">WHERE student.SId NOT IN (</span><br><span class="line">    SELECT sc.SId FROM sc, course, teacher </span><br><span class="line">    WHERE sc.CId = course.CId AND course.TId = teacher.TId AND teacher.Tname= &quot;簡佳蓉&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/bNyLegq.png"></p>
-<h3 id="沒有選修全部課程的學生"><a href="#沒有選修全部課程的學生" class="headerlink" title="沒有選修全部課程的學生"></a>沒有選修全部課程的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student</span><br><span class="line">where student.SId NOT IN (</span><br><span class="line">  SELECT sc.SId FROM sc</span><br><span class="line">  GROUP BY sc.SId</span><br><span class="line">  HAVING count(sc.CId) &lt; 3</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/1TUp36n.png"></p>
-<h3 id="任何一門課程成績＜50-的學生"><a href="#任何一門課程成績＜50-的學生" class="headerlink" title="任何一門課程成績＜50 的學生"></a>任何一門課程成績＜50 的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.Sname AS 姓名, course.Cname AS 課程, sc.score AS 分數 FROM student,course,sc</span><br><span class="line">WHERE sc.score &lt; 50 AND student.SId = sc.SId AND sc.CId = course.CId</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/wSNwFBV.png"></p>
-<h3 id="含-2-門以上課程不及格的學生"><a href="#含-2-門以上課程不及格的學生" class="headerlink" title="含 2 門以上課程不及格的學生"></a>含 2 門以上課程不及格的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, r.平均成績 FROM student</span><br><span class="line">RIGHT JOIN (SELECT SId, ROUND(AVG(score), 1) AS 平均成績 FROM sc</span><br><span class="line">	WHERE SId IN (</span><br><span class="line">		SELECT SId FROM sc </span><br><span class="line">		WHERE score &lt; 60 </span><br><span class="line">		GROUP BY SId </span><br><span class="line">		HAVING COUNT(score) &gt; 1)</span><br><span class="line">GROUP BY sid) r ON student.SId = r.SId</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/YUDoWYG.png"></p>
-<h3 id="01-課程分數＜60-的學生（按分數降序排列）"><a href="#01-課程分數＜60-的學生（按分數降序排列）" class="headerlink" title="01 課程分數＜60 的學生（按分數降序排列）"></a>01 課程分數＜60 的學生（按分數降序排列）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, sc.score AS 國文 FROM student, sc</span><br><span class="line">WHERE student.SId = sc.SId AND sc.score &lt; 60 AND CId = &quot;01&quot;</span><br><span class="line">ORDER BY sc.score DESC</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/NfphIfL.png"></p>
-<h3 id="數學課分數＞90-的學生"><a href="#數學課分數＞90-的學生" class="headerlink" title="數學課分數＞90 的學生"></a>數學課分數＞90 的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.Sname AS 姓名, sc.score AS 分數 from student, sc, course</span><br><span class="line">WHERE student.SId = sc.SId AND course.CId = sc.CId AND course.Cname = &quot;數學&quot; AND sc.score &gt; 90;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/qallOTi.png"></p>
-<h3 id="各課選修人數"><a href="#各課選修人數" class="headerlink" title="各課選修人數"></a>各課選修人數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課號, COUNT(SId) AS 人數 FROM sc</span><br><span class="line">GROUP by CId HAVING 人數 &gt; 5</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/oTtT3di.png"></p>
-<p>至少選修兩門課程的學生</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT SId AS 學號, COUNT(CId) AS 選修課數 FROM sc</span><br><span class="line">GROUP BY 學號 HAVING 選修課數 &gt;= 2</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/FMkZz1U.png"></p>
-<h3 id="各課成績最高分、最低分、平均分與分數比率"><a href="#各課成績最高分、最低分、平均分與分數比率" class="headerlink" title="各課成績最高分、最低分、平均分與分數比率"></a>各課成績最高分、最低分、平均分與分數比率</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課程, MAX(sc.score) AS 最高分, MIN(sc.score) AS 最低分, AVG(sc.score) AS 平均分, COUNT(*) AS 修課人數,</span><br><span class="line">SUM(CASE WHEN sc.score &gt;= 60 THEN 1 ELSE 0 END ) / COUNT(*) AS 及格率,</span><br><span class="line">SUM(CASE WHEN sc.score &gt;= 75 AND sc.score &lt; 90 THEN 1 ELSE 0 END )/ COUNT(*) AS 中等率,</span><br><span class="line">SUM(CASE WHEN sc.score &gt;= 90 THEN 1 ELSE 0 END ) / COUNT(*) AS 優秀率 </span><br><span class="line">FROM sc</span><br><span class="line">GROUP BY sc.CId</span><br><span class="line">ORDER BY count(*) DESC, sc.CId ASC</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/aebrHer.png"></p>
-<h3 id="02-課程成績排名（分數重複時保留名次空缺）"><a href="#02-課程成績排名（分數重複時保留名次空缺）" class="headerlink" title="02 課程成績排名（分數重複時保留名次空缺）"></a>02 課程成績排名（分數重複時保留名次空缺）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.SId AS 學號, a.score AS 分數, count(b.score) + 1 AS 排名 FROM sc AS a</span><br><span class="line">LEFT JOIN sc AS b ON a.score &lt; b.score AND a.CId = b.CId</span><br><span class="line">WHERE a.CId = &#x27;02&#x27;</span><br><span class="line">GROUP BY a.CId, a.SId, a.score</span><br><span class="line">ORDER BY a.CId, 排名 ASC</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/mxPqojj.png"></p>
-<h3 id="各課成績之分段人數"><a href="#各課成績之分段人數" class="headerlink" title="各課成績之分段人數"></a>各課成績之分段人數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT course.CId AS 課號, course.Cname AS 課程,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 60 AND sc.score &gt; 0 THEN 1 ELSE 0 END) AS &#x27;＜60&#x27;,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 70 AND sc.score &gt; 60 THEN 1 ELSE 0 END) AS &#x27;70-60&#x27;,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 85 AND sc.score &gt; 70 THEN 1 ELSE 0 END) AS &#x27;85-70&#x27;,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 100 AND sc.score &gt; 85 THEN 1 ELSE 0 END) AS &#x27;＞85&#x27;</span><br><span class="line">FROM sc LEFT JOIN course</span><br><span class="line">ON sc.CId = course.CId</span><br><span class="line">GROUP BY sc.CId;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/sVhpm78.png"></p>
-<h3 id="各課成績前三名"><a href="#各課成績前三名" class="headerlink" title="各課成績前三名"></a>各課成績前三名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課程, sc.SId AS 學號, sc.score AS 分數 FROM sc WHERE ( SELECT COUNT(*) FROM sc AS a WHERE sc.CId = a.CId AND sc.score &lt; a.score ) &lt; 3</span><br><span class="line">ORDER BY CId ASC, sc.score DESC</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/KLgi9Dm.png"></p>
-<h3 id="選修「鄭家榮」老師課程中成績最高的學生"><a href="#選修「鄭家榮」老師課程中成績最高的學生" class="headerlink" title="選修「鄭家榮」老師課程中成績最高的學生"></a>選修「鄭家榮」老師課程中成績最高的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.*, sc.score, sc.CId FROM student, teacher, course, sc </span><br><span class="line">WHERE teacher.TId = course.TId AND sc.SId = student.SId AND sc.CId = course.CId AND teacher.Tname = &#x27;鄭家榮&#x27;</span><br><span class="line">ORDER BY score DESC LIMIT 1</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/EeHovrL.png"></p>
-<h3 id="各課的平均成績（按平均成績降序排列，相同時按課號升序排列）"><a href="#各課的平均成績（按平均成績降序排列，相同時按課號升序排列）" class="headerlink" title="各課的平均成績（按平均成績降序排列，相同時按課號升序排列）"></a>各課的平均成績（按平均成績降序排列，相同時按課號升序排列）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課號, course.Cname AS 課程, ROUND(AVG(sc.score), 1) AS 平均成績 FROM sc, course</span><br><span class="line">WHERE sc.CId = course.CId</span><br><span class="line">GROUP BY sc.CId </span><br><span class="line">ORDER BY 平均成績 DESC, 課號 ASC</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/bdqZGvf.png"></p>
-<h3 id="男女人數"><a href="#男女人數" class="headerlink" title="男女人數"></a>男女人數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT Ssex AS 性別, COUNT(*) AS 人數 FROM student GROUP BY Ssex</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/2SZ0bc9.png"></p>
-<h3 id="2000-年出生的學生"><a href="#2000-年出生的學生" class="headerlink" title="2000 年出生的學生"></a>2000 年出生的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE YEAR(student.Sage) = 2000</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/9QFbD4g.png"></p>
-<h3 id="學生的年齡（以出生年份計算）"><a href="#學生的年齡（以出生年份計算）" class="headerlink" title="學生的年齡（以出生年份計算）"></a>學生的年齡（以出生年份計算）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號,student.Sname AS 姓名, TIMESTAMPDIFF(YEAR, student.Sage, CURDATE()) AS 年齡 FROM student</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/y6KSvbv.png"></p>
-<h3 id="本週過生日的學生"><a href="#本週過生日的學生" class="headerlink" title="本週過生日的學生"></a>本週過生日的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE WEEKOFYEAR(student.Sage) = WEEKOFYEAR(CURDATE())</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/oA7NPdA.png"></p>
-<h3 id="下個月過生日的學生"><a href="#下個月過生日的學生" class="headerlink" title="下個月過生日的學生"></a>下個月過生日的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE MONTH(student.Sage) = MONTH(CURDATE())+1</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/eqOnkXu.png"></p>
-
+        
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/MySQL/MySQL－練習題/"><span>...More</span></a></p>
+        
       
     </div>
 
@@ -768,15 +329,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/Leetcode/LeetCode－561. Array Partition I/"><span>[Leetcode] 561. Array Partition I</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/Leetcode/LeetCode－561. Array Partition I/"><span>[Leetcode] 561. Array Partition I</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/Leetcode/LeetCode－561. Array Partition I/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.587Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/Leetcode/LeetCode－561. Array Partition I/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.152Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -791,13 +352,8 @@
         <h1 id="561-Array-Partition-I"><a href="#561-Array-Partition-I" class="headerlink" title="561. Array Partition I"></a>561. Array Partition I</h1><blockquote>
 <p>Given an integer array of integers, group these integers into pairs such that the sum of for all is <strong>maximized</strong>. Return <em>the maximized sum</em>.</p>
 </blockquote>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><blockquote>
-<p>Input: nums &#x3D; [6,2,6,5,1,2]</p>
-<p>Output: 9</p>
-<p>Explanation: min(2, 1) + min(2, 5) + min(6, 6) &#x3D; 1 + 2 + 6 &#x3D; 9</p>
-</blockquote>
         
-          <p><a class="excerpt-btn" href="/2022/06/25/Coding/Leetcode/LeetCode－561. Array Partition I/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Leetcode/LeetCode－561. Array Partition I/"><span>...More</span></a></p>
         
       
     </div>
@@ -837,15 +393,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/Leetcode/LeetCode－217. Contains Duplicate/"><span>[LeetCode] 217. Contains Duplicate</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/Leetcode/LeetCode－217. Contains Duplicate/"><span>[LeetCode] 217. Contains Duplicate</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/Leetcode/LeetCode－217. Contains Duplicate/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.582Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/Leetcode/LeetCode－217. Contains Duplicate/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.145Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -860,14 +416,8 @@
         <h1 id="217-Contains-Duplicate"><a href="#217-Contains-Duplicate" class="headerlink" title="217. Contains Duplicate"></a>217. Contains Duplicate</h1><blockquote>
 <p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
 </blockquote>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]</p>
-<p>Output: true</p>
-<p>Input: nums &#x3D; [1,2,3,4]</p>
-<p>Output: false</p>
-</blockquote>
         
-          <p><a class="excerpt-btn" href="/2022/06/25/Coding/Leetcode/LeetCode－217. Contains Duplicate/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Leetcode/LeetCode－217. Contains Duplicate/"><span>...More</span></a></p>
         
       
     </div>
@@ -907,15 +457,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>[LeetCode] 561. Array Partition I</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>[LeetCode] 561. Array Partition I</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.577Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.136Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -931,12 +481,8 @@
 <p>A <strong>matrix diagonal</strong> is a diagonal line of cells starting from some cell in either the topmost row or leftmost column and going in the bottom-right direction until reaching the matrix’s end. For example, the <strong>matrix diagonal</strong> starting from <code>mat[2][0]</code>, where <code>mat</code> is a <code>6 x 3</code> matrix, includes cells <code>mat[2][0]</code>, <code>mat[3][1]</code>, and <code>mat[4][2]</code>.</p>
 <p>Given an <code>m x n</code> matrix <code>mat</code> of integers, sort each <strong>matrix diagonal</strong> in ascending order and return <em>the resulting matrix</em>.</p>
 </blockquote>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><blockquote>
-<p>Input: mat &#x3D; [[3,3,1,1],[2,2,1,2],[1,1,1,2]]</p>
-<p>Output: [[1,1,1,1],[1,2,2,2],[1,2,3,3]]</p>
-</blockquote>
         
-          <p><a class="excerpt-btn" href="/2022/06/25/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>...More</span></a></p>
         
       
     </div>
@@ -976,15 +522,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/25/Coding/JavaScript/JS30/JS30－Day03 CSS Variables/"><span>[JS30] Day03 CSS Variables</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day03 CSS Variables/"><span>[JS30] Day03 CSS Variables</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/25/Coding/JavaScript/JS30/JS30－Day03 CSS Variables/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-25T03:46:07.564Z">
-          2022-06-25
+      <a href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day03 CSS Variables/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.125Z">
+          2022-06-24
         </time>
       </a>
     </span>
@@ -999,21 +545,139 @@
         <img src="https://i.imgur.com/nJDQYVv.jpg" style="zoom: 50%;" />
 
 <h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>用 JS、CSS 製作可以調整照片內距、模糊及邊框色彩的濾鏡</p>
-<h2 id="root"><a href="#root" class="headerlink" title=":root"></a>:root</h2><p>用於全域變數，等同於 html 選擇器。</p>
-<ul>
-<li>宣告 <code>--varName: varValue;</code> </li>
-<li>使用 <code>屬性：var(--varName, [defaultValue]);</code></li>
-</ul>
-<h2 id="updateProperty"><a href="#updateProperty" class="headerlink" title="updateProperty"></a>updateProperty</h2><h3 id="this-dataset-XXX-‘’"><a href="#this-dataset-XXX-‘’" class="headerlink" title="this.dataset.XXX || ‘’"></a>this.dataset.XXX || ‘’</h3><p>取得自定義屬性 data-*，若沒有就給空值。</p>
-<h3 id="document-documentElement-style-setProperty"><a href="#document-documentElement-style-setProperty" class="headerlink" title="document.documentElement.style.setProperty()"></a>document.documentElement.style.setProperty()</h3><p>動態改變 CSS 變數值</p>
-<ul>
-<li>讀取網頁中的根元素 <code>document.documentElement</code></li>
-<li>設定 CSS 屬性 <code>style.setProperty（＝style.cssPropertyName）</code></li>
-</ul>
-<h2 id="element-addEventListener"><a href="#element-addEventListener" class="headerlink" title="element.addEventListener"></a>element.addEventListener</h2><p>change在滑動時不會呼叫方法，放開滑鼠後才會執行、要持續的話必須要加上 <code>mousemove</code></p>
-<h2 id="DOM-Event-觸發事件"><a href="#DOM-Event-觸發事件" class="headerlink" title="DOM Event 觸發事件"></a>DOM Event 觸發事件</h2><h3 id="change"><a href="#change" class="headerlink" title="change"></a>change</h3><p>滑鼠移動時不會呼叫方法，放開後才執行。</p>
-<h3 id="mousemove"><a href="#mousemove" class="headerlink" title="mousemove"></a>mousemove</h3><p>滑鼠移動時觸發</p>
+        
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day03 CSS Variables/"><span>...More</span></a></p>
+        
+      
+    </div>
 
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day02 CSS＋JS Clock/"><span>[JS30] Day02 CSS＋JS Clock</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day02 CSS＋JS Clock/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.118Z">
+          2022-06-24
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="https://i.imgur.com/KyBsWFG.jpg" style="zoom:50%;" />
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>用 JS、CSS 製作一個實時的時鐘</p>
+        
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day02 CSS＋JS Clock/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day01 JS Drum Kit/"><span>[JS30] Day01 JS Drum Kit</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day01 JS Drum Kit/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-24T11:14:14.108Z">
+          2022-06-24
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="https://i.imgur.com/qdMubSb.jpg" style="zoom:50%;" />
+
+
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>以 JS 使鍵盤按下後播放出對應按鍵的音效 </p>
+        
+          <p><a class="excerpt-btn" href="/2022/06/24/Coding/JavaScript/JS30/JS30－Day01 JS Drum Kit/"><span>...More</span></a></p>
+        
       
     </div>
 
