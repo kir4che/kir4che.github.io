@@ -61,95 +61,6 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/03/04/JavaScript/JS－作用域 Scope/"><span>[JS] 作用域 Scope</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/03/04/JavaScript/JS－作用域 Scope/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
-          2022-03-04
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>規範哪些變數在哪些程式碼中可以取用的規則</p>
-<h2 id="作用範圍"><a href="#作用範圍" class="headerlink" title="作用範圍"></a>作用範圍</h2><h3 id="全域作用域-Global-Scope"><a href="#全域作用域-Global-Scope" class="headerlink" title="全域作用域 Global Scope"></a>全域作用域 Global Scope</h3><p><strong>函式外</strong>宣告</p>
-<ul>
-<li>瀏覽器頁面開啟時，自動生成一全域性作用域 window</li>
-<li>會一直存在到頁面關閉為止</li>
-</ul>
-<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ul>
-<li><p>允許重複宣告</p>
-</li>
-<li><p>不支援 Block Scope</p>
-</li>
-<li><p>不支援常數</p>
-</li>
-</ul>
-<h4 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h4><ul>
-<li><p>命名空間汙染、混亂</p>
-</li>
-<li><p>易被存取，可能被修改而導致臭蟲。</p>
-</li>
-<li><p>性能差，須一直追蹤。</p>
-</li>
-</ul>
-<h3 id="區域作用域-Local-Scope"><a href="#區域作用域-Local-Scope" class="headerlink" title="區域作用域 Local Scope"></a>區域作用域 Local Scope</h3><ul>
-<li><h4 id="函式作用域-Function-Scope"><a href="#函式作用域-Function-Scope" class="headerlink" title="函式作用域 Function Scope"></a>函式作用域 Function Scope</h4><p>函式 {} 內宣告</p>
-</li>
-<li><h4 id="區塊作用域-Block-Scope（ES6）"><a href="#區塊作用域-Block-Scope（ES6）" class="headerlink" title="區塊作用域 Block Scope（ES6）"></a>區塊作用域 Block Scope（ES6）</h4><p>於函式中的 { } 內宣告 ➪ 防止不當存取</p>
-</li>
-</ul>
-        
-          <p><a class="excerpt-btn" href="/2022/03/04/JavaScript/JS－作用域 Scope/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
     <h3 class="article-title"><a href="/2022/03/04/JavaScript/JS－正則表達式 Regex/"><span>[JS] 正則表達式 Regex</span></a></h3>
     
   
@@ -419,6 +330,74 @@
 
   
     
+    <h3 class="article-title"><a href="/2022/03/02/JavaScript/JS－變數與宣告/"><span>[JS] 變數與宣告</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/02/JavaScript/JS－變數與宣告/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-01T16:00:00.000Z">
+          2022-03-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="變數-Variables"><a href="#變數-Variables" class="headerlink" title="變數 Variables"></a>變數 Variables</h2><p>變數是對值的引用，名稱被稱為識別符 identifier（具有唯一性）需要遵從一定規則。</p>
+<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><ul>
+<li>開頭可用 ASCII（英文大小寫）或下底線（_）、錢符號（$），不可用數字。</li>
+<li>其他則可用英文、數字或下底線（_）</li>
+<li>大小寫有差異</li>
+<li>不可用 JS 保留字</li>
+</ul>
+        
+          <p><a class="excerpt-btn" href="/2022/03/02/JavaScript/JS－變數與宣告/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2022/03/02/JavaScript/JS－資料型別/"><span>[JS] 資料型別</span></a></h3>
     
   
@@ -536,15 +515,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/03/02/JavaScript/JS－變數與宣告/"><span>[JS] 變數與宣告</span></a></h3>
+    <h3 class="article-title"><a href="/2022/03/01/JavaScript/JS－JavaScript 是什麼？/"><span>[JS] JavaScript 是什麼？</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/03/02/JavaScript/JS－變數與宣告/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-03-01T16:00:00.000Z">
-          2022-03-02
+      <a href="/2022/03/01/JavaScript/JS－JavaScript 是什麼？/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-28T16:00:00.000Z">
+          2022-03-01
         </time>
       </a>
     </span>
@@ -556,15 +535,16 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="變數-Variables"><a href="#變數-Variables" class="headerlink" title="變數 Variables"></a>變數 Variables</h2><p>變數是對值的引用，名稱被稱為識別符 identifier（具有唯一性）需要遵從一定規則。</p>
-<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><ul>
-<li>開頭可用 ASCII（英文大小寫）或下底線（_）、錢符號（$），不可用數字。</li>
-<li>其他則可用英文、數字或下底線（_）</li>
-<li>大小寫有差異</li>
-<li>不可用 JS 保留字</li>
+        <p>一種物件導向的用戶端腳本語言，能夠<strong>動態</strong>更新網頁內容、控制多媒體、動畫…。</p>
+<ul>
+<li><strong>解釋性</strong>：原始程式碼不需編譯，直接在瀏覽器上運行時被解釋。</li>
+<li><strong>基於原型的面向物件</strong>：能運用自己已創建的物件</li>
+<li><strong>事件驅動</strong>：在主頁執行某種操作所產生的動作。JS 可直接對用戶端做出回應，並以事件驅動進行，無需經過 Web 服務程式。</li>
+<li><strong>跨平台</strong>：JS 依賴於瀏覽器本身，與操作環境無關。</li>
+<li><strong>安全性</strong>：不允許訪問本地磁碟，且不能將數據存入伺服器上，也不允許修改、刪除網路文本，有效防止數據丟失。</li>
 </ul>
         
-          <p><a class="excerpt-btn" href="/2022/03/02/JavaScript/JS－變數與宣告/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/03/01/JavaScript/JS－JavaScript 是什麼？/"><span>...More</span></a></p>
         
       
     </div>

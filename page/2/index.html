@@ -61,89 +61,6 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/04/26/JavaScript/JS－JSON/"><span>[JS] JSON</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/04/26/JavaScript/JS－JSON/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-04-25T16:00:00.000Z">
-          2022-04-26
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="JS-物件標記法-JavaScript-Object-Notation（JSON）"><a href="#JS-物件標記法-JavaScript-Object-Notation（JSON）" class="headerlink" title="JS 物件標記法 JavaScript Object Notation（JSON）"></a>JS 物件標記法 JavaScript Object Notation（JSON）</h2><p>一種輕量級的資料交換格式，</p>
-<ul>
-<li>只是語法參考 JS 並非只有 JS 可用</li>
-</ul>
-<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
-<li>便於閱讀、書寫</li>
-<li>支持多種語言</li>
-<li>比起 XML 格式更小</li>
-<li>具有長時間的穩定性（∵ 創始人宣稱此格式永不升級）</li>
-</ul>
-<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
-<li>目前沒有 XML 如此通用性</li>
-</ul>
-<h2 id="轉換"><a href="#轉換" class="headerlink" title="轉換"></a>轉換</h2><p><code>JSON.parse()</code></p>
-<p><code>JSON.stringify()</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JSON 轉 JS Object</span></span><br><span class="line"><span class="keyword">var</span> jsonStr = <span class="string">&#x27;&#123;&quot;name&quot;: &quot;Molly&quot;, &quot;age&quot;: 20,&quot;gender&quot;: &quot;女&quot;&#125;&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(jsonStr);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// JS Object 轉 JSON</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">&quot;Molly&quot;</span>, <span class="attr">age</span>: <span class="number">20</span>, <span class="attr">gender</span>: <span class="string">&quot;女&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> jsonStr = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(jsonStr);</span><br></pre></td></tr></table></figure>
-
-
-
-<p>參考資料</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41684621/article/details/113851644?ops_request_misc=%7B%22request_id%22:%22165746835916780366560507%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=165746835916780366560507&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-2-113851644-null-null.142%5Ev32%5Epc_rank_34,185%5Ev2%5Econtrol&utm_term=jSOn">JSON 基本使用</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38490457/article/details/109257751?ops_request_misc=%7B%22request_id%22:%22165741153016782246491311%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=165741153016782246491311&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-109257751-null-null.142%5Ev32%5Epc_rank_34,185%5Ev2%5Econtrol&utm_term=javascript">学习JavaScript这一篇就够了</a></li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
     <h3 class="article-title"><a href="/2022/04/26/Tailwind/Tailwind－CSS 筆記整理/"><span>[Tailwind] CSS 筆記整理</span></a></h3>
     
   
@@ -742,6 +659,84 @@
 <h3 id="非同步-Asynchronous"><a href="#非同步-Asynchronous" class="headerlink" title="非同步 Asynchronous"></a>非同步 Asynchronous</h3><p>一次同時做好幾件事</p>
         
           <p><a class="excerpt-btn" href="/2022/03/25/JavaScript/JS－同步與非同步/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/03/25/JavaScript/JS－回呼函式 Callback/"><span>[JS] 回呼函式 Callback</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/25/JavaScript/JS－回呼函式 Callback/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-24T16:00:00.000Z">
+          2022-03-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>一函式執行完再去執行另一函式（以<strong>參數型態</strong>傳入）</p>
+<p>➪ 因工作切割而需要有 callback 來回頭處理之前未完成項目</p>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>確保函式時機與關聯</li>
+<li>可讀性高、易於維護</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li><p>[回呼地獄 Callback Hell](##回呼地獄 Callback Hell)</p>
+<ul>
+<li>缺乏順序性</li>
+<li>程式碼之間黏著度高 ➪ 牽一髮而動全身</li>
+<li>無法使用 try…catch ➪ 無法除錯</li>
+</ul>
+</li>
+<li><p>[控制權轉移 Inversion of Control](##控制權轉移 Inversion of Control)</p>
+</li>
+</ul>
+        
+          <p><a class="excerpt-btn" href="/2022/03/25/JavaScript/JS－回呼函式 Callback/"><span>...More</span></a></p>
         
       
     </div>
