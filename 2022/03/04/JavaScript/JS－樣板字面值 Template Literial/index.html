@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 樣板字面值 Template Literial | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="字串與變數、變數與表達式做串接皆用「＋」做連結，當文字較多或需要換行則難以閱讀。
+➪ 字符串的串接更彈性、簡潔與直觀
+定義反引號（&amp;#96;&amp;#96;）
+引用$&amp;#123; 變數名稱 &amp;#125;">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 樣板字面值 Template Literial"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 樣板字面值 Template Literial</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/04/JavaScript/JS－樣板字面值 Template Literial/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
+          2022-03-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>字串與變數、變數與表達式做串接皆用「＋」做連結，當文字較多或需要換行則難以閱讀。</p>
+<p>➪ 字符串的串接更彈性、簡潔與直觀</p>
+<h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><p>反引號（&#96;&#96;）</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><code>$&#123; 變數名稱 &#125;</code></p>
+<span id="more"></span>
+
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><ul>
+<li><p>插入變數</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = <span class="string">&#x27;Molly&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> result = <span class="string">`my name is <span class="subst">$&#123;user&#125;</span>, age is <span class="subst">$&#123;age&#125;</span>.`</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result); <span class="comment">// my name is Molly, age is 20.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入表達式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> result = <span class="string">`x - y = <span class="subst">$&#123;x-y&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);  <span class="comment">// x - y = 5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>呼叫函式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>  <span class="title function_">fun1</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello World！&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = <span class="string">`func return: <span class="subst">$&#123;func()&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result); <span class="comment">// func return: Hello World！</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/vicky-notes/es6-%E7%AB%A0%E7%AF%80-template-literial-7309b9e3bebb">ES6 章節：Template Literial</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27371025/article/details/124891818">JavaScript 学习-12.模板字符串(Template Strings）</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 正則表達式 Regex | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="正規表達式 Regular Expression（Regex、RegExp）確認字串是否符合規則，並構成搜索模式 search pattern。
+用途
+尋找或取代匹配字串
+驗證使用者輸入欄位
+擷取某段想要的資訊
+
+特點
+簡化對字符串的複雜操作
+
+正則越長，可讀性越差。">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 正則表達式 Regex"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 正則表達式 Regex</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/04/JavaScript/JS－正則表達式 Regex/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
+          2022-03-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="正規表達式-Regular-Expression（Regex、RegExp）"><a href="#正規表達式-Regular-Expression（Regex、RegExp）" class="headerlink" title="正規表達式 Regular Expression（Regex、RegExp）"></a>正規表達式 Regular Expression（Regex、RegExp）</h2><p>確認字串是否符合規則，並構成搜索模式 search pattern。</p>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>尋找或取代匹配字串</li>
+<li>驗證使用者輸入欄位</li>
+<li>擷取某段想要的資訊</li>
+</ul>
+<h3 id="特點"><a href="#特點" class="headerlink" title="特點"></a>特點</h3><ul>
+<li><p>簡化對字符串的複雜操作</p>
+</li>
+<li><p>正則越長，可讀性越差。</p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h2><h3 id="字面值"><a href="#字面值" class="headerlink" title="字面值"></a>字面值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rules = <span class="regexp">/[a-z]/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="新增-RegExp-物件"><a href="#新增-RegExp-物件" class="headerlink" title="新增 RegExp 物件"></a>新增 RegExp 物件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rules = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;[0-9]&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="規則"><a href="#規則" class="headerlink" title="規則"></a>規則</h2><h3 id="驗證字元"><a href="#驗證字元" class="headerlink" title="驗證字元"></a>驗證字元</h3><ul>
+<li><p>&#x2F;.&#x2F; 任意字元</p>
+</li>
+<li><p>&#x2F;a&#x2F; 字串含 a</p>
+</li>
+<li><p>&#x2F;a.&#x2F; 字串含 a＋任一字元</p>
+</li>
+</ul>
+<h3 id="特定字元"><a href="#特定字元" class="headerlink" title="特定字元"></a>特定字元</h3><ul>
+<li>[A-Z] 大寫英文字母</li>
+<li>[a-z] 小寫英文字母</li>
+<li>[0–9] 數字 0～9</li>
+<li>\d 數字</li>
+<li>\D 非數字</li>
+<li>\w 數字字母與底線＝[A-Za-z0–9_]</li>
+<li>\W 非數字字母與底線＝[A-Za-z0–9_]</li>
+<li>\s 空白字元</li>
+<li>\S 非空白字元</li>
+</ul>
+<h3 id="開頭結尾"><a href="#開頭結尾" class="headerlink" title="開頭結尾"></a>開頭結尾</h3><ul>
+<li>^ 開始　ex. <code>/^em/</code>：開頭是 em</li>
+<li>$ 結束　ex. <code>/ma$/</code>：結尾是 ma</li>
+</ul>
+<h3 id="多個字元"><a href="#多個字元" class="headerlink" title="多個字元"></a>多個字元</h3><ul>
+<li>[] 驗證括弧內的每一字元　ex. <code>/[abc]/</code>：包含 a 或 b 或 c</li>
+<li>[^] 反過來　ex. <code>/[^abc]/</code>：不包含 a 或 b 或 c</li>
+</ul>
+<h3 id="次數"><a href="#次數" class="headerlink" title="次數"></a>次數</h3><ul>
+<li>* 0 次以上</li>
+<li>+ 1 次以上</li>
+<li>? 0 或 1 次</li>
+<li>{m} m 次</li>
+<li>{n,} 最少 n 次</li>
+<li>{m,n} m～n 次</li>
+<li>{m,n}? m～n 次之間最少次的</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] jQuery | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="jQuery 庫JavaScript 函數庫，為事件處理特別設計的。
+特性
+HTML 元素選取、操作
+CSS 操作
+HTML 事件函數
+JS 特效、動畫
+HTML DOM 遍歷、修改
+AJAX
+Utilities
+
+引用
+下載 jQuery
+&amp;lt;script src=&amp;quot;jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+語法$(選擇器).行為()
+💡若同時用 jQuery 及其他框架，而都以 $ 作為簡寫怎麼辦？ noConflict()">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript,jQuery">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] jQuery"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] jQuery</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/20/JavaScript/JS－jQuery/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-19T16:00:00.000Z">
+          2022-04-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="jQuery-庫"><a href="#jQuery-庫" class="headerlink" title="jQuery 庫"></a>jQuery 庫</h2><p>JavaScript 函數庫，為事件處理特別設計的。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>HTML 元素選取、操作</li>
+<li>CSS 操作</li>
+<li>HTML 事件函數</li>
+<li>JS 特效、動畫</li>
+<li>HTML DOM 遍歷、修改</li>
+<li>AJAX</li>
+<li>Utilities</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li>下載 <a target="_blank" rel="noopener" href="https://jquery.com/download/#Download_jQuery">jQuery</a></li>
+<li><code>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p><code>$(選擇器).行為()</code></p>
+<p><strong>💡若同時用 jQuery 及其他框架，而都以 $ 作為簡寫怎麼辦？ <code>noConflict()</code></strong></p>
+<span id="more"></span>
+
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><p>協助快速控制 CSS</p>
+<ul>
+<li>show() 顯示 ↔ hide()</li>
+<li>toggle() 切換隱藏／顯示</li>
+<li>淡入／出<ul>
+<li>fadeIn(speed)</li>
+<li>fadeOut(speed)</li>
+<li>fadeToggle(speed)</li>
+<li>fadeTo(speed, opacity)</li>
+</ul>
+</li>
+<li>滑入／出<ul>
+<li>slideDown(speed, callback)</li>
+<li>slideUp(speed, callback)</li>
+<li>slideToggle(speed, callback)</li>
+</ul>
+</li>
+<li>delay(speed) 延遲時間</li>
+<li>stop() 停止正在發生的特效</li>
+<li>animate(css, speed) 應用自定義動畫</li>
+</ul>
+<blockquote>
+<p><strong>Callback</strong>：於當前動畫完成後調用</p>
+<p><strong>Chaining</strong>：把多個動作／方法連接起来</p>
+</blockquote>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="内容＆屬性"><a href="#内容＆屬性" class="headerlink" title="内容＆屬性"></a>内容＆屬性</h3><ul>
+<li>text() 設置／回傳内容</li>
+<li>html() 同上（包括 HTML 標記）</li>
+<li>val() 設置／回傳表單值</li>
+<li>attr() 設置／改變屬性值</li>
+</ul>
+<h3 id="新增内容"><a href="#新增内容" class="headerlink" title="新增内容"></a>新增内容</h3><ul>
+<li>append() 結尾</li>
+<li>prepend() 開頭</li>
+<li>after() 元素後</li>
+<li>before() 元素前</li>
+</ul>
+<h3 id="刪除内容"><a href="#刪除内容" class="headerlink" title="刪除内容"></a>刪除内容</h3><ul>
+<li>remove() 刪除包括其子元素</li>
+<li>empty() 只刪除子元素</li>
+</ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><ul>
+<li><p>addClass() 新增一或多個類</p>
+</li>
+<li><p>removeClass() 刪除一或多個類</p>
+</li>
+<li><p>toggleClass() 切換新增／刪除</p>
+</li>
+<li><p>css() 設置／回傳元素之屬性</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>attr() 與 css() 之差別</strong></p>
+<ul>
+<li>attr() → HTML</li>
+<li>css() → style</li>
+</ul>
+</blockquote>
+<h2 id="遍歷"><a href="#遍歷" class="headerlink" title="遍歷"></a>遍歷</h2><h3 id="祖先"><a href="#祖先" class="headerlink" title="祖先"></a>祖先</h3><p>向上遍歷 DOM 樹</p>
+<ul>
+<li>parent() 回傳父元素</li>
+<li>parents() 回傳所有祖先元素</li>
+<li>parentsUntil() 回傳兩元素之間的所有祖先元素</li>
+</ul>
+<h3 id="後代"><a href="#後代" class="headerlink" title="後代"></a>後代</h3><p>向下遍歷 DOM 樹</p>
+<ul>
+<li>children() 回傳子元素</li>
+<li>find() 回傳所有後代元素</li>
+</ul>
+<h3 id="同胞"><a href="#同胞" class="headerlink" title="同胞"></a>同胞</h3><p>擁有相同的父元素，水平遍歷 DOM 樹。</p>
+<ul>
+<li><p>siblings() 回傳所有同胞元素</p>
+</li>
+<li><h4 id="向前"><a href="#向前" class="headerlink" title="向前"></a>向前</h4><ul>
+<li>next() 回傳下一同胞元素</li>
+<li>nextAll() 回傳所有跟隨的同胞元素</li>
+<li>nextUntil() 回傳兩參數之間所有跟隨的同胞元素</li>
+</ul>
+</li>
+<li><h4 id="向後"><a href="#向後" class="headerlink" title="向後"></a>向後</h4><ul>
+<li>prev()</li>
+<li>prevAll()</li>
+<li>prevUntil()</li>
+</ul>
+</li>
+</ul>
+<h3 id="過濾"><a href="#過濾" class="headerlink" title="過濾"></a>過濾</h3><ul>
+<li>first() 回傳首個元素 ↔ last()</li>
+<li>eq() 回傳帶有指定索引的元素</li>
+<li>filter() 回傳匹配標準的元素，否則刪除 ↔ not()</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/jQuery/">jQuery</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

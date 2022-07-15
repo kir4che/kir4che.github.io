@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 作用域 Scope | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="規範哪些變數在哪些程式碼中可以取用的規則
+作用範圍全域作用域 Global Scope函式外宣告
+
+瀏覽器頁面開啟時，自動生成一全域性作用域 window
+會一直存在到頁面關閉為止
+
+缺點
+允許重複宣告
+
+不支援 Block Scope
+
+不支援常數
+
+
+影響
+命名空間汙染、混亂
+
+易被存取，可能被修改而導致臭蟲。
+
+性能差，須一直追蹤。
+
+
+區域作用域 Local Scope
+函式作用域 Function Scope函式 {} 內宣告
+
+區塊作用域 Block Scope（ES6）於函式中的 { } 內宣告 ➪ 防止不當存取">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 作用域 Scope"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 作用域 Scope</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/04/JavaScript/JS－作用域 Scope/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
+          2022-03-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>規範哪些變數在哪些程式碼中可以取用的規則</p>
+<h2 id="作用範圍"><a href="#作用範圍" class="headerlink" title="作用範圍"></a>作用範圍</h2><h3 id="全域作用域-Global-Scope"><a href="#全域作用域-Global-Scope" class="headerlink" title="全域作用域 Global Scope"></a>全域作用域 Global Scope</h3><p><strong>函式外</strong>宣告</p>
+<ul>
+<li>瀏覽器頁面開啟時，自動生成一全域性作用域 window</li>
+<li>會一直存在到頁面關閉為止</li>
+</ul>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ul>
+<li><p>允許重複宣告</p>
+</li>
+<li><p>不支援 Block Scope</p>
+</li>
+<li><p>不支援常數</p>
+</li>
+</ul>
+<h4 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h4><ul>
+<li><p>命名空間汙染、混亂</p>
+</li>
+<li><p>易被存取，可能被修改而導致臭蟲。</p>
+</li>
+<li><p>性能差，須一直追蹤。</p>
+</li>
+</ul>
+<h3 id="區域作用域-Local-Scope"><a href="#區域作用域-Local-Scope" class="headerlink" title="區域作用域 Local Scope"></a>區域作用域 Local Scope</h3><ul>
+<li><h4 id="函式作用域-Function-Scope"><a href="#函式作用域-Function-Scope" class="headerlink" title="函式作用域 Function Scope"></a>函式作用域 Function Scope</h4><p>函式 {} 內宣告</p>
+</li>
+<li><h4 id="區塊作用域-Block-Scope（ES6）"><a href="#區塊作用域-Block-Scope（ES6）" class="headerlink" title="區塊作用域 Block Scope（ES6）"></a>區塊作用域 Block Scope（ES6）</h4><p>於函式中的 { } 內宣告 ➪ 防止不當存取</p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="規則"><a href="#規則" class="headerlink" title="規則"></a>規則</h2><h3 id="靜態、語彙作用域-Static、Lexical-Scope"><a href="#靜態、語彙作用域-Static、Lexical-Scope" class="headerlink" title="靜態、語彙作用域 Static、Lexical Scope"></a>靜態、語彙作用域 Static、Lexical Scope</h3><p>以<strong>宣告</strong>函式的地方作為作用域鏈，為 JS 所採用。</p>
+<p>外層 Scope 無法取用內層變數，但內層 Scope 可以取用外層變數。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> thisIs = <span class="string">&#x27;global&#x27;</span>; <span class="comment">// 變數設定好了</span></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">func1</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(thisIs)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> <span class="title function_">func2</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> thisIs = <span class="string">&#x27;local&#x27;</span>;</span><br><span class="line">    <span class="title function_">func1</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">func1</span>() <span class="comment">// &#x27;global&#x27;</span></span><br><span class="line"><span class="title function_">func2</span>() <span class="comment">// &#x27;global&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="動態作用域-Dynamic-Scope"><a href="#動態作用域-Dynamic-Scope" class="headerlink" title="動態作用域 Dynamic Scope"></a>動態作用域 Dynamic Scope</h3><p>以<strong>呼叫</strong>函式的地方作為作用域鏈</p>
+<h2 id="作用域鏈-Scope-Chain"><a href="#作用域鏈-Scope-Chain" class="headerlink" title="作用域鏈 Scope Chain"></a>作用域鏈 Scope Chain</h2><p>記錄每個環境之間切換的關聯 ex. global -&gt; func()</p>
+<ol>
+<li>函式執行時先從內部找變數</li>
+<li>找不到再一層層往外找</li>
+<li>若到全域還找不到，則拋出錯誤。</li>
+</ol>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cythilya.github.io/2018/10/21/dynamic-scope/">你懂 JavaScript 嗎？#14 動態範疇</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

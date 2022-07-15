@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 事件 Event | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="當使用者對網頁進行操作，網頁要根據事件 Event 去產生對應的更新。
+Event 對象事件的狀態，以下為常用的：
+
+
+
+事件
+描述
+
+
+
+click
+滑鼠點擊物件時
+
+
+keydown
+按下鍵盤按鍵時
+
+
+mousedown
+按下滑鼠按鍵時
+
+
+mousemove
+滑鼠移動時
+
+
+mouseout
+滑鼠離開指定元素四周時
+
+
+submit
+按下送出按鈕時">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 事件 Event"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 事件 Event</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/20/JavaScript/JS－事件 Event/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-19T16:00:00.000Z">
+          2022-03-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>當使用者對網頁進行操作，網頁要根據事件 Event 去產生對應的更新。</p>
+<h2 id="Event-對象"><a href="#Event-對象" class="headerlink" title="Event 對象"></a>Event 對象</h2><p>事件的狀態，以下為常用的：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>click</td>
+<td>滑鼠點擊物件時</td>
+</tr>
+<tr>
+<td>keydown</td>
+<td>按下鍵盤按鍵時</td>
+</tr>
+<tr>
+<td>mousedown</td>
+<td>按下滑鼠按鍵時</td>
+</tr>
+<tr>
+<td>mousemove</td>
+<td>滑鼠移動時</td>
+</tr>
+<tr>
+<td>mouseout</td>
+<td>滑鼠離開指定元素四周時</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>按下送出按鈕時</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+<h2 id="事件處理器-Event-Handler"><a href="#事件處理器-Event-Handler" class="headerlink" title="事件處理器 Event Handler"></a>事件處理器 Event Handler</h2><h3 id="行内（不推薦）"><a href="#行内（不推薦）" class="headerlink" title="行内（不推薦）"></a>行内（不推薦）</h3><p><code>&lt;button onclick=&quot;bgChange()&quot;&gt;Press me&lt;/button&gt;</code></p>
+<ul>
+<li>只能在一元素上使用一事件</li>
+<li>混用 HTML、JS 難以解析</li>
+<li>易被植入惡意程式碼</li>
+</ul>
+<h3 id="屬性"><a href="#屬性" class="headerlink" title="屬性"></a>屬性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"></span><br><span class="line">btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> rndCol = <span class="string">&#x27;rgb(&#x27;</span> + <span class="title function_">random</span>(<span class="number">255</span>) + <span class="string">&#x27;,&#x27;</span> + <span class="title function_">random</span>(<span class="number">255</span>) + <span class="string">&#x27;,&#x27;</span> + <span class="title function_">random</span>(<span class="number">255</span>) + <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = rndCol;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件監聽-addEventListener"><a href="#事件監聽-addEventListener" class="headerlink" title="事件監聽 addEventListener"></a>事件監聽 addEventListener</h3><p>監聽到指定的事件發生時，執行對應的任務函式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.button&quot;</span>);</span><br><span class="line">el.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>選擇要出現的事件</p>
+</li>
+<li><p>function 為匿名以帶入要出現的功能</p>
+</li>
+<li><p>布林值（預設 false）決定要不要產生冒泡事件，不指定會自動產生。</p>
+<ul>
+<li><p>false → 冒泡事件：從指定的元素往外找</p>
+</li>
+<li><p>true → 捕獲事件：從最外層找到指定元素</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="事件委派機制（傳遞機制）"><a href="#事件委派機制（傳遞機制）" class="headerlink" title="事件委派機制（傳遞機制）"></a>事件委派機制（傳遞機制）</h2><h3 id="原則"><a href="#原則" class="headerlink" title="原則"></a>原則</h3><ul>
+<li>先捕獲，再冒泡。</li>
+<li>當事件傳到 target 本身，沒有分捕獲跟冒泡。</li>
+</ul>
+<h3 id="階段"><a href="#階段" class="headerlink" title="階段"></a>階段</h3><ol>
+<li>捕獲階段 Capturing Phase</li>
+<li>傳遞到元素本身 Target Phase</li>
+<li>冒泡階段 Bubbling Phase</li>
+</ol>
+<img src="https://i.imgur.com/zj2brCF.png" alt="img" style="zoom:80%;" />
+
+<h3 id="冒泡事件-Event-Bubbling"><a href="#冒泡事件-Event-Bubbling" class="headerlink" title="冒泡事件 Event Bubbling"></a>冒泡事件 Event Bubbling</h3><p><strong>由內往外</strong>從事件觸發的節點（元素）向根部（document）往上傳遞的過程</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span>冒泡一下<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>There</span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span>&gt;</span>CLICK<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>button</li>
+<li>div</li>
+<li>body</li>
+<li>html</li>
+<li>document</li>
+</ol>
+<h3 id="捕獲事件-Event-Capturing"><a href="#捕獲事件-Event-Capturing" class="headerlink" title="捕獲事件 Event Capturing"></a>捕獲事件 Event Capturing</h3><p><strong>由外往內</strong>從根部（document）找到事件觸發的節點（元素）往下傳遞的過程</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span>捕獲一下<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>There</span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span>&gt;</span>CLICK<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>document</li>
+<li>html</li>
+<li>body</li>
+<li>div</li>
+<li>button</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

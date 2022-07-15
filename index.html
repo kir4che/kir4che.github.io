@@ -61,15 +61,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/27/Coding/JavaScript/JS－LocalStorage/"><span>[JS] LocalStorage</span></a></h3>
+    <h3 class="article-title"><a href="/2022/07/13/筆記目錄/"><span>筆記目錄</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/27/Coding/JavaScript/JS－LocalStorage/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-26T16:00:00.000Z">
-          2022-06-27
+      <a href="/2022/07/13/筆記目錄/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-07-12T16:00:00.000Z">
+          2022-07-13
         </time>
       </a>
     </span>
@@ -81,6 +81,78 @@
   <div class="article-content">
     <div class="entry">
       
+        Here's something encrypted, password is required to continue reading.
+        
+          <p><a class="excerpt-btn" href="/2022/07/13/筆記目錄/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Keep/">Keep</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Keep/">Keep</a><a href="/tags/Coding/">Coding</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/07/01/JavaScript/JS－JavaScript 是什麼？/"><span>[JS] JavaScript 是什麼？</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/07/01/JavaScript/JS－JavaScript 是什麼？/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-30T16:00:00.000Z">
+          2022-07-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>一種物件導向的用戶端腳本語言，能夠<strong>動態</strong>更新網頁內容、控制多媒體、動畫…。</p>
+<ul>
+<li><strong>解釋性</strong>：原始程式碼不需編譯，直接在瀏覽器上運行時被解釋。</li>
+<li><strong>基於原型的面向物件</strong>：能運用自己已創建的物件</li>
+<li><strong>事件驅動</strong>：在主頁執行某種操作所產生的動作。JS 可直接對用戶端做出回應，並以事件驅動進行，無需經過 Web 服務程式。</li>
+<li><strong>跨平台</strong>：JS 依賴於瀏覽器本身，與操作環境無關。</li>
+<li><strong>安全性</strong>：不允許訪問本地磁碟，且不能將數據存入伺服器上，也不允許修改、刪除網路文本，有效防止數據丟失。</li>
+</ul>
+        
+          <p><a class="excerpt-btn" href="/2022/07/01/JavaScript/JS－JavaScript 是什麼？/"><span>...More</span></a></p>
         
       
     </div>
@@ -120,13 +192,13 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/27/Coding/JavaScript/JS－正則表達式/"><span>[JS] 正則表達式 Regular Expression</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/27/JavaScript/JS30/JS30－Day04/"><span>[JS30] Day04 CSS Variables</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/27/Coding/JavaScript/JS－正則表達式/" rel="bookmark">
+      <a href="/2022/06/27/JavaScript/JS30/JS30－Day04/" rel="bookmark">
         <time class="entry-date published" datetime="2022-06-26T16:00:00.000Z">
           2022-06-27
         </time>
@@ -140,45 +212,117 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>ㆍ正規表達式（&#x3D; Regex、RegExp）</p>
-<p>　Def. 確認字串是否符合規則，並構成搜索模式 search pattern。</p>
-<p>ㆍ建立</p>
-<p>　– 字面值　const rules &#x3D; &#x2F;[a-z]&#x2F;</p>
-<p>　– 呼叫 RegExp　var rules &#x3D; new RegExp(‘[0-9]’)</p>
-<p>ㆍ規則</p>
-<p>　– 驗證字元</p>
-<p>　　1) &#x2F;.&#x2F; 任意字元</p>
-<p>　　2) &#x2F;a&#x2F; 字串含 a</p>
-<p>　　3) &#x2F;a.&#x2F; 字串含 a + 任一字元</p>
-<p>　– 特定字元</p>
-<p>　　1) [A-Z] ↔ [a-z] </p>
-<p>　　2) [0–9]</p>
-<p>　　3) \d 數字 ↔ \D</p>
-<p>　　4) \w 數字、字母或底線 ↔ \W</p>
-<p>　　5) \s 空白字元 ↔ \S</p>
-<p>　– ^ 開頭 ↔ $ 結尾</p>
-<p>　– [ ] 包含括弧內 ↔ [^]</p>
-<p>　　ex. &#x2F;[^abc]&#x2F; 不包含 a、b 或 c </p>
-<p>　– 次數</p>
-<table>
-<thead>
-<tr>
-<th>1) * 0次以上  　　2) + 1次以上  　　3) ? 0、1次  　　4) {m} m 次</th>
-<th>5) {n, }  最少 n 次  　　6) {m,  n} m ~ n次  　　7) {m,  n}? m ~ n 最少次的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>　▴ 條件上記得在開頭加 ^，結尾加 $，否則開頭達成條件後就不會繼續驗證。</p>
-<p>ㆍ方法</p>
-<p>　– exec() 回傳第一個符合的陣列：無符合回傳 null</p>
-<p>　– test() 測試是否符合</p>
-<p>　– match() 回傳比對後符合的陣列：無符合回傳 null</p>
-<p>　– search() 回傳搜尋第一個比對後符合的位置：無符合回傳 -1</p>
-<p>　– replace() 替換比對後符合的值</p>
+        <img src="https://i.imgur.com/nJDQYVv.jpg" style="zoom: 50%;" />
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>用 JS、CSS 製作可以調整照片內距、模糊及邊框色彩的濾鏡</p>
+        
+          <p><a class="excerpt-btn" href="/2022/06/27/JavaScript/JS30/JS30－Day04/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/06/20/JavaScript/JS－Async＆Await/"><span>[JS] Async / Await</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/20/JavaScript/JS－Async＆Await/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-19T16:00:00.000Z">
+          2022-06-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Async-x2F-Await（ES8）"><a href="#Async-x2F-Await（ES8）" class="headerlink" title="Async &#x2F; Await（ES8）"></a>Async &#x2F; Await（ES8）</h2><p>將非同步事件用同步語法來處理</p>
+<ul>
+<li>Promise、Generator Function 尬在一起的語法糖</li>
+<li>async 與 await 成對出現</li>
+</ul>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>同步寫法、非同步操作 ➪ 可讀性提高</li>
+<li>條件語句與其他流程語句可直接寫到判斷條件</li>
+<li>處理複雜流程時，清晰度有優勢。</li>
+</ul>
+<h3 id="優缺點"><a href="#優缺點" class="headerlink" title="優缺點"></a>優缺點</h3><ul>
+<li><p>無法處理 Promise 回傳的 reject，要用 try…catch 捕獲。</p>
+</li>
+<li><p>做不到並行（Promise✅）</p>
+<p>也不是不能，只要 await 不在同一 async 函式中即可並行。</p>
+</li>
+<li><p>全域捕獲錯誤須用 window.onerror（Promise 有專用的）</p>
+<p><strong>window.onerror</strong>：捕獲各種稀奇古怪的錯誤，造成系統浪費。</p>
+</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>try…catch 內部變數無法傳遞給下一 try…catch</li>
+<li>無法實現 Promise 原生方法　ex. <code>.race()</code></li>
+</ul>
+<h3 id="以下時機請用-Promise"><a href="#以下時機請用-Promise" class="headerlink" title="以下時機請用 Promise"></a>以下時機請用 Promise</h3><ul>
+<li>要用 Promise 各種原生方法</li>
+<li>需要並行</li>
+<li>傳遞參數</li>
+<li>以 <code>.catch（）</code> 處理錯誤</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 計時器</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">timer</span>(<span class="params">params</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            <span class="comment">// resolve(&#x27;resolve&#x27;);</span></span><br><span class="line">            <span class="title function_">reject</span>(<span class="string">&#x27;reject&#x27;</span>);</span><br><span class="line">        &#125;, params);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// async/await</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">params</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> value = <span class="keyword">await</span> <span class="title function_">timer</span>(params);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(error);        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="title function_">fn</span>(<span class="number">1000</span>); <span class="comment">// 執行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><p>宣告一非同步函式，關鍵字放 function 前面。</p>
+<ul>
+<li>一種物件種類</li>
+<li>跑完會回傳 Promise（resolved or rejected），可接 then 繼續連結。</li>
+<li>函式内部 return 回傳值會成為 then 回呼函式的參數</li>
+</ul>
+<h3 id="await"><a href="#await" class="headerlink" title="await"></a>await</h3><p>呼叫並等待該非同步函式，關鍵字放呼叫 async function 前面。</p>
+<ul>
+<li>屬於一元運算子</li>
+<li>多個 await 後面的非同步操作，若是互不依賴，最好讓它們同時觸發。</li>
+</ul>
+<h3 id="try…catch"><a href="#try…catch" class="headerlink" title="try…catch"></a>try…catch</h3><p><strong>錯誤處理</strong>：運行正確則往下執行，失敗則跳到 catch。</p>
+<p>不在 async 就無法用 await，所以常用 <code>.then/catch()</code> 處理結果或 Error。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">printPostsToConsole</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> posts = <span class="keyword">await</span> <span class="title function_">getPosts</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(posts);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;ERROR！&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -218,15 +362,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/26/Coding/Unity/[Unity] Introduction/"><span>[Unity] Introduction</span></a></h3>
+    <h3 class="article-title"><a href="/2022/06/13/CS、BS 架構/"><span>CS、BS 架構</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/26/Coding/Unity/[Unity] Introduction/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-26T10:34:55.748Z">
-          2022-06-26
+      <a href="/2022/06/13/CS、BS 架構/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-12T16:00:00.000Z">
+          2022-06-13
         </time>
       </a>
     </span>
@@ -238,9 +382,12 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="MonoBehavior"><a href="#MonoBehavior" class="headerlink" title="MonoBehavior"></a>MonoBehavior</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用到的命名空間</span></span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="comment">//整個程式架構是一個class，我命名為role </span></span><br><span class="line"><span class="comment">// 繼承 MonoBehaviour 這個類別 </span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Start is called before the first frame update </span></span><br><span class="line">	<span class="comment">// Start()函數 遊戲一開始會執行一次</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Update()函數 每一幀執行一次</span></span><br><span class="line">    <span class="comment">// 這裡會每一幀執行一次 移動方法();</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
+        <h2 id="Client／Server-主從式架構"><a href="#Client／Server-主從式架構" class="headerlink" title="Client／Server 主從式架構"></a>Client／Server 主從式架構</h2><p>透過 HTTP 協定送出請求 request 給 server 提取 get，當 server 接收到回應 response 後開始處理，並回傳一個回應 response 給 client。</p>
+<p>➪ client、server 之間透過 HTTP 協定進行溝通</p>
+<p><img src="https://darvishdarab.github.io/cs421_f20/assets/images/client-server-1-d85a93ea16590c10bed340dd78294d0d.png" alt="Client-Server Architecture | EN.601.421: Object-Oriented Software  Engineering (OOSE)" style="zoom: 18%;" />
+        
+          <p><a class="excerpt-btn" href="/2022/06/13/CS、BS 架構/"><span>...More</span></a></p>
+        
       
     </div>
 
@@ -254,7 +401,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Unity/">Unity</a>
+        <a href="/categories/Coding/">Coding</a>
     </span>
     
 
@@ -263,7 +410,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Unity/">Unity</a><a href="/tags/C/">C#</a>
+        <a href="/tags/Web/">Web</a><a href="/tags/Client／Server/">Client／Server</a><a href="/tags/Browser／Server/">Browser／Server</a>
     </span>
     
 
@@ -279,15 +426,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/TypeScript/TS－資料型態/"><span>[TS] 資料型態</span></a></h3>
+    <h3 class="article-title"><a href="/2022/05/20/Git/以 Hexo、Github Page 展示前端作品/"><span>以 Hexo、Github Page 展示前端作品</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/TypeScript/TS－資料型態/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.297Z">
-          2022-06-24
+      <a href="/2022/05/20/Git/以 Hexo、Github Page 展示前端作品/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-05-19T16:00:00.000Z">
+          2022-05-20
         </time>
       </a>
     </span>
@@ -299,10 +446,16 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="指定型別"><a href="#指定型別" class="headerlink" title="指定型別"></a>指定型別</h2><h3 id="Type-Inference-型別推斷"><a href="#Type-Inference-型別推斷" class="headerlink" title="Type Inference 型別推斷"></a>Type Inference 型別推斷</h3><p>在沒有明確指定型別時推測出型別，編譯時會報錯。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="string">&#x27;seven&#x27;</span>;</span><br><span class="line">num = <span class="number">7</span>;</span><br><span class="line"><span class="comment">// index.ts(2,1): error TS2322: Type &#x27;number&#x27; is not assignable to type &#x27;string&#x27;.</span></span><br></pre></td></tr></table></figure>
+        <h2 id="專案上傳"><a href="#專案上傳" class="headerlink" title="專案上傳"></a>專案上傳</h2><ol>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit -m “first commit”</li>
+<li>git branch -M main</li>
+<li>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:kir4che&#x2F;項目名稱.git</li>
+<li>git push -u origin main</li>
+</ol>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/TypeScript/TS－資料型態/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/05/20/Git/以 Hexo、Github Page 展示前端作品/"><span>...More</span></a></p>
         
       
     </div>
@@ -317,7 +470,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/TypeScript/">TypeScript</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Git/">Git</a>
     </span>
     
 
@@ -326,7 +479,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/TypeScript/">TypeScript</a>
+        <a href="/tags/Git/">Git</a><a href="/tags/Hexo/">Hexo</a>
     </span>
     
 
@@ -342,15 +495,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/TypeScript/TS－TypeScript 簡介/"><span>[TS] TypeScript 簡介</span></a></h3>
+    <h3 class="article-title"><a href="/2022/05/08/JavaScript/JS－ES6～ES12 新特性/"><span>[JS] ES6～ES12 新特性</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/TypeScript/TS－TypeScript 簡介/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.284Z">
-          2022-06-24
+      <a href="/2022/05/08/JavaScript/JS－ES6～ES12 新特性/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-05-07T16:00:00.000Z">
+          2022-05-08
         </time>
       </a>
     </span>
@@ -362,10 +515,155 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>TypeScript 為 JavaScript 的<strong>超集</strong></p>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/TypeScript/TS－TypeScript 簡介/"><span>...More</span></a></p>
-        
+        <h2 id="ES6（2015）"><a href="#ES6（2015）" class="headerlink" title="ES6（2015）"></a>ES6（2015）</h2><h3 id="類-Class-JS-類-Class"><a href="#類-Class-JS-類-Class" class="headerlink" title="[類 Class]([JS] 類 Class)"></a>[類 Class]([JS] 類 Class)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span> , <span class="variable language_">this</span>.<span class="property">age</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Molly&#x27;</span>, <span class="number">20</span>);</span><br><span class="line">p.<span class="title function_">toString</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="模組化-Module"><a href="#模組化-Module" class="headerlink" title="模組化 Module"></a>模組化 Module</h3><ul>
+<li>export：規定模組對外暴露的接口</li>
+<li>import：引用其他模組提供的接口</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> sub = (a, b) = a + b;</span><br><span class="line"><span class="keyword">import</span> &#123; sub &#125; <span class="keyword">from</span> ./A;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sub</span>(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="箭頭函式-Arrow-Function"><a href="#箭頭函式-Arrow-Function" class="headerlink" title="箭頭函式 Arrow Function"></a><a href="">箭頭函式 Arrow Function</a></h3><p>➪ 解決 this 指向問題</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title function_">func</span> = (<span class="params">x, y</span>) =&gt; &#123; <span class="keyword">return</span> x + y; &#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式預設參數"><a href="#函式預設參數" class="headerlink" title="函式預設參數"></a><a href="">函式預設參數</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">count</span>(<span class="params">x, y = <span class="number">2</span></span>) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="樣板字面值"><a href="#樣板字面值" class="headerlink" title="樣板字面值"></a><a href="">樣板字面值</a></h3><p>➪ 字符串的串接更彈性、簡潔與直觀</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = <span class="string">&#x27;Molly&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> result = <span class="string">`My name is <span class="subst">$&#123;user&#125;</span>.`</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解構賦值"><a href="#解構賦值" class="headerlink" title="解構賦值"></a>解構賦值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>, b= <span class="number">2</span>;</span><br><span class="line">[a, b] = [b, a]; <span class="comment">// a 2  b 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Rest／Spread"><a href="#Rest／Spread" class="headerlink" title="Rest／Spread"></a>Rest／Spread</h3><ul>
+<li><p><strong>其餘 Rest</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">…nums</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  nums.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">num</span>) &#123;</span><br><span class="line">    result += num</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sum</span>(<span class="number">1</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>); <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>展開 Spread</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> groupA = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> groupB = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> groupAll = [...groupA, ..<span class="property">groupB</span>]; <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> groupC = [...<span class="title class_">Hello</span>]; <span class="comment">// [H, e, l, l, o]</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="物件縮寫"><a href="#物件縮寫" class="headerlink" title="物件縮寫"></a>物件縮寫</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;Molly&#x27;</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; </span><br><span class="line">    name <span class="comment">// 原本是 name: name</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a><a href="">Promise</a></h3><p>非同步運算的最終完成或失敗的物件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(() = &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>); &#125;);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>); <span class="comment">// 先輸出 1 再 2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="let、const"><a href="#let、const" class="headerlink" title="let、const"></a><a href="">let、const</a></h3><p>➪ 使變數宣告於<strong>區塊</strong>作用域</p>
+<h2 id="ES7（2016）"><a href="#ES7（2016）" class="headerlink" title="ES7（2016）"></a>ES7（2016）</h2><h3 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes()"></a><code>Array.prototype.includes()</code></h3><p>判斷陣列是否包含該元素，回傳 Boolean 值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>].<span class="title function_">includes</span>(<span class="number">1</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="指數運算子"><a href="#指數運算子" class="headerlink" title="指數運算子"></a>指數運算子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>**<span class="number">10</span>; <span class="comment">// 1024</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ES8（2017）"><a href="#ES8（2017）" class="headerlink" title="ES8（2017）"></a>ES8（2017）</h2><h3 id="Async-x2F-Await"><a href="#Async-x2F-Await" class="headerlink" title="Async &#x2F; Await"></a><a href="">Async &#x2F; Await</a></h3><p>將非同步事件用同步語法來處理</p>
+<h3 id="Object-新特性"><a href="#Object-新特性" class="headerlink" title="Object 新特性"></a>Object 新特性</h3><ul>
+<li><p><strong><code>Object.entries()</code></strong></p>
+<p>像是把物件轉為陣列（二維陣列）的概念</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">entries</span>(&#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>&#125;); <span class="comment">// [[a, 1], [b, 2], [c, 3]]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>Object.values()</code></strong></p>
+<p>  類似 entries，但是回傳值的一維陣列。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">values</span>(&#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>&#125;); <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>Object.getOwnPropertyDescriptors()</code></strong></p>
+<p>  若物件的所有自身屬性的描述符，若沒有任何自身屬性，則回傳 null。</p>
+</li>
+</ul>
+<h3 id="padStart-、padEnd"><a href="#padStart-、padEnd" class="headerlink" title="padStart()、padEnd()"></a><code>padStart()、padEnd()</code></h3><p>可從 start、end 位置填充到指定數字長度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello.<span class="title function_">padStart</span>(<span class="number">10</span>); <span class="comment">//      hello</span></span><br><span class="line">hello.<span class="title function_">padEnd</span>(<span class="number">5</span>,<span class="string">&#x27;o&#x27;</span>) <span class="comment">// helloooooo</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="結尾逗號-Trailing-commas"><a href="#結尾逗號-Trailing-commas" class="headerlink" title="結尾逗號 Trailing commas"></a>結尾逗號 Trailing commas</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,,,];</span><br><span class="line">arr.<span class="property">length</span>; <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="SharedArrayBuffer"><a href="#SharedArrayBuffer" class="headerlink" title="SharedArrayBuffer"></a>SharedArrayBuffer</h3><p>通用長度的密封緩衝區</p>
+<h3 id="原子物件-Atomics"><a href="#原子物件-Atomics" class="headerlink" title="原子物件 Atomics"></a>原子物件 Atomics</h3><p>提供一組靜態方法，用於對 SharedArrayBuffer 物件進行原子操作。</p>
+<h2 id="ES9（2018）"><a href="#ES9（2018）" class="headerlink" title="ES9（2018）"></a>ES9（2018）</h2><h3 id="非同步迭代（await＋for-of）"><a href="#非同步迭代（await＋for-of）" class="headerlink" title="非同步迭代（await＋for of）"></a>非同步迭代（await＋for of）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">process</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">let</span> i <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-finally"><a href="#Promise-finally" class="headerlink" title="Promise.finally()"></a><code>Promise.finally()</code></h3><p>可指定最終處理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>().<span class="title function_">catch</span>(e = e).<span class="title function_">finally</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="RegExp-新特性"><a href="#RegExp-新特性" class="headerlink" title="RegExp 新特性"></a>RegExp 新特性</h3><ul>
+<li><p><strong>捕獲組 Numbered capture groups</strong></p>
+<p>  <code>RegExp.prototype.exec()</code></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/([0-9]&#123;4&#125;)-([0-9]&#123;2&#125;)-([0-9]&#123;2&#125;)/</span>;</span><br><span class="line"><span class="keyword">const</span> match = reg.<span class="title function_">exec</span>(<span class="string">&#x27;1999-12-31&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> year = match[<span class="number">1</span>]; <span class="comment">// 1999</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>反向斷言 lookbehind</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> regex = <span class="regexp">/just(?=java)/</span>;</span><br><span class="line"><span class="comment">// 可匹配到 &#x27;justjava&#x27;，但不包含 &#x27;java&#x27;；也能匹配到 &#x27;justjavac&#x27; 中的 &#x27;just&#x27;。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>s&#x2F;dotAll</strong></p>
+<p>  <code>s</code> 用来表示 dotAll，使 <code>.</code> 可匹配任意字符。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/foo.<span class="property">bar</span>/s.<span class="title function_">test</span>(<span class="string">&#x27;foo\nbar&#x27;</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="ES10（2019）"><a href="#ES10（2019）" class="headerlink" title="ES10（2019）"></a>ES10（2019）</h2><h3 id="Array-新特性"><a href="#Array-新特性" class="headerlink" title="Array 新特性"></a>Array 新特性</h3><ul>
+<li><p><strong><code>Array.flat()</code></strong></p>
+<p>二維攤平成一維陣列，並回傳一個新陣列，也可用於去除陣列的空項目。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]].<span class="title function_">flat</span>(<span class="title class_">Infinity</span>); <span class="comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>Array.flatMap()</code></strong></p>
+<p>＝<code>Array.map(...).flat(1)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].<span class="title function_">flatMap</span>(a = [a**<span class="number">2</span>]); <span class="comment">// [1, 4, 9, 16]</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="String-新特性"><a href="#String-新特性" class="headerlink" title="String 新特性"></a>String 新特性</h3><ul>
+<li><p><strong><code>String.trimStart()</code>、<code>String.trimEnd()</code></strong></p>
+<p>移除 String 開頭或結尾的<strong>空白</strong></p>
+</li>
+<li><p><strong><code>String.prototype.matchAll</code></strong></p>
+<p>回傳一所有匹配 RegExp 及分組捕獲結果的迭代器</p>
+<ul>
+<li>以前須使用 <code>RegExp.prototype.exec()</code> 搭配 while</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> raw_arr = test1  test2  test3.<span class="title function_">matchAll</span>((<span class="regexp">/t(e)(st(\d))/g</span>));</span><br><span class="line"><span class="keyword">const</span> arr = [...raw_arr];</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Symbol-prototype-description"><a href="#Symbol-prototype-description" class="headerlink" title="Symbol.prototype.description"></a><code>Symbol.prototype.description</code></h3><p>只讀屬性，回傳 Symbol 的任選描述字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Symbol</span>(description).<span class="property">description</span>; <span class="comment">// description</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Object-fromEntries"><a href="#Object-fromEntries" class="headerlink" title="Object.fromEntries()"></a><code>Object.fromEntries()</code></h3><p>把陣列改回為物件，與 <code>Object.entries()</code> 相反。</p>
+<h3 id="可選-catch-綁定"><a href="#可選-catch-綁定" class="headerlink" title="可選 catch 綁定"></a>可選 catch 綁定</h3><p>ES10 中 err 可省略</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;<span class="comment">// tryCode</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;<span class="comment">// catchCode</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="BigInt"><a href="#BigInt" class="headerlink" title="BigInt"></a>BigInt</h3><p>新的資料型態，提供＞2⁵³ 整數。</p>
+<h2 id="ES11（2020）"><a href="#ES11（2020）" class="headerlink" title="ES11（2020）"></a>ES11（2020）</h2><h3 id="空值合併運算-Nullish-coalescing-operator"><a href="#空值合併運算-Nullish-coalescing-operator" class="headerlink" title="空值合併運算 Nullish coalescing operator ??"></a>空值合併運算 Nullish coalescing operator <code>??</code></h3><p><strong>由來</strong>：JS 遇到 0、null、undefined，會自動轉型成 false，但有時 0 是正常值，只能容錯到 undefined、null。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> username = user.<span class="property">level</span> ?? <span class="string">&#x27;查無等級&#x27;</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 若 level 值不存在，則變成「查無等級」。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="可選串連-Optional-chaining"><a href="#可選串連-Optional-chaining" class="headerlink" title="可選串連 Optional chaining ?"></a>可選串連 Optional chaining <code>?</code></h3><p><strong>由來</strong>：檢查資料是否存在通常要用 if 判斷，若資料為 null 或 user物件底下沒有 .info 則報錯。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> username = user?.<span class="property">name</span> || <span class="string">&#x27;guest&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-allSettled"><a href="#Promise-allSettled" class="headerlink" title="Promise.allSettled"></a><code>Promise.allSettled</code></h3><p><strong>由來</strong>：<code>Promise.all</code> 可讓多個 Promise 處理完後再進行到下一步，但其一失敗則全部進入 catch，無法針對部份成功繼續處理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">const</span> p2 = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">const</span> p3 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p1));</span><br><span class="line"><span class="keyword">const</span> p4 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p2));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promiseList = [p1,p2,p3, p4]</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">allSettled</span>(promiseList)</span><br><span class="line">.<span class="title function_">then</span>(values=&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(values)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="動態導入-dynamic-import"><a href="#動態導入-dynamic-import" class="headerlink" title="動態導入 dynamic import"></a>動態導入 dynamic import</h3><p>有需要時再載入，可撰寫於文件頂層以外的位置。</p>
+<ul>
+<li>回傳 Promise，可搭配 async／await。</li>
+<li>導入的模組名稱可利用語法來控制</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">importModule</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> moduleName = <span class="string">&#x27;myModule&#x27;</span>;</span><br><span class="line">  <span class="keyword">let</span> importModule = <span class="keyword">await</span>;</span><br><span class="line">  <span class="title function_">import</span>(<span class="string">`./modules/&#123;moduleName&#125;.js`</span>);</span><br><span class="line">  importModule.<span class="title function_">default</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="globalThis"><a href="#globalThis" class="headerlink" title="globalThis"></a>globalThis</h3><p><strong>由來</strong>：在 web 可通過 window、self、frames 取得全域物件；但在 web workers 只有 self 可以；Node.js 則皆無法獲取，必須用 global；在鬆散模式下，可在函式中回傳 this 獲取；但在嚴格模式下 this 則回傳 undefined 。</p>
+<p>提供一個標準方式去獲取不同執行環境下的全域物件</p>
+<h2 id="ES12（2021）"><a href="#ES12（2021）" class="headerlink" title="ES12（2021）"></a>ES12（2021）</h2><h3 id="String-prototype-replaceAll"><a href="#String-prototype-replaceAll" class="headerlink" title="String.prototype.replaceAll"></a><code>String.prototype.replaceAll</code></h3><p>替換所有符合規則的字符串，並回傳一新 String。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = hello world;</span><br><span class="line">str.<span class="title function_">replaceAll</span>(l, ); <span class="comment">// heo word</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-any"><a href="#Promise-any" class="headerlink" title="Promise.any"></a><code>Promise.any</code></h3><p>接收一個包含 Promise 的可迭代物件，並回傳一新 Promise。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p1));</span><br><span class="line"><span class="keyword">const</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p2));</span><br><span class="line"><span class="keyword">const</span> promiseList = [p1, p2];</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">any</span>(promiseList)</span><br><span class="line">.<span class="title function_">then</span>(values = &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(values);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">catch</span>(e = &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="弱引用-weakref"><a href="#弱引用-weakref" class="headerlink" title="弱引用 weakref"></a>弱引用 weakref</h3><p><strong>由來</strong>：若一物件不再被任何物件引用，即判定為可被回收以釋放記憶體的垃圾。</p>
+<p>可拿到一物件的弱引用，其不會阻止物件被垃圾機制回收，當其被回收時，則無法再獲取該物件。</p>
+<h3 id="邏輯運算子-Logical-Assignment-Operator"><a href="#邏輯運算子-Logical-Assignment-Operator" class="headerlink" title="邏輯運算子 Logical Assignment Operator"></a>邏輯運算子 Logical Assignment Operator</h3><ul>
+<li><p><strong>AND <code>&amp;&amp;=</code></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">0</span>, y = <span class="number">1</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x &amp;&amp;= y); <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於 x &amp;&amp; (x = y)</span></span><br><span class="line"><span class="comment">// 不等於 x = x &amp;&amp; y</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>OR</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">0</span>, y = <span class="number">1</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x ||= y); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於 x || (x = y)</span></span><br><span class="line"><span class="comment">// 不等於 x = x || y</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="數字間隔性符"><a href="#數字間隔性符" class="headerlink" title="數字間隔性符 _"></a>數字間隔性符 <code>_</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1_000_000_000</span> === <span class="number">1000000000</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41581588/article/details/124776301">JavaScript语法 ES6、ES7、ES8、ES9、ES10、ES11、ES12</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/unitsexhibition/es6-es7-es8-es9-es10-features-b17d7a1c5a89">ES6、ES7、ES8、ES9、ES10 新特性. ES6、ES7、ES8、ES9、ES10 新特性</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.typeart.cc/javascript-es6-to-es11-features/">詳解JavaScript ES6~11新語法</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/easons-murmuring/js%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-es2021-es12%E4%BB%A4%E4%BA%BA%E6%9C%9F%E5%BE%85%E7%9A%84%E6%96%B0%E5%8A%9F%E8%83%BD-ab3c651a9385">JS學習筆記－ES2021&#x2F;ES12令人期待的新功能</a></li>
+</ul>
+
       
     </div>
 
@@ -379,7 +677,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/TypeScript/">TypeScript</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -388,7 +686,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/TypeScript/">TypeScript</a>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -404,15 +702,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/TypeScript/TS－Class＆Interface/"><span>[TS] Class＆Interface</span></a></h3>
+    <h3 class="article-title"><a href="/2022/04/27/JavaScript/JS－LocalStorage/"><span>[JS] Web Storage</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/TypeScript/TS－Class＆Interface/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.277Z">
-          2022-06-24
+      <a href="/2022/04/27/JavaScript/JS－LocalStorage/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-26T16:00:00.000Z">
+          2022-04-27
         </time>
       </a>
     </span>
@@ -424,9 +722,27 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="Class-類別"><a href="#Class-類別" class="headerlink" title="Class 類別"></a>Class 類別</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`My name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(<span class="string">&#x27;Jack&#x27;</span>);  <span class="comment">// 物件實例化</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">sayHi</span>());</span><br></pre></td></tr></table></figure>
+        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>可讓網頁將資料儲存於本地端的技術，資料以 <strong>key-value</strong> 形式保存。</p>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>儲存空間比 cookie 大很多（至少約 5MB）</li>
+<li>資料不會占用網路頻寬（與 cookie 相反）</li>
+<li>獨立的儲存空間 ➪ 避免混亂</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>存於本地的資料未加密且永不過期 ➪ 隱私洩漏</li>
+<li>資料型別只能是 <strong>String</strong></li>
+<li>隱私模式下不可讀</li>
+<li>爬蟲抓取不到</li>
+<li>無法跨域</li>
+</ul>
+<h3 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h3><p>兩者差異主要在於壽命長短與有效範圍，而使用的 API 相同。</p>
+<ul>
+<li>[Local Storage](##Local Storage)</li>
+<li>[Session Storage](##Session Storage)</li>
+</ul>
+<p><strong>💡兩者皆限制在該網站的規範內，其他網站無法存取。</strong>。</p>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/TypeScript/TS－Class＆Interface/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/04/27/JavaScript/JS－LocalStorage/"><span>...More</span></a></p>
         
       
     </div>
@@ -441,7 +757,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/TypeScript/">TypeScript</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -450,7 +766,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/TypeScript/">TypeScript</a>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -466,15 +782,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/Tailwind/Tailwind－如何客製化？/"><span>[Tailwind] 如何客製化？</span></a></h3>
+    <h3 class="article-title"><a href="/2022/04/27/Tailwind/Tailwind－如何客製化？/"><span>[Tailwind] 如何客製化？</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/Tailwind/Tailwind－如何客製化？/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.264Z">
-          2022-06-24
+      <a href="/2022/04/27/Tailwind/Tailwind－如何客製化？/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-26T16:00:00.000Z">
+          2022-04-27
         </time>
       </a>
     </span>
@@ -494,7 +810,7 @@
 <li>1536px <code>2xl:</code></li>
 </ul>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Tailwind/Tailwind－如何客製化？/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/04/27/Tailwind/Tailwind－如何客製化？/"><span>...More</span></a></p>
         
       
     </div>
@@ -534,15 +850,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/Tailwind/Tailwind－CSS 筆記整理/"><span>[Tailwind] CSS 筆記整理</span></a></h3>
+    <h3 class="article-title"><a href="/2022/04/26/JavaScript/JS－AJAX/"><span>[JS] AJAX</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/Tailwind/Tailwind－CSS 筆記整理/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.258Z">
-          2022-06-24
+      <a href="/2022/04/26/JavaScript/JS－AJAX/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-25T16:00:00.000Z">
+          2022-04-26
         </time>
       </a>
     </span>
@@ -554,12 +870,14 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="安裝＆設定"><a href="#安裝＆設定" class="headerlink" title="安裝＆設定"></a>安裝＆設定</h2><p><code>yarn add postcss-cli autoprefixer -D</code></p>
-<h3 id="產生配置檔"><a href="#產生配置檔" class="headerlink" title="產生配置檔"></a>產生配置檔</h3><p><code>yarn tailwindcss init -p</code></p>
-<p><code>tailwind.css</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
+        <h2 id="Asynchronous-JavaScript-and-XML（AJAX）"><a href="#Asynchronous-JavaScript-and-XML（AJAX）" class="headerlink" title="Asynchronous JavaScript and XML（AJAX）"></a>Asynchronous JavaScript and XML（AJAX）</h2><p>網頁前端與後端伺服器溝通的技術</p>
+<ul>
+<li>核心：<strong>XMLHttpRequest（XHR）</strong> 物件</li>
+<li>目的：不必重整網頁即可向伺服器傳送及取得資料</li>
+<li>流程：所有 AJAX 行為皆由網頁端先發出，透過 API 接口對後端進行請求，而後端會針對請求的內容進行回應。</li>
+</ul>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Tailwind/Tailwind－CSS 筆記整理/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/04/26/JavaScript/JS－AJAX/"><span>...More</span></a></p>
         
       
     </div>
@@ -574,7 +892,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Tailwind/">Tailwind</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -583,132 +901,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/Tailwind/">Tailwind</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/React/React－組件 Component/"><span>[React] 組件 Component</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/React/React－組件 Component/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.243Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h2><p>可將 UI 拆分成獨立且重複使用的程式碼</p>
-<img src="https://miro.medium.com/max/800/0*0k0Dsg1IcfIUQOvu.png" style="zoom: 60%;" />
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/React/React－組件 Component/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/React/">React</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/React/">React</a><a href="/tags/Component/">Component</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/React/React－生態圈/"><span>[React] 生態圈</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/React/React－生態圈/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.234Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>JavaScript UI 庫</p>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/React/React－生態圈/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/React/">React</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/React/">React</a>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AJAX/">AJAX</a>
     </span>
     
 

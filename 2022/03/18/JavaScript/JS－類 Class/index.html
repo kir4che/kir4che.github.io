@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 類 Class | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="Class（ES6）基於原型物件導向的語法糖
+
+利用 _proto_ 委派機制來實作
+
+**_proto_**：詳見 [JS] 繼承與原型鏈
+委派機制：詳見 [JS] 事件 Event
+
+
+原型指向預設的 [[construct]] 方法
+
+prototype 屬性仍是存在
+
+以建構式搭配 new 來實例化
+
+實例 Instance：一個實際建立的個體
+new 建立了新的記憶體空間與物件，並將 this 指向該實例。">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 類 Class"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 類 Class</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/18/JavaScript/JS－類 Class/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-17T16:00:00.000Z">
+          2022-03-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Class（ES6）"><a href="#Class（ES6）" class="headerlink" title="Class（ES6）"></a>Class（ES6）</h2><p>基於原型物件導向的語法糖</p>
+<ul>
+<li><p>利用 _<em>proto</em>_ 委派機制來實作</p>
+<blockquote>
+<p>**_<em>proto</em>_**：詳見 [JS] 繼承與原型鏈</p>
+<p><strong>委派機制</strong>：詳見 [JS] 事件 Event</p>
+</blockquote>
+</li>
+<li><p>原型指向預設的 [[construct]] 方法</p>
+</li>
+<li><p>prototype 屬性仍是存在</p>
+</li>
+<li><p>以建構式搭配 new 來<strong>實例化</strong></p>
+<ul>
+<li><strong>實例 Instance</strong>：一個實際建立的個體</li>
+<li>new 建立了新的記憶體空間與物件，並將 this 指向該實例。</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul>
+<li>效仿其他 OOP 所擁有的，並取代需要原型 prototype 的操作。</li>
+<li>提供更簡潔的語法來作物件建立與繼承</li>
+</ul>
+<h3 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h3><ul>
+<li>只能宣告方法，無法宣告屬性。</li>
+<li>其中定義的原型方法不能作為建構式</li>
+<li>不可枚舉</li>
+<li>存在暫時性死區，宣告前不能用。</li>
+<li>不能在類中修改類名</li>
+<li>內部程式碼自動強制執行在嚴格模式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span> , <span class="variable language_">this</span>.<span class="property">age</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Molly&#x27;</span>, <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不可枚舉</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> p1) &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(p1); <span class="comment">// 不會報錯但沒有東西</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型方法不能作為建構式</span></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> <span class="title class_">Person</span>.<span class="title function_">toString</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p2); <span class="comment">// Uncaught TypeError: person.toString is not a constructor</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 須搭配 new</span></span><br><span class="line"><span class="title class_">Person</span>(); <span class="comment">// Uncaught TypeError: Class constructor Person cannot be invoked without &#x27;new</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 宣告式</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">funcA</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匿名表達式</span></span><br><span class="line"><span class="keyword">let</span> funcB = <span class="keyword">class</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具名表達式，B 只能在外部使用，B2 只能在內部使用。</span></span><br><span class="line"><span class="keyword">let</span> funcB = <span class="keyword">class</span> <span class="title class_">funcB2</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="建構式-constructor"><a href="#建構式-constructor" class="headerlink" title="建構式 constructor"></a>建構式 constructor</h2><p>一類別只能有一建構式（預設方法）</p>
+<ul>
+<li>通過 new 生成對象實例時，自動呼叫該方法。</li>
+<li>若無顯式定義，空的建構式會被預設添加</li>
+</ul>
+<h2 id="靜態方法-Static"><a href="#靜態方法-Static" class="headerlink" title="靜態方法 Static"></a>靜態方法 Static</h2><p>定義一靜態的方法給類別</p>
+<ul>
+<li><p>原型專屬的方法，不會繼承到物件上。</p>
+</li>
+<li><p>不須 new 直接呼叫</p>
+</li>
+<li><p>Instance 無法使用</p>
+</li>
+<li><p>宣告時靜態綁定，某些狀況下須手動綁定。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>()&#123;</span><br><span class="line">  <span class="keyword">static</span> type = <span class="string">&#x27;人類&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Molly</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(); <span class="comment">// 創建一實例</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Molly</span>.<span class="property">type</span>); <span class="comment">// undefined</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Person</span>.<span class="property">type</span>); <span class="comment">// &#x27;人類&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="繼承-extends"><a href="#繼承-extends" class="headerlink" title="繼承 extends"></a>繼承 extends</h2><p>用 extends 繼承另一類別的屬性 properties 與方法 method。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello!&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Molly</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Animal</span> &#123;&#125; <span class="comment">// 繼承 Person</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="title class_">Molly</span>(); <span class="comment">// 創建一實例</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 執行父類別的方法</span></span><br><span class="line">a.<span class="title function_">greet</span>(); <span class="comment">// Hello!</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><p>能夠呼叫父類（基類）的值（屬性）</p>
+<ul>
+<li><p>子類（派生類）建構式必須呼叫一次，否則報錯。</p>
+<p>因為它不像父類建構式，其建構式沒有初始 this 綁定，所以要先用 <code>super()</code> 生成。</p>
+</li>
+</ul>
+<h3 id="當作函式"><a href="#當作函式" class="headerlink" title="當作函式"></a>當作函式</h3><p>代表父類建構式，只能用於子類建構式中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">funcA</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>.<span class="property">name</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">funcB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">funcA</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>(); <span class="comment">// 内部 this 指向子類 funcB 建構式</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> <span class="title function_">funcA</span>() <span class="comment">// A</span></span><br><span class="line"><span class="keyword">new</span> <span class="title function_">funcB</span>() <span class="comment">// B</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="當作物件"><a href="#當作物件" class="headerlink" title="當作物件"></a>當作物件</h3><p>需要加以區分是用在子類的普通方法還是靜態方法</p>
+<ul>
+<li><h4 id="普通方法"><a href="#普通方法" class="headerlink" title="普通方法"></a>普通方法</h4><ul>
+<li><p>super 指向父類的<strong>原型物件</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcA.<span class="property">num</span> = <span class="number">7</span>;</span><br><span class="line">funcA.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">num</span> = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">funcB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">super</span>.<span class="property">num</span> + <span class="string">&#x27; and I am in funcB.&#x27;</span>); <span class="comment">// 100</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通過 super 呼叫父類方法，內部 <strong>this 指向子類的實例</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span>=<span class="number">11</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">print</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">x</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">funcB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">90</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">num</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">5</span>;</span><br><span class="line">        <span class="comment">// 若無 this.x = 5 回傳 3；無 3 回傳 90；無 90 回傳 11。</span></span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">print</span>(); <span class="comment">// 5  </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通過 super 為子類屬性<strong>賦值</strong>時，super＝this。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">funcB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">e</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="property">e</span> = <span class="number">20</span>; <span class="comment">// super＝this</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">super</span>.<span class="property">e</span>); <span class="comment">// super 指向父類的原型物件（undefined）</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">e</span>); <span class="comment">// 20</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="靜態方法"><a href="#靜態方法" class="headerlink" title="靜態方法"></a>靜態方法</h4><ul>
+<li><p>super 指向<strong>父類</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是父類的 f！&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是父類原型物件的 f！&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">funcB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">funcA</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">son</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">f</span>(); <span class="comment">// 指向父類 f（靜態 f）</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">son</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">f</span>(); <span class="comment">// 指向父類原型物件（普通 f）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ff = <span class="keyword">new</span> <span class="title function_">funcB</span>();</span><br><span class="line"></span><br><span class="line">funcB.<span class="title function_">son</span>(); <span class="comment">// 我是父類的 f！</span></span><br><span class="line">ff.<span class="title function_">son</span>(); <span class="comment">// 我是父類原型物件的 f！</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通過 super 呼叫父類方法時，內部 <strong>this 指向子類</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">print</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">x</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">funcB</span> <span class="keyword">extends</span> <span class="title class_ inherited__">funcA</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">num</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">8</span>;</span><br><span class="line">        <span class="comment">// 若無 this.x = 8，funcB.num() 回傳 11；無 11 回傳 undefined（並非建構式的 2）。</span></span><br><span class="line">        <span class="variable language_">super</span>.<span class="title function_">print</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcB.<span class="property">x</span> = <span class="number">11</span></span><br><span class="line">funcB.<span class="title function_">num</span>()</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>​	在上面兩個關於<strong>x值</strong>的例子中，在<strong>普通方法</strong>中調用super時，若在子類和父類的方法中都未指定x的值，構造函數中的x值會被訪問到; 但是在<strong>靜態方法</strong>中並不會，它會返回undefined，因為構造函數是類的實例。</p>
+<h3 id="super-vs-this"><a href="#super-vs-this" class="headerlink" title="super vs this"></a>super vs this</h3><ul>
+<li>this 指向函式所在的當前物件</li>
+<li>super 指向當前物件的原型物件</li>
+</ul>
+<h2 id="Getter＆Setter"><a href="#Getter＆Setter" class="headerlink" title="Getter＆Setter"></a>Getter＆Setter</h2><p>存取或設定屬性值，可同時對<strong>相同的變數</strong>進行操作。</p>
+<ul>
+<li>只有 getter 則不能修改</li>
+<li>setter 只能傳入一個參數</li>
+</ul>
+<h3 id="不建議使用"><a href="#不建議使用" class="headerlink" title="不建議使用"></a>不建議使用</h3><p>其可能發生無預期的副作用，且難以測試與維護，建議改用原型方法 prototype method 自己建立。</p>
+<p>ex. <code>getVal()</code>、<code>setVal(&#39;Hello&#39;)</code>…</p>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cythilya.github.io/2018/10/28/es6-class/">你懂 JavaScript 嗎？#21 ES6 Class</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.casper.tw/javascript/2017/12/31/javascript-constructor/">鐵人賽：ES6 建構式語法糖</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qwerty053/article/details/121310300">【javascript】class的繼承之super的使用</a></li>
+<li>[<a target="_blank" rel="noopener" href="https://hackmd.io/@chrisHsiao/BJ_IqRB6I">JS]類別(class) - constructor、extends、super、static、Getter &amp; Setter</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

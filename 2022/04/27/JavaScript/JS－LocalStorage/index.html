@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] Web Storage | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="簡介可讓網頁將資料儲存於本地端的技術，資料以 key-value 形式保存。
+優點
+儲存空間比 cookie 大很多（至少約 5MB）
+資料不會占用網路頻寬（與 cookie 相反）
+獨立的儲存空間 ➪ 避免混亂
+
+缺點
+存於本地的資料未加密且永不過期 ➪ 隱私洩漏
+資料型別只能是 String
+隱私模式下不可讀
+爬蟲抓取不到
+無法跨域
+
+類型兩者差異主要在於壽命長短與有效範圍，而使用的 API 相同。
+
+[Local Storage](##Local Storage)
+[Session Storage](##Session Storage)
+
+💡兩者皆限制在該網站的規範內，其他網站無法存取。。">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] Web Storage"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] Web Storage</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/27/JavaScript/JS－LocalStorage/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-26T16:00:00.000Z">
+          2022-04-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>可讓網頁將資料儲存於本地端的技術，資料以 <strong>key-value</strong> 形式保存。</p>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>儲存空間比 cookie 大很多（至少約 5MB）</li>
+<li>資料不會占用網路頻寬（與 cookie 相反）</li>
+<li>獨立的儲存空間 ➪ 避免混亂</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>存於本地的資料未加密且永不過期 ➪ 隱私洩漏</li>
+<li>資料型別只能是 <strong>String</strong></li>
+<li>隱私模式下不可讀</li>
+<li>爬蟲抓取不到</li>
+<li>無法跨域</li>
+</ul>
+<h3 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h3><p>兩者差異主要在於壽命長短與有效範圍，而使用的 API 相同。</p>
+<ul>
+<li>[Local Storage](##Local Storage)</li>
+<li>[Session Storage](##Session Storage)</li>
+</ul>
+<p><strong>💡兩者皆限制在該網站的規範內，其他網站無法存取。</strong>。</p>
+<span id="more"></span>
+
+<h2 id="Local-Storage"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</h2><p>本地永久性資料，除非顯式刪除或清空，且資料可跨瀏覽器分頁（生命週期長）。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>新增：<code>localStorage.setItem(key,value)</code></li>
+<li>讀取：<code>localStorage.getItem(key)</code></li>
+<li>刪除<ul>
+<li>單個：<code>localStorage.removeItem(key)</code></li>
+<li>所有：<code>localStorage.clear()</code></li>
+</ul>
+</li>
+<li>查找：<code>localStorage.key(index)</code></li>
+</ul>
+<h2 id="Session-Storage"><a href="#Session-Storage" class="headerlink" title="Session Storage"></a>Session Storage</h2><p>關閉瀏覽器視窗或分頁關閉就沒了（生命週期短）</p>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>新增：<code>sessionStorage.setItem(key,value)</code></li>
+<li>讀取：<code>sessionStorage.getItem(key)</code></li>
+<li>刪除<ul>
+<li>單個<code>sessionStorage.removeItem(key)</code></li>
+<li>所有：<code>sessionStorage.clear()</code></li>
+</ul>
+</li>
+<li>查找：<code>sessionStorage.key(index)</code></li>
+</ul>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.huanlintalk.com/2012/06/html5-web-storage.html">HTML5 Web Storage</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012149969/article/details/80587523">注意啦！Web Storage的用法都在这里了</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39834073/article/details/107834213">Local Storage和Session Storage详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38490457/article/details/109257751?ops_request_misc=%7B%22request_id%22:%22165741153016782246491311%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=165741153016782246491311&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-109257751-null-null.142%5Ev32%5Epc_rank_34,185%5Ev2%5Econtrol&utm_term=javascript">学习JavaScript这一篇就够了</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

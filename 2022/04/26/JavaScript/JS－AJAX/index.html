@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] AJAX | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="Asynchronous JavaScript and XML（AJAX）網頁前端與後端伺服器溝通的技術
+
+核心：XMLHttpRequest（XHR） 物件
+目的：不必重整網頁即可向伺服器傳送及取得資料
+流程：所有 AJAX 行為皆由網頁端先發出，透過 API 接口對後端進行請求，而後端會針對請求的內容進行回應。">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript,AJAX">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] AJAX"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] AJAX</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/26/JavaScript/JS－AJAX/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-25T16:00:00.000Z">
+          2022-04-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Asynchronous-JavaScript-and-XML（AJAX）"><a href="#Asynchronous-JavaScript-and-XML（AJAX）" class="headerlink" title="Asynchronous JavaScript and XML（AJAX）"></a>Asynchronous JavaScript and XML（AJAX）</h2><p>網頁前端與後端伺服器溝通的技術</p>
+<ul>
+<li>核心：<strong>XMLHttpRequest（XHR）</strong> 物件</li>
+<li>目的：不必重整網頁即可向伺服器傳送及取得資料</li>
+<li>流程：所有 AJAX 行為皆由網頁端先發出，透過 API 接口對後端進行請求，而後端會針對請求的內容進行回應。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="API-接口"><a href="#API-接口" class="headerlink" title="API 接口"></a>API 接口</h3><p>所有 AJAX 都有對應的 API 接口，其實就是<strong>一段網址</strong>，不同網址也對應不同「HTTP 請求方法」，請求方法必須與網址完全對應才可運作。</p>
+<blockquote>
+<p>類似於點餐的<strong>櫃台</strong></p>
+</blockquote>
+<h3 id="網頁端請求"><a href="#網頁端請求" class="headerlink" title="網頁端請求"></a>網頁端請求</h3><p>AJAX 會統一由網頁端發出請求，依據不同接口、請求方法進行請求。</p>
+<blockquote>
+<p>類似於點餐的<strong>顧客</strong>，且說明需要什麼餐點…。</p>
+</blockquote>
+<h3 id="伺服器回應"><a href="#伺服器回應" class="headerlink" title="伺服器回應"></a>伺服器回應</h3><p>收到請求後，伺服器會依據請求的方法、內容與資料庫取得資源並統整過濾後進行回應。</p>
+<blockquote>
+<p>類似於櫃台員工對於顧客的回應</p>
+</blockquote>
+<h2 id="HTTP-請求方法"><a href="#HTTP-請求方法" class="headerlink" title="HTTP 請求方法"></a>HTTP 請求方法</h2><h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><p>請求特定的資源（接在 url 後），且不會提交任何資源。</p>
+<p>➪ 伺服器僅會依據條件進行回應</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line"><span class="comment">// 在地址後加上 ?，然後以 key=value 形式傳遞（參數以 &amp; 區隔）</span></span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;get&#x27;</span>, <span class="string">&#x27;./data.php?a=100&amp;b=200&#x27;</span>);</span><br><span class="line">xhr.<span class="title function_">send</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p>提交特定的資源（待在請求體中），常用於新增資源或改變狀態（登入、註冊…）</p>
+<p>➪ 伺服器會回應新增或改變狀態的結果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>() xhr.<span class="title function_">open</span>(<span class="string">&#x27;post&#x27;</span>, <span class="string">&#x27;./data.php&#x27;</span>);</span><br><span class="line">xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;content-type&#x27;</span>, <span class="string">&#x27;application/x-www-form- urlencoded&#x27;</span>);</span><br><span class="line">xhr.<span class="title function_">send</span>(<span class="string">&#x27;a=100&amp;b=200&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>GET vs POST</strong> </p>
+<ul>
+<li>GET：比 post 更簡單更快</li>
+<li>POST：無資料量限制、更安全</li>
+</ul>
+<p><strong>一定要使用 POST 情況</strong></p>
+<ul>
+<li>無法使用緩存檔案</li>
+<li>向伺服器傳送大量資料</li>
+</ul>
+</blockquote>
+<h3 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h3><p>取代指定資源，常用於完整更新 ➪ 伺服器會回應更新的結果</p>
+<h3 id="PATCH"><a href="#PATCH" class="headerlink" title="PATCH"></a>PATCH</h3><p>更新指定資源，常用於部分資源更新 ➪ 伺服器會回應更新的結果</p>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>刪除特定的資源 ➪ 伺服器會回應刪除的結果</p>
+<h2 id="XMLHttpRequest-跨瀏覽器撈資料"><a href="#XMLHttpRequest-跨瀏覽器撈資料" class="headerlink" title="XMLHttpRequest 跨瀏覽器撈資料"></a>XMLHttpRequest 跨瀏覽器撈資料</h2><p><code>var xhr = new XMLHttpRequest()</code></p>
+<h3 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a>readyState</h3><p>判斷目前讀取資料的狀態，回傳 unsigned short。</p>
+<ul>
+<li><p>0 已產生 XMLHttpRequest，請求未初始化。</p>
+</li>
+<li><p>1 建立連接（未傳送資料）</p>
+<p><code>xhr.open(method, url, async, [user, password])</code></p>
+<ul>
+<li>method：GET、POST</li>
+<li>非同步 async：true 非同步（預設）、false 同步</li>
+</ul>
+</li>
+<li><p>2 傳送請求</p>
+<p><code>xhr.send(body)</code></p>
+<p><strong>💡若只要讀取資料則 () 內打 null</strong></p>
+</li>
+<li><p>3 資料處理中</p>
+</li>
+<li><p>4 完成</p>
+</li>
+</ul>
+<h3 id="onreadystatechange"><a href="#onreadystatechange" class="headerlink" title="onreadystatechange"></a>onreadystatechange</h3><p>呼叫於 readyState 發生變化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>() xhr.<span class="title function_">open</span>(<span class="string">&#x27;get&#x27;</span>, <span class="string">&#x27;./data.php&#x27;</span>)</span><br><span class="line">xhr.<span class="title function_">send</span>()</span><br><span class="line"><span class="comment">// 每次 readyState 改變時都會觸發该事件</span></span><br><span class="line">xhr.<span class="property">onreadyStateChange</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 此處判斷 readyState 是否等於 4 且 HTTP Status 是不是 200 ~ 299</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; <span class="regexp">/^2\d&#123;2|$/</span>.<span class="title function_">test</span>(xhr.<span class="property">status</span>))</span><br><span class="line">        <span class="comment">// 驗證通過並獲取伺服器端的回應</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="onload"><a href="#onload" class="headerlink" title="onload"></a>onload</h3><p>當資料全部跑完，才會觸發此事件</p>
+<h2 id="HTTP-Status-狀態碼"><a href="#HTTP-Status-狀態碼" class="headerlink" title="HTTP Status 狀態碼"></a>HTTP Status 狀態碼</h2><p>優先確認 AJAX 成功與否的方式，透過數字進行不同的分類，讓開發者可以優先專注在可能出錯的環節。</p>
+<h3 id="1XX-參考資訊"><a href="#1XX-參考資訊" class="headerlink" title="1XX 參考資訊"></a>1XX 參考資訊</h3><h3 id="2XX-成功回應"><a href="#2XX-成功回應" class="headerlink" title="2XX 成功回應"></a>2XX 成功回應</h3><ul>
+<li>200 正確回傳</li>
+<li>201 資源已創建</li>
+</ul>
+<h3 id="3XX-重新導向（轉址）"><a href="#3XX-重新導向（轉址）" class="headerlink" title="3XX 重新導向（轉址）"></a>3XX 重新導向（轉址）</h3><h3 id="4XX-用戶端錯誤"><a href="#4XX-用戶端錯誤" class="headerlink" title="4XX 用戶端錯誤"></a>4XX 用戶端錯誤</h3><ul>
+<li>401、403 未取得授權</li>
+<li>404 找不到資源</li>
+<li>422 不符合操作流程</li>
+<li>429 請求次數過多</li>
+</ul>
+<h3 id="5XX-伺服器端錯誤"><a href="#5XX-伺服器端錯誤" class="headerlink" title="5XX 伺服器端錯誤"></a>5XX 伺服器端錯誤</h3><ul>
+<li>500 不可預期之錯誤</li>
+<li>503 無法正確處理該請求</li>
+</ul>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.casper.tw/development/2020/09/30/about-ajax/">AJAX 完整解說系列：基礎觀念</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Oriental_/article/details/104863762?ops_request_misc=%7B%22request_id%22:%22165746834516782390591631%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=165746834516782390591631&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-5-104863762-null-null.142%5Ev32%5Epc_rank_34,185%5Ev2%5Econtrol&utm_term=AJAX">看这一篇就够了！-Ajax详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.casper.tw/development/2020/10/03/about-ajax-4/">AJAX 完整解說系列：輕鬆搞懂 HTTP 狀態碼（HTTP Status Code）</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/AJAX/">AJAX</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

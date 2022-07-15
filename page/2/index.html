@@ -61,15 +61,453 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/React/React－深入淺出 Hooks/"><span>[React] 深入淺出 Hooks</span></a></h3>
+    <h3 class="article-title"><a href="/2022/04/26/JavaScript/JS－JSON/"><span>[JS] JSON</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/React/React－深入淺出 Hooks/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.228Z">
-          2022-06-24
+      <a href="/2022/04/26/JavaScript/JS－JSON/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-25T16:00:00.000Z">
+          2022-04-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="JS-物件標記法-JavaScript-Object-Notation（JSON）"><a href="#JS-物件標記法-JavaScript-Object-Notation（JSON）" class="headerlink" title="JS 物件標記法 JavaScript Object Notation（JSON）"></a>JS 物件標記法 JavaScript Object Notation（JSON）</h2><p>一種輕量級的資料交換格式，</p>
+<ul>
+<li>只是語法參考 JS 並非只有 JS 可用</li>
+</ul>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>便於閱讀、書寫</li>
+<li>支持多種語言</li>
+<li>比起 XML 格式更小</li>
+<li>具有長時間的穩定性（∵ 創始人宣稱此格式永不升級）</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>目前沒有 XML 如此通用性</li>
+</ul>
+<h2 id="轉換"><a href="#轉換" class="headerlink" title="轉換"></a>轉換</h2><p><code>JSON.parse()</code></p>
+<p><code>JSON.stringify()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JSON 轉 JS Object</span></span><br><span class="line"><span class="keyword">var</span> jsonStr = <span class="string">&#x27;&#123;&quot;name&quot;: &quot;Molly&quot;, &quot;age&quot;: 20,&quot;gender&quot;: &quot;女&quot;&#125;&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(jsonStr);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// JS Object 轉 JSON</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">&quot;Molly&quot;</span>, <span class="attr">age</span>: <span class="number">20</span>, <span class="attr">gender</span>: <span class="string">&quot;女&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> jsonStr = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(jsonStr);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41684621/article/details/113851644?ops_request_misc=%7B%22request_id%22:%22165746835916780366560507%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=165746835916780366560507&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-2-113851644-null-null.142%5Ev32%5Epc_rank_34,185%5Ev2%5Econtrol&utm_term=jSOn">JSON 基本使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38490457/article/details/109257751?ops_request_misc=%7B%22request_id%22:%22165741153016782246491311%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=165741153016782246491311&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-109257751-null-null.142%5Ev32%5Epc_rank_34,185%5Ev2%5Econtrol&utm_term=javascript">学习JavaScript这一篇就够了</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/04/26/Tailwind/Tailwind－CSS 筆記整理/"><span>[Tailwind] CSS 筆記整理</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/26/Tailwind/Tailwind－CSS 筆記整理/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-25T16:00:00.000Z">
+          2022-04-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="安裝＆設定"><a href="#安裝＆設定" class="headerlink" title="安裝＆設定"></a>安裝＆設定</h2><p><code>yarn add postcss-cli autoprefixer -D</code></p>
+<h3 id="產生配置檔"><a href="#產生配置檔" class="headerlink" title="產生配置檔"></a>產生配置檔</h3><p><code>yarn tailwindcss init -p</code></p>
+<p><code>tailwind.css</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
+        
+          <p><a class="excerpt-btn" href="/2022/04/26/Tailwind/Tailwind－CSS 筆記整理/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Tailwind/">Tailwind</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/Tailwind/">Tailwind</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/04/20/JavaScript/JS－jQuery/"><span>[JS] jQuery</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/20/JavaScript/JS－jQuery/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-19T16:00:00.000Z">
+          2022-04-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="jQuery-庫"><a href="#jQuery-庫" class="headerlink" title="jQuery 庫"></a>jQuery 庫</h2><p>JavaScript 函數庫，為事件處理特別設計的。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>HTML 元素選取、操作</li>
+<li>CSS 操作</li>
+<li>HTML 事件函數</li>
+<li>JS 特效、動畫</li>
+<li>HTML DOM 遍歷、修改</li>
+<li>AJAX</li>
+<li>Utilities</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li>下載 <a target="_blank" rel="noopener" href="https://jquery.com/download/#Download_jQuery">jQuery</a></li>
+<li><code>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p><code>$(選擇器).行為()</code></p>
+<p><strong>💡若同時用 jQuery 及其他框架，而都以 $ 作為簡寫怎麼辦？ <code>noConflict()</code></strong></p>
+        
+          <p><a class="excerpt-btn" href="/2022/04/20/JavaScript/JS－jQuery/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/jQuery/">jQuery</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/04/19/JavaScript/JS－函式 Function/"><span>[JS] 函式 Function</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/19/JavaScript/JS－函式 Function/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-18T16:00:00.000Z">
+          2022-04-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>將一或多段程式指令包裝起來，可重複使用，也方便維護。</p>
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><h3 id="宣告式"><a href="#宣告式" class="headerlink" title="宣告式"></a>宣告式</h3><p><code>function Name([param]) &#123; ... &#125;</code></p>
+<h3 id="表達式"><a href="#表達式" class="headerlink" title="表達式"></a>表達式</h3><ul>
+<li><p><strong>具名函式 Named Function</strong></p>
+<p><code>var Name1 = function Name2([param]) &#123; ... &#125;</code></p>
+</li>
+<li><p><strong>匿名函式 Anonymous Function</strong>：沒有方法名的方法</p>
+<p><code>var Name = function([param]) &#123; ... &#125;</code></p>
+<ul>
+<li>透過呼叫變數來執行函式內容</li>
+<li>用於容易解決或一次性使用
+        
+          <p><a class="excerpt-btn" href="/2022/04/19/JavaScript/JS－函式 Function/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/04/19/JavaScript/JS－閉包 Closure/"><span>[JS] 閉包 Closure</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/19/JavaScript/JS－閉包 Closure/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-18T16:00:00.000Z">
+          2022-04-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>函式中的函式，也是一物件，用於<strong>存取外部函數</strong>的變數。</p>
+<p><strong>💡與語彙作用域 Lexical Scope 密不可分，詳見 [JS] 作用域 Scope。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">funcA</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">funcB</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// 存取 funcA 裡面的 num</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(num);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">funcB</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">funcA</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>避免使用全域變數</li>
+<li>延伸了變數的作用範圍</li>
+<li>減少命名空間之混亂、物件的相依性</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li><p>被引用的私有變數不能被銷毀 ➪ 記憶體洩漏</p>
+<blockquote>
+<p>解決：變數用完後手動賦值 null</p>
+</blockquote>
+</li>
+<li><p>跨域存取 ➪ 性能損失</p>
+</li>
+</ul>
+        
+          <p><a class="excerpt-btn" href="/2022/04/19/JavaScript/JS－閉包 Closure/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/04/18/JavaScript/JS－錯誤處理/"><span>[JS] 錯誤處理</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/18/JavaScript/JS－錯誤處理/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-17T16:00:00.000Z">
+          2022-04-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>當錯誤 error（例外 exception）發生時，會產生一個用來代表錯誤的物件。</p>
+        
+          <p><a class="excerpt-btn" href="/2022/04/18/JavaScript/JS－錯誤處理/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/04/01/React/React－深入淺出 Hooks/"><span>[React] 深入淺出 Hooks</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/01/React/React－深入淺出 Hooks/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-31T16:00:00.000Z">
+          2022-04-01
         </time>
       </a>
     </span>
@@ -84,7 +522,7 @@
         <h2 id="useState-狀態改變"><a href="#useState-狀態改變" class="headerlink" title="useState 狀態改變"></a>useState 狀態改變</h2><p>傳入 state 初始值，回傳當前 state、更新方法。</p>
 <p><code>const [state, setState] = useState(初始值);</code></p>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/React/React－深入淺出 Hooks/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/04/01/React/React－深入淺出 Hooks/"><span>...More</span></a></p>
         
       
     </div>
@@ -124,15 +562,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/React/React－Props＆State/"><span>[React] Props＆State</span></a></h3>
+    <h3 class="article-title"><a href="/2022/03/30/React/React－Props＆State/"><span>[React] Props＆State</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/React/React－Props＆State/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.219Z">
-          2022-06-24
+      <a href="/2022/03/30/React/React－Props＆State/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-29T16:00:00.000Z">
+          2022-03-30
         </time>
       </a>
     </span>
@@ -146,7 +584,7 @@
       
         <h2 id="屬性-Props"><a href="#屬性-Props" class="headerlink" title="屬性 Props"></a>屬性 Props</h2><p>父組件 → 子組件傳遞之屬性，用來設定組件初始化的相關資料，可讀不可寫。</p>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/React/React－Props＆State/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/03/30/React/React－Props＆State/"><span>...More</span></a></p>
         
       
     </div>
@@ -186,15 +624,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/React/React－Hooks vs Render Props vs HOC/"><span>[React] Hooks vs Render Props vs HOC</span></a></h3>
+    <h3 class="article-title"><a href="/2022/03/28/JavaScript/JS－Promise/"><span>[JS] Promise</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/React/React－Hooks vs Render Props vs HOC/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.208Z">
-          2022-06-24
+      <a href="/2022/03/28/JavaScript/JS－Promise/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-27T16:00:00.000Z">
+          2022-03-28
         </time>
       </a>
     </span>
@@ -206,150 +644,36 @@
   <div class="article-content">
     <div class="entry">
       
-        <blockquote>
-<p><strong>組件封裝</strong> ➪ 重複使用程式碼</p>
-</blockquote>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/React/React－Hooks vs Render Props vs HOC/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/React/">React</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/React/">React</a><a href="/tags/Hooks/">Hooks</a><a href="/tags/Render-Props/">Render Props</a><a href="/tags/HOC/">HOC</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/React/React－CSS in JS/"><span>[React] CSS in JS</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/React/React－CSS in JS/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.195Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>一個 CSS in JS 函式庫</p>
-<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
-<li>獨立 Class ➪ 避免重複讀取而互相影響</li>
-<li>支持組件間繼承 ➪ 可維護性 ↗</li>
-<li>能以 Props 控制 CSS</li>
-</ul>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/React/React－CSS in JS/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/React/">React</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Front-End/">Front-End</a><a href="/tags/React/">React</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/Python/Python－爬蟲實戰（Dcard看版）/"><span>[Python] 爬蟲實戰（Dcard看版）</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/Python/Python－爬蟲實戰（Dcard看版）/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.183Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="DcardAPI-GET"><a href="#DcardAPI-GET" class="headerlink" title="DcardAPI GET"></a>DcardAPI GET</h2><p><a target="_blank" rel="noopener" href="https://www.dcard.tw/service/api/v2">https://www.dcard.tw/service/api/v2</a></p>
+        <h2 id="Promise（ES6）"><a href="#Promise（ES6）" class="headerlink" title="Promise（ES6）"></a>Promise（ES6）</h2><p>非同步運算的最終完成或失敗的物件</p>
 <ul>
-<li>全部文章 &#x2F;posts</li>
-<li>看板資訊 &#x2F;forums</li>
-<li>看板內文章列表 &#x2F;forums&#x2F;{看板名稱}&#x2F;posts</li>
-<li>文章內文 &#x2F;posts&#x2F;{文章ID}</li>
-<li>文章內引用連結 &#x2F;posts&#x2F;{文章ID}&#x2F;links</li>
-<li>文章內留言 &#x2F;posts&#x2F;{文章ID}&#x2F;comments</li>
+<li><p>以建構式為原型，必須傳入一參數（該參數為函式）。</p>
+</li>
+<li><p>透過微任務序列來驅動</p>
+<blockquote>
+<p><strong>微任務序列 micro task queue</strong></p>
+<p>事件循環機制 Event Loop 在 HTML5 Web API 標準中新增的</p>
+<p>觸發時機是在 Stack 清空時，JS 引擎會先確認微任務序列有無東西，有的話優先執行，直到清空後，才從 Queue 拿出新任務到 Stack 上。</p>
+</blockquote>
+</li>
 </ul>
-<p>皆回傳 JSON 格式資料！</p>
-<p>（來源：<a target="_blank" rel="noopener" href="https://blog.jiatool.com/posts/dcard_api_v2/">爬蟲 Dcard API 2.0 版本？！ – IT 空間</a>）</p>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li><p>非同步操作以同步化表達</p>
+<p>➪ 易於閱讀、避免層層嵌套</p>
+</li>
+<li><p>物件提供統一的接口</p>
+</li>
+<li><p>物件狀態不受外界影響</p>
+</li>
+<li><p>良好的錯誤處理</p>
+</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>一旦建立則立即執行，無法取消。</li>
+<li>若不設定回呼函式，Promise 內部錯誤不會反映到外部。</li>
+<li>peding 狀態模糊，是剛開始還是快完成了。</li>
+</ul>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Python/Python－爬蟲實戰（Dcard看版）/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/03/28/JavaScript/JS－Promise/"><span>...More</span></a></p>
         
       
     </div>
@@ -364,7 +688,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Python/">Python</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -373,7 +697,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Python/">Python</a><a href="/tags/Web-Crawler/">Web Crawler</a>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Promise/">Promise</a>
     </span>
     
 
@@ -389,15 +713,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/Coding/Python/Python－商管程式設計/"><span>[Python] 商管程式設計</span></a></h3>
+    <h3 class="article-title"><a href="/2022/03/25/JavaScript/JS－同步與非同步/"><span>[JS] 同步與非同步 Sync＆Async</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/Coding/Python/Python－商管程式設計/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.176Z">
-          2022-06-24
+      <a href="/2022/03/25/JavaScript/JS－同步與非同步/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-24T16:00:00.000Z">
+          2022-03-25
         </time>
       </a>
     </span>
@@ -409,12 +733,15 @@
   <div class="article-content">
     <div class="entry">
       
-        <blockquote>
-<p>本文為臺大孔令傑教授與盧信銘教授的「用 Python 做商管程式設計」學習筆記</p>
-<p>課程網址：<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/pbc1%E3%80%81https://www.coursera.org/learn/pbc2">https://www.coursera.org/learn/pbc1、https://www.coursera.org/learn/pbc2</a></p>
-</blockquote>
+        <h2 id="同步與非同步"><a href="#同步與非同步" class="headerlink" title="同步與非同步"></a>同步與非同步</h2><p><img src="https://www.oxxostudio.tw/img/articles/201706/javascript-promise-settimeout-1.jpg" alt="img"></p>
+<h3 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步 Synchronous"></a>同步 Synchronous</h3><p>一次只能做一件事</p>
+<ul>
+<li>阻塞後面程式碼的執行</li>
+<li>瀏覽器同步執行時，阻塞畫面的渲染。</li>
+</ul>
+<h3 id="非同步-Asynchronous"><a href="#非同步-Asynchronous" class="headerlink" title="非同步 Asynchronous"></a>非同步 Asynchronous</h3><p>一次同時做好幾件事</p>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Python/Python－商管程式設計/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/03/25/JavaScript/JS－同步與非同步/"><span>...More</span></a></p>
         
       
     </div>
@@ -429,7 +756,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Python/">Python</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -438,264 +765,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Python/">Python</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/MySQL/MySQL－練習題/"><span>[MySQL] 練習題</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/MySQL/MySQL－練習題/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.164Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="01-課程成績＞02-課程成績的學生"><a href="#01-課程成績＞02-課程成績的學生" class="headerlink" title="01 課程成績＞02 課程成績的學生"></a>01 課程成績＞02 課程成績的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, s1.score AS 國文, s2.score AS 數學 FROM student</span><br><span class="line">JOIN sc s1 ON student.Sid = s1.Sid AND s1.Cid = &#x27;01&#x27;</span><br><span class="line">JOIN sc s2 ON student.Sid = s2.Sid AND s2.cid = &#x27;02&#x27;</span><br><span class="line">WHERE s1.score &gt; s2.score</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/2qTPahq.png"></p>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/MySQL/MySQL－練習題/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/MySQL/">MySQL</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/MySQL/">MySQL</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/Leetcode/LeetCode－561. Array Partition I/"><span>[Leetcode] 561. Array Partition I</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/Leetcode/LeetCode－561. Array Partition I/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.152Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="561-Array-Partition-I"><a href="#561-Array-Partition-I" class="headerlink" title="561. Array Partition I"></a>561. Array Partition I</h1><blockquote>
-<p>Given an integer array of integers, group these integers into pairs such that the sum of for all is <strong>maximized</strong>. Return <em>the maximized sum</em>.</p>
-</blockquote>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Leetcode/LeetCode－561. Array Partition I/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/LeetCode/">LeetCode</a>, <a href="/categories/Coding/LeetCode/Array/">Array</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a><a href="/tags/LeetCode/">LeetCode</a><a href="/tags/Array/">Array</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/Leetcode/LeetCode－217. Contains Duplicate/"><span>[LeetCode] 217. Contains Duplicate</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/Leetcode/LeetCode－217. Contains Duplicate/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.145Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="217-Contains-Duplicate"><a href="#217-Contains-Duplicate" class="headerlink" title="217. Contains Duplicate"></a>217. Contains Duplicate</h1><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Leetcode/LeetCode－217. Contains Duplicate/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/LeetCode/">LeetCode</a>, <a href="/categories/Coding/LeetCode/Array/">Array</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a><a href="/tags/LeetCode/">LeetCode</a><a href="/tags/Array/">Array</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2022/06/24/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>[LeetCode] 561. Array Partition I</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/06/24/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:14.136Z">
-          2022-06-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="1329-Sort-the-Matrix-Diagonally"><a href="#1329-Sort-the-Matrix-Diagonally" class="headerlink" title="1329. Sort the Matrix Diagonally"></a>1329. Sort the Matrix Diagonally</h1><blockquote>
-<p>A <strong>matrix diagonal</strong> is a diagonal line of cells starting from some cell in either the topmost row or leftmost column and going in the bottom-right direction until reaching the matrix’s end. For example, the <strong>matrix diagonal</strong> starting from <code>mat[2][0]</code>, where <code>mat</code> is a <code>6 x 3</code> matrix, includes cells <code>mat[2][0]</code>, <code>mat[3][1]</code>, and <code>mat[4][2]</code>.</p>
-<p>Given an <code>m x n</code> matrix <code>mat</code> of integers, sort each <strong>matrix diagonal</strong> in ascending order and return <em>the resulting matrix</em>.</p>
-</blockquote>
-        
-          <p><a class="excerpt-btn" href="/2022/06/24/Coding/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>...More</span></a></p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/LeetCode/">LeetCode</a>, <a href="/categories/Coding/LeetCode/Array/">Array</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a><a href="/tags/LeetCode/">LeetCode</a><a href="/tags/Array/">Array</a>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
     </span>
     
 

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CS、BS 架構 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="Client／Server 主從式架構透過 HTTP 協定送出請求 request 給 server 提取 get，當 server 接收到回應 response 後開始處理，並回傳一個回應 response 給 client。
+➪ client、server 之間透過 HTTP 協定進行溝通">
+  
+
+  
+  
+  <meta name="keywords" content="Web,Client／Server,Browser／Server">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="CS、BS 架構"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>CS、BS 架構</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/06/13/CS、BS 架構/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-06-12T16:00:00.000Z">
+          2022-06-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Client／Server-主從式架構"><a href="#Client／Server-主從式架構" class="headerlink" title="Client／Server 主從式架構"></a>Client／Server 主從式架構</h2><p>透過 HTTP 協定送出請求 request 給 server 提取 get，當 server 接收到回應 response 後開始處理，並回傳一個回應 response 給 client。</p>
+<p>➪ client、server 之間透過 HTTP 協定進行溝通</p>
+<p><img src="https://darvishdarab.github.io/cs421_f20/assets/images/client-server-1-d85a93ea16590c10bed340dd78294d0d.png" alt="Client-Server Architecture | EN.601.421: Object-Oriented Software  Engineering (OOSE)" style="zoom: 18%;" /><span id="more"></span></p>
+<ul>
+<li>交互性強</li>
+<li>具有安全的存取模式</li>
+<li>響應速度快</li>
+<li>適於處理大量數據</li>
+<li>較難以維護、管理（成本高）</li>
+</ul>
+<h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><p>提供 web 服務相關的伺服器</p>
+<h3 id="Client（主動）"><a href="#Client（主動）" class="headerlink" title="Client（主動）"></a>Client（主動）</h3><p>任何可以呈現 server 端所傳來的資訊，並提供使用者本地服務的程式。</p>
+<h2 id="Browser／Server-瀏覽器-伺服器"><a href="#Browser／Server-瀏覽器-伺服器" class="headerlink" title="Browser／Server 瀏覽器-伺服器"></a>Browser／Server 瀏覽器-伺服器</h2><p>只需要瀏覽器即可與 web 伺服器互動</p>
+<img src="http://ithelp.ithome.com.tw/upload/images/20141005/2014100500235854301f1ee42b2_resize_600.png" alt="iT 邦幫忙::一起幫忙解決難題，拯救IT 人的一天" style="zoom: 90%;" />
+
+<ul>
+<li>分布性強</li>
+<li>易於維護（成本低）</li>
+<li>開發簡單</li>
+<li>共享性強</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Web/">Web</a><a href="/tags/Client／Server/">Client／Server</a><a href="/tags/Browser／Server/">Browser／Server</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

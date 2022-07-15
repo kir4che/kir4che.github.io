@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[MySQL] 練習題 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="01 課程成績＞02 課程成績的學生1234SELECT student.SId AS 學號, student.Sname AS 姓名, s1.score AS 國文, s2.score AS 數學 FROM studentJOIN sc s1 ON student.Sid = s1.Sid AND s1.Cid = &amp;#x27;01&amp;#x27;JOIN sc s2 ON student.Sid = s2.Sid AND s2.cid = &amp;#x27;02&amp;#x27;WHERE s1.score &amp;gt; s2.score">
+  
+
+  
+  
+  <meta name="keywords" content="MySQL">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[MySQL] 練習題"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[MySQL] 練習題</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/10/MySQL/MySQL－練習題/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-09T16:00:00.000Z">
+          2022-03-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="01-課程成績＞02-課程成績的學生"><a href="#01-課程成績＞02-課程成績的學生" class="headerlink" title="01 課程成績＞02 課程成績的學生"></a>01 課程成績＞02 課程成績的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, s1.score AS 國文, s2.score AS 數學 FROM student</span><br><span class="line">JOIN sc s1 ON student.Sid = s1.Sid AND s1.Cid = &#x27;01&#x27;</span><br><span class="line">JOIN sc s2 ON student.Sid = s2.Sid AND s2.cid = &#x27;02&#x27;</span><br><span class="line">WHERE s1.score &gt; s2.score</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/2qTPahq.png"></p>
+<span id="more"></span>
+
+<h3 id="存在-01-課程成績但可能缺少-02-課程成績的學號"><a href="#存在-01-課程成績但可能缺少-02-課程成績的學號" class="headerlink" title="存在 01 課程成績但可能缺少 02 課程成績的學號"></a>存在 01 課程成績但可能缺少 02 課程成績的學號</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT s1.SId AS 學號, s1.score AS 國文, s2.score AS 數學 FROM (SELECT * FROM sc WHERE sc.CId = &#x27;01&#x27;) AS s1</span><br><span class="line">LEFT JOIN (SELECT * FROM sc WHERE sc.CId = &#x27;02&#x27;) AS s2 ON s1.SId = s2.SId</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/eMWcP4w.png"></p>
+<h3 id="存在-01-課程成績但缺少-02-課程成績的學號"><a href="#存在-01-課程成績但缺少-02-課程成績的學號" class="headerlink" title="存在 01 課程成績但缺少 02 課程成績的學號"></a>存在 01 課程成績但缺少 02 課程成績的學號</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.SId AS 學號, sc.score AS 國文 FROM sc</span><br><span class="line">WHERE sc.SId NOT IN (</span><br><span class="line">    SELECT SId FROM sc </span><br><span class="line">    WHERE sc.CId = &#x27;02&#x27;</span><br><span class="line">) AND sc.CId= &#x27;01&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>也可以在上一題後方加 <code>WHERE s2.score IS NULL</code></p>
+<p><img src="https://i.imgur.com/FKcYsUv.png"></p>
+<h3 id="平均成績-≥-60-的學生資料"><a href="#平均成績-≥-60-的學生資料" class="headerlink" title="平均成績 ≥ 60 的學生資料"></a>平均成績 ≥ 60 的學生資料</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, r.avgsc AS 平時成績 FROM Student</span><br><span class="line">RIGHT JOIN(</span><br><span class="line">  SELECT SId, ROUND(AVG(score), 1) AS avgsc FROM sc</span><br><span class="line">  GROUP BY SId</span><br><span class="line">  HAVING AVG(score) &gt;= 60</span><br><span class="line">) r ON student.SId = r.SId;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\k5528\AppData\Roaming\Typora\typora-user-images\image-20220519131835778.png" alt="image-20220519131835778"></p>
+<h3 id="所有學生的選課數、課程之總成績"><a href="#所有學生的選課數、課程之總成績" class="headerlink" title="所有學生的選課數、課程之總成績"></a>所有學生的選課數、課程之總成績</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.Sid AS 學號, student.Sname AS 姓名, r.課數, r.總成績</span><br><span class="line">FROM student, (SELECT sc.SId, COUNT(sc.CId) AS 課數, SUM(sc.score) AS 總成績 FROM sc GROUP BY sc.SId) r</span><br><span class="line">WHERE student.SId = r.SId;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/K5toVJ0.png"></p>
+<h3 id="姓黃的學生"><a href="#姓黃的學生" class="headerlink" title="姓黃的學生"></a>姓黃的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE Sname LIKE &#x27;黃%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/6OKWDpX.png"></p>
+<h3 id="選修「周欣潔」老師課程的學生"><a href="#選修「周欣潔」老師課程的學生" class="headerlink" title="選修「周欣潔」老師課程的學生"></a>選修「周欣潔」老師課程的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select student.* FROM student, teacher, course,sc</span><br><span class="line">WHERE student.SId = sc.SId AND course.CId = sc.CId AND course.TId = teacher.TId AND Tname = &#x27;周欣潔&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/GXOR3S6.png"></p>
+<h3 id="沒有選修「簡佳蓉」老師課程的學生"><a href="#沒有選修「簡佳蓉」老師課程的學生" class="headerlink" title="沒有選修「簡佳蓉」老師課程的學生"></a>沒有選修「簡佳蓉」老師課程的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student</span><br><span class="line">WHERE student.SId NOT IN (</span><br><span class="line">    SELECT sc.SId FROM sc, course, teacher </span><br><span class="line">    WHERE sc.CId = course.CId AND course.TId = teacher.TId AND teacher.Tname= &quot;簡佳蓉&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/bNyLegq.png"></p>
+<h3 id="沒有選修全部課程的學生"><a href="#沒有選修全部課程的學生" class="headerlink" title="沒有選修全部課程的學生"></a>沒有選修全部課程的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student</span><br><span class="line">where student.SId NOT IN (</span><br><span class="line">  SELECT sc.SId FROM sc</span><br><span class="line">  GROUP BY sc.SId</span><br><span class="line">  HAVING count(sc.CId) &lt; 3</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/1TUp36n.png"></p>
+<h3 id="任何一門課程成績＜50-的學生"><a href="#任何一門課程成績＜50-的學生" class="headerlink" title="任何一門課程成績＜50 的學生"></a>任何一門課程成績＜50 的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.Sname AS 姓名, course.Cname AS 課程, sc.score AS 分數 FROM student,course,sc</span><br><span class="line">WHERE sc.score &lt; 50 AND student.SId = sc.SId AND sc.CId = course.CId</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/wSNwFBV.png"></p>
+<h3 id="含-2-門以上課程不及格的學生"><a href="#含-2-門以上課程不及格的學生" class="headerlink" title="含 2 門以上課程不及格的學生"></a>含 2 門以上課程不及格的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, r.平均成績 FROM student</span><br><span class="line">RIGHT JOIN (SELECT SId, ROUND(AVG(score), 1) AS 平均成績 FROM sc</span><br><span class="line">	WHERE SId IN (</span><br><span class="line">		SELECT SId FROM sc </span><br><span class="line">		WHERE score &lt; 60 </span><br><span class="line">		GROUP BY SId </span><br><span class="line">		HAVING COUNT(score) &gt; 1)</span><br><span class="line">GROUP BY sid) r ON student.SId = r.SId</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/YUDoWYG.png"></p>
+<h3 id="01-課程分數＜60-的學生（按分數降序排列）"><a href="#01-課程分數＜60-的學生（按分數降序排列）" class="headerlink" title="01 課程分數＜60 的學生（按分數降序排列）"></a>01 課程分數＜60 的學生（按分數降序排列）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號, student.Sname AS 姓名, sc.score AS 國文 FROM student, sc</span><br><span class="line">WHERE student.SId = sc.SId AND sc.score &lt; 60 AND CId = &quot;01&quot;</span><br><span class="line">ORDER BY sc.score DESC</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/NfphIfL.png"></p>
+<h3 id="數學課分數＞90-的學生"><a href="#數學課分數＞90-的學生" class="headerlink" title="數學課分數＞90 的學生"></a>數學課分數＞90 的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.Sname AS 姓名, sc.score AS 分數 from student, sc, course</span><br><span class="line">WHERE student.SId = sc.SId AND course.CId = sc.CId AND course.Cname = &quot;數學&quot; AND sc.score &gt; 90;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/qallOTi.png"></p>
+<h3 id="各課選修人數"><a href="#各課選修人數" class="headerlink" title="各課選修人數"></a>各課選修人數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課號, COUNT(SId) AS 人數 FROM sc</span><br><span class="line">GROUP by CId HAVING 人數 &gt; 5</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/oTtT3di.png"></p>
+<p>至少選修兩門課程的學生</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT SId AS 學號, COUNT(CId) AS 選修課數 FROM sc</span><br><span class="line">GROUP BY 學號 HAVING 選修課數 &gt;= 2</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/FMkZz1U.png"></p>
+<h3 id="各課成績最高分、最低分、平均分與分數比率"><a href="#各課成績最高分、最低分、平均分與分數比率" class="headerlink" title="各課成績最高分、最低分、平均分與分數比率"></a>各課成績最高分、最低分、平均分與分數比率</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課程, MAX(sc.score) AS 最高分, MIN(sc.score) AS 最低分, AVG(sc.score) AS 平均分, COUNT(*) AS 修課人數,</span><br><span class="line">SUM(CASE WHEN sc.score &gt;= 60 THEN 1 ELSE 0 END ) / COUNT(*) AS 及格率,</span><br><span class="line">SUM(CASE WHEN sc.score &gt;= 75 AND sc.score &lt; 90 THEN 1 ELSE 0 END )/ COUNT(*) AS 中等率,</span><br><span class="line">SUM(CASE WHEN sc.score &gt;= 90 THEN 1 ELSE 0 END ) / COUNT(*) AS 優秀率 </span><br><span class="line">FROM sc</span><br><span class="line">GROUP BY sc.CId</span><br><span class="line">ORDER BY count(*) DESC, sc.CId ASC</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/aebrHer.png"></p>
+<h3 id="02-課程成績排名（分數重複時保留名次空缺）"><a href="#02-課程成績排名（分數重複時保留名次空缺）" class="headerlink" title="02 課程成績排名（分數重複時保留名次空缺）"></a>02 課程成績排名（分數重複時保留名次空缺）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.SId AS 學號, a.score AS 分數, count(b.score) + 1 AS 排名 FROM sc AS a</span><br><span class="line">LEFT JOIN sc AS b ON a.score &lt; b.score AND a.CId = b.CId</span><br><span class="line">WHERE a.CId = &#x27;02&#x27;</span><br><span class="line">GROUP BY a.CId, a.SId, a.score</span><br><span class="line">ORDER BY a.CId, 排名 ASC</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/mxPqojj.png"></p>
+<h3 id="各課成績之分段人數"><a href="#各課成績之分段人數" class="headerlink" title="各課成績之分段人數"></a>各課成績之分段人數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT course.CId AS 課號, course.Cname AS 課程,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 60 AND sc.score &gt; 0 THEN 1 ELSE 0 END) AS &#x27;＜60&#x27;,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 70 AND sc.score &gt; 60 THEN 1 ELSE 0 END) AS &#x27;70-60&#x27;,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 85 AND sc.score &gt; 70 THEN 1 ELSE 0 END) AS &#x27;85-70&#x27;,</span><br><span class="line">SUM(CASE WHEN sc.score &lt;= 100 AND sc.score &gt; 85 THEN 1 ELSE 0 END) AS &#x27;＞85&#x27;</span><br><span class="line">FROM sc LEFT JOIN course</span><br><span class="line">ON sc.CId = course.CId</span><br><span class="line">GROUP BY sc.CId;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/sVhpm78.png"></p>
+<h3 id="各課成績前三名"><a href="#各課成績前三名" class="headerlink" title="各課成績前三名"></a>各課成績前三名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課程, sc.SId AS 學號, sc.score AS 分數 FROM sc WHERE ( SELECT COUNT(*) FROM sc AS a WHERE sc.CId = a.CId AND sc.score &lt; a.score ) &lt; 3</span><br><span class="line">ORDER BY CId ASC, sc.score DESC</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/KLgi9Dm.png"></p>
+<h3 id="選修「鄭家榮」老師課程中成績最高的學生"><a href="#選修「鄭家榮」老師課程中成績最高的學生" class="headerlink" title="選修「鄭家榮」老師課程中成績最高的學生"></a>選修「鄭家榮」老師課程中成績最高的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.*, sc.score, sc.CId FROM student, teacher, course, sc </span><br><span class="line">WHERE teacher.TId = course.TId AND sc.SId = student.SId AND sc.CId = course.CId AND teacher.Tname = &#x27;鄭家榮&#x27;</span><br><span class="line">ORDER BY score DESC LIMIT 1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/EeHovrL.png"></p>
+<h3 id="各課的平均成績（按平均成績降序排列，相同時按課號升序排列）"><a href="#各課的平均成績（按平均成績降序排列，相同時按課號升序排列）" class="headerlink" title="各課的平均成績（按平均成績降序排列，相同時按課號升序排列）"></a>各課的平均成績（按平均成績降序排列，相同時按課號升序排列）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT sc.CId AS 課號, course.Cname AS 課程, ROUND(AVG(sc.score), 1) AS 平均成績 FROM sc, course</span><br><span class="line">WHERE sc.CId = course.CId</span><br><span class="line">GROUP BY sc.CId </span><br><span class="line">ORDER BY 平均成績 DESC, 課號 ASC</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/bdqZGvf.png"></p>
+<h3 id="男女人數"><a href="#男女人數" class="headerlink" title="男女人數"></a>男女人數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT Ssex AS 性別, COUNT(*) AS 人數 FROM student GROUP BY Ssex</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/2SZ0bc9.png"></p>
+<h3 id="2000-年出生的學生"><a href="#2000-年出生的學生" class="headerlink" title="2000 年出生的學生"></a>2000 年出生的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE YEAR(student.Sage) = 2000</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/9QFbD4g.png"></p>
+<h3 id="學生的年齡（以出生年份計算）"><a href="#學生的年齡（以出生年份計算）" class="headerlink" title="學生的年齡（以出生年份計算）"></a>學生的年齡（以出生年份計算）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT student.SId AS 學號,student.Sname AS 姓名, TIMESTAMPDIFF(YEAR, student.Sage, CURDATE()) AS 年齡 FROM student</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/y6KSvbv.png"></p>
+<h3 id="本週過生日的學生"><a href="#本週過生日的學生" class="headerlink" title="本週過生日的學生"></a>本週過生日的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE WEEKOFYEAR(student.Sage) = WEEKOFYEAR(CURDATE())</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/oA7NPdA.png"></p>
+<h3 id="下個月過生日的學生"><a href="#下個月過生日的學生" class="headerlink" title="下個月過生日的學生"></a>下個月過生日的學生</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM student WHERE MONTH(student.Sage) = MONTH(CURDATE())+1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/eqOnkXu.png"></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/MySQL/">MySQL</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/MySQL/">MySQL</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

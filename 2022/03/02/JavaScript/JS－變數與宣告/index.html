@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 變數與宣告 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="變數 Variables變數是對值的引用，名稱被稱為識別符 identifier（具有唯一性）需要遵從一定規則。
+命名規則
+開頭可用 ASCII（英文大小寫）或下底線（_）、錢符號（$），不可用數字。
+其他則可用英文、數字或下底線（_）
+大小寫有差異
+不可用 JS 保留字">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 變數與宣告"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 變數與宣告</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/02/JavaScript/JS－變數與宣告/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-01T16:00:00.000Z">
+          2022-03-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="變數-Variables"><a href="#變數-Variables" class="headerlink" title="變數 Variables"></a>變數 Variables</h2><p>變數是對值的引用，名稱被稱為識別符 identifier（具有唯一性）需要遵從一定規則。</p>
+<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><ul>
+<li>開頭可用 ASCII（英文大小寫）或下底線（_）、錢符號（$），不可用數字。</li>
+<li>其他則可用英文、數字或下底線（_）</li>
+<li>大小寫有差異</li>
+<li>不可用 JS 保留字</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h2><h3 id="全域變數-Global-Variable"><a href="#全域變數-Global-Variable" class="headerlink" title="全域變數 Global Variable"></a>全域變數 Global Variable</h3><ul>
+<li>任何地方皆能存取到</li>
+<li>在 function 外宣告的變數</li>
+</ul>
+<h3 id="區域變數-Local-Variable"><a href="#區域變數-Local-Variable" class="headerlink" title="區域變數 Local Variable"></a>區域變數 Local Variable</h3><ul>
+<li>在 function 內宣告的變數</li>
+<li>有效於該作用域內</li>
+<li>執行後自動銷毀，並同步釋放記憶體。</li>
+</ul>
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><p>不宣告也能使用變數，取而代之的是要指定其值（嚴格模式下報錯）</p>
+<h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><p>宣告一個可隨意改值的變數</p>
+<ul>
+<li><p>若無初始值則預設 undefined</p>
+</li>
+<li><p>變數執行可以比宣告還早（∵ Hoisting）</p>
+</li>
+<li><p><strong>函式</strong>作用域</p>
+</li>
+</ul>
+<h3 id="let-vs-const（ES6）"><a href="#let-vs-const（ES6）" class="headerlink" title="let vs const（ES6）"></a>let vs const（ES6）</h3><h4 id="相同點"><a href="#相同點" class="headerlink" title="相同點"></a>相同點</h4><ul>
+<li>避免汙染全域變數</li>
+<li>變數不會提升</li>
+<li><strong>區塊</strong>作用域</li>
+<li>同區塊內禁止重複命名（會報錯）</li>
+</ul>
+<h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><p>宣告一個可隨意改值的區域變數</p>
+<ul>
+<li>一次宣告多個變數和值</li>
+<li>若無初始值則預設 undefined</li>
+<li>可重複給值</li>
+</ul>
+<h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>宣告一個只可讀取的不可變常數</p>
+<ul>
+<li>宣告時必須賦值</li>
+<li>不能重新給值</li>
+</ul>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Grammar_and_types">語法與型別 - JavaScript | MDN (mozilla.org)</a></li>
+<li><a target="_blank" rel="noopener" href="https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part3/var_const_naming.html">變數、常數與命名 · 從ES6開始的JavaScript學習生活</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS30] Day03 CSS Variables | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="功能用 JS、CSS 製作可以調整照片內距、模糊及邊框色彩的濾鏡">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript,Challenge">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS30] Day03 CSS Variables"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS30] Day03 CSS Variables</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/06/JavaScript/JS30/JS30－Day03 CSS Variables/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-05T16:00:00.000Z">
+          2022-03-06
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="https://i.imgur.com/nJDQYVv.jpg" style="zoom: 50%;" />
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>用 JS、CSS 製作可以調整照片內距、模糊及邊框色彩的濾鏡</p>
+<span id="more"></span>
+
+<h2 id="root"><a href="#root" class="headerlink" title=":root"></a>:root</h2><p>用於全域變數，等同於 html 選擇器。</p>
+<ul>
+<li>宣告 <code>--varName: varValue;</code> </li>
+<li>使用 <code>屬性：var(--varName, [defaultValue]);</code></li>
+</ul>
+<h2 id="updateProperty"><a href="#updateProperty" class="headerlink" title="updateProperty"></a>updateProperty</h2><h3 id="this-dataset-XXX-‘’"><a href="#this-dataset-XXX-‘’" class="headerlink" title="this.dataset.XXX || ‘’"></a>this.dataset.XXX || ‘’</h3><p>取得自定義屬性 data-*，若沒有就給空值。</p>
+<h3 id="document-documentElement-style-setProperty"><a href="#document-documentElement-style-setProperty" class="headerlink" title="document.documentElement.style.setProperty()"></a>document.documentElement.style.setProperty()</h3><p>動態改變 CSS 變數值</p>
+<ul>
+<li>讀取網頁中的根元素 <code>document.documentElement</code></li>
+<li>設定 CSS 屬性 <code>style.setProperty（＝style.cssPropertyName）</code></li>
+</ul>
+<h2 id="element-addEventListener"><a href="#element-addEventListener" class="headerlink" title="element.addEventListener"></a>element.addEventListener</h2><p>change在滑動時不會呼叫方法，放開滑鼠後才會執行、要持續的話必須要加上 <code>mousemove</code></p>
+<h2 id="DOM-Event-觸發事件"><a href="#DOM-Event-觸發事件" class="headerlink" title="DOM Event 觸發事件"></a>DOM Event 觸發事件</h2><h3 id="change"><a href="#change" class="headerlink" title="change"></a>change</h3><p>滑鼠移動時不會呼叫方法，放開後才執行。</p>
+<h3 id="mousemove"><a href="#mousemove" class="headerlink" title="mousemove"></a>mousemove</h3><p>滑鼠移動時觸發</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

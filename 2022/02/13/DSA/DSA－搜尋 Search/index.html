@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[DSA] 搜尋 Search | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="分類
+內部搜尋資料量小，可從 RAM 資料檔中尋找資料。
+
+外部搜尋資料量較大，通常先分次載入部份資料，再用內部排序後回存或合併結果。">
+  
+
+  
+  
+  <meta name="keywords" content="DSA,Java">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[DSA] 搜尋 Search"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[DSA] 搜尋 Search</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/02/13/DSA/DSA－搜尋 Search/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-12T16:00:00.000Z">
+          2022-02-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h2><ul>
+<li><h4 id="內部搜尋"><a href="#內部搜尋" class="headerlink" title="內部搜尋"></a>內部搜尋</h4><p>資料量小，可從 RAM 資料檔中尋找資料。</p>
+</li>
+<li><h4 id="外部搜尋"><a href="#外部搜尋" class="headerlink" title="外部搜尋"></a>外部搜尋</h4><p>資料量較大，通常先分次載入部份資料，再用內部排序後回存或合併結果。</p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="線性搜尋-Linear-Search（-x3D-循序搜尋-Sequential-Search）"><a href="#線性搜尋-Linear-Search（-x3D-循序搜尋-Sequential-Search）" class="headerlink" title="線性搜尋 Linear Search（&#x3D; 循序搜尋 Sequential Search）"></a>線性搜尋 Linear Search（&#x3D; 循序搜尋 Sequential Search）</h2><p>從頭逐一比對各筆資料值與目標，直到找到或搜完為止。</p>
+<h3 id="複雜度"><a href="#複雜度" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(n) → O(n)</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] data = &#123;<span class="number">75</span>,<span class="number">50</span>,<span class="number">60</span>,<span class="number">20</span>,<span class="number">90</span>,<span class="number">40</span>,<span class="number">55</span>,<span class="number">80</span>&#125;;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> <span class="number">55</span>;<span class="keyword">static</span> String <span class="title function_">linearSearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (arr[i] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 &quot;</span> + (i+<span class="number">1</span>) + <span class="string">&quot; 項&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;找不到&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(linearSearch(data, target));  <span class="comment">// 找到了！在第 7 項</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二分搜尋-Binary-Search"><a href="#二分搜尋-Binary-Search" class="headerlink" title="二分搜尋 Binary Search"></a>二分搜尋 Binary Search</h2><p>在<strong>已排序</strong>陣列 中搜尋某一元素</p>
+<h4 id="過程"><a href="#過程" class="headerlink" title="過程"></a>過程</h4><ol>
+<li>排序</li>
+<li>找出中間值</li>
+<li>比對目標與中間值（若大於目標往左找）</li>
+<li>重複 3. 縮小範圍至找到或找完</li>
+</ol>
+<h3 id="複雜度-1"><a href="#複雜度-1" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(logn) → O(logn)</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼-1"><a href="#程式碼-1" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] data = &#123;<span class="number">10</span>,<span class="number">15</span>,<span class="number">25</span>,<span class="number">40</span>,<span class="number">45</span>,<span class="number">55</span>,<span class="number">60</span>,<span class="number">80</span>,<span class="number">90</span>&#125;;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">target</span> <span class="operator">=</span> <span class="number">55</span>;</span><br><span class="line"><span class="keyword">static</span> String <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> start, <span class="type">int</span> end, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (start &lt;= end) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> start + (end - start) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 &quot;</span> + (mid+<span class="number">1</span>) + <span class="string">&quot; 項&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &gt; target) <span class="keyword">return</span> binarySearch(arr, start, mid-<span class="number">1</span>, target);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> binarySearch(arr, mid+<span class="number">1</span>, end, target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;找不到&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(binarySearch(data, <span class="number">0</span>, data.length-<span class="number">1</span>, target));  <span class="comment">// 找到了！在第 6 項</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="內插搜尋-Interpolation-Search"><a href="#內插搜尋-Interpolation-Search" class="headerlink" title="內插搜尋 Interpolation Search"></a>內插搜尋 Interpolation Search</h2><p>從<strong>已排序</strong>資料中以斜率預測目標所在位置</p>
+<h3 id="複雜度-2"><a href="#複雜度-2" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(n) → O(log(logn))</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼-2"><a href="#程式碼-2" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> String <span class="title function_">interSearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> start, <span class="type">int</span> end, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (start &lt;= end) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> start + (target - arr[start]) * (end - start) / (arr[end] - arr [start]);</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 &quot;</span> + (mid+<span class="number">1</span>) + <span class="string">&quot; 項&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &lt; target) <span class="keyword">return</span> binarySearch(arr, mid+<span class="number">1</span>, end, target);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> binarySearch(arr, start, mid-<span class="number">1</span>, target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;找不到&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(interSearch(data2, <span class="number">0</span>, data2.length-<span class="number">1</span>, target));  <span class="comment">// 找到了！在第 6 項</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="指數搜尋-Exponential-Search"><a href="#指數搜尋-Exponential-Search" class="headerlink" title="指數搜尋 Exponential Search"></a>指數搜尋 Exponential Search</h2><p>搜尋無限、無邊界的<strong>已排序</strong>陣列</p>
+<h3 id="過程-1"><a href="#過程-1" class="headerlink" title="過程"></a>過程</h3><ol>
+<li><p>從索引位置 $2^0$ 開始，不斷遞增 $2^1、2^2$ 直到 $2^i$。</p>
+</li>
+<li><p>若比目標大，會停止指數增長，改用<strong>二分搜尋</strong>來尋找。</p>
+</li>
+</ol>
+<h3 id="複雜度-3"><a href="#複雜度-3" class="headerlink" title="複雜度"></a>複雜度</h3><ul>
+<li><p>時間：O(1) → O(logn) → O(logn)</p>
+</li>
+<li><p>空間：O(1)</p>
+</li>
+</ul>
+<h3 id="程式碼-3"><a href="#程式碼-3" class="headerlink" title="程式碼"></a>程式碼</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> String <span class="title function_">expSearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>] == target) <span class="keyword">return</span> <span class="string">&quot;找到了！在第 1 項&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; arr.length &amp;&amp; arr[i] &lt;= target) i *= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> binarySearch(arr, (i / <span class="number">2</span>), Math.min(i, arr.length), target);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="深度優先搜尋-Depth-first-Search（DFS）"><a href="#深度優先搜尋-Depth-first-Search（DFS）" class="headerlink" title="深度優先搜尋 Depth-first Search（DFS）"></a>深度優先搜尋 Depth-first Search（DFS）</h2><h3 id="過程-2"><a href="#過程-2" class="headerlink" title="過程"></a>過程</h3><ol>
+<li>選定一起始點走訪</li>
+<li>選與其相鄰且未走過的點，再以此為起始點。</li>
+<li>重複 1～2.，直到走完所有頂點。</li>
+</ol>
+<h3 id="圖解"><a href="#圖解" class="headerlink" title="圖解"></a>圖解</h3><img src="https://i.imgur.com/s5eUbrk.png" style="zoom: 60%;" />
+
+
+
+
+
+<h2 id="廣度優先搜尋-Breadth-first-Search（BFS）"><a href="#廣度優先搜尋-Breadth-first-Search（BFS）" class="headerlink" title="廣度優先搜尋 Breadth-first Search（BFS）"></a>廣度優先搜尋 Breadth-first Search（BFS）</h2><p>找出兩物之間的最短距離</p>
+<h3 id="過程-3"><a href="#過程-3" class="headerlink" title="過程"></a>過程</h3><ol>
+<li>選定一起始點走訪</li>
+<li>選與其相鄰且未走過的點</li>
+<li>重複 1～2.</li>
+<li>走完所有與其相鄰的點後，尋找下一層頂點。</li>
+</ol>
+<h3 id="圖解-1"><a href="#圖解-1" class="headerlink" title="圖解"></a>圖解</h3><img src="https://yuihuang.com/wp-content/uploads/2020/01/zj_d453_3.png" alt="img" style="zoom:50%;" />
+
+
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/DSA/">DSA</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/DSA/">DSA</a><a href="/tags/Java/">Java</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

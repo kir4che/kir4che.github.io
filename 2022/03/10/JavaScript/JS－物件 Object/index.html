@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 物件 Object | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="物件導向 Object-orientedJS 是一種基於原型，而不是基於類的物件導向語言。
+
+採用物件 Objects 來模塑真實的實物世界
+每一物件都有自己的屬性與方法
+
+
+基於類別 Class-Based擁有「類別」與「實例」的概念
+
+類別 class：定義某種物件的 property
+實例 instance：類別產生的 object
+
+ex. Java、C++
+基於原型 Prototype-Based沒有類別與實體的概念，只有物件，且新物件在初始化時以原型物件為範本獲得屬性。
+ex. JavaScript">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 物件 Object"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 物件 Object</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/10/JavaScript/JS－物件 Object/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-09T16:00:00.000Z">
+          2022-03-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="物件導向-Object-oriented"><a href="#物件導向-Object-oriented" class="headerlink" title="物件導向 Object-oriented"></a>物件導向 Object-oriented</h2><p>JS 是一種<strong>基於原型</strong>，而不是基於類的物件導向語言。</p>
+<ul>
+<li>採用物件 Objects 來模塑真實的實物世界</li>
+<li>每一物件都有自己的屬性與方法</li>
+</ul>
+<blockquote>
+<p><strong>基於類別 Class-Based</strong><br>擁有「類別」與「實例」的概念</p>
+<ul>
+<li>類別 class：定義某種物件的 property</li>
+<li>實例 instance：類別產生的 object</li>
+</ul>
+<p>ex. Java、C++</p>
+<p><strong>基於原型 Prototype-Based</strong><br>沒有類別與實體的概念，只有物件，且新物件在初始化時以原型物件為範本獲得屬性。</p>
+<p>ex. JavaScript</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>封裝 Encapsulation</li>
+<li>繼承 Inheritance</li>
+<li>多型 Polymorphism</li>
+</ul>
+<h3 id="實體化-Instantiation"><a href="#實體化-Instantiation" class="headerlink" title="實體化 Instantiation"></a>實體化 Instantiation</h3><p><code>類別 Class -&gt; 建構子 Constructor -&gt; 物件實體 Object instance</code></p>
+<ul>
+<li>class：建構某特定物體的設計圖</li>
+<li>instance：按照設計圖所製造的成品</li>
+<li>constructor：初始化的動作</li>
+</ul>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>以人類舉例，名字、身高、年齡…就是它的屬性，而吃飯、睡覺…則是行為。</p>
+<img src="https://github.com/kir4che/blog-img/blob/main/js-object-person.png?raw=true" alt="js-object-person.png" style="zoom:80%;" />
+
+
+
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><h3 id="表達式"><a href="#表達式" class="headerlink" title="表達式"></a>表達式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Molly&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">158</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="new"><a href="#new" class="headerlink" title="new"></a>new</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="title class_">Object</span>(<span class="attr">name</span>: <span class="string">&#x27;Molly&#x27;</span>, <span class="attr">age</span>: <span class="number">20</span>, <span class="attr">height</span>: <span class="number">158</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="存取屬性"><a href="#存取屬性" class="headerlink" title="存取屬性"></a>存取屬性</h2><h3 id="單一屬性"><a href="#單一屬性" class="headerlink" title="單一屬性"></a>單一屬性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.<span class="property">name</span> <span class="comment">// Molly</span></span><br><span class="line">person[<span class="string">&#x27;name&#x27;</span>] <span class="comment">//Molly</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>物件標記法</strong> <code>.</code></p>
+<p>呼叫 person 物件的 name 屬性</p>
+<ul>
+<li>比較簡潔，大多人用。</li>
+</ul>
+</li>
+<li><p><strong>陣列標記法</strong> <code>[ ]</code></p>
+<p>用 person 這個 key 想取出 name 內容</p>
+</li>
+</ul>
+<h3 id="所有屬性"><a href="#所有屬性" class="headerlink" title="所有屬性"></a>所有屬性</h3><ul>
+<li>for(var <code>屬性變數</code> in <code>物件變數</code> ){ … }</li>
+<li><code>typeof()</code> 搭配迴圈</li>
+</ul>
+<h3 id="確認屬性存在"><a href="#確認屬性存在" class="headerlink" title="確認屬性存在"></a>確認屬性存在</h3><ul>
+<li><code>objName.propertyName</code></li>
+<li><code>in</code></li>
+<li><code>typeof()</code></li>
+</ul>
+<h3 id="刪除屬性"><a href="#刪除屬性" class="headerlink" title="刪除屬性"></a>刪除屬性</h3><p><code>delete 物件名稱.屬性名稱</code></p>
+<h2 id="物件方法"><a href="#物件方法" class="headerlink" title="物件方法"></a>物件方法</h2><p>物件的屬性值是函式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Molly&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">158</span>,</span><br><span class="line">    <span class="attr">greet</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello World！&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="內建物件-Built-in-Objects"><a href="#內建物件-Built-in-Objects" class="headerlink" title="內建物件 Built-in Objects"></a>內建物件 Built-in Objects</h2><ul>
+<li>Number</li>
+<li>Boolean</li>
+<li>String</li>
+<li>Array</li>
+<li>Math</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>Error</li>
+</ul>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Working_with_Objects">物件的使用</a></li>
+<li><a target="_blank" rel="noopener" href="http://test.domojyun.net/MEMO/JavaScript/5_object.html">JavaScript 入門學習筆記</a></li>
+<li><a target="_blank" rel="noopener" href="https://javascript.alphacamp.co/object.html">Object 物件</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

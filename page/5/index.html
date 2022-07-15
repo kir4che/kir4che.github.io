@@ -61,15 +61,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/設計資源整理/"><span>設計資源整理</span></a></h3>
+    <h3 class="article-title"><a href="/2022/03/04/JavaScript/JS－作用域 Scope/"><span>[JS] 作用域 Scope</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/設計資源整理/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:13.909Z">
-          2022-06-24
+      <a href="/2022/03/04/JavaScript/JS－作用域 Scope/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
+          2022-03-04
         </time>
       </a>
     </span>
@@ -81,10 +81,36 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>好多好多資源需要保存～</p>
-<p>存放各種設計相關資源（圖庫、配色、簡報模板…）</p>
+        <p>規範哪些變數在哪些程式碼中可以取用的規則</p>
+<h2 id="作用範圍"><a href="#作用範圍" class="headerlink" title="作用範圍"></a>作用範圍</h2><h3 id="全域作用域-Global-Scope"><a href="#全域作用域-Global-Scope" class="headerlink" title="全域作用域 Global Scope"></a>全域作用域 Global Scope</h3><p><strong>函式外</strong>宣告</p>
+<ul>
+<li>瀏覽器頁面開啟時，自動生成一全域性作用域 window</li>
+<li>會一直存在到頁面關閉為止</li>
+</ul>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><ul>
+<li><p>允許重複宣告</p>
+</li>
+<li><p>不支援 Block Scope</p>
+</li>
+<li><p>不支援常數</p>
+</li>
+</ul>
+<h4 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h4><ul>
+<li><p>命名空間汙染、混亂</p>
+</li>
+<li><p>易被存取，可能被修改而導致臭蟲。</p>
+</li>
+<li><p>性能差，須一直追蹤。</p>
+</li>
+</ul>
+<h3 id="區域作用域-Local-Scope"><a href="#區域作用域-Local-Scope" class="headerlink" title="區域作用域 Local Scope"></a>區域作用域 Local Scope</h3><ul>
+<li><h4 id="函式作用域-Function-Scope"><a href="#函式作用域-Function-Scope" class="headerlink" title="函式作用域 Function Scope"></a>函式作用域 Function Scope</h4><p>函式 {} 內宣告</p>
+</li>
+<li><h4 id="區塊作用域-Block-Scope（ES6）"><a href="#區塊作用域-Block-Scope（ES6）" class="headerlink" title="區塊作用域 Block Scope（ES6）"></a>區塊作用域 Block Scope（ES6）</h4><p>於函式中的 { } 內宣告 ➪ 防止不當存取</p>
+</li>
+</ul>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/設計資源整理/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/03/04/JavaScript/JS－作用域 Scope/"><span>...More</span></a></p>
         
       
     </div>
@@ -99,7 +125,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Keep/">Keep</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -108,7 +134,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Keep/">Keep</a>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -124,15 +150,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2022/06/24/出國交換準備/"><span>出國交換準備</span></a></h3>
+    <h3 class="article-title"><a href="/2022/03/04/JavaScript/JS－正則表達式 Regex/"><span>[JS] 正則表達式 Regex</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/06/24/出國交換準備/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-06-24T11:14:13.891Z">
-          2022-06-24
+      <a href="/2022/03/04/JavaScript/JS－正則表達式 Regex/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
+          2022-03-04
         </time>
       </a>
     </span>
@@ -144,9 +170,20 @@
   <div class="article-content">
     <div class="entry">
       
-        Here's something encrypted, password is required to continue reading.
+        <h2 id="正規表達式-Regular-Expression（Regex、RegExp）"><a href="#正規表達式-Regular-Expression（Regex、RegExp）" class="headerlink" title="正規表達式 Regular Expression（Regex、RegExp）"></a>正規表達式 Regular Expression（Regex、RegExp）</h2><p>確認字串是否符合規則，並構成搜索模式 search pattern。</p>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>尋找或取代匹配字串</li>
+<li>驗證使用者輸入欄位</li>
+<li>擷取某段想要的資訊</li>
+</ul>
+<h3 id="特點"><a href="#特點" class="headerlink" title="特點"></a>特點</h3><ul>
+<li><p>簡化對字符串的複雜操作</p>
+</li>
+<li><p>正則越長，可讀性越差。</p>
+</li>
+</ul>
         
-          <p><a class="excerpt-btn" href="/2022/06/24/出國交換準備/"><span>...More</span></a></p>
+          <p><a class="excerpt-btn" href="/2022/03/04/JavaScript/JS－正則表達式 Regex/"><span>...More</span></a></p>
         
       
     </div>
@@ -161,7 +198,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Keep/">Keep</a>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
     </span>
     
 
@@ -170,7 +207,579 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/Keep/">Keep</a>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/03/04/JavaScript/JS－樣板字面值 Template Literial/"><span>[JS] 樣板字面值 Template Literial</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/04/JavaScript/JS－樣板字面值 Template Literial/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
+          2022-03-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>字串與變數、變數與表達式做串接皆用「＋」做連結，當文字較多或需要換行則難以閱讀。</p>
+<p>➪ 字符串的串接更彈性、簡潔與直觀</p>
+<h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><p>反引號（&#96;&#96;）</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><code>$&#123; 變數名稱 &#125;</code></p>
+        
+          <p><a class="excerpt-btn" href="/2022/03/04/JavaScript/JS－樣板字面值 Template Literial/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/03/04/Python/Python－商管程式設計/"><span>[Python] 商管程式設計</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/04/Python/Python－商管程式設計/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-03T16:00:00.000Z">
+          2022-03-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>本文為臺大孔令傑教授與盧信銘教授的「用 Python 做商管程式設計」學習筆記</p>
+<p>課程網址：<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/pbc1%E3%80%81https://www.coursera.org/learn/pbc2">https://www.coursera.org/learn/pbc1、https://www.coursera.org/learn/pbc2</a></p>
+</blockquote>
+        
+          <p><a class="excerpt-btn" href="/2022/03/04/Python/Python－商管程式設計/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Python/">Python</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Python/">Python</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/03/03/JavaScript/JS30/JS30－Day01 JS Drum Kit/"><span>[JS30] Day01 JS Drum Kit</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/03/JavaScript/JS30/JS30－Day01 JS Drum Kit/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-02T16:00:00.000Z">
+          2022-03-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="https://i.imgur.com/qdMubSb.jpg" style="zoom:50%;" />
+
+
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>以 JS 使鍵盤按下後播放出對應按鍵的音效 </p>
+        
+          <p><a class="excerpt-btn" href="/2022/03/03/JavaScript/JS30/JS30－Day01 JS Drum Kit/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>, <a href="/categories/Coding/JavaScript/JS30/">JS30</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Challenge/">Challenge</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/03/02/JavaScript/JS－資料型別/"><span>[JS] 資料型別</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/02/JavaScript/JS－資料型別/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-01T16:00:00.000Z">
+          2022-03-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="基本／原始型別-Primitive-Type"><a href="#基本／原始型別-Primitive-Type" class="headerlink" title="基本／原始型別 Primitive Type"></a>基本／原始型別 Primitive Type</h2><table>
+<thead>
+<tr>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Number</td>
+<td>數值</td>
+</tr>
+<tr>
+<td>String</td>
+<td>字串</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>True、False</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>尚未被定義的值（缺少值）</td>
+</tr>
+<tr>
+<td>null</td>
+<td>空值（不會自動賦予）</td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td>字串符號（防止物件屬性被意外的修改）</td>
+</tr>
+</tbody></table>
+<h2 id="參考／複合型別-Reference／Composite-Type"><a href="#參考／複合型別-Reference／Composite-Type" class="headerlink" title="參考／複合型別 Reference／Composite Type"></a>參考／複合型別 Reference／Composite Type</h2><table>
+<thead>
+<tr>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Array</td>
+<td>陣列</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>函式</td>
+</tr>
+<tr>
+<td>Objedct</td>
+<td>物件</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>日期</td>
+</tr>
+</tbody></table>
+        
+          <p><a class="excerpt-btn" href="/2022/03/02/JavaScript/JS－資料型別/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/03/02/JavaScript/JS－變數與宣告/"><span>[JS] 變數與宣告</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/02/JavaScript/JS－變數與宣告/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-01T16:00:00.000Z">
+          2022-03-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="變數-Variables"><a href="#變數-Variables" class="headerlink" title="變數 Variables"></a>變數 Variables</h2><p>變數是對值的引用，名稱被稱為識別符 identifier（具有唯一性）需要遵從一定規則。</p>
+<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><ul>
+<li>開頭可用 ASCII（英文大小寫）或下底線（_）、錢符號（$），不可用數字。</li>
+<li>其他則可用英文、數字或下底線（_）</li>
+<li>大小寫有差異</li>
+<li>不可用 JS 保留字</li>
+</ul>
+        
+          <p><a class="excerpt-btn" href="/2022/03/02/JavaScript/JS－變數與宣告/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/02/23/Leetcode/LeetCode－217. Contains Duplicate/"><span>[LeetCode] 217. Contains Duplicate</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/02/23/Leetcode/LeetCode－217. Contains Duplicate/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-22T16:00:00.000Z">
+          2022-02-23
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="217-Contains-Duplicate"><a href="#217-Contains-Duplicate" class="headerlink" title="217. Contains Duplicate"></a>217. Contains Duplicate</h1><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+        
+          <p><a class="excerpt-btn" href="/2022/02/23/Leetcode/LeetCode－217. Contains Duplicate/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/LeetCode/">LeetCode</a>, <a href="/categories/Coding/LeetCode/Array/">Array</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Java/">Java</a><a href="/tags/LeetCode/">LeetCode</a><a href="/tags/Array/">Array</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/02/20/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>[LeetCode] 561. Array Partition I</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/02/20/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-19T16:00:00.000Z">
+          2022-02-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="1329-Sort-the-Matrix-Diagonally"><a href="#1329-Sort-the-Matrix-Diagonally" class="headerlink" title="1329. Sort the Matrix Diagonally"></a>1329. Sort the Matrix Diagonally</h1><blockquote>
+<p>A <strong>matrix diagonal</strong> is a diagonal line of cells starting from some cell in either the topmost row or leftmost column and going in the bottom-right direction until reaching the matrix’s end. For example, the <strong>matrix diagonal</strong> starting from <code>mat[2][0]</code>, where <code>mat</code> is a <code>6 x 3</code> matrix, includes cells <code>mat[2][0]</code>, <code>mat[3][1]</code>, and <code>mat[4][2]</code>.</p>
+<p>Given an <code>m x n</code> matrix <code>mat</code> of integers, sort each <strong>matrix diagonal</strong> in ascending order and return <em>the resulting matrix</em>.</p>
+</blockquote>
+        
+          <p><a class="excerpt-btn" href="/2022/02/20/Leetcode/LeetCode－1329. Sort the Matrix Diagonally/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/LeetCode/">LeetCode</a>, <a href="/categories/Coding/LeetCode/Array/">Array</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Java/">Java</a><a href="/tags/LeetCode/">LeetCode</a><a href="/tags/Array/">Array</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/02/20/TypeScript/TS－Class＆Interface/"><span>[TS] Class＆Interface</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/02/20/TypeScript/TS－Class＆Interface/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-19T16:00:00.000Z">
+          2022-02-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Class-類別"><a href="#Class-類別" class="headerlink" title="Class 類別"></a>Class 類別</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`My name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(<span class="string">&#x27;Jack&#x27;</span>);  <span class="comment">// 物件實例化</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">sayHi</span>());</span><br></pre></td></tr></table></figure>
+        
+          <p><a class="excerpt-btn" href="/2022/02/20/TypeScript/TS－Class＆Interface/"><span>...More</span></a></p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/TypeScript/">TypeScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/TypeScript/">TypeScript</a>
     </span>
     
 
@@ -187,6 +796,8 @@
   
   <a href="/page/4/" class="pagination-prev">Prev</a>
   
+  
+  <a href="/page/6/" class="pagination-next">Next</a>
   
 </nav>
     </main>

@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] ES6～ES12 新特性 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="ES6（2015）[類 Class]([JS] 類 Class)12345678910111213class Person &amp;#123;    constructor(name, age) &amp;#123;         this.name = name;         this.age = age">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] ES6～ES12 新特性"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] ES6～ES12 新特性</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/05/08/JavaScript/JS－ES6～ES12 新特性/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-05-07T16:00:00.000Z">
+          2022-05-08
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="ES6（2015）"><a href="#ES6（2015）" class="headerlink" title="ES6（2015）"></a>ES6（2015）</h2><h3 id="類-Class-JS-類-Class"><a href="#類-Class-JS-類-Class" class="headerlink" title="[類 Class]([JS] 類 Class)"></a>[類 Class]([JS] 類 Class)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span> , <span class="variable language_">this</span>.<span class="property">age</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Molly&#x27;</span>, <span class="number">20</span>);</span><br><span class="line">p.<span class="title function_">toString</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="模組化-Module"><a href="#模組化-Module" class="headerlink" title="模組化 Module"></a>模組化 Module</h3><ul>
+<li>export：規定模組對外暴露的接口</li>
+<li>import：引用其他模組提供的接口</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> sub = (a, b) = a + b;</span><br><span class="line"><span class="keyword">import</span> &#123; sub &#125; <span class="keyword">from</span> ./A;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sub</span>(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="箭頭函式-Arrow-Function"><a href="#箭頭函式-Arrow-Function" class="headerlink" title="箭頭函式 Arrow Function"></a><a href="">箭頭函式 Arrow Function</a></h3><p>➪ 解決 this 指向問題</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title function_">func</span> = (<span class="params">x, y</span>) =&gt; &#123; <span class="keyword">return</span> x + y; &#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式預設參數"><a href="#函式預設參數" class="headerlink" title="函式預設參數"></a><a href="">函式預設參數</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">count</span>(<span class="params">x, y = <span class="number">2</span></span>) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="樣板字面值"><a href="#樣板字面值" class="headerlink" title="樣板字面值"></a><a href="">樣板字面值</a></h3><p>➪ 字符串的串接更彈性、簡潔與直觀</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = <span class="string">&#x27;Molly&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> result = <span class="string">`My name is <span class="subst">$&#123;user&#125;</span>.`</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解構賦值"><a href="#解構賦值" class="headerlink" title="解構賦值"></a>解構賦值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>, b= <span class="number">2</span>;</span><br><span class="line">[a, b] = [b, a]; <span class="comment">// a 2  b 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Rest／Spread"><a href="#Rest／Spread" class="headerlink" title="Rest／Spread"></a>Rest／Spread</h3><ul>
+<li><p><strong>其餘 Rest</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">…nums</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  nums.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">num</span>) &#123;</span><br><span class="line">    result += num</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sum</span>(<span class="number">1</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>); <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>展開 Spread</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> groupA = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> groupB = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> groupAll = [...groupA, ..<span class="property">groupB</span>]; <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> groupC = [...<span class="title class_">Hello</span>]; <span class="comment">// [H, e, l, l, o]</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="物件縮寫"><a href="#物件縮寫" class="headerlink" title="物件縮寫"></a>物件縮寫</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;Molly&#x27;</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; </span><br><span class="line">    name <span class="comment">// 原本是 name: name</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a><a href="">Promise</a></h3><p>非同步運算的最終完成或失敗的物件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(() = &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>); &#125;);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>); <span class="comment">// 先輸出 1 再 2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="let、const"><a href="#let、const" class="headerlink" title="let、const"></a><a href="">let、const</a></h3><p>➪ 使變數宣告於<strong>區塊</strong>作用域</p>
+<h2 id="ES7（2016）"><a href="#ES7（2016）" class="headerlink" title="ES7（2016）"></a>ES7（2016）</h2><h3 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes()"></a><code>Array.prototype.includes()</code></h3><p>判斷陣列是否包含該元素，回傳 Boolean 值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>].<span class="title function_">includes</span>(<span class="number">1</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="指數運算子"><a href="#指數運算子" class="headerlink" title="指數運算子"></a>指數運算子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>**<span class="number">10</span>; <span class="comment">// 1024</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ES8（2017）"><a href="#ES8（2017）" class="headerlink" title="ES8（2017）"></a>ES8（2017）</h2><h3 id="Async-x2F-Await"><a href="#Async-x2F-Await" class="headerlink" title="Async &#x2F; Await"></a><a href="">Async &#x2F; Await</a></h3><p>將非同步事件用同步語法來處理</p>
+<h3 id="Object-新特性"><a href="#Object-新特性" class="headerlink" title="Object 新特性"></a>Object 新特性</h3><ul>
+<li><p><strong><code>Object.entries()</code></strong></p>
+<p>像是把物件轉為陣列（二維陣列）的概念</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">entries</span>(&#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>&#125;); <span class="comment">// [[a, 1], [b, 2], [c, 3]]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>Object.values()</code></strong></p>
+<p>  類似 entries，但是回傳值的一維陣列。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">values</span>(&#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>&#125;); <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>Object.getOwnPropertyDescriptors()</code></strong></p>
+<p>  若物件的所有自身屬性的描述符，若沒有任何自身屬性，則回傳 null。</p>
+</li>
+</ul>
+<h3 id="padStart-、padEnd"><a href="#padStart-、padEnd" class="headerlink" title="padStart()、padEnd()"></a><code>padStart()、padEnd()</code></h3><p>可從 start、end 位置填充到指定數字長度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello.<span class="title function_">padStart</span>(<span class="number">10</span>); <span class="comment">//      hello</span></span><br><span class="line">hello.<span class="title function_">padEnd</span>(<span class="number">5</span>,<span class="string">&#x27;o&#x27;</span>) <span class="comment">// helloooooo</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="結尾逗號-Trailing-commas"><a href="#結尾逗號-Trailing-commas" class="headerlink" title="結尾逗號 Trailing commas"></a>結尾逗號 Trailing commas</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,,,];</span><br><span class="line">arr.<span class="property">length</span>; <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="SharedArrayBuffer"><a href="#SharedArrayBuffer" class="headerlink" title="SharedArrayBuffer"></a>SharedArrayBuffer</h3><p>通用長度的密封緩衝區</p>
+<h3 id="原子物件-Atomics"><a href="#原子物件-Atomics" class="headerlink" title="原子物件 Atomics"></a>原子物件 Atomics</h3><p>提供一組靜態方法，用於對 SharedArrayBuffer 物件進行原子操作。</p>
+<h2 id="ES9（2018）"><a href="#ES9（2018）" class="headerlink" title="ES9（2018）"></a>ES9（2018）</h2><h3 id="非同步迭代（await＋for-of）"><a href="#非同步迭代（await＋for-of）" class="headerlink" title="非同步迭代（await＋for of）"></a>非同步迭代（await＋for of）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">process</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">let</span> i <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-finally"><a href="#Promise-finally" class="headerlink" title="Promise.finally()"></a><code>Promise.finally()</code></h3><p>可指定最終處理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>().<span class="title function_">catch</span>(e = e).<span class="title function_">finally</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="RegExp-新特性"><a href="#RegExp-新特性" class="headerlink" title="RegExp 新特性"></a>RegExp 新特性</h3><ul>
+<li><p><strong>捕獲組 Numbered capture groups</strong></p>
+<p>  <code>RegExp.prototype.exec()</code></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/([0-9]&#123;4&#125;)-([0-9]&#123;2&#125;)-([0-9]&#123;2&#125;)/</span>;</span><br><span class="line"><span class="keyword">const</span> match = reg.<span class="title function_">exec</span>(<span class="string">&#x27;1999-12-31&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> year = match[<span class="number">1</span>]; <span class="comment">// 1999</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>反向斷言 lookbehind</strong></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> regex = <span class="regexp">/just(?=java)/</span>;</span><br><span class="line"><span class="comment">// 可匹配到 &#x27;justjava&#x27;，但不包含 &#x27;java&#x27;；也能匹配到 &#x27;justjavac&#x27; 中的 &#x27;just&#x27;。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>s&#x2F;dotAll</strong></p>
+<p>  <code>s</code> 用来表示 dotAll，使 <code>.</code> 可匹配任意字符。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/foo.<span class="property">bar</span>/s.<span class="title function_">test</span>(<span class="string">&#x27;foo\nbar&#x27;</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="ES10（2019）"><a href="#ES10（2019）" class="headerlink" title="ES10（2019）"></a>ES10（2019）</h2><h3 id="Array-新特性"><a href="#Array-新特性" class="headerlink" title="Array 新特性"></a>Array 新特性</h3><ul>
+<li><p><strong><code>Array.flat()</code></strong></p>
+<p>二維攤平成一維陣列，並回傳一個新陣列，也可用於去除陣列的空項目。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]].<span class="title function_">flat</span>(<span class="title class_">Infinity</span>); <span class="comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>Array.flatMap()</code></strong></p>
+<p>＝<code>Array.map(...).flat(1)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].<span class="title function_">flatMap</span>(a = [a**<span class="number">2</span>]); <span class="comment">// [1, 4, 9, 16]</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="String-新特性"><a href="#String-新特性" class="headerlink" title="String 新特性"></a>String 新特性</h3><ul>
+<li><p><strong><code>String.trimStart()</code>、<code>String.trimEnd()</code></strong></p>
+<p>移除 String 開頭或結尾的<strong>空白</strong></p>
+</li>
+<li><p><strong><code>String.prototype.matchAll</code></strong></p>
+<p>回傳一所有匹配 RegExp 及分組捕獲結果的迭代器</p>
+<ul>
+<li>以前須使用 <code>RegExp.prototype.exec()</code> 搭配 while</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> raw_arr = test1  test2  test3.<span class="title function_">matchAll</span>((<span class="regexp">/t(e)(st(\d))/g</span>));</span><br><span class="line"><span class="keyword">const</span> arr = [...raw_arr];</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Symbol-prototype-description"><a href="#Symbol-prototype-description" class="headerlink" title="Symbol.prototype.description"></a><code>Symbol.prototype.description</code></h3><p>只讀屬性，回傳 Symbol 的任選描述字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Symbol</span>(description).<span class="property">description</span>; <span class="comment">// description</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Object-fromEntries"><a href="#Object-fromEntries" class="headerlink" title="Object.fromEntries()"></a><code>Object.fromEntries()</code></h3><p>把陣列改回為物件，與 <code>Object.entries()</code> 相反。</p>
+<h3 id="可選-catch-綁定"><a href="#可選-catch-綁定" class="headerlink" title="可選 catch 綁定"></a>可選 catch 綁定</h3><p>ES10 中 err 可省略</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;<span class="comment">// tryCode</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;<span class="comment">// catchCode</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="BigInt"><a href="#BigInt" class="headerlink" title="BigInt"></a>BigInt</h3><p>新的資料型態，提供＞2⁵³ 整數。</p>
+<h2 id="ES11（2020）"><a href="#ES11（2020）" class="headerlink" title="ES11（2020）"></a>ES11（2020）</h2><h3 id="空值合併運算-Nullish-coalescing-operator"><a href="#空值合併運算-Nullish-coalescing-operator" class="headerlink" title="空值合併運算 Nullish coalescing operator ??"></a>空值合併運算 Nullish coalescing operator <code>??</code></h3><p><strong>由來</strong>：JS 遇到 0、null、undefined，會自動轉型成 false，但有時 0 是正常值，只能容錯到 undefined、null。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> username = user.<span class="property">level</span> ?? <span class="string">&#x27;查無等級&#x27;</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 若 level 值不存在，則變成「查無等級」。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="可選串連-Optional-chaining"><a href="#可選串連-Optional-chaining" class="headerlink" title="可選串連 Optional chaining ?"></a>可選串連 Optional chaining <code>?</code></h3><p><strong>由來</strong>：檢查資料是否存在通常要用 if 判斷，若資料為 null 或 user物件底下沒有 .info 則報錯。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> username = user?.<span class="property">name</span> || <span class="string">&#x27;guest&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-allSettled"><a href="#Promise-allSettled" class="headerlink" title="Promise.allSettled"></a><code>Promise.allSettled</code></h3><p><strong>由來</strong>：<code>Promise.all</code> 可讓多個 Promise 處理完後再進行到下一步，但其一失敗則全部進入 catch，無法針對部份成功繼續處理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">const</span> p2 = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">const</span> p3 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p1));</span><br><span class="line"><span class="keyword">const</span> p4 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p2));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promiseList = [p1,p2,p3, p4]</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">allSettled</span>(promiseList)</span><br><span class="line">.<span class="title function_">then</span>(values=&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(values)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="動態導入-dynamic-import"><a href="#動態導入-dynamic-import" class="headerlink" title="動態導入 dynamic import"></a>動態導入 dynamic import</h3><p>有需要時再載入，可撰寫於文件頂層以外的位置。</p>
+<ul>
+<li>回傳 Promise，可搭配 async／await。</li>
+<li>導入的模組名稱可利用語法來控制</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">importModule</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> moduleName = <span class="string">&#x27;myModule&#x27;</span>;</span><br><span class="line">  <span class="keyword">let</span> importModule = <span class="keyword">await</span>;</span><br><span class="line">  <span class="title function_">import</span>(<span class="string">`./modules/&#123;moduleName&#125;.js`</span>);</span><br><span class="line">  importModule.<span class="title function_">default</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="globalThis"><a href="#globalThis" class="headerlink" title="globalThis"></a>globalThis</h3><p><strong>由來</strong>：在 web 可通過 window、self、frames 取得全域物件；但在 web workers 只有 self 可以；Node.js 則皆無法獲取，必須用 global；在鬆散模式下，可在函式中回傳 this 獲取；但在嚴格模式下 this 則回傳 undefined 。</p>
+<p>提供一個標準方式去獲取不同執行環境下的全域物件</p>
+<h2 id="ES12（2021）"><a href="#ES12（2021）" class="headerlink" title="ES12（2021）"></a>ES12（2021）</h2><h3 id="String-prototype-replaceAll"><a href="#String-prototype-replaceAll" class="headerlink" title="String.prototype.replaceAll"></a><code>String.prototype.replaceAll</code></h3><p>替換所有符合規則的字符串，並回傳一新 String。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = hello world;</span><br><span class="line">str.<span class="title function_">replaceAll</span>(l, ); <span class="comment">// heo word</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-any"><a href="#Promise-any" class="headerlink" title="Promise.any"></a><code>Promise.any</code></h3><p>接收一個包含 Promise 的可迭代物件，並回傳一新 Promise。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p1));</span><br><span class="line"><span class="keyword">const</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>((resolve, reject) = <span class="title function_">reject</span>(我是失敗的 p2));</span><br><span class="line"><span class="keyword">const</span> promiseList = [p1, p2];</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">any</span>(promiseList)</span><br><span class="line">.<span class="title function_">then</span>(values = &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(values);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">catch</span>(e = &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="弱引用-weakref"><a href="#弱引用-weakref" class="headerlink" title="弱引用 weakref"></a>弱引用 weakref</h3><p><strong>由來</strong>：若一物件不再被任何物件引用，即判定為可被回收以釋放記憶體的垃圾。</p>
+<p>可拿到一物件的弱引用，其不會阻止物件被垃圾機制回收，當其被回收時，則無法再獲取該物件。</p>
+<h3 id="邏輯運算子-Logical-Assignment-Operator"><a href="#邏輯運算子-Logical-Assignment-Operator" class="headerlink" title="邏輯運算子 Logical Assignment Operator"></a>邏輯運算子 Logical Assignment Operator</h3><ul>
+<li><p><strong>AND <code>&amp;&amp;=</code></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">0</span>, y = <span class="number">1</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x &amp;&amp;= y); <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於 x &amp;&amp; (x = y)</span></span><br><span class="line"><span class="comment">// 不等於 x = x &amp;&amp; y</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>OR</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">0</span>, y = <span class="number">1</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x ||= y); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於 x || (x = y)</span></span><br><span class="line"><span class="comment">// 不等於 x = x || y</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="數字間隔性符"><a href="#數字間隔性符" class="headerlink" title="數字間隔性符 _"></a>數字間隔性符 <code>_</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1_000_000_000</span> === <span class="number">1000000000</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41581588/article/details/124776301">JavaScript语法 ES6、ES7、ES8、ES9、ES10、ES11、ES12</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/unitsexhibition/es6-es7-es8-es9-es10-features-b17d7a1c5a89">ES6、ES7、ES8、ES9、ES10 新特性. ES6、ES7、ES8、ES9、ES10 新特性</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.typeart.cc/javascript-es6-to-es11-features/">詳解JavaScript ES6~11新語法</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/easons-murmuring/js%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-es2021-es12%E4%BB%A4%E4%BA%BA%E6%9C%9F%E5%BE%85%E7%9A%84%E6%96%B0%E5%8A%9F%E8%83%BD-ab3c651a9385">JS學習筆記－ES2021&#x2F;ES12令人期待的新功能</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

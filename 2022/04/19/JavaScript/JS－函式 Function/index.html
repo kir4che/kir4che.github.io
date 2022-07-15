@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 函式 Function | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="將一或多段程式指令包裝起來，可重複使用，也方便維護。
+宣告宣告式function Name([param]) &amp;#123; ... &amp;#125;
+表達式
+具名函式 Named Function
+var Name1 = function Name2([param]) &amp;#123; ... &amp;#125;
+
+匿名函式 Anonymous Function：沒有方法名的方法
+var Name = function([param]) &amp;#123; ... &amp;#125;
+
+透過呼叫變數來執行函式內容
+用於容易解決或一次性使用">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 函式 Function"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 函式 Function</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/19/JavaScript/JS－函式 Function/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-18T16:00:00.000Z">
+          2022-04-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>將一或多段程式指令包裝起來，可重複使用，也方便維護。</p>
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><h3 id="宣告式"><a href="#宣告式" class="headerlink" title="宣告式"></a>宣告式</h3><p><code>function Name([param]) &#123; ... &#125;</code></p>
+<h3 id="表達式"><a href="#表達式" class="headerlink" title="表達式"></a>表達式</h3><ul>
+<li><p><strong>具名函式 Named Function</strong></p>
+<p><code>var Name1 = function Name2([param]) &#123; ... &#125;</code></p>
+</li>
+<li><p><strong>匿名函式 Anonymous Function</strong>：沒有方法名的方法</p>
+<p><code>var Name = function([param]) &#123; ... &#125;</code></p>
+<ul>
+<li>透過呼叫變數來執行函式內容</li>
+<li>用於容易解決或一次性使用<span id="more"></span></li>
+</ul>
+</li>
+</ul>
+<h3 id="建構式（效能差）"><a href="#建構式（效能差）" class="headerlink" title="建構式（效能差）"></a>建構式（效能差）</h3><p><code>const Name = new Function ([param], ...)</code></p>
+<h3 id="箭頭-Arrow（ES6）"><a href="#箭頭-Arrow（ES6）" class="headerlink" title="箭頭 Arrow（ES6）"></a>箭頭 Arrow（ES6）</h3><p><code>const Name = ([param]) =&gt; &#123; ... &#125;</code></p>
+<ul>
+<li><p>匿名函式的一種，隱式回傳值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title function_">func</span> = x =&gt; x * x; <span class="comment">// concise：內建 return</span></span><br><span class="line"><span class="keyword">var</span> <span class="title function_">func</span> = (<span class="params">x, y</span>) =&gt; &#123; <span class="keyword">return</span> x + y; &#125;; <span class="comment">// block body：需要明確　return</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>無法當作構造子 constructor</p>
+</li>
+<li><p>沒有引數：若在箭頭函式呼叫引數，報錯：arguments is not defined。</p>
+</li>
+<li><p>没有自己的 this</p>
+<ul>
+<li>傳統：呼叫方法的物件</li>
+<li>箭頭：該函式外層作用域</li>
+</ul>
+</li>
+<li><p>無法以 <code>bind()</code>、<code>apply()</code>、<code>call()</code> 重新綁定 this</p>
+</li>
+<li><p>沒有原型 prototype 屬性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title function_">Foo</span> = (<span class="params"></span>) =&gt; &#123;&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Foo</span>.<span class="property"><span class="keyword">prototype</span></span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="回傳-return"><a href="#回傳-return" class="headerlink" title="回傳 return"></a>回傳 return</h2><p>函式執行後 return 會中斷程式並回傳一值</p>
+<ul>
+<li>可接受多個參數</li>
+<li>只能回傳一值</li>
+<li>若沒有值回傳，則回傳 undefined。</li>
+</ul>
+<h2 id="參數-Parameters"><a href="#參數-Parameters" class="headerlink" title="參數 Parameters"></a>參數 Parameters</h2><p>是在函式的那些傳入參數名稱的定義</p>
+<h3 id="預設參數-Default-Parameters（ES6）"><a href="#預設參數-Default-Parameters（ES6）" class="headerlink" title="預設參數 Default Parameters（ES6）"></a>預設參數 Default Parameters（ES6）</h3><p>沒有值傳入的情況下，參數能以指定預設值初始化。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">count</span>(<span class="params">x, y = <span class="number">2</span></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">count</span>(<span class="number">5</span>); <span class="comment">// 7</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>減少程式碼</li>
+<li>利於代碼的可讀性</li>
+</ul>
+<h2 id="引數-Arguments"><a href="#引數-Arguments" class="headerlink" title="引數 Arguments"></a>引數 Arguments</h2><p>當函式被呼叫時，傳入到函式中真正的值。</p>
+<ul>
+<li>函式一創建就有</li>
+<li>呼叫方法來取得所有傳入的參數，長度也以其決定。</li>
+<li>是一個類陣列 Array-Like（不是真正的陣列）</li>
+<li>記憶體空間獨立</li>
+<li>若傳入的參數＜命名參數，命名參數與不會同步。</li>
+</ul>
+<blockquote>
+<p><strong>類陣列 Array-like</strong></p>
+<p>一樣有 <code>length</code>、索引從 0 開始等特性，但沒有陣列的內建方法。</p>
+<p>ex. <code>forEach()</code>、<code>map()</code></p>
+</blockquote>
+<h3 id="需要用到嗎？"><a href="#需要用到嗎？" class="headerlink" title="需要用到嗎？"></a>需要用到嗎？</h3><p>不要！此有設計缺陷，新手使用容易出問題，可改用其餘參數 rest。</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>指向當前物件</p>
+<ul>
+<li>永遠指向一個物件</li>
+<li>指向取決於函式調用的位置</li>
+</ul>
+<h3 id="規則（以優先排序）"><a href="#規則（以優先排序）" class="headerlink" title="規則（以優先排序）"></a>規則（以優先排序）</h3><ul>
+<li><p><strong>new 綁定</strong>：指向 new 出來的物件</p>
+</li>
+<li><p><strong>明確綁定（call、apply、bind）</strong>：明確指向要綁定給 this 的物件</p>
+</li>
+<li><p><strong>隱含綁定</strong>：當函式為物件的方法時，在執行階段 this 就會被綁定至該物件。</p>
+</li>
+<li><p><strong>預設綁定</strong>：以上規則都不適用時套用</p>
+<ul>
+<li>非嚴格模式：this -&gt; window</li>
+<li>嚴格模式下：this -&gt; undefined。</li>
+</ul>
+</li>
+<li><p>沒有明確呼叫者 -&gt; window</p>
+</li>
+</ul>
+<h3 id="綁定"><a href="#綁定" class="headerlink" title="綁定"></a>綁定</h3><ul>
+<li><p><code>call()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">test.<span class="title function_">call</span>(<span class="number">123</span>);     <span class="comment">// 123</span></span><br><span class="line">test.<span class="title function_">call</span>(&#123;&#125;);      <span class="comment">// &#123;&#125;</span></span><br><span class="line">test.<span class="title function_">call</span>([<span class="number">1</span>]);     <span class="comment">// [ 1 ]</span></span><br><span class="line">test.<span class="title function_">call</span>(<span class="string">&#x27;abc&#x27;</span>);   <span class="comment">// &#x27;abc&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>apply()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;  <span class="comment">// 嚴格模式</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params">a, b, c</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// 1 2 3</span></span><br><span class="line">test.<span class="title function_">call</span>(<span class="number">123</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// 123</span></span><br><span class="line"><span class="comment">// 1 2 3</span></span><br><span class="line">test.<span class="title function_">apply</span>(<span class="number">123</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="comment">// 123</span></span><br><span class="line"><span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>bind()</code>：強制綁定，綁定後就無法更改。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">a</span>: <span class="number">10</span>,</span><br><span class="line">  <span class="attr">test</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 寫法1：直接呼叫</span></span><br><span class="line">obj.<span class="property">test</span>.<span class="title function_">bind</span>(obj)();</span><br><span class="line"><span class="comment">// &#123; a: 10, test: [Function: test] &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 寫法2：先宣告，再呼叫</span></span><br><span class="line"><span class="keyword">const</span> bindTest = obj.<span class="property">test</span>.<span class="title function_">bind</span>(obj);</span><br><span class="line"><span class="title function_">bindTest</span>();  </span><br><span class="line"><span class="comment">// &#123; a: 10, test: [Function: test] &#125;</span></span><br><span class="line"><span class="keyword">const</span> bindTestA = obj.<span class="property">test</span>.<span class="title function_">bind</span>(obj.<span class="property">test</span>);</span><br><span class="line"><span class="title function_">bindTestA</span>();</span><br><span class="line"><span class="comment">// [Function: test]</span></span><br><span class="line"><span class="keyword">const</span> bindTestB = obj.<span class="property">test</span>.<span class="title function_">bind</span>(<span class="string">&quot;test B&quot;</span>);</span><br><span class="line"><span class="title function_">bindTestB</span>();</span><br><span class="line"><span class="comment">// test B</span></span><br><span class="line"><span class="keyword">const</span> bindTestC = obj.<span class="property">test</span>.<span class="title function_">bind</span>(<span class="string">&quot;test C&quot;</span>);</span><br><span class="line">bindTestC.<span class="title function_">call</span>(<span class="string">&#x27;CCC&#x27;</span>);</span><br><span class="line"><span class="comment">// test C</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h2><p>全名：Immediately Invoked Function Expression，立即呼叫函式表達式。</p>
+<ul>
+<li>全域變數減少</li>
+<li>全域變數區域化</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&#x27;Molly&#x27;</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 無法從外部存取</span></span><br><span class="line">name <span class="comment">// &quot;Uncaught ReferenceError: name is not defined&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part3/function_scope.html">函式與作用域</a></li>
+<li><a target="_blank" rel="noopener" href="https://cythilya.github.io/2018/10/23/this/">你懂 JavaScript 嗎？#16 this</a></li>
+<li>[<a target="_blank" rel="noopener" href="https://hackmd.io/@Heidi-Liu/note-js201-this">week 16] JavaScript 進階 - What is this？</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218297">立即函式 ( IIFE )</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

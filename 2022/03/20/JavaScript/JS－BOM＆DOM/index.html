@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] BOM＆DOM | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="瀏覽器上 JS$JavaScript &amp;#x3D; ECMAscript + BOM + DOM$
+
+
+
+JS 核心：以 ECMAScript 標準為基礎
+[瀏覽器物件模型 Browser Object Model（BOM）](##瀏覽器物件模型 Browser Object Model（BOM）)
+[文件物件模型 Document Object Model（DOM）](##文件物件模型 Document Object Model（DOM）)">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] BOM＆DOM"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] BOM＆DOM</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/20/JavaScript/JS－BOM＆DOM/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-19T16:00:00.000Z">
+          2022-03-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="瀏覽器上-JS"><a href="#瀏覽器上-JS" class="headerlink" title="瀏覽器上 JS"></a>瀏覽器上 JS</h2><p>$JavaScript &#x3D; ECMAscript + BOM + DOM$</p>
+<img src="https://i.imgur.com/sKg5RdA.png" style="zoom: 60%;" />
+
+<ul>
+<li>JS 核心：以 ECMAScript 標準為基礎</li>
+<li>[瀏覽器物件模型 Browser Object Model（BOM）](##瀏覽器物件模型 Browser Object Model（BOM）)</li>
+<li>[文件物件模型 Document Object Model（DOM）](##文件物件模型 Document Object Model（DOM）)</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="瀏覽器物件模型-Browser-Object-Model（BOM）"><a href="#瀏覽器物件模型-Browser-Object-Model（BOM）" class="headerlink" title="瀏覽器物件模型 Browser Object Model（BOM）"></a>瀏覽器物件模型 Browser Object Model（BOM）</h2><p>瀏覽器所有功能的核心（<strong>window 物件</strong>），JS 與瀏覽器溝通的窗口，無關網頁內容。</p>
+<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><p>ECMAScript 標準裡的<strong>全域物件</strong>，代表瀏覽器視窗本身。</p>
+<p><strong>💡若視窗中含有框架，則每一框架都有屬於自己的 window 物件。</strong></p>
+<h3 id="結構"><a href="#結構" class="headerlink" title="結構"></a>結構</h3><ul>
+<li>screen 螢幕畫面尺寸</li>
+<li>location 頁面網址</li>
+<li>history 上下頁切換（不建議使用）</li>
+<li>navigator 瀏覽器資訊</li>
+<li>frames 框架</li>
+</ul>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><ul>
+<li><p><code>window.open()</code> 開啟新視窗 ↔ <code>window.close()</code></p>
+</li>
+<li><p><code>window.print()</code></p>
+</li>
+<li><p><code>alert()</code> 警告</p>
+</li>
+<li><p><code>confirm()</code> 確認</p>
+</li>
+<li><p><code>prompt()</code> 文字輸入</p>
+</li>
+<li><p><code>setTimeout()</code> 執行一次就停止 ↔ <code>clearTimeout()</code></p>
+</li>
+<li><p>&#96;&#96;setInterval()<code>一直執行下去 ↔</code>clearInterval()&#96;</p>
+</li>
+</ul>
+<h2 id="文件物件模型-Document-Object-Model（DOM）"><a href="#文件物件模型-Document-Object-Model（DOM）" class="headerlink" title="文件物件模型 Document Object Model（DOM）"></a>文件物件模型 Document Object Model（DOM）</h2><p>JS 控制網頁的節點與內容的標準，將文件內的各個標籤（文字、圖片等）定義成物件後，最終皆會形成一樹狀結構。</p>
+<h3 id="DOM-樹"><a href="#DOM-樹" class="headerlink" title="DOM 樹"></a>DOM 樹</h3><p>由頁面中所有 HTML 元素所組成</p>
+<img src="https://miro.medium.com/max/950/0*Sk5AAj4ze_bDFPA0.png" style="zoom: 60%;" />
+
+<ul>
+<li>瀏覽器解析時，會將程式碼變成 DOM 樹。</li>
+<li>document：根節點，表示整份 HTML 文件，存取 HTML 皆由其開始。</li>
+<li>節點 node：表示每一物件，也是 DOM 中所有 Object 的父類。<ul>
+<li>元素節點 element node</li>
+<li>文字節點 text node</li>
+<li>屬性節點 attribute node</li>
+<li>註解節點 comment node</li>
+</ul>
+</li>
+</ul>
+<h3 id="DOM-API"><a href="#DOM-API" class="headerlink" title="DOM API"></a>DOM API</h3><p>可以存取並改變文件架構和內容的屬性方法</p>
+<h4 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h4><ul>
+<li><h5 id="根據-HTML-標籤"><a href="#根據-HTML-標籤" class="headerlink" title="根據 HTML 標籤"></a>根據 HTML 標籤</h5><ul>
+<li><p><code>document.getElementById(id)</code></p>
+</li>
+<li><p><code>document.getElementsByTagName()</code></p>
+</li>
+<li><p><code>document.getElementsByClassName()</code></p>
+</li>
+</ul>
+</li>
+<li><h5 id="CSS-選擇器"><a href="#CSS-選擇器" class="headerlink" title="CSS 選擇器"></a>CSS 選擇器</h5><ul>
+<li><p><code>document.querySelector()</code>：只選取<strong>第一個</strong>匹配的元素</p>
+</li>
+<li><p><code>document.querySelectorAll()</code>：選取<strong>所有</strong>匹配到的元素</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="CSS-style"><a href="#CSS-style" class="headerlink" title="CSS style"></a>CSS style</h4><ul>
+<li><h5 id="行內（不易修改）"><a href="#行內（不易修改）" class="headerlink" title="行內（不易修改）"></a>行內（不易修改）</h5><ul>
+<li><p><code>element.style.cssProperty = newStyle</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// <span class="selector-attr">[]</span></span><br><span class="line">btn<span class="selector-class">.style</span><span class="selector-attr">[<span class="string">&#x27;background-color&#x27;</span>]</span> = &#x27;<span class="selector-id">#f00</span>&#x27;;</span><br><span class="line">// 駝峰式寫法</span><br><span class="line">btn<span class="selector-class">.style</span><span class="selector-class">.marginTop</span> = &#x27;<span class="number">100px</span>&#x27;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>element.style.cssText = newCSS</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn<span class="selector-class">.style</span><span class="selector-class">.cssText</span> = &#x27;<span class="attribute">font-size</span>: <span class="number">20px</span>; <span class="attribute">color</span>: purple;&#x27;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h5 id="element-classList"><a href="#element-classList" class="headerlink" title="element.classList"></a><code>element.classList</code></h5><p>可透過定義的方法修改元素的 class 屬性，比如 <code>add()</code>、<code>remove()</code>、<code>toggle()</code>。</p>
+</li>
+</ul>
+<h4 id="修改元素內容"><a href="#修改元素內容" class="headerlink" title="修改元素內容"></a>修改元素內容</h4><ul>
+<li><code>element.innerHTML()</code>：抓取標籤內的所有內容，包含 HTML 標籤並改變。</li>
+<li><code>element.innerText()</code>：只抓取標籤內的文字並改變</li>
+<li><code>element.outerHTML()</code>（少用）：抓取整個元素，可用來重新設置。</li>
+</ul>
+<h4 id="刪除與插入元素"><a href="#刪除與插入元素" class="headerlink" title="刪除與插入元素"></a>刪除與插入元素</h4><ul>
+<li><p><code>element.appendChild()</code>：移除子元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const element = document<span class="selector-class">.querySelector</span>(&#x27;<span class="selector-class">.btn</span>&#x27;)</span><br><span class="line">element<span class="selector-class">.removeChild</span>(document<span class="selector-class">.querySelector</span>(&#x27;<span class="selector-tag">a</span>&#x27;))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>element.removeChild()</code>：插入元素在最後</p>
+</li>
+</ul>
+<h4 id="屬性"><a href="#屬性" class="headerlink" title="屬性"></a>屬性</h4><ul>
+<li><code>element.setAttribute()</code>：設定元素的屬性，若已存在則更新。</li>
+<li><code>element.getAttribute()</code>：取得當前的屬性</li>
+<li><code>element.attributes</code>：取得所有的屬性</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

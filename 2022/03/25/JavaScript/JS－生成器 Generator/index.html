@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 生成器 Generator | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="Generator（ES6）可隨時暫停、恢復執行的特殊函式
+
+封裝多個內部狀態的非同步
+
+像是狀態機 state machine，會一直改變內部的不同狀態。
+
+
+流程
+建立一生成器函式
+呼叫 next() 開始執行函式
+遇到 yield 暫停
+再次呼叫 next() 從 yield 位置繼續往下執行
+
+普通函式 vs 生成器
+宣告：普通函式 -&amp;gt; function、生成器 -&amp;gt; function*
+回傳值：普通函式 -&amp;gt; return、生成器 -&amp;gt; yield
+模式：普通函式 -&amp;gt; RTC、生成器 -&amp;gt; RPR
+run to completion（RTC）：開始執行後，直到該函式所有程式碼執行完之前，不會執行别的程式碼。
+run-pause-run（RPR）：函式執行中可被暫停一或多次，之後再恢復執行，且暫停期間允許執行其他程式碼">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 生成器 Generator"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 生成器 Generator</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/25/JavaScript/JS－生成器 Generator/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-24T16:00:00.000Z">
+          2022-03-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Generator（ES6）"><a href="#Generator（ES6）" class="headerlink" title="Generator（ES6）"></a>Generator（ES6）</h2><p>可隨時暫停、恢復執行的特殊函式</p>
+<ul>
+<li><p>封裝多個內部狀態的非同步</p>
+</li>
+<li><p>像是<strong>狀態機 state machine</strong>，會一直改變內部的不同狀態。</p>
+</li>
+</ul>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol>
+<li>建立一生成器函式</li>
+<li>呼叫 <code>next()</code> 開始執行函式</li>
+<li>遇到 yield 暫停</li>
+<li>再次呼叫 <code>next()</code> 從 yield 位置繼續往下執行</li>
+</ol>
+<h3 id="普通函式-vs-生成器"><a href="#普通函式-vs-生成器" class="headerlink" title="普通函式 vs 生成器"></a>普通函式 vs 生成器</h3><ul>
+<li><strong>宣告</strong>：普通函式 -&gt; function、生成器 -&gt; function*</li>
+<li><strong>回傳值</strong>：普通函式 -&gt; return、生成器 -&gt; yield</li>
+<li><strong>模式</strong>：普通函式 -&gt; RTC、生成器 -&gt; RPR<ul>
+<li><strong>run to completion（RTC）</strong>：開始執行後，直到該函式所有程式碼執行完之前，不會執行别的程式碼。</li>
+<li><strong>run-pause-run（RPR）</strong>：函式執行中可被暫停一或多次，之後再恢復執行，且暫停期間允許執行其他程式碼</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h2><ul>
+<li>呼叫後的初始狀態：暫停不執行</li>
+<li>回傳 Generator Object（本質為 Iterator）</li>
+<li>寫法<ul>
+<li><code>function* funcName</code></li>
+<li><code>function * funcName</code></li>
+<li><code>function *funcName</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 宣告式</span></span><br><span class="line"><span class="keyword">function</span>* <span class="title function_">funcA</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">funcA</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表達式</span></span><br><span class="line"><span class="keyword">const</span> funcB = <span class="keyword">function</span>* () &#123;&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">funcB</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義於物件</span></span><br><span class="line"><span class="keyword">const</span> myObj = &#123;</span><br><span class="line">    *<span class="title function_">funcC</span>(<span class="params"></span>) &#123;&#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myObj.<span class="title function_">funcC</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義於類別</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">myClass</span> &#123;</span><br><span class="line">    *<span class="title function_">funcD</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myClass = <span class="keyword">new</span> <span class="title function_">myClass</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myClass.<span class="title function_">funcD</span>());</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h3><p>使 generator <strong>暫停</strong></p>
+<ul>
+<li>本身沒有回傳值（惰性求值），須透過 next、return 等方式回傳。</li>
+<li>用於其他表達式中，須用 () 刮起來。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">generator</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> y = <span class="number">2</span> * (<span class="keyword">yield</span> x + <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">yield</span> y + <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generator</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 執行 yield x + 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>()); <span class="comment">// &#123; value: 3, done: false &#125;</span></span><br><span class="line"><span class="comment">// x 無傳入值，y = 2 * undefined 使 y + 3 = NaN。</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>()); <span class="comment">// &#123; value: NaN, done: false &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="next"><a href="#next" class="headerlink" title="next"></a>next</h3><p>將 yield 換成一值</p>
+<ul>
+<li><p>首次呼叫用以啟動迭代器物件，後續才可傳入參數。</p>
+<p><strong>💡想一開始就傳入參數，須在函式外面再包一層。</strong></p>
+</li>
+<li><p>每次呼叫，指針會從函式頂端或上次停下的位置繼續執行，直到遇到下一 yield 或 return。</p>
+</li>
+<li><p>既定循環完成後回傳 undeinded</p>
+</li>
+<li><p>一旦 <code>done: true</code> 表示執行完畢</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">generator</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="keyword">yield</span> x * <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generator</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>().<span class="property">value</span>);  <span class="comment">// 20</span></span><br><span class="line"><span class="comment">// yield x + y 換成 0</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>(<span class="number">0</span>).<span class="property">value</span>);  <span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 執行完畢</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>());  <span class="comment">// &#123;value: undefined, done: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p>將 yield 換成一個 return 語句</p>
+<ul>
+<li>於 generator 中使用後，不允許其他操作（done 強制設為 true）。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">generator</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">3</span>; <span class="comment">// 不會執行</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="title function_">generator</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>()); <span class="comment">// &#123; value: 5, done: false &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>()); <span class="comment">// &#123; value: 2, done: true &#125;</span></span><br><span class="line"><span class="comment">// yield 5 換成 return &#x27;Hello&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="keyword">return</span>(<span class="string">&#x27;Hello&#x27;</span>)); <span class="comment">// &#123; value: &quot;Hello&quot;, done: true &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(g.<span class="title function_">next</span>()); <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h3><p>將 yield 換成一個 throw 語句</p>
+<ul>
+<li><p>回傳自定義 <code>new Error()</code></p>
+</li>
+<li><p>錯誤被拋出外部之情況</p>
+<ul>
+<li>尚未至少執行過一次 <code>next()</code></li>
+<li>函式内部没有部署 try…catch</li>
+<li>函式未開始執行</li>
+</ul>
+</li>
+<li><p>可接受一個參數，其會被 catch 接收。</p>
+</li>
+<li><p>捕獲後附帶執行下一條 yield，也附帶執行一次 next。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">generator</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">yield</span> x;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = <span class="title function_">generator</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">g.<span class="keyword">throw</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;ERROR！&#x27;</span>)); <span class="comment">// ERROR！</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yiyueqinghui/article/details/111057634">js中的生成器函数Generator</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/45599048">什么是JavaScript generator 以及如何使用它们</a></li>
+<li><a target="_blank" rel="noopener" href="https://sherrybabyone.github.io/2019/10/23/JavaScript%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B%E4%BB%A5%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9/">JavaScript异步解决方案的发展历程以及优缺点</a></li>
+<li><a target="_blank" rel="noopener" href="https://cythilya.github.io/2018/11/01/generator/">你懂 JavaScript 嗎？#25 產生器（Generator）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39903567/article/details/115188020">前端面试系列-JavaScript-理解generator及实现原理</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

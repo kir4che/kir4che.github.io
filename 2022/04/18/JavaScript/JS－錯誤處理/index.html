@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 錯誤處理 | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="當錯誤 error（例外 exception）發生時，會產生一個用來代表錯誤的物件。">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 錯誤處理"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 錯誤處理</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/18/JavaScript/JS－錯誤處理/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-17T16:00:00.000Z">
+          2022-04-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>當錯誤 error（例外 exception）發生時，會產生一個用來代表錯誤的物件。</p>
+<span id="more"></span>
+
+<h2 id="類型"><a href="#類型" class="headerlink" title="類型"></a>類型</h2><h3 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h3><p>一般的錯誤情況，常用於客製化例外情況。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> e = <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Error！&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(e); <span class="comment">// Error: Error！</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="RangeError"><a href="#RangeError" class="headerlink" title="RangeError"></a>RangeError</h3><p>表示數值或參數超出有效範圍</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pi = <span class="number">3.14</span>;</span><br><span class="line">pi.<span class="title function_">toFixed</span>(<span class="number">100000</span>); <span class="comment">// Error: toFixed() digits argument must be between 0 and 100</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ReferenceError"><a href="#ReferenceError" class="headerlink" title="ReferenceError"></a>ReferenceError</h3><p>表示存取一個不存在的變數，常發生於拼錯字的情況。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x); <span class="comment">// Error: x is not defined</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="SyntaxError"><a href="#SyntaxError" class="headerlink" title="SyntaxError"></a>SyntaxError</h3><p>表示程式碼違反 JS 的語法規則，使得解析程式碼時發生錯誤。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">false</span>) &#123; <span class="comment">// Error: Unexpected token &#x27;)&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="TypeError"><a href="#TypeError" class="headerlink" title="TypeError"></a>TypeError</h3><p>表示值的型別非預期操作時發生之錯誤，常發生於呼叫執行一不存在的函式時。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line">person.<span class="title function_">name</span>(); <span class="comment">// Error: person.name is not a function</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="URIError"><a href="#URIError" class="headerlink" title="URIError"></a>URIError</h3><p>表示給 <code>encodeURI()</code>、<code>decodeURl()</code> 傳遞的 URI 無效，但兩者容錯性高，不易發生此錯誤。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">decodeURIComponent</span>(<span class="string">&#x27;%&#x27;</span>); <span class="comment">// Error: URI malformed</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="EvalError"><a href="#EvalError" class="headerlink" title="EvalError"></a>EvalError</h3><p>表示 <code>eval()</code> 使用錯誤，已不被當前 ECMAScript 規範所採用。</p>
+<h2 id="處理錯誤-Handling-Exceptions"><a href="#處理錯誤-Handling-Exceptions" class="headerlink" title="處理錯誤 Handling Exceptions"></a>處理錯誤 Handling Exceptions</h2><p><code>try...catch...finally</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// attempt to execute this code</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (exception) &#123;</span><br><span class="line">  <span class="comment">// this code handles exceptions</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">  <span class="comment">// this code always gets executed</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="try"><a href="#try" class="headerlink" title="try"></a>try</h3><p>於 try 區塊內試著執行程式碼</p>
+<h3 id="catch"><a href="#catch" class="headerlink" title="catch"></a>catch</h3><p>一有任何錯誤發生時，則立即跳到 catch，沒有則跳過 ➪ 阻止錯誤向外冒泡</p>
+<ul>
+<li>catchID：catch 中可指定的一個參數，離開則無法取得。</li>
+</ul>
+<h3 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h3><p>最後執行 fially</p>
+<ul>
+<li>用於包含清除的程式碼（ex. closing files）</li>
+<li>若 finally 中有回傳值，其為整個 <code>try...catch...finally</code> 回傳結果。</li>
+</ul>
+<h2 id="客製化錯誤-Throwing-Exceptions"><a href="#客製化錯誤-Throwing-Exceptions" class="headerlink" title="客製化錯誤 Throwing Exceptions"></a>客製化錯誤 Throwing Exceptions</h2><p>JS 允許開發者透過 throw 拋出幾乎任何型別的錯誤（仍建議用 JS 內建）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> expression;</span><br></pre></td></tr></table></figure>
+
+<h3 id="客製化錯誤訊息"><a href="#客製化錯誤訊息" class="headerlink" title="客製化錯誤訊息"></a>客製化錯誤訊息</h3><p>ex. 透過除法卻不小心除了分母為 0 的數值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> denominator = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (denominator === <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RangeError</span>(<span class="string">&#x27;Attempted division by zero！&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">name</span> + <span class="string">&#x27;：&#x27;</span> + e.<span class="property">message</span>);　<span class="comment">// RangeError：Attempted division by zero！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="客製化錯誤名稱"><a href="#客製化錯誤名稱" class="headerlink" title="客製化錯誤名稱"></a>客製化錯誤名稱</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">DivisionByZeroError</span>(<span class="params">message</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&#x27;DivisionByZeroError&#x27;</span>;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">message</span> = message;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 繼承 Error 物件</span></span><br><span class="line"><span class="title class_">DivisionByZeroError</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="keyword">new</span> <span class="title class_">Error</span>();</span><br><span class="line"><span class="title class_">DivisionByZeroError</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">constructor</span> = <span class="title class_">DivisionByZeroError</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立 showError 的方法</span></span><br><span class="line"><span class="title class_">DivisionByZeroError</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">showError</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span> + <span class="string">&#x27;：&#x27;</span> + <span class="variable language_">this</span>.<span class="property">message</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> denominator = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (denominator === <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">DivisionByZeroError</span>(<span class="string">&#x27;Attempted division by zero！&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="title function_">showError</span>()); <span class="comment">// DivisionByZeroError：Attempted division by zero！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>參考資料</p>
+<ul>
+<li>[<a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/2017/12/js-error-handling.html">JS] 談談 JavaScript 中的錯誤處理 Error Handling</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44797985/article/details/115758014">关于JavaScript中的错误（error）</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

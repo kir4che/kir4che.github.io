@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 嚴格模式 Strict Mode | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="簡介讓程式碼變得更好、更容易優化的方法。
+
+透過拋出錯誤的方式消除一些安靜的錯誤
+修正會阻礙 JS 引擎進行最佳化的錯誤（相同程式碼在嚴格模式有時能執行得比非嚴格模式來的快）
+禁止用一些有可能被未來版本 ECMAScript 定義的語法">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 嚴格模式 Strict Mode"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 嚴格模式 Strict Mode</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/07/JavaScript/JS－嚴格模式 Strict Mode/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-06T16:00:00.000Z">
+          2022-03-07
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>讓程式碼變得更好、更容易優化的方法。</p>
+<ul>
+<li>透過拋出錯誤的方式消除一些安靜的錯誤</li>
+<li>修正會阻礙 JS 引擎進行最佳化的錯誤（相同程式碼在嚴格模式有時能執行得比非嚴格模式來的快）</li>
+<li>禁止用一些有可能被未來版本 ECMAScript 定義的語法</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>消除 JS 語法中一些不合理、不嚴謹之處</li>
+<li>消除程式碼執行的一些不安全之處</li>
+<li>增加執行速度</li>
+<li>為未來新版本 ECMAScript 做準備</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>不可用 <code>with</code> 述句（∵ 降低可讀性）</li>
+<li>所有變數都必須被宣告</li>
+<li>取消 this 強制轉換<ul>
+<li>this -&gt; undefined</li>
+<li>若用 <code>call()</code>,<code>apply()</code>,<code>bind()</code> 指定，this 則依照其語法設定，但若其參數為 null、undefined，則 this 不變。</li>
+</ul>
+</li>
+<li>不可寫入 nonwritable 的物件或不可擴充 nonextensible 的物件嘗試建立新特性會報錯</li>
+<li>不允許重複的屬性名稱或參數值</li>
+<li>delete 使用無效時抛出錯誤</li>
+<li><code>eval()</code> 不能宣告變數或定義函式 ➪ 更安全</li>
+<li>引數 arguments <ul>
+<li>唯讀、不能修改</li>
+<li><code>arguments.callee</code>、<code>arguments.caller</code> 存取會報錯</li>
+</ul>
+</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>可用於整份腳本或個別函數中，但不要 <code>&#123;&#125;</code> 中做，會沒有效果。</p>
+<h3 id="全域設定"><a href="#全域設定" class="headerlink" title="全域設定"></a>全域設定</h3><p>有效範圍為全部程式碼</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> v = <span class="string">&quot;Hi! I&#x27;m a strict mode script!&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式中設定"><a href="#函式中設定" class="headerlink" title="函式中設定"></a>函式中設定</h3><p>有效範圍只侷限於函式內部</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">strict</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Function-level strict mode syntax</span></span><br><span class="line">  <span class="string">&#x27;use strict&#x27;</span>;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">nested</span>(<span class="params"></span>) &#123; <span class="keyword">return</span> <span class="string">&#x27;And so am I!&#x27;</span>; &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Hi!  I&#x27;m a strict mode function!  &quot;</span> + <span class="title function_">nested</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">notStrict</span>(<span class="params"></span>) &#123; <span class="keyword">return</span> <span class="string">&quot;I&#x27;m not strict.&quot;</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Strict_mode">Strict mode</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42936527/article/details/84992209?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-1-84992209-blog-120547419.pc_relevant_multi_platform_whitelistv2&spm=1001.2101.3001.4242.2&utm_relevant_index=4">use strict严格模式优缺点</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10223724">JavaScript 嚴格模式(Strict mode)</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] Promise | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="Promise（ES6）非同步運算的最終完成或失敗的物件
+
+以建構式為原型，必須傳入一參數（該參數為函式）。
+
+透過微任務序列來驅動
+
+微任務序列 micro task queue
+事件循環機制 Event Loop 在 HTML5 Web API 標準中新增的
+觸發時機是在 Stack 清空時，JS 引擎會先確認微任務序列有無東西，有的話優先執行，直到清空後，才從 Queue 拿出新任務到 Stack 上。
+
+
+
+優點
+非同步操作以同步化表達
+➪ 易於閱讀、避免層層嵌套
+
+物件提供統一的接口
+
+物件狀態不受外界影響
+
+良好的錯誤處理
+
+
+缺點
+一旦建立則立即執行，無法取消。
+若不設定回呼函式，Promise 內部錯誤不會反映到外部。
+peding 狀態模糊，是剛開始還是快完成了。">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript,Promise">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] Promise"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] Promise</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/28/JavaScript/JS－Promise/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-27T16:00:00.000Z">
+          2022-03-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Promise（ES6）"><a href="#Promise（ES6）" class="headerlink" title="Promise（ES6）"></a>Promise（ES6）</h2><p>非同步運算的最終完成或失敗的物件</p>
+<ul>
+<li><p>以建構式為原型，必須傳入一參數（該參數為函式）。</p>
+</li>
+<li><p>透過微任務序列來驅動</p>
+<blockquote>
+<p><strong>微任務序列 micro task queue</strong></p>
+<p>事件循環機制 Event Loop 在 HTML5 Web API 標準中新增的</p>
+<p>觸發時機是在 Stack 清空時，JS 引擎會先確認微任務序列有無東西，有的話優先執行，直到清空後，才從 Queue 拿出新任務到 Stack 上。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li><p>非同步操作以同步化表達</p>
+<p>➪ 易於閱讀、避免層層嵌套</p>
+</li>
+<li><p>物件提供統一的接口</p>
+</li>
+<li><p>物件狀態不受外界影響</p>
+</li>
+<li><p>良好的錯誤處理</p>
+</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>一旦建立則立即執行，無法取消。</li>
+<li>若不設定回呼函式，Promise 內部錯誤不會反映到外部。</li>
+<li>peding 狀態模糊，是剛開始還是快完成了。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>優化非同步的語法結構</li>
+<li>解決回呼地獄 callback hell</li>
+</ul>
+<blockquote>
+<p><strong>Promise 與 Ajax 關係：無關</strong></p>
+<ul>
+<li><p>Ajax（技術名稱）：不必重整即可向伺服器傳送及取得資料</p>
+</li>
+<li><p>Promise（語法）：詳見用途</p>
+</li>
+</ul>
+<p><strong>Promise 與 Async、Await 關係：前後輩</strong></p>
+<ul>
+<li>Promise：詳見用途</li>
+<li>Async、Await：基於 Promise 使非同步結構更類似於「同步」</li>
+</ul>
+</blockquote>
+<h2 id="寫法"><a href="#寫法" class="headerlink" title="寫法"></a>寫法</h2><img src="https://firebasestorage.googleapis.com/v0/b/casper-de5d5.appspot.com/o/images%2Fblog%2F202002%2Fimg-promise-pending.png?alt=media&token=f5a5607b-4436-44e6-ab1f-0d8dd4bf59b3" alt="img" style="zoom: 60%;" />
+
+<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 寫法1</span></span><br><span class="line"><span class="keyword">const</span> myName = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&#x27;Molly&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">300</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 寫法2</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myName</span> () &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&#x27;Molly&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">300</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="then"><a href="#then" class="headerlink" title="then()"></a><code>then()</code></h3><p>處理 Promise 被接受或拒绝的回呼</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p.<span class="title function_">then</span>(onFulfilled[, onRejected]);</span><br><span class="line"></span><br><span class="line">p.<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">value</span>) &#123;</span><br><span class="line">  <span class="comment">// fulfillment</span></span><br><span class="line">&#125;, <span class="keyword">function</span>(<span class="params">reason</span>) &#123;</span><br><span class="line">  <span class="comment">// rejection</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>最多可接受兩個參數</p>
+<ul>
+<li><strong>onFulfilled</strong>：當 Promise 變成接受狀態時呼叫<ul>
+<li>若該參數不是函式（包括沒有參數之情況），內部則替換成 <code>(x) =&gt; x</code>，即原樣回傳 Promise 結果。</li>
+</ul>
+</li>
+<li><strong>onRejected</strong>：當 Promise 變成拒絕狀態時呼叫<ul>
+<li>若該參數不是函式（包括沒有參數之情況），內部則報錯：<code>Thrower(it throws an error it received as argument)</code>，</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>每次回傳新的 Promise，支持<strong>鏈式呼叫</strong>（then 接 then） ➪ 解決回呼地獄</p>
+</li>
+</ul>
+<h3 id="catch"><a href="#catch" class="headerlink" title="catch()"></a><code>catch()</code></h3><p>設定 Promise 變成拒絕狀態 rejected 時的回呼，只要有任一 Ppromise 拒絕，就會 run catch。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>())</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">value</span>) &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>()</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">catch</span>(<span class="keyword">function</span>(<span class="params">error</span>) &#123;</span><br><span class="line">  <span class="comment">// 錯誤處理，没有錯誤，則跳過 catch()。</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>catch 只是語法糖，主要還是透過 then 處理。</p>
+<p>＝<code>then(null/undefined, rejection)</code></p>
+</li>
+<li><p>若該參數不是函式（包括沒有參數之情況）也會報錯</p>
+</li>
+<li><p>不管被連接到哪，都能捕獲上層未捕捉過的錯誤。</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>then 的第二個參數（onRejected）與 catch 差異：</strong></p>
+<ul>
+<li>reject 是 Promise 的方法 ➪ 拋出錯誤</li>
+<li>catch ➪ 處理錯誤</li>
+</ul>
+</blockquote>
+<h3 id="finally-（ES9）"><a href="#finally-（ES9）" class="headerlink" title="finally()（ES9）"></a><code>finally()</code>（ES9）</h3><p>最後執行的程式碼，適合作為 Ajax 已讀取完，透過 finally 關閉讀取。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">promise</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">result</span> =&gt;</span> &#123; ··· &#125;)</span><br><span class="line">.<span class="title function_">catch</span>(<span class="function"><span class="params">error</span> =&gt;</span> &#123; ··· &#125;)</span><br><span class="line">.<span class="title function_">finally</span>(<span class="function">() =&gt;</span> &#123; ··· &#125;);</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不管 Promise 最後狀態如何，都會執行的操作。</li>
+<li>回傳值永遠是 Promise，狀態依 Promise Chain。<ul>
+<li>若 <code>finally()</code> 前一個 Promise 是 fulfilled，那回傳就是 fulfilled。</li>
+<li>若 <code>finally()</code> 前一個 Promise 是 rejected，那回傳就是 rejected</li>
+</ul>
+</li>
+<li>callback 不帶任何參數（無法判對一開始的狀態），且會被忽略 return。</li>
+</ul>
+<h2 id="狀態"><a href="#狀態" class="headerlink" title="狀態"></a>狀態</h2><p>非同步的過程中也包含著不同的進度狀態</p>
+<img src="https://img-service.csdnimg.cn/img_convert/7835ced036df4aa66e2f4f8e89238c3f.png" style="zoom:90%;" />
+
+<ul>
+<li><h4 id="初始狀態-pending-⏳"><a href="#初始狀態-pending-⏳" class="headerlink" title="初始狀態 pending ⏳"></a>初始狀態 pending ⏳</h4><p>事件進行中，尚未取得結果。</p>
+</li>
+<li><h4 id="操作成功-resolved-✅"><a href="#操作成功-resolved-✅" class="headerlink" title="操作成功 resolved ✅"></a>操作成功 resolved ✅</h4><p>事件執行完畢且成功操作，回傳 <code>resolve</code> 的結果（該承諾已被實現 fulfilled）。</p>
+</li>
+<li><h4 id="操作失敗-rejected-⛔️"><a href="#操作失敗-rejected-⛔️" class="headerlink" title="操作失敗 rejected ⛔️"></a>操作失敗 rejected ⛔️</h4><p>事件執行完畢但操作失敗，回傳 <code>rejected</code> 的結果</p>
+</li>
+</ul>
+<p><strong>💡只有結果會影響狀態，無法透過其他操作改變。</strong></p>
+<h2 id="靜態方法"><a href="#靜態方法" class="headerlink" title="靜態方法"></a>靜態方法</h2><ul>
+<li><p><code>Promise.all(iterable)</code></p>
+<p>多個 Promise 事件需要一起執行與完成</p>
+<ul>
+<li>所有非同步操作執行完才回呼，並以跑得慢的為準執行回呼。</li>
+<li>接收一陣列參數，其中的值最終 Promise。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myName1 = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&#x27;Molly1&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">300</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myName2 = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&#x27;Molly2&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">300</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>([<span class="title function_">myName1</span>(), <span class="title function_">myName2</span>()])</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res); <span class="comment">// [&#x27;Molly1&#x27;, &#x27;Molly2&#x27;]</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Promise.race(iterable)</code></p>
+<p>當有任一事件完成時，就只回傳那一事件。</p>
+<ul>
+<li>以跑得快的為準執行回呼。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myName1 = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&#x27;Molly1&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myName2 = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&#x27;Molly2&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">100</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// myName2 會比 myName1 更快結束</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">race</span>([<span class="title function_">myName1</span>(), <span class="title function_">myName2</span>()])</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res); <span class="comment">// Molly2</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Promise.reject(resason)</code> &lt;-&gt; <code>Promise.resolve(value)</code></p>
+<p>取得失敗結果</p>
+</li>
+</ul>
+<p>參考資料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://sherrybabyone.github.io/2019/10/23/JavaScript%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%9A%84%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B%E4%BB%A5%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9/">JavaScript异步解决方案的发展历程以及优缺点</a></li>
+<li><a target="_blank" rel="noopener" href="https://cythilya.github.io/2018/10/31/promise/">你懂 JavaScript 嗎？#24 Promise</a></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a><a href="/tags/Promise/">Promise</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

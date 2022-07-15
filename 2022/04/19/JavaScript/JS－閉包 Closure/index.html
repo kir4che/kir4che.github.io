@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[JS] 閉包 Closure | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="簡介函式中的函式，也是一物件，用於存取外部函數的變數。
+💡與語彙作用域 Lexical Scope 密不可分，詳見 [JS] 作用域 Scope。
+123456789function funcA() &amp;#123;    var num = 10;    function funcB() &amp;#123;        // 存取 funcA 裡面的 num        console.log(num);    &amp;#125;    funcB();&amp;#125;funcA();
+
+優點
+避免使用全域變數
+延伸了變數的作用範圍
+減少命名空間之混亂、物件的相依性
+
+缺點
+被引用的私有變數不能被銷毀 ➪ 記憶體洩漏
+
+解決：變數用完後手動賦值 null
+
+
+跨域存取 ➪ 性能損失">
+  
+
+  
+  
+  <meta name="keywords" content="Front-End,JavaScript">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[JS] 閉包 Closure"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[JS] 閉包 Closure</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/04/19/JavaScript/JS－閉包 Closure/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-04-18T16:00:00.000Z">
+          2022-04-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>函式中的函式，也是一物件，用於<strong>存取外部函數</strong>的變數。</p>
+<p><strong>💡與語彙作用域 Lexical Scope 密不可分，詳見 [JS] 作用域 Scope。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">funcA</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">funcB</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// 存取 funcA 裡面的 num</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(num);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">funcB</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">funcA</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>避免使用全域變數</li>
+<li>延伸了變數的作用範圍</li>
+<li>減少命名空間之混亂、物件的相依性</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li><p>被引用的私有變數不能被銷毀 ➪ 記憶體洩漏</p>
+<blockquote>
+<p>解決：變數用完後手動賦值 null</p>
+</blockquote>
+</li>
+<li><p>跨域存取 ➪ 性能損失</p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="何時不該使用？"><a href="#何時不該使用？" class="headerlink" title="何時不該使用？"></a>何時不該使用？</h2><ul>
+<li>作用域過多</li>
+<li>不該使用也不要用</li>
+<li>記憶體回收 Garbage Collection：不正確使用閉包可能導致記憶體洩漏 Memory Leak</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Front-End/">Front-End</a><a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

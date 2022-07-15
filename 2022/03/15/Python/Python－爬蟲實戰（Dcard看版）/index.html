@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[Python] 爬蟲實戰（Dcard看版） | kir4che</title>
+
+  
+  <meta name="author" content="Molly Su">
+  
+
+  
+  <meta name="description" content="DcardAPI GEThttps://www.dcard.tw/service/api/v2
+
+全部文章 &amp;#x2F;posts
+看板資訊 &amp;#x2F;forums
+看板內文章列表 &amp;#x2F;forums&amp;#x2F;{看板名稱}&amp;#x2F;posts
+文章內文 &amp;#x2F;posts&amp;#x2F;{文章ID}
+文章內引用連結 &amp;#x2F;posts&amp;#x2F;{文章ID}&amp;#x2F;links
+文章內留言 &amp;#x2F;posts&amp;#x2F;{文章ID}&amp;#x2F;comments
+
+皆回傳 JSON 格式資料！
+（來源：爬蟲 Dcard API 2.0 版本？！ – IT 空間）">
+  
+
+  
+  
+  <meta name="keywords" content="Python,Web Crawler">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="[Python] 爬蟲實戰（Dcard看版）"/>
+
+  <meta property="og:site_name" content="kir4che"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="kir4che" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">kir4che</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>[Python] 爬蟲實戰（Dcard看版）</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/03/15/Python/Python－爬蟲實戰（Dcard看版）/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-03-14T16:00:00.000Z">
+          2022-03-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="DcardAPI-GET"><a href="#DcardAPI-GET" class="headerlink" title="DcardAPI GET"></a>DcardAPI GET</h2><p><a target="_blank" rel="noopener" href="https://www.dcard.tw/service/api/v2">https://www.dcard.tw/service/api/v2</a></p>
+<ul>
+<li>全部文章 &#x2F;posts</li>
+<li>看板資訊 &#x2F;forums</li>
+<li>看板內文章列表 &#x2F;forums&#x2F;{看板名稱}&#x2F;posts</li>
+<li>文章內文 &#x2F;posts&#x2F;{文章ID}</li>
+<li>文章內引用連結 &#x2F;posts&#x2F;{文章ID}&#x2F;links</li>
+<li>文章內留言 &#x2F;posts&#x2F;{文章ID}&#x2F;comments</li>
+</ul>
+<p>皆回傳 JSON 格式資料！</p>
+<p>（來源：<a target="_blank" rel="noopener" href="https://blog.jiatool.com/posts/dcard_api_v2/">爬蟲 Dcard API 2.0 版本？！ – IT 空間</a>）</p>
+<span id="more"></span>
+
+<h2 id="最新-30-篇文章及其留言"><a href="#最新-30-篇文章及其留言" class="headerlink" title="最新 30 篇文章及其留言"></a>最新 30 篇文章及其留言</h2><p>尚有問題待解決</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 連上網站</span></span><br><span class="line">forums = <span class="string">&quot;sex&quot;</span></span><br><span class="line">url = <span class="string">&quot;https://www.dcard.tw/service/api/v2/forums/&quot;</span> + forums + <span class="string">&quot;/posts&quot;</span></span><br><span class="line">req = requests.get(url, headers= &#123;</span><br><span class="line"><span class="string">&quot;User-Agent&quot;</span>:<span class="string">&quot;X&quot;</span></span><br><span class="line">&#125;)</span><br><span class="line">data = req.json()</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Coding/">Coding</a>, <a href="/categories/Coding/Python/">Python</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Python/">Python</a><a href="/tags/Web-Crawler/">Web Crawler</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<section id="comment" class="comment">
+		<div id="gitalk-container"></div>
+	</section>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: '7016754be95933da525e',
+			clientSecret: '7c74f10d805728ace56ef2db68e2bbd8555592ef',
+			repo: 'kir4che.github.io',
+			owner: 'kir4che',
+			admin: ['kir4che'],
+			id: location.pathname,
+			distractionFreeMode: false
+		})
+
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    
+    &copy; 2022 kir4che
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
