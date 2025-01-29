@@ -25,7 +25,7 @@
     "description": "我是蘇昶諭 (Molly)，畢業於臺北科技大學資訊與財金管理系。\n高中時接觸了 Visual Basic，發現了對程式設計的熱忱，從而開啟了我的程式之路；在大學時期，我開始接觸前端，能夠快速地將自己的想法實現在畫面上，讓我對前端產生了濃厚的興趣，並且希望能夠在該領域中不斷精進自己，也期許自己成為一名優秀的前端工程師。",
     "hobby": {
       "title": "小小興趣：",
-      "content": ["打電動", "觀看 LoL 比賽", "吃吃美食", "看 Twitch 實況"]
+      "content": ["鉤織", "打電動", "吃吃美食", "看 Twitch 實況"]
     }
   },
   "experience": {
@@ -47,14 +47,14 @@
         "自定義 SurveyCake Wordpress 部落格主題",
         "協助開發 SurveyCake XM",
         [
-          "協助調整頁面樣式",
-          "學習並使用 nivo 製作自定義圖表",
+          "調整頁面樣式",
+          "學習並使用 nivo 製作圖表",
           "切版新頁面並串接 API"
         ],
         "學習使用 Git 協同開發並進行版控",
         "維護舊有專案"
       ],
-      "skills": ["HTML/CSS", "JavaScript", "React", "Redux", "Git", "WordPress"]
+      "skills": ["React", "JavaScript", "TypeScript", "Redux", "Git", "HTML/CSS", "WordPress"]
     },
     "mrhost": {
       "title": "mrhost",
@@ -69,14 +69,14 @@
         "建立 SOP 確保日常工作流程的正確及一致性",
         "於 Wordpress 撰寫 SEO 文章"
       ],
-      "skills": ["App Script", "HTML/CSS", "Bootstrap 5", "SiteMinder"]
+      "skills": ["Apps Script", "Google Sheet", "HTML/CSS", "Bootstrap 5", "SiteMinder"]
     }
   },
   "projects": {
     "title": "作品集",
     "website": "網站連結",
     "demoVideo": "Demo 影片",
-    "github": "GitHub (FE)",
+    "github": "GitHub",
     "stocklight": {
       "title": "股市光明燈 Stock Light ✨",
       "subtitle": "大學畢業專題",

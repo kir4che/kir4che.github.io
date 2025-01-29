@@ -7,7 +7,7 @@ import Projects from '@/components/Projects';
 
 const Home: React.FC = () => {
   return (
-    <main>
+    <main className='overflow-x-hidden bg-white'>
       <Banner />
       <About />
       <Experience />

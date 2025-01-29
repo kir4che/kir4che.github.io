@@ -44,7 +44,7 @@
         "Learn Git for collaborative development and version control.",
         "Maintained legacy projects"
       ],
-      "skills": ["HTML/CSS", "JavaScript", "React", "Redux", "Git", "WordPress"]
+      "skills": ["React", "JavaScript", "TypeScript", "Redux", "Git", "HTML/CSS", "WordPress"]
     },
     "mrhost": {
       "title": "mrhost",
@@ -59,7 +59,7 @@
         "Create SOPs to ensure the accuracy and consistency of daily workflows.",
         "Assist in writing SEO articles."
       ],
-      "skills": ["Apps Script", "HTML/CSS", "Bootstrap 5", "SiteMinder"]
+      "skills": ["Apps Script", "Google Sheet", "HTML/CSS", "Bootstrap 5", "SiteMinder"]
     }
   },
   "projects": {

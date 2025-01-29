@@ -17,6 +17,10 @@ const LangMenu: React.FC = () => {
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng).then(() => {
       navigate(`/${lng}`);
+
+      // 自動關閉選單
+      const elem = document.activeElement;
+      if (elem) (elem as HTMLElement)?.blur();
     });
   };
 
